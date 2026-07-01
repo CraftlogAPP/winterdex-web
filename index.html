@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WinterDex — Winterdienst rechtssicher dokumentieren</title>
+  <meta name="description" content="Räum- und Streupflicht gerichtsfest dokumentieren: GPS-Stempel, archivierte Wetterlage, Beweisfotos und PDF-Nachweis. Für Hausmeisterservices, GaLaBau und Hausverwaltungen in DACH." />
+  <meta name="theme-color" content="#0A1520" />
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA; --blue: #0284C7; --blue-light: #38BDF8;
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 26px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540); border-radius: 10px; display: grid; place-items: center; }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; }
+    a { color: #7DCBF7; }
+    .hero { padding: 46px 0 30px; }
+    h1 { font-size: clamp(30px, 5.4vw, 52px); font-weight: 800; letter-spacing: -1px; line-height: 1.12; }
+    h1 .hl { color: var(--blue-light); }
+    .sub { margin-top: 16px; font-size: 18px; color: var(--muted); max-width: 640px; }
+    .cta-row { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; background: var(--blue); color: #fff; font-weight: 700; font-size: 16px;
+      padding: 13px 24px; border-radius: 12px; text-decoration: none; }
+    .btn:hover { background: var(--blue-light); }
+    .btn.ghost { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 99px; margin-bottom: 16px; }
+    section { padding: 34px 0; }
+    h2 { font-size: 27px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 18px; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    .card p { font-size: 14.5px; color: var(--muted); }
+    .emoji { font-size: 26px; display: block; margin-bottom: 10px; }
+    .steps { counter-reset: step; }
+    .step { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+    .step .num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--blue);
+      display: grid; place-items: center; font-weight: 800; }
+    .price-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 640px; }
+    .price h3 { font-size: 18px; }
+    .price .amount { font-size: 34px; font-weight: 800; margin: 8px 0 2px; }
+    .price .per { color: var(--muted); font-size: 13px; }
+    .price ul { list-style: none; margin-top: 14px; }
+    .price li { font-size: 14.5px; padding: 4px 0; color: var(--muted); }
+    .price li::before { content: "✓ "; color: var(--green); font-weight: 800; }
+    .price.pro { border-color: var(--blue); }
+    .promo-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .promo { display: flex; gap: 14px; align-items: center; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 14px; padding: 16px; text-decoration: none; color: var(--text); }
+    .promo:hover { border-color: var(--blue); }
+    .promo .tile { flex: 0 0 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; }
+    .promo b { display: block; font-size: 15.5px; }
+    .promo span { font-size: 13px; color: var(--muted); }
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+          <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+        </svg>
+      </span>
+      <span class="brand">WinterDex</span>
+    </header>
+
+    <div class="hero">
+      <span class="badge">Für Hausmeisterservices · GaLaBau · Hausverwaltungen — 🇩🇪 🇦🇹 🇨🇭</span>
+      <h1>Wenn's glatt wird, bist du sicher.<br/><span class="hl">Auch vor Gericht.</span></h1>
+      <p class="sub">
+        Jemand stürzt auf Glatteis vor deinem Objekt — und plötzlich zählt nur noch deine Dokumentation.
+        WinterDex macht aus jedem Räum- und Streueinsatz eine <strong>gerichtsfeste Beweiskette</strong>:
+        GPS-Stempel, archivierte Wetterlage, Fotos und PDF-Nachweis. In 30 Sekunden pro Einsatz.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#" id="store-link">Bald im Google Play Store</a>
+        <a class="btn ghost" href="#funktionen">Mehr erfahren</a>
+      </div>
+    </div>
+
+    <section id="funktionen">
+      <h2>Deine Beweiskette</h2>
+      <div class="grid">
+        <div class="card"><span class="emoji">📍</span><h3>GPS- &amp; Zeitstempel</h3>
+          <p>Jeder Einsatz wird automatisch mit Position und Uhrzeit versehen — du warst nachweislich da.</p></div>
+        <div class="card"><span class="emoji">🌡️</span><h3>Wetterlage archiviert</h3>
+          <p>„−2&nbsp;°C bei Schneefall um 6:40, Einsatz 6:55." WinterDex speichert die Wetterlage unveränderlich zu jedem Einsatz.</p></div>
+        <div class="card"><span class="emoji">🔒</span><h3>Unveränderlich (append-only)</h3>
+          <p>Einträge können nie bearbeitet oder gelöscht werden — nur gekennzeichnete Stornos mit Begründung. Genau das überzeugt vor Gericht.</p></div>
+        <div class="card"><span class="emoji">📷</span><h3>Beweisfotos</h3>
+          <p>Geräumter Gehweg, gestreute Zufahrt — direkt am Objekt fotografiert und dem Einsatz zugeordnet.</p></div>
+        <div class="card"><span class="emoji">❄️</span><h3>Glätte-Frühwarnung</h3>
+          <p>WinterDex prüft die Vorhersage für alle deine Objekte: „Heute Glättegefahr bei 4 Objekten."</p></div>
+        <div class="card"><span class="emoji">📄</span><h3>PDF-Nachweis</h3>
+          <p>Ein Tipp erzeugt den kompletten Bericht pro Objekt und Saison — inklusive Rechtsgrundlage deines Landes.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>So funktioniert's</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Objekt anlegen.</strong>
+          <span class="sub" style="display:block;font-size:15px">Adresse, Flächen, Pflichtzeiten — je Land vorbelegt (DE: Ortssatzung, AT: § 93 StVO, CH: kantonal).</span></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Einsatz dokumentieren.</strong>
+          <span class="sub" style="display:block;font-size:15px">Nach getaner Arbeit: Maßnahme antippen, optional Foto — GPS und Wetter ergänzt WinterDex automatisch. Auch „kontrolliert, nichts nötig" ist ein Nachweis.</span></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Nachweis teilen.</strong>
+          <span class="sub" style="display:block;font-size:15px">PDF pro Monat oder Saison an Hausverwaltung, Auftraggeber — oder im Streitfall an den Anwalt.</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Preise</h2>
+      <div class="price-grid">
+        <div class="card price">
+          <h3>Free</h3>
+          <div class="amount">0&nbsp;€</div>
+          <div class="per">für immer</div>
+          <ul>
+            <li>2 Objekte in vollem Umfang</li>
+            <li>GPS, Wetter, Fotos, Storno-Schutz</li>
+            <li>PDF-Nachweis mit Wasserzeichen</li>
+            <li>Cloud-Sync auf allen Geräten</li>
+          </ul>
+        </div>
+        <div class="card price pro">
+          <h3>Pro</h3>
+          <div class="amount">9,99&nbsp;€</div>
+          <div class="per">pro Monat · oder 59,99 € pro Saison — jederzeit kündbar</div>
+          <ul>
+            <li>Unbegrenzt Objekte</li>
+            <li>PDF-Nachweis ohne Wasserzeichen</li>
+            <li>Glätte-Frühwarnung für alle Objekte</li>
+            <li>Priorisierter Support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Mehr von uns</h2>
+      <p class="sub" style="margin-bottom:16px">WinterDex ist Teil der Dex-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
+      <div class="promo-grid">
+        <a class="promo" href="https://craftlogapp.github.io/schutzheld-web/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#16A34A22">🦺</span>
+          <span><b>Schutzheld</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
+        <a class="promo" href="https://craftlogapp.github.io/pruefdex-landing/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#2563EB22">🔌</span>
+          <span><b>PrüfDex</b><span>DGUV-V3-Prüfung: Geräte, Protokolle, Plaketten &amp; Fristen.</span></span></a>
+        <a class="promo" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#22C55E22">🌳</span>
+          <span><b>BaumDex</b><span>Baumkataster &amp; Verkehrssicherung für GaLaBau und Baumpflege.</span></span></a>
+        <a class="promo" href="https://craftlogapp.github.io/craftlog-web/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#B4530922">🪵</span>
+          <span><b>CraftLog</b><span>Aufträge, Zeiten &amp; Material — die App für Handwerksbetriebe.</span></span></a>
+        <a class="promo" href="https://craftlogapp.github.io/routelog-web/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#0EA5E922">🚗</span>
+          <span><b>RouteLog</b><span>Automatisches Fahrtenbuch — KI trennt geschäftlich &amp; privat.</span></span></a>
+        <a class="promo" href="https://craftlogapp.github.io/archio-web/" target="_blank" rel="noopener">
+          <span class="tile" style="background:#8B5CF622">📄</span>
+          <span><b>Archio</b><span>Dokumente scannen &amp; per KI verstehen — mit Fristen-Erinnerung.</span></span></a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 WinterDex · Alexander Pfalz</span>
+      <nav>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+        <a href="mailto:2easy4trash@gmail.com?subject=WinterDex%20Support">Support</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

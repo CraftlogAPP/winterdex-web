@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutzerklärung — WinterDex</title>
+  <meta name="robots" content="all" />
+  <meta name="theme-color" content="#0A1520" />
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA; --blue: #0284C7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 64px; }
+    header { padding: 28px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 36px; height: 36px; background: var(--blue); border-radius: 9px; display: grid; place-items: center; }
+    .brand { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+    a { color: #7DCBF7; }
+    h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; margin: 18px 0 6px; }
+    h2 { font-size: 19px; font-weight: 700; margin: 30px 0 8px; }
+    h3 { font-size: 16px; font-weight: 700; margin: 18px 0 6px; }
+    p, li { font-size: 15px; margin-bottom: 8px; }
+    ul { padding-left: 22px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .stand { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .note { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 16px 0; font-size: 14px; color: var(--muted); }
+    .back { display: inline-block; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+          <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+        </svg>
+      </span>
+      <span class="brand">WinterDex</span>
+    </header>
+
+    <h1>Datenschutzerklärung</h1>
+    <p class="stand">Stand: Juli 2026 · Gilt für die mobile App „WinterDex" und diese Website.</p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Alexander Pfalz<br/>
+      Hofsatz 29, 7082 Donnerskirchen, Österreich<br/>
+      E-Mail: 2easy4trash@gmail.com
+    </p>
+
+    <h2>2. Kurzüberblick</h2>
+    <ul>
+      <li>Keine Werbung, kein Werbe-Tracking, kein Verkauf von Daten.</li>
+      <li>Standort wird <strong>nur beim Dokumentieren eines Einsatzes</strong> erfasst — nie im Hintergrund.</li>
+      <li>Ihre Daten liegen in Ihrem Konto (EU-Rechenzentrum) und gehören Ihnen.</li>
+      <li>Konto-Löschung jederzeit direkt in der App (Einstellungen → Konto löschen).</li>
+    </ul>
+
+    <h2>3. Welche Daten wir verarbeiten</h2>
+    <h3>a) Konto</h3>
+    <p>E-Mail-Adresse und Passwort (verschlüsselt) zur Anmeldung. Rechtsgrundlage: Art. 6 Abs. 1 lit. b
+      DSGVO (Vertragserfüllung).</p>
+    <h3>b) Betriebs- und Objektdaten</h3>
+    <p>Von Ihnen eingegebene Angaben zu Ihrem Betrieb und Ihren Objekten (Name, Adressen, Flächen,
+      Pflichtzeiten, Auftraggeber). Objektadressen werden zur Zuordnung von Wetterdaten in Koordinaten
+      umgerechnet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <h3>c) Einsatz-Dokumentation</h3>
+    <p>Beim Dokumentieren eines Einsatzes speichern wir Zeitpunkt, Maßnahme, Streumittel, optionale
+      Notizen und Fotos, die aktuelle Geräteposition (GPS-Stempel) sowie die Wetterlage am Objekt.
+      Diese Daten dienen dem Nachweis der Erfüllung der Räum- und Streupflicht (Beweiszweck).
+      Rechtsgrundlage: Art. 6 Abs. 1 lit. b und f DSGVO (berechtigtes Interesse an rechtssicherer
+      Dokumentation).</p>
+    <h3>d) Standort</h3>
+    <p>Der Standort wird ausschließlich im Moment der Einsatz-Dokumentation im Vordergrund abgefragt.
+      Es findet <strong>keine Hintergrund-Ortung</strong> und keine Bewegungsprofilbildung statt. Die
+      Berechtigung kann jederzeit in den Systemeinstellungen entzogen werden; die App bleibt nutzbar
+      (Nachweis dann ohne GPS-Stempel).</p>
+    <h3>e) Wetterdaten</h3>
+    <p>Zur Archivierung der Wetterlage übermitteln wir die Koordinaten des Einsatzorts an unseren
+      Server (Cloudflare Workers), der sie an den Wetterdienst Open-Meteo weiterreicht. Dabei werden
+      keine Namen, Konten oder sonstigen personenbezogenen Daten übermittelt.</p>
+
+    <h2>4. Auftragsverarbeiter &amp; Empfänger</h2>
+    <ul>
+      <li><strong>Supabase</strong> (Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt) — speichert Konto-, Objekt- und Einsatzdaten.</li>
+      <li><strong>Cloudflare</strong> (Server/Workers) — technische Verarbeitung der Wetter-Anfragen.</li>
+      <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
+      <li><strong>Google Play / RevenueCat</strong> — Abwicklung von In-App-Käufen (sofern Sie ein Abo abschließen); wir erhalten keine Zahlungsdaten.</li>
+    </ul>
+
+    <h2>5. Speicherdauer</h2>
+    <p>Ihre Daten bleiben gespeichert, solange Ihr Konto besteht. Einsatz-Dokumentation ist bewusst
+      unveränderlich angelegt (Beweiszweck); mit der Konto-Löschung wird sie vollständig entfernt.
+      Gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
+
+    <h2>6. Ihre Rechte</h2>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+      Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO) sowie das Recht auf Beschwerde bei der
+      Österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).</p>
+
+    <h2>7. Konto löschen</h2>
+    <p>Direkt in der App unter <strong>Einstellungen → Konto löschen</strong> oder per E-Mail —
+      Details: <a href="konto-loeschung.html">Konto und Daten löschen</a>.</p>
+
+    <h2>8. Diese Website</h2>
+    <p>Diese Website setzt keine Cookies und bindet keine Tracker ein. Beim Aufruf fallen technisch
+      bedingt Server-Logdaten (IP-Adresse, Zeitpunkt) beim Hosting-Anbieter an.</p>
+
+    <div class="note">Hinweis: Diese Datenschutzerklärung ist ein sorgfältig erstellter Entwurf und wird
+      vor dem offiziellen Launch final juristisch geprüft.</div>
+
+    <a class="back" href="index.html">← Zurück zur Startseite</a>
+  </div>
+</body>
+</html>
