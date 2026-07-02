@@ -8,75 +8,184 @@
   <meta name="theme-color" content="#0A1520" />
   <style>
     :root {
-      --bg: #0A1520; --surface: #122334; --border: #22374B;
-      --text: #E4EEF7; --muted: #8FA6BA; --blue: #0284C7; --blue-light: #38BDF8;
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
       --accent: #FB923C; --green: #22C55E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--bg); color: var(--text);
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 26px 0; display: flex; align-items: center; gap: 12px; }
-    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540); border-radius: 10px; display: grid; place-items: center; }
-    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
     a { color: #7DCBF7; }
-    .hero { padding: 46px 0 30px; }
-    h1 { font-size: clamp(30px, 5.4vw, 52px); font-weight: 800; letter-spacing: -1px; line-height: 1.12; }
-    h1 .hl { color: var(--blue-light); }
-    .sub { margin-top: 16px; font-size: 18px; color: var(--muted); max-width: 640px; }
-    .cta-row { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-block; background: var(--blue); color: #fff; font-weight: 700; font-size: 16px;
-      padding: 13px 24px; border-radius: 12px; text-decoration: none; }
-    .btn:hover { background: var(--blue-light); }
-    .btn.ghost { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall {
+      to { transform: translateY(105vh) translateX(6vw); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; }
+
+    /* Hero */
+    .hero { padding: 64px 0 42px; }
+    h1 { font-size: clamp(32px, 5.6vw, 56px); font-weight: 850; letter-spacing: -1.4px; line-height: 1.1; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .sub { margin-top: 18px; font-size: 18px; color: var(--muted); max-width: 640px; }
+    .cta-row { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; color: #fff; font-weight: 700; font-size: 16px;
+      padding: 14px 26px; border-radius: 12px; text-decoration: none; border: 1px solid transparent;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+    .btn.ghost { background: rgba(255,255,255,.03); border-color: var(--border); color: var(--text); box-shadow: none; }
+    .btn.ghost:hover { border-color: var(--blue-light); }
     .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
-      font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 99px; margin-bottom: 16px; }
-    section { padding: 34px 0; }
-    h2 { font-size: 27px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 18px; }
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero > * { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.22,.61,.36,1) forwards; }
+      .hero > *:nth-child(2) { animation-delay: .08s; }
+      .hero > *:nth-child(3) { animation-delay: .16s; }
+      .hero > *:nth-child(4) { animation-delay: .24s; }
+      .hero > *:nth-child(5) { animation-delay: .32s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+    }
+
+    /* Stats strip */
+    .stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .stat .n { font-size: 24px; font-weight: 800; letter-spacing: -.5px; color: var(--blue-light); }
+    .stat .l { color: var(--muted); font-size: 13px; }
+
+    section { padding: 40px 0; }
+    h2 { font-size: clamp(23px, 3.6vw, 30px); font-weight: 850; letter-spacing: -0.6px; margin-bottom: 6px; }
+    .sec-eyebrow { color: var(--blue-light); font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px; }
+    .sec-lead { color: var(--muted); font-size: 15.5px; max-width: 620px; margin-bottom: 22px; }
+
+    /* Cards */
     .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-    .card h3 { font-size: 16.5px; margin-bottom: 6px; }
+    .card { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 22px 20px;
+      transition: transform .18s ease, border-color .18s ease; }
+    .card::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .card > * { position: relative; }
+    .card:hover { transform: translateY(-4px); border-color: var(--blue-light); }
+    .card h3 { font-size: 16.5px; font-weight: 750; margin-bottom: 6px; }
     .card p { font-size: 14.5px; color: var(--muted); }
-    .emoji { font-size: 26px; display: block; margin-bottom: 10px; }
+    .emoji { width: 44px; height: 44px; border-radius: 12px; background: rgba(56,189,248,.12);
+      border: 1px solid rgba(56,189,248,.25); display: grid; place-items: center;
+      font-size: 21px; margin-bottom: 12px; }
+
+    /* Steps */
     .steps { counter-reset: step; }
-    .step { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
-    .step .num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--blue);
-      display: grid; place-items: center; font-weight: 800; }
-    .price-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 640px; }
+    .step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+    .step .num { flex: 0 0 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      display: grid; place-items: center; font-weight: 800; color: #fff;
+      box-shadow: 0 6px 16px rgba(2,132,199,.4); }
+
+    /* Pricing */
+    .price-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 680px; }
     .price h3 { font-size: 18px; }
-    .price .amount { font-size: 34px; font-weight: 800; margin: 8px 0 2px; }
+    .price .amount { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin: 8px 0 2px; }
     .price .per { color: var(--muted); font-size: 13px; }
     .price ul { list-style: none; margin-top: 14px; }
     .price li { font-size: 14.5px; padding: 4px 0; color: var(--muted); }
     .price li::before { content: "✓ "; color: var(--green); font-weight: 800; }
-    .price.pro { border-color: var(--blue); }
+    .price.pro { border-color: var(--blue-light); box-shadow: 0 0 0 1px rgba(56,189,248,.35), 0 18px 44px rgba(2,132,199,.15); }
+    .price.pro .amount { color: var(--blue-light); }
+    .price.pro:hover { transform: translateY(-4px); }
+    .plan-tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--blue-light);
+      background: rgba(56,189,248,.14); border: 1px solid rgba(56,189,248,.3);
+      padding: 3px 9px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+
+    /* Cross-promo */
     .promo-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .promo { display: flex; gap: 14px; align-items: center; background: var(--surface);
-      border: 1px solid var(--border); border-radius: 14px; padding: 16px; text-decoration: none; color: var(--text); }
-    .promo:hover { border-color: var(--blue); }
-    .promo .tile { flex: 0 0 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; }
+    .promo { position: relative; overflow: hidden; display: flex; gap: 14px; align-items: center;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 16px; text-decoration: none; color: var(--text);
+      transition: border-color .18s ease, transform .18s ease; }
+    .promo::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(300px 140px at 100% 0%, var(--glow), transparent 70%); opacity: .7; }
+    .promo > * { position: relative; }
+    .promo:hover { border-color: var(--blue-light); transform: translateY(-3px); }
+    .promo img { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08); }
     .promo b { display: block; font-size: 15.5px; }
     .promo span { font-size: 13px; color: var(--muted); }
+
+    /* Scroll reveal */
+    .reveal.pre { opacity: 0; transform: translateY(18px); }
+    .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+    .grid .reveal.in:nth-child(2), .promo-grid .reveal.in:nth-child(2) { transition-delay: .07s; }
+    .grid .reveal.in:nth-child(3), .promo-grid .reveal.in:nth-child(3) { transition-delay: .14s; }
+    .grid .reveal.in:nth-child(4), .promo-grid .reveal.in:nth-child(4) { transition-delay: .21s; }
+    .grid .reveal.in:nth-child(5), .promo-grid .reveal.in:nth-child(5) { transition-delay: .28s; }
+    .grid .reveal.in:nth-child(6), .promo-grid .reveal.in:nth-child(6) { transition-delay: .35s; }
+
     footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
       display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
     footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <span class="logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
-          <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
-        </svg>
-      </span>
-      <span class="brand">WinterDex</span>
-    </header>
+  <div class="snow" aria-hidden="true"></div>
 
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <span class="brand">WinterDex</span>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="hero">
       <span class="badge">Für Hausmeisterservices · GaLaBau · Hausverwaltungen — 🇩🇪 🇦🇹 🇨🇭</span>
       <h1>Wenn's glatt wird, bist du sicher.<br/><span class="hl">Auch vor Gericht.</span></h1>
@@ -89,42 +198,50 @@
         <a class="btn" href="#" id="store-link">Bald im Google Play Store</a>
         <a class="btn ghost" href="#funktionen">Mehr erfahren</a>
       </div>
+      <div class="stats">
+        <div class="stat"><div class="n">30 Sek.</div><div class="l">pro Einsatz dokumentiert</div></div>
+        <div class="stat"><div class="n">Append-only</div><div class="l">Einträge unveränderlich</div></div>
+        <div class="stat"><div class="n">GPS + Wetter</div><div class="l">automatisch archiviert</div></div>
+      </div>
     </div>
 
     <section id="funktionen">
+      <div class="sec-eyebrow">Funktionen</div>
       <h2>Deine Beweiskette</h2>
       <div class="grid">
-        <div class="card"><span class="emoji">📍</span><h3>GPS- &amp; Zeitstempel</h3>
+        <div class="card reveal"><span class="emoji">📍</span><h3>GPS- &amp; Zeitstempel</h3>
           <p>Jeder Einsatz wird automatisch mit Position und Uhrzeit versehen — du warst nachweislich da.</p></div>
-        <div class="card"><span class="emoji">🌡️</span><h3>Wetterlage archiviert</h3>
+        <div class="card reveal"><span class="emoji">🌡️</span><h3>Wetterlage archiviert</h3>
           <p>„−2&nbsp;°C bei Schneefall um 6:40, Einsatz 6:55." WinterDex speichert die Wetterlage unveränderlich zu jedem Einsatz.</p></div>
-        <div class="card"><span class="emoji">🔒</span><h3>Unveränderlich (append-only)</h3>
+        <div class="card reveal"><span class="emoji">🔒</span><h3>Unveränderlich (append-only)</h3>
           <p>Einträge können nie bearbeitet oder gelöscht werden — nur gekennzeichnete Stornos mit Begründung. Genau das überzeugt vor Gericht.</p></div>
-        <div class="card"><span class="emoji">📷</span><h3>Beweisfotos</h3>
+        <div class="card reveal"><span class="emoji">📷</span><h3>Beweisfotos</h3>
           <p>Geräumter Gehweg, gestreute Zufahrt — direkt am Objekt fotografiert und dem Einsatz zugeordnet.</p></div>
-        <div class="card"><span class="emoji">❄️</span><h3>Glätte-Frühwarnung</h3>
+        <div class="card reveal"><span class="emoji">❄️</span><h3>Glätte-Frühwarnung</h3>
           <p>WinterDex prüft die Vorhersage für alle deine Objekte: „Heute Glättegefahr bei 4 Objekten."</p></div>
-        <div class="card"><span class="emoji">📄</span><h3>PDF-Nachweis</h3>
+        <div class="card reveal"><span class="emoji">📄</span><h3>PDF-Nachweis</h3>
           <p>Ein Tipp erzeugt den kompletten Bericht pro Objekt und Saison — inklusive Rechtsgrundlage deines Landes.</p></div>
       </div>
     </section>
 
     <section>
+      <div class="sec-eyebrow">Ablauf</div>
       <h2>So funktioniert's</h2>
       <div class="steps">
-        <div class="step"><div class="num">1</div><div><strong>Objekt anlegen.</strong>
-          <span class="sub" style="display:block;font-size:15px">Adresse, Flächen, Pflichtzeiten — je Land vorbelegt (DE: Ortssatzung, AT: § 93 StVO, CH: kantonal).</span></div></div>
-        <div class="step"><div class="num">2</div><div><strong>Einsatz dokumentieren.</strong>
-          <span class="sub" style="display:block;font-size:15px">Nach getaner Arbeit: Maßnahme antippen, optional Foto — GPS und Wetter ergänzt WinterDex automatisch. Auch „kontrolliert, nichts nötig" ist ein Nachweis.</span></div></div>
-        <div class="step"><div class="num">3</div><div><strong>Nachweis teilen.</strong>
-          <span class="sub" style="display:block;font-size:15px">PDF pro Monat oder Saison an Hausverwaltung, Auftraggeber — oder im Streitfall an den Anwalt.</span></div></div>
+        <div class="step reveal"><div class="num">1</div><div><strong>Objekt anlegen.</strong>
+          <span class="sub" style="display:block;font-size:15px;margin-top:2px">Adresse, Flächen, Pflichtzeiten — je Land vorbelegt (DE: Ortssatzung, AT: § 93 StVO, CH: kantonal).</span></div></div>
+        <div class="step reveal"><div class="num">2</div><div><strong>Einsatz dokumentieren.</strong>
+          <span class="sub" style="display:block;font-size:15px;margin-top:2px">Nach getaner Arbeit: Maßnahme antippen, optional Foto — GPS und Wetter ergänzt WinterDex automatisch. Auch „kontrolliert, nichts nötig" ist ein Nachweis.</span></div></div>
+        <div class="step reveal"><div class="num">3</div><div><strong>Nachweis teilen.</strong>
+          <span class="sub" style="display:block;font-size:15px;margin-top:2px">PDF pro Monat oder Saison an Hausverwaltung, Auftraggeber — oder im Streitfall an den Anwalt.</span></div></div>
       </div>
     </section>
 
     <section>
+      <div class="sec-eyebrow">Preise</div>
       <h2>Preise</h2>
       <div class="price-grid">
-        <div class="card price">
+        <div class="card price reveal">
           <h3>Free</h3>
           <div class="amount">0&nbsp;€</div>
           <div class="per">für immer</div>
@@ -135,8 +252,8 @@
             <li>Cloud-Sync auf allen Geräten</li>
           </ul>
         </div>
-        <div class="card price pro">
-          <h3>Pro</h3>
+        <div class="card price pro reveal">
+          <h3>Pro <span class="plan-tag">Empfohlen</span></h3>
           <div class="amount">9,99&nbsp;€</div>
           <div class="per">pro Monat · oder 59,99 € pro Saison — jederzeit kündbar</div>
           <ul>
@@ -150,28 +267,32 @@
     </section>
 
     <section>
-      <h2>Mehr von uns</h2>
-      <p class="sub" style="margin-bottom:16px">WinterDex ist Teil der Dex-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
+      <div class="sec-eyebrow">Die Dexware-Familie</div>
+      <h2>Entdecke die ganze Dexware</h2>
+      <p class="sec-lead">WinterDex ist Teil der Dexware-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
       <div class="promo-grid">
-        <a class="promo" href="https://schutzdex.dexware.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#16A34A22">🦺</span>
-          <span><b>Schutzheld</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
-        <a class="promo" href="https://pruefdex.dexware.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#2563EB22">🔌</span>
+        <a class="promo reveal" href="https://schutzdex.dexware.app" target="_blank" rel="noopener">
+          <img src="schutzheld-icon.png" alt="SchutzDex" width="48" height="48" />
+          <span><b>SchutzDex</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
+        <a class="promo reveal" href="https://pruefdex.dexware.app" target="_blank" rel="noopener">
+          <img src="pruefdex-icon.png" alt="PrüfDex" width="48" height="48" />
           <span><b>PrüfDex</b><span>DGUV-V3-Prüfung: Geräte, Protokolle, Plaketten &amp; Fristen.</span></span></a>
-        <a class="promo" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#22C55E22">🌳</span>
+        <a class="promo reveal" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener">
+          <img src="baumdex-icon.png" alt="BaumDex" width="48" height="48" />
           <span><b>BaumDex</b><span>Baumkataster &amp; Verkehrssicherung für GaLaBau und Baumpflege.</span></span></a>
-        <a class="promo" href="https://craftdex.dexware.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#B4530922">🪵</span>
-          <span><b>CraftLog</b><span>Aufträge, Zeiten &amp; Material — die App für Handwerksbetriebe.</span></span></a>
-        <a class="promo" href="https://tourdex.dexware.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#0EA5E922">🚗</span>
-          <span><b>RouteLog</b><span>Automatisches Fahrtenbuch — KI trennt geschäftlich &amp; privat.</span></span></a>
-        <a class="promo" href="https://dokudex.dexware.app/" target="_blank" rel="noopener">
-          <span class="tile" style="background:#8B5CF622">📄</span>
-          <span><b>Archio</b><span>Dokumente scannen &amp; per KI verstehen — mit Fristen-Erinnerung.</span></span></a>
+        <a class="promo reveal" href="https://craftdex.dexware.app" target="_blank" rel="noopener">
+          <img src="craftlog-icon.png" alt="CraftDex" width="48" height="48" />
+          <span><b>CraftDex</b><span>Aufträge, Zeiten &amp; Material — die App für Handwerksbetriebe.</span></span></a>
+        <a class="promo reveal" href="https://tourdex.dexware.app" target="_blank" rel="noopener">
+          <img src="routelog-icon.png" alt="TourDex" width="48" height="48" />
+          <span><b>TourDex</b><span>Automatisches Fahrtenbuch — KI trennt geschäftlich &amp; privat.</span></span></a>
+        <a class="promo reveal" href="https://dokudex.dexware.app" target="_blank" rel="noopener">
+          <img src="archio-icon.png" alt="DokuDex" width="48" height="48" />
+          <span><b>DokuDex</b><span>Dokumente scannen &amp; per KI verstehen — mit Fristen-Erinnerung.</span></span></a>
       </div>
+      <p style="text-align:center;margin-top:20px">
+        <a href="https://dexware.app/" target="_blank" rel="noopener">Alle Dexware-Apps auf einen Blick →</a>
+      </p>
     </section>
 
     <footer>
@@ -184,5 +305,37 @@
       </nav>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Dezenter Schneefall
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+      // Scroll reveal
+      if (!reduced && 'IntersectionObserver' in window) {
+        var els = document.querySelectorAll('.reveal');
+        for (var j = 0; j < els.length; j++) els[j].classList.add('pre');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        for (var k = 0; k < els.length; k++) io.observe(els[k]);
+      }
+    })();
+  </script>
 </body>
 </html>
