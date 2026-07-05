@@ -154,6 +154,34 @@
     .promo b { display: block; font-size: 15.5px; }
     .promo span { font-size: 13px; color: var(--muted); }
 
+    /* Dexware Suite */
+    .suite { background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 34px 30px; max-width: 900px; box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .suite-pill { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: #06283a; background: var(--blue-light); padding: 6px 14px; border-radius: 999px; }
+    .suite h3.st { font-size: 26px; font-weight: 850; letter-spacing: -.6px; margin-top: 16px; }
+    .suite .sl { color: var(--muted); font-size: 15px; margin-top: 10px; }
+    .suite-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    @media (max-width: 700px) { .suite-prices { grid-template-columns: 1fr; } }
+    .sp { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; position: relative; }
+    .sp.best { border-color: var(--blue-light); box-shadow: 0 12px 34px rgba(2,132,199,.2); }
+    .sp-badge { position: absolute; top: -12px; right: 16px; font-size: 11.5px; font-weight: 800;
+      color: #052e12; background: #4ADE80; padding: 4px 11px; border-radius: 999px; }
+    .sp-name { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    .sp.best .sp-name { color: var(--blue-light); }
+    .sp-strike { color: var(--muted); font-size: 14px; text-decoration: line-through; margin-top: 10px; }
+    .sp-amount { font-size: 32px; font-weight: 850; letter-spacing: -.8px; }
+    .sp-amount small { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .sp-note { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .suite-icons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .suite-icons img { width: 42px; height: 42px; border-radius: 11px; border: 1px solid var(--border); background: var(--surface); }
+    .suite-list { list-style: none; margin-top: 18px; }
+    .suite-list li { font-size: 14.5px; padding: 5px 0 5px 22px; position: relative; color: var(--text); }
+    .suite-list li::before { content: "★"; color: var(--blue-light); position: absolute; left: 0; }
+    .suite-how { color: var(--muted); font-size: 13.5px; margin-top: 18px; margin-bottom: 20px; }
+    .suite .btn { display: inline-block; font-weight: 700; padding: 12px 24px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue)); color: #06283a; text-decoration: none; }
+
     /* Scroll reveal */
     .reveal.pre { opacity: 0; transform: translateY(18px); }
     .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
@@ -264,6 +292,49 @@
           </ul>
         </div>
       </div>
+
+      <!-- Dexware Suite Bundle -->
+      <div class="suite" id="suite" style="margin-top:28px;">
+        <span class="suite-pill">Dexware Suite — ein Abo, alle Apps</span>
+        <h3 class="st">Alle 8 Dexware-Apps. Ein Abo.</h3>
+        <p class="sl">
+          Die Suite kostet so viel wie unsere teuerste Einzel-App — und schaltet <b>alle</b> Dexware-Apps
+          auf allen deinen Geräten frei. Neue Apps kommen automatisch dazu, ohne Aufpreis.
+        </p>
+        <div class="suite-prices">
+          <div class="sp">
+            <div class="sp-name">Monatlich</div>
+            <div class="sp-strike">über 90 € — alle Apps einzeln</div>
+            <div class="sp-amount">29,99 € <small>/ Monat</small></div>
+            <div class="sp-note">Der Preis unserer teuersten Einzel-App — über 65 % günstiger als alles einzeln.</div>
+          </div>
+          <div class="sp best">
+            <span class="sp-badge">4 Monate geschenkt · −33 %</span>
+            <div class="sp-name">Jährlich</div>
+            <div class="sp-strike">statt 359,88 € (12 × 29,99 €)</div>
+            <div class="sp-amount">239,99 € <small>/ Jahr</small></div>
+            <div class="sp-note">Entspricht 20,00 € im Monat — du zahlst nur 8 von 12 Monaten.</div>
+          </div>
+        </div>
+        <div class="suite-icons">
+          <img src="kfzdex-icon.png" alt="KfzDex" title="KfzDex" />
+          <img src="pruefdex-icon.png" alt="PrüfDex" title="PrüfDex" />
+          <img src="schutzheld-icon.png" alt="SchutzDex" title="SchutzDex" />
+          <img src="baumdex-icon.png" alt="BaumDex" title="BaumDex" />
+          <img src="winterdex-icon.png" alt="WinterDex" title="WinterDex" />
+          <img src="routelog-icon.png" alt="TourDex" title="TourDex" />
+          <img src="craftlog-icon.png" alt="CraftDex" title="CraftDex" />
+          <img src="archio-icon.png" alt="DokuDex" title="DokuDex" />
+        </div>
+        <ul class="suite-list">
+          <li>Alle 8 Apps inklusive — von Winterdienst bis UVV</li>
+          <li>Alle zukünftigen Dexware-Apps automatisch dabei</li>
+          <li>Einmal kaufen — in jeder App freigeschaltet</li>
+          <li>Jederzeit kündbar</li>
+        </ul>
+        <p class="suite-how">Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.</p>
+        <a href="https://dexware.app/" target="_blank" rel="noopener" class="btn">Mehr zur Dexware Suite →</a>
+      </div>
     </section>
 
     <section>
@@ -271,6 +342,9 @@
       <h2>Entdecke die ganze Dexware</h2>
       <p class="sec-lead">WinterDex ist Teil der Dexware-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
       <div class="promo-grid">
+        <a class="promo reveal" href="https://kfzdex.dexware.app" target="_blank" rel="noopener">
+          <img src="kfzdex-icon.png" alt="KfzDex" width="48" height="48" />
+          <span><b>KfzDex</b><span>Fuhrpark-Verwaltung — UVV-Prüfung, Führerscheinkontrolle &amp; Fristen.</span></span></a>
         <a class="promo reveal" href="https://schutzdex.dexware.app" target="_blank" rel="noopener">
           <img src="schutzheld-icon.png" alt="SchutzDex" width="48" height="48" />
           <span><b>SchutzDex</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
