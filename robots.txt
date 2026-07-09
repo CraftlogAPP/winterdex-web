@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://winterdex.dexware.app/sitemap.xml
