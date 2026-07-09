@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Räum- und Streupflicht: Wer haftet — und wie dokumentiert man den Winterdienst gerichtsfest? | WinterDex</title>
+  <meta name="description" content="Räum- und Streupflicht verständlich erklärt: Wer haftet bei einem Glatteisunfall, welche Uhrzeiten gelten, wie man die Streupflicht auf Mieter oder Dienstleister überträgt — und wie eine gerichtsfeste Winterdienst-Dokumentation aussieht." />
+  <meta name="theme-color" content="#0A1520" />
+  <meta name="robots" content="all" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Räum- und Streupflicht: Wer haftet — und wie dokumentiert man den Winterdienst gerichtsfest?" />
+  <meta property="og:description" content="Haftung, Uhrzeiten, Übertragung auf Mieter und Dienstleister sowie gerichtsfeste Dokumentation des Winterdienstes — verständlich erklärt." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html" />
+  <meta property="og:locale" content="de_DE" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+  </style>
+
+  <!-- FAQPage strukturierte Daten -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Zu welchen Uhrzeiten muss geräumt und gestreut werden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verbindlich ist immer die örtliche Satzung der jeweiligen Gemeinde. Als weit verbreitete Üblichkeit gilt an Werktagen etwa 7 bis 20 Uhr, an Sonn- und Feiertagen mit einem späteren Beginn (oft gegen 8 oder 9 Uhr). Das sind keine bundesweit einheitlichen Zeiten, sondern Orientierungswerte — welche Zeiten konkret gelten, legt die kommunale Satzung fest. Bei anhaltendem Schneefall oder Eisregen kann eine Räumung auch mehrfach und außerhalb dieses Rahmens nötig sein."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wer haftet, wenn jemand auf Glatteis stürzt — Eigentümer, Vermieter oder Mieter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Grundsätzlich trifft die Verkehrssicherungspflicht den Eigentümer beziehungsweise Vermieter. Er kann die Räum- und Streupflicht wirksam auf Mieter oder einen Dienstleister übertragen. Selbst dann bleibt jedoch eine Kontroll- und Überwachungspflicht bestehen: Der Eigentümer muss stichprobenartig prüfen, ob die Pflicht tatsächlich erfüllt wird. Wer zum Zeitpunkt eines Unfalls haftet, hängt davon ab, wer die Pflicht wirksam übernommen hatte und ob die Übertragung und Kontrolle nachweisbar sind."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich die Streupflicht als Vermieter auf die Mieter übertragen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, die Räum- und Streupflicht lässt sich auf Mieter übertragen — allerdings nur durch eine klare, ausdrückliche Regelung, üblicherweise im Mietvertrag oder in der Hausordnung, die Vertragsbestandteil ist. Ein bloßer Aushang genügt in der Regel nicht. Auch nach der Übertragung bleibt der Vermieter verpflichtet zu kontrollieren, ob die Mieter die Pflicht zuverlässig erfüllen, und muss zum Beispiel bei erkennbarem Versagen eingreifen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Muss ich den Winterdienst dokumentieren — und warum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine gesetzliche Pflicht zur Dokumentation gibt es nicht ausdrücklich. Entscheidend ist die Beweislast: Kommt es zum Streit, muss der Sicherungspflichtige darlegen können, dass er rechtzeitig und ausreichend geräumt und gestreut hat. Ohne Nachweise steht im Zweifel Aussage gegen Aussage. Eine zeitnahe Dokumentation von Einsatzzeitpunkt, Wetterlage und eingesetztem Material ist deshalb der praktische Weg, sich abzusichern."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie sieht eine gerichtsfeste Dokumentation des Winterdienstes aus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Als belastbar gilt eine Dokumentation, die zeitnah zum Einsatz entsteht und nachträglich nicht unbemerkt verändert werden kann. Sinnvoll sind je Einsatz: Datum und genaue Uhrzeit, Ort, die durchgeführte Maßnahme (Räumen, Streuen, Kontrolle), das verwendete Streumittel sowie die Wetterlage. Fotos, ein GPS-Standort und ein unveränderlicher Zeitstempel erhöhen den Beweiswert deutlich. Eine nachträglich erstellte Sammelnotiz wirkt dagegen schwächer als lückenlose Einzeleinträge in Echtzeit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Reicht es, den Winterdienst an eine Firma zu vergeben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Beauftragung eines professionellen Dienstleisters ist eine wirksame Möglichkeit, die Räum- und Streupflicht zu übertragen. Der Eigentümer wird dadurch aber nicht vollständig aus der Verantwortung entlassen: Er muss den Dienstleister sorgfältig auswählen und die ordnungsgemäße Erfüllung überwachen. Für den Dienstleister selbst ist eine saubere Einsatzdokumentation entscheidend, um im Schadensfall belegen zu können, dass er seine Aufgabe erfüllt hat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was gilt bei Blitzeis oder durchgehendem Schneefall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Räum- und Streupflicht ist keine Garantie für eine jederzeit eisfreie Fläche. Verlangt wird das Zumutbare und Verhältnismäßige. Bei anhaltendem Schneefall oder Eisregen muss nicht permanent gestreut werden, wenn eine Maßnahme ohnehin sofort wieder wirkungslos wäre — sobald es die Wetterlage sinnvoll zulässt, ist jedoch tätig zu werden. Gerade in solchen Ausnahmelagen ist es besonders wertvoll, den Zustand und die durchgeführten Kontrollen mit Uhrzeit und Wetterlage zu dokumentieren."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Winterdienst &amp; Recht</span>
+      <h1>Räum- und Streupflicht: Wer haftet — und wie dokumentiert man den Winterdienst <span class="hl">gerichtsfest</span>?</h1>
+      <p class="lead">
+        Ein Sturz auf Glatteis, eine Anzeige, eine Schadensersatzforderung — und plötzlich zählt nur noch,
+        ob du beweisen kannst, dass du geräumt und gestreut hast. Dieser Ratgeber erklärt die Rechtslage,
+        die üblichen Zeiten und wie eine Dokumentation aussieht, die vor Gericht standhält.
+      </p>
+      <div class="meta">
+        <span>Lesezeit ca. 8 Minuten</span>
+        <span class="dot">·</span>
+        <span>Für Eigentümer, Vermieter, Hausverwaltungen &amp; Winterdienste</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#grundlage">Die rechtliche Grundlage: Verkehrssicherungspflicht</a></li>
+          <li><a href="#zeiten">Zu welchen Uhrzeiten gilt die Streupflicht?</a></li>
+          <li><a href="#uebertragung">Übertragung auf Mieter und Dienstleister</a></li>
+          <li><a href="#streitfall">Was im Streitfall zählt: die Beweislast</a></li>
+          <li><a href="#dokumentation">Wie gerichtsfeste Dokumentation aussieht</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="grundlage">Die rechtliche Grundlage: Verkehrssicherungspflicht</h2>
+      <p>
+        Wer eine Gefahrenquelle schafft oder für eine Fläche verantwortlich ist, auf der sich andere
+        bewegen, muss dafür sorgen, dass niemand zu Schaden kommt. Dieser Grundsatz nennt sich
+        <strong>Verkehrssicherungspflicht</strong>. Im Winter bedeutet er konkret: Gehwege und Zugänge sind
+        so von Schnee und Eis zu befreien, dass Passanten sie gefahrlos benutzen können.
+      </p>
+      <p>
+        Die zivilrechtliche Haftung stützt sich in Deutschland vor allem auf <strong>§ 823 BGB</strong> — die
+        Haftung für die schuldhafte Verletzung von Leben, Körper oder Gesundheit. Wer seine
+        Sicherungspflicht verletzt und dadurch einen Sturz mit Verletzungsfolge verursacht, kann für
+        Schmerzensgeld, Behandlungs- und Verdienstausfallkosten in Anspruch genommen werden. Kommt es zu
+        schweren Verletzungen, steht mitunter auch eine strafrechtliche Bewertung (etwa fahrlässige
+        Körperverletzung) im Raum.
+      </p>
+      <p>
+        <strong>Wie</strong> im Detail geräumt und gestreut werden muss, ergibt sich meist aus den
+        <strong>kommunalen Satzungen</strong>. Städte und Gemeinden übertragen die Reinigungs- und
+        Streupflicht für öffentliche Gehwege regelmäßig auf die Anlieger — also die Eigentümer der
+        angrenzenden Grundstücke. In der jeweiligen Satzung stehen dann Details wie Breite der zu räumenden
+        Fläche, zulässige oder verbotene Streumittel und die maßgeblichen Zeiten. Deshalb gilt: Der Blick in
+        die örtliche Satzung ist immer der erste Schritt — sie ist verbindlicher als jede allgemeine Faustregel.
+      </p>
+
+      <div class="callout">
+        <div class="cl-t">Kurz gesagt</div>
+        <p>Die Verkehrssicherungspflicht ist das „Ob", die kommunale Satzung regelt das „Wie". Wer
+        haftet, entscheidet sich daran, ob die zumutbaren Maßnahmen rechtzeitig ergriffen wurden — und ob
+        sich das im Zweifel nachweisen lässt.</p>
+      </div>
+
+      <h2 id="zeiten">Zu welchen Uhrzeiten gilt die Streupflicht?</h2>
+      <p>
+        Die wohl häufigste Frage — und zugleich die, bei der die meisten Missverständnisse entstehen. Es
+        gibt <strong>keine bundesweit einheitliche Uhrzeit</strong>. Maßgeblich ist die Satzung der jeweiligen
+        Gemeinde. Als weit verbreitete Üblichkeit, an der sich viele Kommunen orientieren, gilt jedoch:
+      </p>
+      <ul>
+        <li><strong>Werktags</strong> etwa von 7 bis 20 Uhr.</li>
+        <li><strong>An Sonn- und Feiertagen</strong> mit einem späteren Beginn, häufig gegen 8 oder 9 Uhr, bis etwa 20 Uhr.</li>
+      </ul>
+      <p>
+        Diese Spanne ist ein Orientierungswert, keine bundesweite Regel. Manche Satzungen setzen den Beginn
+        früher oder das Ende später an. Innerhalb des maßgeblichen Zeitraums muss der Gehweg grundsätzlich
+        in einem verkehrssicheren Zustand sein — bei einsetzendem Glätte- oder Schneefall also zeitnah, und
+        bei Bedarf <strong>wiederholt</strong>.
+      </p>
+      <p>
+        Wichtig ist die Verhältnismäßigkeit: Die Streupflicht verlangt nicht die Unmöglichkeit. Bei
+        durchgehendem Schneefall oder Eisregen muss nicht im Minutentakt gestreut werden, wenn jede Maßnahme
+        sofort wieder wirkungslos wäre. Sobald die Wetterlage ein sinnvolles Vorgehen zulässt, ist jedoch zu
+        handeln. Und genau solche Ausnahmesituationen sind es, in denen eine Dokumentation von Kontrolle,
+        Uhrzeit und Wetter später den Unterschied macht.
+      </p>
+
+      <h2 id="uebertragung">Übertragung auf Mieter und Dienstleister</h2>
+      <p>
+        Die Räum- und Streupflicht trifft zunächst den Eigentümer beziehungsweise Vermieter. Er muss sie
+        aber nicht selbst ausführen — er kann sie übertragen. In der Praxis gibt es dafür zwei Wege:
+      </p>
+
+      <h3>Übertragung auf Mieter</h3>
+      <p>
+        Vermieter können die Pflicht auf ihre Mieter übertragen. Das setzt jedoch eine <strong>klare,
+        ausdrückliche Regelung</strong> voraus — üblicherweise im Mietvertrag oder in einer Hausordnung, die
+        wirksam Vertragsbestandteil geworden ist. Ein bloßer Aushang im Treppenhaus genügt in der Regel
+        nicht. Die Regelung sollte eindeutig festlegen, wer wann für welche Flächen zuständig ist.
+      </p>
+
+      <h3>Übertragung auf einen Dienstleister</h3>
+      <p>
+        Ebenso lässt sich der Winterdienst an eine Fachfirma oder einen Hausmeisterservice vergeben. Der
+        Vertrag sollte den Umfang, die Flächen und die Reaktionszeiten regeln. Für den Dienstleister wird die
+        Einsatzdokumentation damit zum zentralen Werkzeug: Nur wer belegen kann, wann er tätig war, ist im
+        Schadensfall abgesichert.
+      </p>
+
+      <div class="callout">
+        <div class="cl-t">Der entscheidende Punkt: die Kontrollpflicht bleibt</div>
+        <p>Auch nach wirksamer Übertragung ist der Eigentümer nicht vollständig aus der Verantwortung. Es
+        verbleibt eine <strong>Auswahl-, Kontroll- und Überwachungspflicht</strong>: Er muss den Beauftragten
+        sorgfältig auswählen und stichprobenartig prüfen, ob die Pflicht tatsächlich zuverlässig erfüllt
+        wird. Erkennt er, dass jemand seiner Aufgabe nicht nachkommt, muss er eingreifen.</p>
+      </div>
+
+      <p>
+        Für die Haftung heißt das: Wer im konkreten Unfallmoment einzustehen hat, hängt davon ab, wer die
+        Pflicht wirksam übernommen hatte — und ob sich sowohl die Übertragung als auch die Kontrolle
+        <strong>nachweisen</strong> lässt. Eine mündliche Absprache ohne jede Dokumentation ist im Streit ein
+        schwaches Fundament.
+      </p>
+
+      <h2 id="streitfall">Was im Streitfall zählt: die Beweislast</h2>
+      <p>
+        Kommt es nach einem Sturz zum Rechtsstreit, verschiebt sich die Frage schnell von „Was ist passiert?"
+        zu „Was lässt sich beweisen?". Der Verletzte muss den Sturz und den Schaden darlegen. Der
+        Sicherungspflichtige steht dann vor der Aufgabe, plausibel zu machen, dass er seiner Pflicht
+        <strong>rechtzeitig und ausreichend</strong> nachgekommen ist.
+      </p>
+      <p>
+        Genau hier entscheiden sich viele Fälle. Ohne belastbare Nachweise steht am Ende oft Aussage gegen
+        Aussage — und Erinnerungen an einen konkreten Wintermorgen Wochen oder Monate zuvor sind naturgemäß
+        vage. Was zählt, ist konkret und überprüfbar:
+      </p>
+      <ul>
+        <li><strong>Zeitpunkt:</strong> Wann genau wurde geräumt und gestreut?</li>
+        <li><strong>Wetterlage:</strong> Wie war die Situation vor Ort — Temperatur, Niederschlag, Glätte?</li>
+        <li><strong>Maßnahme &amp; Mittel:</strong> Wurde geräumt, gestreut, kontrolliert — und womit?</li>
+        <li><strong>Ort:</strong> Welche Fläche wurde tatsächlich behandelt?</li>
+      </ul>
+      <p>
+        Je zeitnaher, lückenloser und unveränderlicher diese Angaben festgehalten sind, desto größer ist ihr
+        Beweiswert. Eine nachträglich zusammengeschriebene Sammelnotiz — womöglich erst nach der Klage —
+        überzeugt weit weniger als Einträge, die erkennbar in dem Moment entstanden sind, in dem die Arbeit
+        erledigt wurde.
+      </p>
+
+      <h2 id="dokumentation">Wie gerichtsfeste Dokumentation aussieht</h2>
+      <p>
+        „Gerichtsfest" ist kein magischer Stempel, sondern eine Eigenschaft: Die Dokumentation muss
+        <strong>glaubwürdig, zeitnah und nachträglich nicht unbemerkt veränderbar</strong> sein. Ein
+        handschriftliches Heft kann grundsätzlich helfen — aber es lässt sich rückdatieren, ergänzen oder
+        „nachbessern", und genau das schwächt seinen Wert. Überzeugender ist eine Dokumentation, die von sich
+        aus belegt, wann sie entstanden ist.
+      </p>
+
+      <div class="checklist">
+        <h3>Merkmale einer belastbaren Einsatzdokumentation</h3>
+        <ul>
+          <li>Jeder Einsatz einzeln erfasst — mit Datum und exakter <strong>Uhrzeit</strong>.</li>
+          <li>Ein <strong>Standortnachweis</strong> (GPS), der belegt: Du warst tatsächlich am Objekt.</li>
+          <li>Die <strong>Wetterlage</strong> zum Einsatzzeitpunkt, unveränderlich mitgespeichert.</li>
+          <li>Die konkrete <strong>Maßnahme</strong> und das eingesetzte Streumittel.</li>
+          <li>Optional ein <strong>Beweisfoto</strong> der geräumten Fläche, direkt dem Einsatz zugeordnet.</li>
+          <li><strong>Unveränderlichkeit:</strong> Einträge lassen sich nicht heimlich nachbearbeiten oder löschen.</li>
+          <li>Auch die Notiz „kontrolliert, nichts nötig" ist ein wertvoller Nachweis.</li>
+        </ul>
+      </div>
+
+      <p>
+        Der Grund, warum Unveränderlichkeit so schwer wiegt: Eine Aufzeichnung, die niemand nachträglich
+        frisieren kann, ist von Natur aus glaubwürdiger. Wenn zusätzlich Zeitstempel, Standort und die
+        historische Wetterlage automatisch und nicht manuell entstehen, entfällt der Verdacht, es könnte
+        „passend gemacht" worden sein. Genau darauf ist <strong>WinterDex</strong> ausgelegt: Jeder Einsatz
+        wird mit GPS-Stempel, archivierter Wetterlage und optionalem Foto festgehalten — als append-only-Kette,
+        in der Einträge nicht bearbeitet oder gelöscht, sondern nur mit begründetem Storno gekennzeichnet
+        werden können. Am Ende steht ein PDF-Nachweis pro Objekt und Saison, den du an Hausverwaltung,
+        Auftraggeber oder im Ernstfall an den Anwalt weitergeben kannst.
+      </p>
+
+      <div class="cta">
+        <h3>Mach aus jedem Einsatz eine gerichtsfeste Beweiskette</h3>
+        <p>
+          WinterDex dokumentiert Räum- und Streueinsätze in rund 30 Sekunden — mit GPS, archivierter
+          Wetterlage, Fotos und unveränderlichem PDF-Nachweis. Für Hausmeisterservices, GaLaBau und
+          Hausverwaltungen im DACH-Raum.
+        </p>
+        <a class="btn" href="https://winterdex.dexware.app">WinterDex ansehen →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Zu welchen Uhrzeiten muss geräumt und gestreut werden?</summary>
+          <p>Verbindlich ist immer die örtliche Satzung der jeweiligen Gemeinde. Als weit verbreitete
+          Üblichkeit gilt an Werktagen etwa 7 bis 20 Uhr, an Sonn- und Feiertagen mit einem späteren Beginn
+          (oft gegen 8 oder 9 Uhr). Das sind keine bundesweit einheitlichen Zeiten, sondern
+          Orientierungswerte — welche Zeiten konkret gelten, legt die kommunale Satzung fest. Bei anhaltendem
+          Schneefall oder Eisregen kann eine Räumung auch mehrfach und außerhalb dieses Rahmens nötig sein.</p>
+        </details>
+        <details>
+          <summary>Wer haftet, wenn jemand auf Glatteis stürzt — Eigentümer, Vermieter oder Mieter?</summary>
+          <p>Grundsätzlich trifft die Verkehrssicherungspflicht den Eigentümer beziehungsweise Vermieter. Er
+          kann die Räum- und Streupflicht wirksam auf Mieter oder einen Dienstleister übertragen. Selbst dann
+          bleibt jedoch eine Kontroll- und Überwachungspflicht bestehen: Der Eigentümer muss stichprobenartig
+          prüfen, ob die Pflicht tatsächlich erfüllt wird. Wer zum Zeitpunkt eines Unfalls haftet, hängt
+          davon ab, wer die Pflicht wirksam übernommen hatte und ob Übertragung und Kontrolle nachweisbar sind.</p>
+        </details>
+        <details>
+          <summary>Kann ich die Streupflicht als Vermieter auf die Mieter übertragen?</summary>
+          <p>Ja, die Räum- und Streupflicht lässt sich auf Mieter übertragen — allerdings nur durch eine
+          klare, ausdrückliche Regelung, üblicherweise im Mietvertrag oder in der Hausordnung, die
+          Vertragsbestandteil ist. Ein bloßer Aushang genügt in der Regel nicht. Auch nach der Übertragung
+          bleibt der Vermieter verpflichtet zu kontrollieren, ob die Mieter die Pflicht zuverlässig erfüllen,
+          und muss zum Beispiel bei erkennbarem Versagen eingreifen.</p>
+        </details>
+        <details>
+          <summary>Muss ich den Winterdienst dokumentieren — und warum?</summary>
+          <p>Eine ausdrückliche gesetzliche Pflicht zur Dokumentation gibt es nicht. Entscheidend ist die
+          Beweislast: Kommt es zum Streit, muss der Sicherungspflichtige darlegen können, dass er rechtzeitig
+          und ausreichend geräumt und gestreut hat. Ohne Nachweise steht im Zweifel Aussage gegen Aussage.
+          Eine zeitnahe Dokumentation von Einsatzzeitpunkt, Wetterlage und eingesetztem Material ist deshalb
+          der praktische Weg, sich abzusichern.</p>
+        </details>
+        <details>
+          <summary>Wie sieht eine gerichtsfeste Dokumentation des Winterdienstes aus?</summary>
+          <p>Als belastbar gilt eine Dokumentation, die zeitnah zum Einsatz entsteht und nachträglich nicht
+          unbemerkt verändert werden kann. Sinnvoll sind je Einsatz: Datum und genaue Uhrzeit, Ort, die
+          durchgeführte Maßnahme (Räumen, Streuen, Kontrolle), das verwendete Streumittel sowie die
+          Wetterlage. Fotos, ein GPS-Standort und ein unveränderlicher Zeitstempel erhöhen den Beweiswert
+          deutlich. Eine nachträglich erstellte Sammelnotiz wirkt dagegen schwächer als lückenlose
+          Einzeleinträge in Echtzeit.</p>
+        </details>
+        <details>
+          <summary>Reicht es, den Winterdienst an eine Firma zu vergeben?</summary>
+          <p>Die Beauftragung eines professionellen Dienstleisters ist eine wirksame Möglichkeit, die Räum-
+          und Streupflicht zu übertragen. Der Eigentümer wird dadurch aber nicht vollständig aus der
+          Verantwortung entlassen: Er muss den Dienstleister sorgfältig auswählen und die ordnungsgemäße
+          Erfüllung überwachen. Für den Dienstleister selbst ist eine saubere Einsatzdokumentation
+          entscheidend, um im Schadensfall belegen zu können, dass er seine Aufgabe erfüllt hat.</p>
+        </details>
+        <details>
+          <summary>Was gilt bei Blitzeis oder durchgehendem Schneefall?</summary>
+          <p>Die Räum- und Streupflicht ist keine Garantie für eine jederzeit eisfreie Fläche. Verlangt wird
+          das Zumutbare und Verhältnismäßige. Bei anhaltendem Schneefall oder Eisregen muss nicht permanent
+          gestreut werden, wenn eine Maßnahme ohnehin sofort wieder wirkungslos wäre — sobald es die
+          Wetterlage sinnvoll zulässt, ist jedoch tätig zu werden. Gerade in solchen Ausnahmelagen ist es
+          besonders wertvoll, Zustand und durchgeführte Kontrollen mit Uhrzeit und Wetterlage zu dokumentieren.</p>
+        </details>
+      </div>
+
+      <p class="disclaimer">
+        Hinweis: Dieser Ratgeber bietet allgemeine, verständlich aufbereitete Informationen zur Räum- und
+        Streupflicht und ersetzt keine Rechtsberatung im Einzelfall. Maßgeblich sind stets die jeweils
+        geltende kommunale Satzung sowie die konkreten Umstände. Bei einem konkreten Schadens- oder
+        Haftungsfall wenden Sie sich bitte an eine Rechtsanwältin oder einen Rechtsanwalt.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Alexander Pfalz</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
