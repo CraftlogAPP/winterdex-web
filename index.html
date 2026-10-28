@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WinterDex — Winterdienst rechtssicher dokumentieren</title>
   <meta name="description" content="Räum- und Streupflicht gerichtsfest dokumentieren: GPS-Stempel, archivierte Wetterlage, Beweisfotos und PDF-Nachweis. Für Hausmeisterservices, GaLaBau und Hausverwaltungen in DACH." />
-  <meta name="theme-color" content="#0A1520" />
+  <meta name="theme-color" content="#08111a" />
   <!-- seo:start -->
   <link rel="icon" type="image/png" href="/winterdex-icon.png" />
   <link rel="canonical" href="https://winterdex.dexware.app/" />
@@ -24,450 +24,441 @@
   <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WinterDex","url":"https://winterdex.dexware.app/","description":"Räum- und Streupflicht gerichtsfest dokumentieren: GPS-Stempel, archivierte Wetterlage, Beweisfotos und PDF-Nachweis. Für Hausmeisterservices, GaLaBau und Hausverwaltungen in DACH.","operatingSystem":"Android","applicationCategory":"BusinessApplication","image":"https://winterdex.dexware.app/og-image.png","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Kostenlos starten, Pro-Abo in der App"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"}}</script>
   <!-- seo:end -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wann muss geräumt und gestreut werden?","acceptedAnswer":{"@type":"Answer","text":"Eine bundesweit einheitliche Uhrzeit gibt es nicht — maßgeblich ist die Satzung der Gemeinde. Als Orientierung gilt werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen ein späterer Beginn. Details im Ratgeber zur Räum- und Streupflicht."}},{"@type":"Question","name":"Ich dokumentiere noch auf Papier — gibt es eine Vorlage?","acceptedAnswer":{"@type":"Answer","text":"Ja, eine kostenlose Streuprotokoll-Vorlage zum Ausdrucken mit allen Pflichtangaben. Mit WinterDex sparst du dir das Ausfüllen — GPS, Uhrzeit und Wetter kommen automatisch."}},{"@type":"Question","name":"Kann ich Einsätze nachträglich ändern?","acceptedAnswer":{"@type":"Answer","text":"Nein — genau das macht den Nachweis belastbar. Einsätze sind unveränderlich, ein Storno ist nur gekennzeichnet und mit Begründung möglich."}},{"@type":"Question","name":"Gibt es WinterDex auch am PC?","acceptedAnswer":{"@type":"Answer","text":"Ja — im Dexware-Dashboard siehst du Kennzahlen, Objekte, Einsätze und Nachweis-PDFs im Browser."}},{"@type":"Question","name":"Wo liegen meine Daten?","acceptedAnswer":{"@type":"Answer","text":"In einem EU-Rechenzentrum in Frankfurt. Keine Werbung, kein Tracking, kein Datenverkauf — Details in der Datenschutzerklärung."}}]}</script>
+  <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <style>
+    @font-face { font-family: 'Inter'; src: url('assets/inter-latin-var.woff2') format('woff2');
+      font-weight: 100 900; font-style: normal; font-display: swap; }
     :root {
-      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
-      --text: #E4EEF7; --muted: #8FA6BA;
-      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
-      --accent: #FB923C; --green: #22C55E;
+      --accent: #0EA5E9;
+      --on-accent: #03202f;
+      --radius: 16px;
+      --wrap: 1120px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background:
-        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
-        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
-        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
-        var(--bg);
-      background-attachment: fixed;
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.65; -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+    html.light {
+      --bg: #ffffff;
+      --bg-soft: color-mix(in oklab, #f7f7f9 96%, var(--accent));
+      --surface: #ffffff;
+      --border: color-mix(in oklab, #e7e7eb 94%, var(--accent));
+      --ink: #0d0d12;
+      --muted: #5c5c69;
+      --accent-text: color-mix(in oklab, var(--accent) 82%, #000);
+      --accent-soft: color-mix(in oklab, var(--accent) 10%, #fff);
+      --card: var(--surface);
+      --shadow: 0 1px 2px rgba(16,16,24,.04), 0 8px 24px -12px rgba(16,16,24,.12);
+      color-scheme: light;
     }
-    body::before {
-      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 44px 44px;
-      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
-      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    html.dark {
+      --bg: #08111a;
+      --bg-soft: color-mix(in oklab, #08111a 96%, #fff);
+      --surface: color-mix(in oklab, #08111a 93%, #fff);
+      --card: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      --border: rgba(255,255,255,.085);
+      --ink: #f6f5f7;
+      --muted: #aaa4ad;
+      --accent-text: color-mix(in oklab, var(--accent) 70%, #fff);
+      --accent-soft: color-mix(in oklab, var(--accent) 18%, transparent);
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -16px rgba(0,0,0,.6);
+      color-scheme: dark;
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    a { color: #7DCBF7; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink);
+      font: 400 16px/1.6 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-feature-settings: 'cv11', 'ss01'; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: var(--accent-text); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    img { max-width: 100%; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+    .i { width: 20px; height: 20px; flex: none; }
 
-    /* Schneefall (dezent, nur ohne Reduced-Motion) */
-    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
-      animation: fall linear infinite; }
-    @keyframes fall {
-      to { transform: translateY(105vh) translateX(6vw); opacity: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+    /* Kopfzeile */
+    .top { position: sticky; top: 0; z-index: 40; background: color-mix(in oklab, var(--bg) 82%, transparent);
+      -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+      border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .top.scrolled { border-bottom-color: var(--border); }
+    .top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand .wm span { color: var(--accent-text); }
+    .top nav { display: flex; gap: 24px; margin-left: auto; }
+    .top nav a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
+    .top nav a:hover { color: var(--ink); text-decoration: none; }
+    @media (max-width: 760px) { .top nav { display: none; } .top .btn { margin-left: auto; } }
 
-    /* Sticky glass header */
-    .sitehead {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(10,21,32,.72);
-      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
-    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
-      border-radius: 10px; display: grid; place-items: center;
-      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
-    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; }
+    /* Knöpfe */
+    .btn { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 12px;
+      font-weight: 600; font-size: 15.5px; background: var(--accent); color: var(--on-accent);
+      box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 6px 20px -8px color-mix(in oklab, var(--accent) 70%, transparent);
+      transition: transform .15s, box-shadow .15s, background .15s; }
+    .btn:hover { text-decoration: none; transform: translateY(-1px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 10px 26px -8px color-mix(in oklab, var(--accent) 80%, transparent); }
+    .btn.sm { height: 38px; padding: 0 16px; font-size: 14px; border-radius: 10px; }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); }
+    .btn.ghost:hover { background: var(--bg-soft); }
+    .btn .play { width: 14px; height: 14px; fill: currentColor; stroke: none; }
 
     /* Hero */
-    .hero { padding: 64px 0 42px; }
-    h1 { font-size: clamp(32px, 5.6vw, 56px); font-weight: 850; letter-spacing: -1.4px; line-height: 1.1; }
-    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .sub { margin-top: 18px; font-size: 18px; color: var(--muted); max-width: 640px; }
-    .cta-row { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-block; color: #fff; font-weight: 700; font-size: 16px;
-      padding: 14px 26px; border-radius: 12px; text-decoration: none; border: 1px solid transparent;
-      background: linear-gradient(135deg, var(--blue-light), var(--blue));
-      box-shadow: 0 10px 30px rgba(2,132,199,.4);
-      transition: transform .15s ease, box-shadow .15s ease; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
-    .btn.ghost { background: rgba(255,255,255,.03); border-color: var(--border); color: var(--text); box-shadow: none; }
-    .btn.ghost:hover { border-color: var(--blue-light); }
-    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
-      border: 1px solid rgba(56,189,248,.3);
-      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .hero > * { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.22,.61,.36,1) forwards; }
-      .hero > *:nth-child(2) { animation-delay: .08s; }
-      .hero > *:nth-child(3) { animation-delay: .16s; }
-      .hero > *:nth-child(4) { animation-delay: .24s; }
-      .hero > *:nth-child(5) { animation-delay: .32s; }
-      @keyframes rise { to { opacity: 1; transform: none; } }
+    .hero { position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: -20% -10% auto 40%; height: 120%; z-index: -1; pointer-events: none;
+      background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent 75%); }
+    .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 40px; }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--accent-text);
+      background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+    h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.05; font-weight: 750; letter-spacing: -.035em; }
+    h1 em { font-style: normal; color: var(--accent-text); }
+    .sub { margin-top: 20px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 520px; }
+    .sub strong { color: var(--ink); font-weight: 600; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hint { margin-top: 12px; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+    .hint .i { width: 15px; height: 15px; }
+    .ticks { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .ticks li { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 500; }
+    .ticks .i { width: 17px; height: 17px; color: var(--accent-text); }
+    .shots { position: relative; height: 560px; }
+    .shots .phone { position: absolute; }
+    .shots .phone.a { left: 4%; top: 0; z-index: 2; }
+    .shots .phone.b { right: 0; top: 64px; transform: scale(.9); transform-origin: top right; opacity: .96; }
+    @media (max-width: 900px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 36px; padding-top: 36px; }
+      .shots { height: 380px; max-width: 420px; width: 100%; margin: 0 auto;
+        -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+      .shots .phone { --pw: 210px; }
+      .shots .phone.a { left: 2%; } .shots .phone.b { top: 40px; }
     }
 
-    /* Stats strip */
-    .stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
-    .stat .n { font-size: 24px; font-weight: 800; letter-spacing: -.5px; color: var(--blue-light); }
-    .stat .l { color: var(--muted); font-size: 13px; }
+    /* Handyrahmen */
+    .phone { --pw: 262px; width: var(--pw); padding: 8px; border-radius: calc(var(--pw) * .16);
+      background: linear-gradient(160deg, #2b2b31, #0e0e11 40%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 0 1px rgba(0,0,0,.5), 0 40px 70px -30px rgba(10,10,20,.55), 0 18px 30px -18px rgba(10,10,20,.35); }
+    .screen { position: relative; border-radius: calc(var(--pw) * .13); overflow: hidden; background: var(--bar); padding-top: calc(var(--pw) * .1); }
+    .screen::before { content: ''; position: absolute; top: calc(var(--pw) * .03); left: 50%; transform: translateX(-50%);
+      width: 30%; height: calc(var(--pw) * .075); border-radius: 99px; background: #000; }
+    .screen img { display: block; width: 100%; height: auto; }
 
-    section { padding: 40px 0; }
-    h2 { font-size: clamp(23px, 3.6vw, 30px); font-weight: 850; letter-spacing: -0.6px; margin-bottom: 6px; }
-    .sec-eyebrow { color: var(--blue-light); font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px; }
-    .sec-lead { color: var(--muted); font-size: 15.5px; max-width: 620px; margin-bottom: 22px; }
+    /* Abschnitte */
+    section { padding: 80px 0; }
+    section.soft { background: var(--bg-soft); }
+    @media (max-width: 700px) {
+      section { padding: 52px 0; }
+      .head { margin-bottom: 24px; }
+      .lead { font-size: 16px; }
+      .sub { font-size: 16.5px; }
+      .cta .btn { flex: 1 1 100%; justify-content: center; }
+      .ticks { gap: 8px 16px; }
+      .rules li { padding: 14px 16px; grid-template-columns: 32px 1fr; gap: 12px; font-size: 14.5px; }
+      .rules .ic { width: 32px; height: 32px; }
+    }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--accent-text); margin-bottom: 10px; }
+    h2 { font-size: clamp(27px, 3.4vw, 38px); line-height: 1.12; font-weight: 720; letter-spacing: -.03em; max-width: 760px; }
+    .lead { margin-top: 14px; font-size: 17px; color: var(--muted); max-width: 620px; }
+    .lead strong { color: var(--ink); font-weight: 600; }
+    .head { margin-bottom: 40px; }
 
-    /* Cards */
-    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .card { position: relative; overflow: hidden;
-      background: linear-gradient(180deg, var(--surface), var(--surface2));
-      border: 1px solid var(--border); border-radius: 18px; padding: 22px 20px;
-      transition: transform .18s ease, border-color .18s ease; }
-    .card::before { content: ''; position: absolute; inset: 0;
-      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
-    .card > * { position: relative; }
-    .card:hover { transform: translateY(-4px); border-color: var(--blue-light); }
-    .card h3 { font-size: 16.5px; font-weight: 750; margin-bottom: 6px; }
-    .card p { font-size: 14.5px; color: var(--muted); }
-    .emoji { width: 44px; height: 44px; border-radius: 12px; background: rgba(56,189,248,.12);
-      border: 1px solid rgba(56,189,248,.25); display: grid; place-items: center;
-      font-size: 21px; margin-bottom: 12px; }
+    /* Pflicht */
+    .duty { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+    .rules { list-style: none; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .rules li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 18px 22px; border-top: 1px solid var(--border); font-size: 15px; color: var(--muted); }
+    .rules li:first-child { border-top: 0; }
+    .rules b { display: block; color: var(--ink); font-weight: 600; font-size: 15.5px; margin-bottom: 1px; }
+    .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-text); }
+    @media (max-width: 860px) { .duty { grid-template-columns: 1fr; gap: 28px; } }
 
-    /* Steps */
-    .steps { counter-reset: step; }
-    .step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start;
-      background: linear-gradient(180deg, var(--surface), var(--surface2));
-      border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
-    .step .num { flex: 0 0 36px; height: 36px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue-light), var(--blue));
-      display: grid; place-items: center; font-weight: 800; color: #fff;
-      box-shadow: 0 6px 16px rgba(2,132,199,.4); }
+    /* Funktionen */
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .feature .ic { margin-bottom: 16px; }
+    .feature h3 { font-size: 16.5px; font-weight: 640; letter-spacing: -.01em; margin-bottom: 6px; }
+    .feature p { font-size: 15px; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 900px) { .features { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .features { grid-template-columns: 1fr; gap: 10px; }
+      .feature { padding: 16px; display: grid; grid-template-columns: 36px 1fr; gap: 0 14px; }
+      .feature .ic { margin: 0; grid-row: span 2; } .feature p { font-size: 14.5px; } }
 
-    /* Pricing */
-    .price-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 680px; }
-    .price h3 { font-size: 18px; }
-    .price .amount { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin: 8px 0 2px; }
-    .price .per { color: var(--muted); font-size: 13px; }
-    .price ul { list-style: none; margin-top: 14px; }
-    .price li { font-size: 14.5px; padding: 4px 0; color: var(--muted); }
-    .price li::before { content: "✓ "; color: var(--green); font-weight: 800; }
-    .price.pro { border-color: var(--blue-light); box-shadow: 0 0 0 1px rgba(56,189,248,.35), 0 18px 44px rgba(2,132,199,.15); }
-    .price.pro .amount { color: var(--blue-light); }
-    .price.pro:hover { transform: translateY(-4px); }
-    .plan-tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--blue-light);
-      background: rgba(56,189,248,.14); border: 1px solid rgba(56,189,248,.3);
-      padding: 3px 9px; border-radius: 999px; margin-left: 8px; vertical-align: middle; }
+    /* Ablauf */
+    .flow { display: grid; grid-template-columns: 1fr auto; gap: 72px; align-items: center; }
+    .steps { list-style: none; counter-reset: s; margin-top: 32px; }
+    .steps li { counter-increment: s; position: relative; padding: 0 0 26px 56px; }
+    .steps li:last-child { padding-bottom: 0; }
+    .steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center; font-weight: 650; font-size: 15px; background: var(--accent); color: var(--on-accent); }
+    .steps li:not(:last-child)::after { content: ''; position: absolute; left: 17.5px; top: 40px; bottom: 6px; width: 1px; background: var(--border); }
+    .steps b { display: block; font-size: 17px; font-weight: 640; margin-bottom: 4px; }
+    .steps p { color: var(--muted); font-size: 15.5px; }
+    .flow .phone { --pw: 280px; }
+    @media (max-width: 860px) { .flow { grid-template-columns: 1fr; } .flow > div:last-child { display: none; } .steps { margin-top: 24px; } }
 
-    /* Cross-promo */
-    .promo-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .promo { position: relative; overflow: hidden; display: flex; gap: 14px; align-items: center;
-      background: linear-gradient(180deg, var(--surface), var(--surface2));
-      border: 1px solid var(--border); border-radius: 16px; padding: 16px; text-decoration: none; color: var(--text);
-      transition: border-color .18s ease, transform .18s ease; }
-    .promo::before { content: ''; position: absolute; inset: 0;
-      background: radial-gradient(300px 140px at 100% 0%, var(--glow), transparent 70%); opacity: .7; }
-    .promo > * { position: relative; }
-    .promo:hover { border-color: var(--blue-light); transform: translateY(-3px); }
-    .promo img { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08); }
-    .promo b { display: block; font-size: 15.5px; }
-    .promo span { font-size: 13px; color: var(--muted); }
+    /* Preise */
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+    .plan { position: relative; display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .plan.pro { border-color: color-mix(in oklab, var(--accent) 55%, var(--border)); box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 55%, transparent), var(--shadow); }
+    .plan .badge { position: absolute; top: -11px; left: 28px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--accent); color: var(--on-accent); }
+    .plan h3 { font-size: 15px; font-weight: 600; color: var(--muted); }
+    .price { margin-top: 10px; font-size: 38px; font-weight: 720; letter-spacing: -.03em; line-height: 1.1; }
+    .price small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+    .per { font-size: 14px; color: var(--muted); margin-top: 4px; min-height: 22px; }
+    .plan ul { list-style: none; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); display: grid; gap: 10px; }
+    .plan li { display: flex; gap: 10px; font-size: 15px; }
+    .plan li .i { width: 18px; height: 18px; margin-top: 2px; color: var(--accent-text); }
+    .plan.suite { color: #f4f4f6; border: 1px solid transparent;
+      background: linear-gradient(180deg, #121218, #0b0b0f) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 55%, var(--accent)) border-box; }
+    .plan.suite h3, .plan.suite .per, .plan.suite .price small { color: #a3a3ad; }
+    .plan.suite ul { border-color: rgba(255,255,255,.1); }
+    .plan.suite li .i { color: #f4f4f6; }
+    .icons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 22px; }
+    .icons img { width: 26px; height: 26px; border-radius: 7px; }
+    .fine { margin-top: 20px; font-size: 13.5px; color: var(--muted); }
+    @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 480px; } }
 
-    /* Dexware Suite */
-    .suite { background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
-      border-radius: 22px; padding: 34px 30px; max-width: 900px; box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
-    .suite-pill { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
-      color: #06283a; background: var(--blue-light); padding: 6px 14px; border-radius: 999px; }
-    .suite h3.st { font-size: 26px; font-weight: 850; letter-spacing: -.6px; margin-top: 16px; }
-    .suite .sl { color: var(--muted); font-size: 15px; margin-top: 10px; }
-    .suite-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
-    @media (max-width: 700px) { .suite-prices { grid-template-columns: 1fr; } }
-    .sp { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; position: relative; }
-    .sp.best { border-color: var(--blue-light); box-shadow: 0 12px 34px rgba(2,132,199,.2); }
-    .sp-badge { position: absolute; top: -12px; right: 16px; font-size: 11.5px; font-weight: 800;
-      color: #052e12; background: #4ADE80; padding: 4px 11px; border-radius: 999px; }
-    .sp-name { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
-    .sp.best .sp-name { color: var(--blue-light); }
-    .sp-strike { color: var(--muted); font-size: 14px; text-decoration: line-through; margin-top: 10px; }
-    .sp-amount { font-size: 32px; font-weight: 850; letter-spacing: -.8px; }
-    .sp-amount small { font-size: 14px; font-weight: 600; color: var(--muted); }
-    .sp-note { color: var(--muted); font-size: 13px; margin-top: 4px; }
-    .suite-icons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-    .suite-icons img { width: 42px; height: 42px; border-radius: 11px; border: 1px solid var(--border); background: var(--surface); }
-    .suite-list { list-style: none; margin-top: 18px; }
-    .suite-list li { font-size: 14.5px; padding: 5px 0 5px 22px; position: relative; color: var(--text); }
-    .suite-list li::before { content: "★"; color: var(--blue-light); position: absolute; left: 0; }
-    .suite-how { color: var(--muted); font-size: 13.5px; margin-top: 18px; margin-bottom: 20px; }
-    .suite .btn { display: inline-block; font-weight: 700; padding: 12px 24px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--blue-light), var(--blue)); color: #06283a; text-decoration: none; }
+    /* FAQ */
+    .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+    .faq details { border-bottom: 1px solid var(--border); }
+    .faq details:first-child { border-top: 1px solid var(--border); }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center;
+      padding: 18px 2px; font-weight: 600; font-size: 16px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .i { color: var(--muted); transition: transform .2s; }
+    .faq details[open] summary .i { transform: rotate(180deg); }
+    .faq .a { padding: 0 2px 20px; color: var(--muted); font-size: 15.5px; max-width: 640px; }
+    .ask { margin-top: 18px; color: var(--muted); font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 860px) { .faq { grid-template-columns: 1fr; gap: 24px; } }
 
-    /* Scroll reveal */
-    .reveal.pre { opacity: 0; transform: translateY(18px); }
-    .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
-    .grid .reveal.in:nth-child(2), .promo-grid .reveal.in:nth-child(2) { transition-delay: .07s; }
-    .grid .reveal.in:nth-child(3), .promo-grid .reveal.in:nth-child(3) { transition-delay: .14s; }
-    .grid .reveal.in:nth-child(4), .promo-grid .reveal.in:nth-child(4) { transition-delay: .21s; }
-    .grid .reveal.in:nth-child(5), .promo-grid .reveal.in:nth-child(5) { transition-delay: .28s; }
-    .grid .reveal.in:nth-child(6), .promo-grid .reveal.in:nth-child(6) { transition-delay: .35s; }
+    /* Familie */
+    .family { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 32px; }
+    .family a { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 6px 14px; border-radius: 14px;
+      color: var(--ink); text-align: center; transition: background .15s; }
+    .family a:hover { background: var(--surface); text-decoration: none; box-shadow: var(--shadow); }
+    .family img { width: 44px; height: 44px; border-radius: 11px; }
+    .family b { font-size: 13.5px; font-weight: 600; line-height: 1.2; }
+    .family small { font-size: 12px; color: var(--muted); line-height: 1.3; }
+    .family-row { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .family { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 480px) { .family { grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 20px; } .family a { padding: 10px 2px; gap: 6px; }
+      .family img { width: 40px; height: 40px; } .family b { font-size: 11.5px; } .family small { display: none; } }
 
-    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
-      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
-    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    /* Prüfpunkte (optional) */
+    .points { margin-top: 16px; padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
+    .points p { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
+    .points p b { color: var(--ink); font-weight: 600; margin-right: 4px; }
+    .points ol { list-style: none; counter-reset: p; display: flex; flex-wrap: wrap; gap: 8px; }
+    .points li { counter-increment: p; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
+      padding: 5px 12px 5px 5px; border-radius: 99px; background: var(--bg-soft); border: 1px solid var(--border); }
+    .points li::before { content: counter(p); width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+      font-size: 12px; font-weight: 650; background: var(--accent-soft); color: var(--accent-text); }
+    @media (max-width: 600px) { .points { padding: 16px; } .points li { font-size: 13px; } }
+
+    /* Fußzeile */
+    footer { border-top: 1px solid var(--border); padding: 32px 0 40px; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--ink); }
+
+    /* Handy: Feinschliff (muss nach den Grundregeln stehen) */
+    @media (max-width: 700px) {
+      .duty { gap: 22px; }
+      .plan { padding: 22px; }
+      .plan ul { margin-top: 16px; padding-top: 14px; gap: 7px; }
+      .price { font-size: 34px; }
+      .plans { gap: 20px; }
+      .faq summary { padding: 15px 2px; font-size: 15.5px; }
+      .rules li { padding: 13px 16px; }
+      .family-row .btn { order: 2; }
+    }
+
+    /* Einblenden beim Scrollen — nur mit JS und ohne reduzierte Bewegung */
+    .js .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+    .js .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
   </style>
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <div class="snow" aria-hidden="true"></div>
-
-  <div class="sitehead">
+  <header class="top">
     <div class="wrap">
-      <header>
-        <span class="logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
-            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
-          </svg>
-        </span>
-        <span class="brand">WinterDex</span>
-      </header>
+      <a class="brand" href="/" aria-label="WinterDex Startseite"><img src="assets/apps/winterdex.webp" alt="" width="32" height="32" /><span class="wm">Winter<span>Dex</span></span></a>
+      <nav aria-label="Seitennavigation"><a href="#funktionen">Funktionen</a><a href="#preise">Preise</a><a href="#faq">FAQ</a><a href="ratgeber-raeum-streupflicht.html">Ratgeber</a></nav>
+      <a class="btn sm" href="https://play.google.com/store/apps/details?id=com.winterdex.app" target="_blank" rel="noopener">App laden</a>
     </div>
-  </div>
+  </header>
 
-  <div class="wrap">
+  <main>
     <div class="hero">
-      <span class="badge">Für Hausmeisterservices · GaLaBau · Hausverwaltungen — DACH</span>
-      <h1>Wenn's glatt wird, bist du sicher.<br/><span class="hl">Auch vor Gericht.</span></h1>
-      <p class="sub">
-        Jemand stürzt auf Glatteis vor deinem Objekt — und plötzlich zählt nur noch deine Dokumentation.
-        WinterDex macht aus jedem Räum- und Streueinsatz eine <strong>gerichtsfeste Beweiskette</strong>:
-        GPS-Stempel, archivierte Wetterlage, Fotos und PDF-Nachweis. In 30 Sekunden pro Einsatz.
-      </p>
-      <p style="margin-top:14px;font-size:14px;opacity:.72">Speziell für den DACH-Raum — Räum- und Streupflicht in Deutschland, Österreich und der Schweiz.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app" id="store-link" target="_blank" rel="noopener">Kostenlos bei Google Play</a>
-        <a class="btn ghost" href="#funktionen">Mehr erfahren</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><div class="n">30 Sek.</div><div class="l">pro Einsatz dokumentiert</div></div>
-        <div class="stat"><div class="n">Append-only</div><div class="l">Einträge unveränderlich</div></div>
-        <div class="stat"><div class="n">GPS + Wetter</div><div class="l">automatisch archiviert</div></div>
+      <div class="wrap">
+        <div>
+          <span class="kicker">Räum- und Streupflicht · DE · AT · CH</span>
+          <h1>Winterdienst per App. <em>Sicher, auch vor Gericht.</em></h1>
+          <p class="sub">WinterDex macht aus jedem Räum- und Streueinsatz eine gerichtsfeste Beweiskette: <strong>GPS-Stempel, archivierte Wetterlage, Fotos und PDF-Nachweis</strong> — in 30 Sekunden.</p>
+          <div class="cta">
+            <a class="btn" id="store-link" href="https://play.google.com/store/apps/details?id=com.winterdex.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg>Kostenlos bei Google Play</a>
+            <a class="btn ghost" href="#ablauf">So funktioniert's</a>
+          </div>
+          <p class="hint"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg>Android jetzt · iPhone & iPad bald</p>
+          <ul class="ticks"><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>30 Sekunden pro Einsatz</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Einträge unveränderlich</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>GPS + Wetter automatisch</li></ul>
+        </div>
+        <div class="shots" aria-label="Screenshots der App">
+          <div class="phone a"><div class="screen" style="--bar:#075985"><img src="assets/shots/hero-1.webp" width="600" height="1107" alt="WinterDex: Einsatz dokumentieren mit Maßnahme, Streumittel und Beweisfoto" decoding="async"></div></div>
+          <div class="phone b"><div class="screen" style="--bar:#075985"><img src="assets/shots/hero-2.webp" width="600" height="1107" alt="WinterDex: Objekt mit Pflichtzeiten und Einsatz-Historie" decoding="async"></div></div>
+        </div>
       </div>
     </div>
+
+    <section class="soft" id="pflicht">
+      <div class="wrap duty">
+        <div class="rv">
+          <p class="eyebrow">Rechtsgrundlage</p>
+          <h2>Stürzt jemand, zählt nur deine Dokumentation</h2>
+          <p class="lead">Wer für eine Fläche verantwortlich ist, trägt die Verkehrssicherungspflicht. Kommt es zum Sturz auf Glatteis, musst du belegen können, dass rechtzeitig geräumt und gestreut wurde. Für Hausmeisterservices, GaLaBau und Hausverwaltungen.</p>
+        </div>
+        <ul class="rules rv">
+          <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /><path d="M7 21h10" /><path d="M12 3v18" /><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></svg></span><span><b>Deutschland</b>Verkehrssicherungspflicht nach § 823 BGB, Details in der Satzung der Gemeinde.</span></li>
+          <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg></span><span><b>Typische Zeiten</b>Werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen später — maßgeblich ist die Satzung.</span></li>
+          <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22" /><line x1="6" x2="6" y1="18" y2="11" /><line x1="10" x2="10" y1="18" y2="11" /><line x1="14" x2="14" y1="18" y2="11" /><line x1="18" x2="18" y1="18" y2="11" /><polygon points="12 2 20 7 4 7" /></svg></span><span><b>Österreich und Schweiz</b>In Österreich § 93 StVO, in der Schweiz kantonale und kommunale Vorgaben.</span></li>
+          <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /><path d="m9 13 2 2 4-4" /></svg></span><span><b>Beweis im Streitfall</b>Wer wann was gemacht hat — mit Uhrzeit, Ort und Wetterlage belegt.</span></li>
+        </ul>
+      </div>
+    </section>
 
     <section id="funktionen">
-      <div class="sec-eyebrow">Funktionen</div>
-      <h2>Deine Beweiskette</h2>
-      <div class="grid">
-        <div class="card reveal"><span class="emoji">📍</span><h3>GPS- &amp; Zeitstempel</h3>
-          <p>Jeder Einsatz wird automatisch mit Position und Uhrzeit versehen — du warst nachweislich da.</p></div>
-        <div class="card reveal"><span class="emoji">🌡️</span><h3>Wetterlage archiviert</h3>
-          <p>„−2&nbsp;°C bei Schneefall um 6:40, Einsatz 6:55." WinterDex speichert die Wetterlage unveränderlich zu jedem Einsatz.</p></div>
-        <div class="card reveal"><span class="emoji">🔒</span><h3>Unveränderlich (append-only)</h3>
-          <p>Einträge können nie bearbeitet oder gelöscht werden — nur gekennzeichnete Stornos mit Begründung. Genau das überzeugt vor Gericht.</p></div>
-        <div class="card reveal"><span class="emoji">📷</span><h3>Beweisfotos</h3>
-          <p>Geräumter Gehweg, gestreute Zufahrt — direkt am Objekt fotografiert und dem Einsatz zugeordnet.</p></div>
-        <div class="card reveal"><span class="emoji">❄️</span><h3>Glätte-Frühwarnung</h3>
-          <p>WinterDex prüft die Vorhersage für alle deine Objekte: „Heute Glättegefahr bei 4 Objekten."</p></div>
-        <div class="card reveal"><span class="emoji">📄</span><h3>PDF-Nachweis</h3>
-          <p>Ein Tipp erzeugt den kompletten Bericht pro Objekt und Saison — inklusive Rechtsgrundlage deines Landes.</p></div>
+      <div class="wrap">
+        <div class="head rv">
+          <p class="eyebrow">Funktionen</p>
+          <h2>Deine Beweiskette für jeden Einsatz</h2>
+          <p class="lead">Geräumt, gestreut oder nur kontrolliert — jeder Einsatz mit Ort, Zeit und Wetter festgehalten.</p>
+        </div>
+        <div class="features">
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg></span><h3>GPS- und Zeitstempel</h3><p>Jeder Einsatz automatisch mit Position und Uhrzeit — du warst nachweislich da.</p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h10" /><path d="M9 4v16" /><path d="m3 9 3 3-3 3" /><path d="M12 6 9 9 6 6" /><path d="m6 18 3-3 1.5 1.5" /><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" /></svg></span><h3>Wetterlage archiviert</h3><p>„−2 °C bei Schneefall um 6:40, Einsatz 6:55." Die Wetterlage wird zu jedem Einsatz unveränderlich gespeichert.</p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="22" y1="12" y2="12" /><line x1="12" x2="12" y1="2" y2="22" /><path d="m20 16-4-4 4-4" /><path d="m4 8 4 4-4 4" /><path d="m16 4-4 4-4-4" /><path d="m8 20 4-4 4 4" /></svg></span><h3>Glätte-Frühwarnung</h3><p>WinterDex prüft die Vorhersage für alle Objekte: „Heute Glättegefahr bei 4 Objekten."</p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" /><circle cx="12" cy="13" r="3" /></svg></span><h3>Beweisfotos</h3><p>Geräumter Gehweg, gestreute Zufahrt — direkt am Objekt fotografiert und dem Einsatz zugeordnet.</p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span><h3>PDF-Nachweis</h3><p>Je Objekt und Monat oder Saison — mit der Rechtsgrundlage deines Landes.</p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg></span><h3>Unveränderlich</h3><p>Einträge lassen sich weder bearbeiten noch löschen — Storno nur mit Begründung. Das zählt vor Gericht.</p></article>
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="sec-eyebrow">Ablauf</div>
-      <h2>So funktioniert's</h2>
-      <div class="steps">
-        <div class="step reveal"><div class="num">1</div><div><strong>Objekt anlegen.</strong>
-          <span class="sub" style="display:block;font-size:15px;margin-top:2px">Adresse, Flächen, Pflichtzeiten — je Land vorbelegt (DE: Ortssatzung, AT: § 93 StVO, CH: kantonal).</span></div></div>
-        <div class="step reveal"><div class="num">2</div><div><strong>Einsatz dokumentieren.</strong>
-          <span class="sub" style="display:block;font-size:15px;margin-top:2px">Nach getaner Arbeit: Maßnahme antippen, optional Foto — GPS und Wetter ergänzt WinterDex automatisch. Auch „kontrolliert, nichts nötig" ist ein Nachweis.</span></div></div>
-        <div class="step reveal"><div class="num">3</div><div><strong>Nachweis teilen.</strong>
-          <span class="sub" style="display:block;font-size:15px;margin-top:2px">PDF pro Monat oder Saison an Hausverwaltung, Auftraggeber — oder im Streitfall an den Anwalt.</span></div></div>
+    <section class="soft" id="ablauf">
+      <div class="wrap flow">
+        <div class="rv">
+          <p class="eyebrow">So funktioniert's</p>
+          <h2>In drei Schritten zum Nachweis</h2>
+          <ol class="steps">
+            <li><b>Objekt anlegen</b><p>Adresse, Flächen und Pflichtzeiten — je Land vorbelegt.</p></li>
+            <li><b>Einsatz dokumentieren</b><p>Maßnahme antippen, optional Foto. GPS und Wetter ergänzt WinterDex automatisch — auch „kontrolliert, nichts nötig" ist ein Nachweis.</p></li>
+            <li><b>Nachweis teilen</b><p>PDF pro Monat oder Saison an Hausverwaltung oder Auftraggeber schicken.</p></li>
+          </ol>
+        </div>
+        <div class="rv"><div class="phone lazy"><div class="screen" style="--bar:#075985"><img src="assets/shots/ablauf.webp" width="600" height="1107" alt="WinterDex: Objekte mit offenen Räum- und Streupflichten" decoding="async" loading="lazy"></div></div></div>
       </div>
-      <p style="margin-top:22px;font-size:15.5px;opacity:.9">Noch auf Papier? Hier gibt es die kostenlose <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage zum Ausdrucken</a> und alles zur <a href="ratgeber-raeum-streupflicht.html">Räum- und Streupflicht</a>.</p>
     </section>
 
-    <section>
-      <div class="sec-eyebrow">Preise</div>
-      <h2>Preise</h2>
-      <div class="price-grid">
-        <div class="card price reveal">
-          <h3>Free</h3>
-          <div class="amount">0&nbsp;€</div>
-          <div class="per">für immer</div>
-          <ul>
-            <li>2 Objekte in vollem Umfang</li>
-            <li>GPS, Wetter, Fotos, Storno-Schutz</li>
-            <li>PDF-Nachweis mit Wasserzeichen</li>
-            <li>Cloud-Sync auf allen Geräten</li>
-          </ul>
+    <section id="preise">
+      <div class="wrap">
+        <div class="head rv">
+          <p class="eyebrow">Preise</p>
+          <h2>Kostenlos starten, bei Bedarf upgraden.</h2>
         </div>
-        <div class="card price pro reveal">
-          <h3>Pro <span class="plan-tag">Empfohlen</span></h3>
-          <div class="amount">9,99&nbsp;€</div>
-          <div class="per">pro Monat · oder 59,99 € pro Saison — jederzeit kündbar</div>
-          <ul>
-            <li>Unbegrenzt Objekte</li>
-            <li>PDF-Nachweis ohne Wasserzeichen</li>
-            <li>Glätte-Frühwarnung für alle Objekte</li>
-            <li>Priorisierter Support</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Web-Dashboard -->
-      <div class="suite" id="dashboard" style="margin-top:28px;">
-        <span class="suite-pill">💻 Neu: Web-Dashboard — inklusive</span>
-        <h3 class="st">WinterDex auch am PC.</h3>
-        <p style="margin:10px 0 16px;opacity:.85">Übersicht mit Kennzahlen, alle Objekte und Einsätze, Nachweis-PDFs — direkt im Browser. Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort.</p>
-        <a class="btn" href="https://dashboard.dexware.app/app/winterdex">Dashboard öffnen →</a>
-      </div>
-
-      <!-- Dexware Suite Bundle -->
-      <div class="suite" id="suite" style="margin-top:28px;">
-        <span class="suite-pill">Dexware Suite — ein Abo, alle Apps</span>
-        <h3 class="st">Alle 15 Dexware-Apps. Ein Abo.</h3>
-        <p class="sl">
-          Die Suite kostet so viel wie unsere teuerste Einzel-App — und schaltet <b>alle</b> Dexware-Apps
-          auf allen deinen Geräten frei. Neue Apps kommen automatisch dazu, ohne Aufpreis.
-        </p>
-        <div class="suite-prices">
-          <div class="sp">
-            <div class="sp-name">Monatlich</div>
-            <div class="sp-strike">über 90 € — alle Apps einzeln</div>
-            <div class="sp-amount">29,99 € <small>/ Monat</small></div>
-            <div class="sp-note">Der Preis unserer teuersten Einzel-App — über 65 % günstiger als alles einzeln.</div>
+        <div class="plans">
+          <div class="plan rv">
+            <h3>Free</h3>
+            <p class="price">0 €</p>
+            <p class="per">für immer</p>
+            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>2 Objekte in vollem Umfang</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>GPS, Wetter, Fotos, Storno-Schutz</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF mit Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Cloud-Sync auf allen Geräten</li></ul>
           </div>
-          <div class="sp best">
-            <span class="sp-badge">4 Monate geschenkt · −33 %</span>
-            <div class="sp-name">Jährlich</div>
-            <div class="sp-strike">statt 359,88 € (12 × 29,99 €)</div>
-            <div class="sp-amount">239,99 € <small>/ Jahr</small></div>
-            <div class="sp-note">Entspricht 20,00 € im Monat — du zahlst nur 8 von 12 Monaten.</div>
+          <div class="plan pro rv">
+            <span class="badge">Empfohlen</span>
+            <h3>WinterDex Pro</h3>
+            <p class="price">9,99 € <small>/ Monat</small></p>
+            <p class="per">oder 59,99 € pro Saison</p>
+            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Unbegrenzt Objekte</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF ohne Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Glätte-Frühwarnung für alle Objekte</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Priorisierter Support</li></ul>
+          </div>
+          <div class="plan suite rv">
+            <h3>Dexware Suite</h3>
+            <p class="price">29,99 € <small>/ Monat</small></p>
+            <p class="per">oder 239,99 € im Jahr · entspricht 20 € im Monat</p>
+            <ul>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Alle 15 Dexware-Apps freigeschaltet</li>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Neue Apps automatisch dabei</li>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Ein Abo für alle Geräte</li>
+            </ul>
+            <div class="icons" aria-hidden="true"><img src="assets/apps/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/spieldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/winterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/kfzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/baumdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/tourdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/craftdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/apps/dokudex.webp" alt="" width="26" height="26" loading="lazy" /></div>
           </div>
         </div>
-        <div class="suite-icons">
-          <img src="gurtdex-icon.png" alt="GurtDex" title="GurtDex" />
-          <img src="toredex-icon.png" alt="ToreDex" title="ToreDex" />
-          <img src="geruestdex-icon.png" alt="GerüstDex" title="GerüstDex" />
-          <img src="regaldex-icon.png" alt="RegalDex" title="RegalDex" />
-          <img src="leiterdex-icon.png" alt="LeiterDex" title="LeiterDex" />
-          <img src="feuerdex-icon.png" alt="FeuerDex" title="FeuerDex" />
-          <img src="spieldex-icon.png" alt="SpielDex" title="SpielDex" />
-          <img src="kfzdex-icon.png" alt="KfzDex" title="KfzDex" />
-          <img src="pruefdex-icon.png" alt="PrüfDex" title="PrüfDex" />
-          <img src="schutzheld-icon.png" alt="SchutzDex" title="SchutzDex" />
-          <img src="baumdex-icon.png" alt="BaumDex" title="BaumDex" />
-          <img src="winterdex-icon.png" alt="WinterDex" title="WinterDex" />
-          <img src="routelog-icon.png" alt="TourDex" title="TourDex" />
-          <img src="craftlog-icon.png" alt="CraftDex" title="CraftDex" />
-          <img src="archio-icon.png" alt="DokuDex" title="DokuDex" />
+        <p class="fine">Abschluss direkt in der App über Google Play · jederzeit kündbar · Preise inkl. MwSt.</p>
+      </div>
+    </section>
+
+    <section class="soft" id="faq">
+      <div class="wrap faq">
+        <div class="rv">
+          <p class="eyebrow">FAQ</p>
+          <h2>Häufige Fragen</h2>
+          <p class="ask"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg><span>Noch etwas offen? <a href="mailto:support@dexware.app?subject=WinterDex">support@dexware.app</a></span></p>
         </div>
-        <ul class="suite-list">
-          <li>Alle 15 Apps inklusive — von Winterdienst bis UVV</li>
-          <li>Alle zukünftigen Dexware-Apps automatisch dabei</li>
-          <li>Einmal kaufen — in jeder App freigeschaltet</li>
-          <li>Jederzeit kündbar</li>
-        </ul>
-        <p class="suite-how">Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.</p>
-        <a href="https://dexware.app/" target="_blank" rel="noopener" class="btn">Mehr zur Dexware Suite →</a>
-        <p class="suite-how" style="opacity:.85">💻 Fürs Web gibt's einen Haupteinstieg: <a href="https://dashboard.dexware.app">dashboard.dexware.app</a> — die Übersicht aller App-Dashboards. Dort wählst du einfach die App, deren Dashboard du öffnen willst.</p>
+        <div class="rv">
+          <details><summary>Wann muss geräumt und gestreut werden?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Eine bundesweit einheitliche Uhrzeit gibt es nicht — maßgeblich ist die Satzung der Gemeinde. Als Orientierung gilt werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen ein späterer Beginn. Details im <a href="ratgeber-raeum-streupflicht.html">Ratgeber zur Räum- und Streupflicht</a>.</div></details>
+          <details><summary>Ich dokumentiere noch auf Papier — gibt es eine Vorlage?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Ja, eine kostenlose <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage zum Ausdrucken</a> mit allen Pflichtangaben. Mit WinterDex sparst du dir das Ausfüllen — GPS, Uhrzeit und Wetter kommen automatisch.</div></details>
+          <details><summary>Kann ich Einsätze nachträglich ändern?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Nein — genau das macht den Nachweis belastbar. Einsätze sind unveränderlich, ein Storno ist nur gekennzeichnet und mit Begründung möglich.</div></details>
+          <details><summary>Gibt es WinterDex auch am PC?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Ja — im <a href="https://dashboard.dexware.app/app/winterdex">Dexware-Dashboard</a> siehst du Kennzahlen, Objekte, Einsätze und Nachweis-PDFs im Browser.</div></details>
+          <details><summary>Wo liegen meine Daten?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">In einem EU-Rechenzentrum in Frankfurt. Keine Werbung, kein Tracking, kein Datenverkauf — Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</div></details>
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="sec-eyebrow">Die Dexware-Familie</div>
-      <h2>Entdecke die ganze Dexware</h2>
-      <p class="sec-lead">WinterDex ist Teil der Dexware-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
-        <a class="promo reveal" href="https://gurtdex.dexware.app" target="_blank" rel="noopener">
-          <img src="gurtdex-icon.png" alt="GurtDex" width="48" height="48" />
-          <span><b>GurtDex</b><span>PSA gegen Absturz prüfen nach DGUV 312-906 / EN 365 — mit Ablegereife-Wächter, Prüfbericht als PDF.</span></span></a>
-        <a class="promo reveal" href="https://toredex.dexware.app" target="_blank" rel="noopener">
-          <img src="toredex-icon.png" alt="ToreDex" width="48" height="48" />
-          <span><b>ToreDex</b><span>Kraftbetätigte Tore &amp; Türen prüfen nach ASR A1.7 / DGUV 208-022.</span></span></a>
-      <div class="promo-grid">        <a class="promo reveal" href="https://geruestdex.dexware.app" target="_blank" rel="noopener">
-          <img src="geruestdex-icon.png" alt="GerüstDex" width="48" height="48" />
-          <span><b>GerüstDex</b><span>Gerüstprüfung nach TRBS 2121-1 — gerichtsfest dokumentiert.</span></span></a>
-
-        <a class="promo reveal" href="https://regaldex.dexware.app" target="_blank" rel="noopener">
-          <img src="regaldex-icon.png" alt="RegalDex" width="48" height="48" />
-          <span><b>RegalDex</b><span>Regalinspektion nach DIN EN 15635 — Ampelverfahren &amp; Prüfbericht.</span></span></a>
-        <a class="promo reveal" href="https://leiterdex.dexware.app" target="_blank" rel="noopener">
-          <img src="leiterdex-icon.png" alt="LeiterDex" width="48" height="48" />
-          <span><b>LeiterDex</b><span>Leitern- &amp; Tritte-Prüfung nach BetrSichV &amp; DGUV 208-016.</span></span></a>
-        <a class="promo reveal" href="https://feuerdex.dexware.app" target="_blank" rel="noopener">
-          <img src="feuerdex-icon.png" alt="FeuerDex" width="48" height="48" />
-          <span><b>FeuerDex</b><span>Feuerlöscher-Prüfung nach ASR A2.2 &amp; DIN 14406-4.</span></span></a>
-        <a class="promo reveal" href="https://spieldex.dexware.app" target="_blank" rel="noopener">
-          <img src="spieldex-icon.png" alt="SpielDex" width="48" height="48" />
-          <span><b>SpielDex</b><span>Spielplatzkontrolle nach DIN EN 1176 — Geräte prüfen, Mängel dokumentieren, Kontrollbuch als PDF.</span></span></a>
-        <a class="promo reveal" href="https://kfzdex.dexware.app" target="_blank" rel="noopener">
-          <img src="kfzdex-icon.png" alt="KfzDex" width="48" height="48" />
-          <span><b>KfzDex</b><span>Fuhrpark-Verwaltung — UVV-Prüfung, Führerscheinkontrolle &amp; Fristen.</span></span></a>
-        <a class="promo reveal" href="https://schutzdex.dexware.app" target="_blank" rel="noopener">
-          <img src="schutzheld-icon.png" alt="SchutzDex" width="48" height="48" />
-          <span><b>SchutzDex</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
-        <a class="promo reveal" href="https://pruefdex.dexware.app" target="_blank" rel="noopener">
-          <img src="pruefdex-icon.png" alt="PrüfDex" width="48" height="48" />
-          <span><b>PrüfDex</b><span>DGUV-V3-Prüfung: Geräte, Protokolle, Plaketten &amp; Fristen.</span></span></a>
-        <a class="promo reveal" href="https://play.google.com/store/apps/details?id=com.baumdex.app" target="_blank" rel="noopener">
-          <img src="baumdex-icon.png" alt="BaumDex" width="48" height="48" />
-          <span><b>BaumDex</b><span>Baumkataster &amp; Verkehrssicherung für GaLaBau und Baumpflege.</span></span></a>
-        <a class="promo reveal" href="https://play.google.com/store/apps/details?id=com.craftlog.app" target="_blank" rel="noopener">
-          <img src="craftlog-icon.png" alt="CraftDex" width="48" height="48" />
-          <span><b>CraftDex</b><span>Aufträge, Zeiten &amp; Material — die App für Handwerksbetriebe.</span></span></a>
-        <a class="promo reveal" href="https://play.google.com/store/apps/details?id=com.routelog.app" target="_blank" rel="noopener">
-          <img src="routelog-icon.png" alt="TourDex" width="48" height="48" />
-          <span><b>TourDex</b><span>Automatisches Fahrtenbuch — KI trennt geschäftlich &amp; privat.</span></span></a>
-        <a class="promo reveal" href="https://play.google.com/store/apps/details?id=com.archio.app" target="_blank" rel="noopener">
-          <img src="archio-icon.png" alt="DokuDex" width="48" height="48" />
-          <span><b>DokuDex</b><span>Dokumente scannen &amp; per KI verstehen — mit Fristen-Erinnerung.</span></span></a>
+    <section id="dexware">
+      <div class="wrap">
+        <div class="family-row rv">
+          <div>
+            <p class="eyebrow">Teil von Dexware</p>
+            <h2>Eine App pro Pflicht.</h2>
+            <p class="lead">WinterDex gehört zu Dexware — schlanke Apps für Prüfung und Dokumentation im Betrieb.</p>
+          </div>
+          <a href="https://dexware.app/" class="btn ghost sm">Alle Apps ansehen <svg class="i sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+        </div>
+        <div class="family rv">
+          <a href="https://gurtdex.dexware.app"><img src="assets/apps/gurtdex.webp" alt="" width="44" height="44" loading="lazy" /><b>GurtDex</b><small>PSA gegen Absturz</small></a>
+          <a href="https://toredex.dexware.app"><img src="assets/apps/toredex.webp" alt="" width="44" height="44" loading="lazy" /><b>ToreDex</b><small>Tore & Türen</small></a>
+          <a href="https://geruestdex.dexware.app"><img src="assets/apps/geruestdex.webp" alt="" width="44" height="44" loading="lazy" /><b>GerüstDex</b><small>Gerüstprüfung</small></a>
+          <a href="https://feuerdex.dexware.app"><img src="assets/apps/feuerdex.webp" alt="" width="44" height="44" loading="lazy" /><b>FeuerDex</b><small>Feuerlöscher</small></a>
+          <a href="https://leiterdex.dexware.app"><img src="assets/apps/leiterdex.webp" alt="" width="44" height="44" loading="lazy" /><b>LeiterDex</b><small>Leitern & Tritte</small></a>
+          <a href="https://regaldex.dexware.app"><img src="assets/apps/regaldex.webp" alt="" width="44" height="44" loading="lazy" /><b>RegalDex</b><small>Regalinspektion</small></a>
+          <a href="https://spieldex.dexware.app"><img src="assets/apps/spieldex.webp" alt="" width="44" height="44" loading="lazy" /><b>SpielDex</b><small>Spielplatzkontrolle</small></a>
+          <a href="https://kfzdex.dexware.app"><img src="assets/apps/kfzdex.webp" alt="" width="44" height="44" loading="lazy" /><b>KfzDex</b><small>Fuhrpark & UVV</small></a>
+          <a href="https://pruefdex.dexware.app"><img src="assets/apps/pruefdex.webp" alt="" width="44" height="44" loading="lazy" /><b>PrüfDex</b><small>DGUV V3</small></a>
+          <a href="https://schutzdex.dexware.app"><img src="assets/apps/schutzdex.webp" alt="" width="44" height="44" loading="lazy" /><b>SchutzDex</b><small>Unterweisungen</small></a>
+          <a href="https://baumdex.dexware.app"><img src="assets/apps/baumdex.webp" alt="" width="44" height="44" loading="lazy" /><b>BaumDex</b><small>Baumkataster</small></a>
+          <a href="https://tourdex.dexware.app"><img src="assets/apps/tourdex.webp" alt="" width="44" height="44" loading="lazy" /><b>TourDex</b><small>Fahrtenbuch</small></a>
+          <a href="https://craftdex.dexware.app"><img src="assets/apps/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><b>CraftDex</b><small>Projekt-Doku</small></a>
+          <a href="https://dokudex.dexware.app"><img src="assets/apps/dokudex.webp" alt="" width="44" height="44" loading="lazy" /><b>DokuDex</b><small>Dokumente & KI</small></a>
+        </div>
       </div>
-      <p style="text-align:center;margin-top:20px">
-        <a href="https://dexware.app/" target="_blank" rel="noopener">Alle Dexware-Apps auf einen Blick →</a>
-      </p>
     </section>
+  </main>
 
-    <footer>
-      <span>© 2026 WinterDex · Alexander Pfalz</span>
-      <nav>
-        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
-        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="konto-loeschung.html">Konto löschen</a>
-        <a href="mailto:support@dexware.app?subject=WinterDex%20Support">Support</a>
-      </nav>
-    </footer>
-  </div>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 WinterDex · ein Produkt von <a href="https://dexware.app/">Dexware</a></span>
+      <nav aria-label="Rechtliches"><a href="ratgeber-raeum-streupflicht.html">Ratgeber</a><a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="konto-loeschung.html">Konto löschen</a><a href="mailto:support@dexware.app?subject=WinterDex%20Support">Support</a></nav>
+    </div>
+  </footer>
 
   <script>
     (function () {
-      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      // Dezenter Schneefall
-      if (!reduced) {
-        var host = document.querySelector('.snow');
-        for (var i = 0; i < 26; i++) {
-          var f = document.createElement('i');
-          var size = 2 + Math.random() * 3;
-          f.style.width = size + 'px';
-          f.style.height = size + 'px';
-          f.style.left = (Math.random() * 100) + 'vw';
-          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
-          f.style.animationDuration = (9 + Math.random() * 14) + 's';
-          f.style.animationDelay = (-Math.random() * 20) + 's';
-          host.appendChild(f);
-        }
+      var top = document.querySelector('.top');
+      var onScroll = function () { top.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+      var els = document.querySelectorAll('.rv');
+      if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        els.forEach(function (e) { e.classList.add('in'); }); return;
       }
-      // Scroll reveal
-      if (!reduced && 'IntersectionObserver' in window) {
-        var els = document.querySelectorAll('.reveal');
-        for (var j = 0; j < els.length; j++) els[j].classList.add('pre');
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-          });
-        }, { threshold: 0.12 });
-        for (var k = 0; k < els.length; k++) io.observe(els[k]);
-      }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach(function (e) { io.observe(e); });
     })();
   </script>
 </body>
