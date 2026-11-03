@@ -50,7 +50,7 @@
     </header>
 
     <h1>Datenschutzerklärung</h1>
-    <p class="stand">Stand: Juli 2026 · Gilt für die mobile App „WinterDex" und diese Website.</p>
+    <p class="stand">Stand: November 2026 · Gilt für die mobile App „WinterDex" und diese Website.</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -90,12 +90,20 @@
     <p>Zur Archivierung der Wetterlage übermitteln wir die Koordinaten des Einsatzorts an unseren
       Server (Cloudflare Workers), der sie an den Wetterdienst Open-Meteo weiterreicht. Dabei werden
       keine Namen, Konten oder sonstigen personenbezogenen Daten übermittelt.</p>
+    <h3>f) Glätte-Frühwarnung (Push-Mitteilungen)</h3>
+    <p>Nur wenn Sie die Frühwarnung in den Einstellungen aktivieren (Pro, Cloud-Modus): Wir speichern
+      eine Geräte-Kennung für Push-Mitteilungen (Push-Token) zu Ihrem Betrieb. Bei Glättegefahr an
+      Ihren Objekten sendet unser Server morgens eine Mitteilung über den Push-Dienst von Expo, der sie
+      an Google (Android) bzw. Apple (iPhone/iPad) zur Zustellung weitergibt. Übermittelt werden nur
+      das Push-Token und der Warntext — keine Namen, Objektadressen oder Einsatzdaten. Deaktivieren
+      Sie die Frühwarnung, wird das Token gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
 
     <h2>4. Auftragsverarbeiter &amp; Empfänger</h2>
     <ul>
       <li><strong>Supabase</strong> (Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt) — speichert Konto-, Objekt- und Einsatzdaten.</li>
       <li><strong>Cloudflare</strong> (Server/Workers) — technische Verarbeitung der Wetter-Anfragen.</li>
       <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
+      <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
       <li><strong>Google</strong> (nur bei Nutzung der Google-Anmeldung) — Authentifizierung; wir erhalten E-Mail-Adresse und Namen.</li>
       <li><strong>Apple</strong> (nur bei Nutzung von „Mit Apple anmelden“ auf dem iPhone) — Authentifizierung; wir erhalten eine Kennung, Ihre E-Mail-Adresse (auf Wunsch eine von Apple anonymisierte Weiterleitungsadresse) und – falls freigegeben – Ihren Namen.</li>
       <li><strong>Google Play bzw. Apple App Store / RevenueCat</strong> — Abwicklung von In-App-Käufen (sofern Sie ein Abo abschließen); wir erhalten keine Zahlungsdaten.</li>
