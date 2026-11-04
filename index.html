@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WinterDex","url":"https://winterdex.dexware.app/","description":"Räum- und Streupflicht lückenlos dokumentieren: GPS-Stempel, archivierte Wetterlage, Beweisfotos und PDF-Nachweis. Für Hausmeisterservices, GaLaBau und Hausverwaltungen in DACH.","operatingSystem":"Android","applicationCategory":"BusinessApplication","image":"https://winterdex.dexware.app/og-image.png","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Kostenlos starten, Pro-Abo in der App"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"}}</script>
   <!-- seo:end -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wann muss geräumt und gestreut werden?","acceptedAnswer":{"@type":"Answer","text":"Eine bundesweit einheitliche Uhrzeit gibt es nicht — maßgeblich ist die Satzung der Gemeinde. Als Orientierung gilt werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen ein späterer Beginn. Details im Ratgeber zur Räum- und Streupflicht."}},{"@type":"Question","name":"Ich dokumentiere noch auf Papier — gibt es eine Vorlage?","acceptedAnswer":{"@type":"Answer","text":"Ja, eine kostenlose Streuprotokoll-Vorlage zum Ausdrucken mit allen Pflichtangaben. Mit WinterDex sparst du dir das Ausfüllen — GPS, Uhrzeit und Wetter kommen automatisch."}},{"@type":"Question","name":"Wir sind ein Bauhof mit vielen Leuten — was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Abgerechnet wird pro Betrieb, nicht pro Person: Pro deckt bis zu 20 Mitarbeiter, Team bis 50, Team XL bis 100. Alle treten mit einem einzigen Team-Code bei und brauchen kein eigenes Abo. Für Gemeinden mit mehr als 100 Mitarbeitern gibt es eine Kommunal-Lizenz auf Rechnung — schreib an support@dexware.app."}},{"@type":"Question","name":"Kann ich Einsätze nachträglich ändern?","acceptedAnswer":{"@type":"Answer","text":"Nein — genau das macht den Nachweis belastbar. Einsätze sind unveränderlich, ein Storno ist nur gekennzeichnet und mit Begründung möglich."}},{"@type":"Question","name":"Gibt es WinterDex auch am PC?","acceptedAnswer":{"@type":"Answer","text":"Ja — im Dexware-Dashboard siehst du Kennzahlen, Objekte, Einsätze und Nachweis-PDFs im Browser."}},{"@type":"Question","name":"Wo liegen meine Daten?","acceptedAnswer":{"@type":"Answer","text":"In einem EU-Rechenzentrum in Frankfurt. Keine Werbung, kein Tracking, kein Datenverkauf — Details in der Datenschutzerklärung."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wann muss geräumt und gestreut werden?","acceptedAnswer":{"@type":"Answer","text":"Eine bundesweit einheitliche Uhrzeit gibt es nicht — maßgeblich ist die Satzung der Gemeinde. Als Orientierung gilt werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen ein späterer Beginn. Details im Ratgeber zur Räum- und Streupflicht."}},{"@type":"Question","name":"Ich dokumentiere noch auf Papier — gibt es eine Vorlage?","acceptedAnswer":{"@type":"Answer","text":"Ja, eine kostenlose Streuprotokoll-Vorlage zum Ausdrucken mit allen Pflichtangaben. Mit WinterDex sparst du dir das Ausfüllen — GPS, Uhrzeit und Wetter kommen automatisch."}},{"@type":"Question","name":"Wir sind ein Bauhof mit vielen Leuten — was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Abgerechnet wird pro Betrieb, nicht pro Person: Pro deckt bis zu 20 Mitarbeiter, Team bis 50, Team XL bis 100. Alle treten mit einem einzigen Team-Code bei und brauchen kein eigenes Abo. Für Gemeinden mit mehr als 100 Mitarbeitern gibt es eine Kommunal-Lizenz auf Rechnung — schreib an support@dexware.app."}},{"@type":"Question","name":"Kann ich auch Gehwege und Straßen als Strecke nachweisen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Mit dem Strecken-Nachweis fährst du eine Strecke einmal ab, danach wird jede Fahrt per GPS aufgezeichnet. Der Server berechnet, wie viel Prozent der Strecke befahren wurden; ausgelassene Abschnitte erscheinen rot. Das Fahrtenbuch gibt es als PDF mit Kartenskizze. Im Gratis-Paket ist 1 Strecke enthalten, mit Pro unbegrenzt viele."}},{"@type":"Question","name":"Kann ich Einsätze nachträglich ändern?","acceptedAnswer":{"@type":"Answer","text":"Nein — genau das macht den Nachweis belastbar. Einsätze und Fahrten sind unveränderlich. Ein Storno ist nur mit Begründung möglich — der Eintrag bleibt sichtbar und gekennzeichnet."}},{"@type":"Question","name":"Gibt es WinterDex auch am PC?","acceptedAnswer":{"@type":"Answer","text":"Ja — im Dexware-Dashboard siehst du Kennzahlen, Objekte, Einsätze und Nachweis-PDFs im Browser."}},{"@type":"Question","name":"Wo liegen meine Daten?","acceptedAnswer":{"@type":"Answer","text":"In einem EU-Rechenzentrum in Frankfurt. Keine Werbung, kein Tracking, kein Datenverkauf — Details in der Datenschutzerklärung."}}]}</script>
   <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face { font-family: 'Inter'; src: url('assets/inter-latin-var.woff2') format('woff2');
@@ -296,6 +296,31 @@
     .js .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
     .js .rv.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+    .show { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .show-points { margin-top: 24px; }
+    @media (max-width: 860px) { .show { grid-template-columns: 1fr; gap: 28px; } .show-visual { order: 2; } }
+    .rdemo { background: var(--card); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); padding: 14px; }
+    .rd-top { display: flex; align-items: center; gap: 10px; padding: 4px 6px 12px; font-size: 14px; }
+    .rd-top b { font-weight: 650; }
+    .rd-rec { width: 10px; height: 10px; border-radius: 50%; background: #ef4444; animation: rdpulse 1.6s infinite; }
+    .rd-name { margin-left: auto; font-size: 12.5px; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+    .rd-map { display: block; width: 100%; height: auto; border-radius: 14px; background: color-mix(in oklab, var(--bg) 72%, #1e3a52); }
+    .rd-streets { stroke: rgba(255,255,255,.055); stroke-width: 16; fill: none; }
+    .rd-plan { stroke: #94a3b8; stroke-opacity: .42; stroke-width: 12; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .rd-line { stroke: #22c55e; stroke-width: 6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .rd-miss { stroke: #ef4444; stroke-width: 6; fill: none; stroke-dasharray: 9 7; stroke-linecap: round; }
+    .rd-start { fill: #22c55e; stroke: #fff; stroke-width: 3; }
+    .rd-end { fill: #0c1b2a; stroke: #fff; stroke-width: 3; }
+    .rd-dot { fill: var(--accent); stroke: #fff; stroke-width: 3; }
+    .rd-halo { fill: var(--accent); opacity: .22; }
+    .rd-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+    .rd-stats div { background: rgba(255,255,255,.035); border: 1px solid var(--border); border-radius: 12px; padding: 10px 6px; text-align: center; }
+    .rd-stats b { display: block; font-size: clamp(18px, 2.4vw, 22px); font-weight: 750; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .rd-stats span { font-size: 12.5px; color: var(--muted); }
+    .rd-stats .ok { color: #4ade80; } .rd-stats .bad { color: #f87171; }
+    @keyframes rdpulse { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,.55); } 70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+    @media (prefers-reduced-motion: reduce) { .rd-rec { animation: none; } }
   </style>
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -329,6 +354,42 @@
         </div>
       </div>
     </div>
+
+    <section id="strecken">
+      <div class="wrap show">
+        <div class="show-visual rv"><div class="rdemo" role="img" aria-label="Animation: Eine Strecke wird per GPS abgefahren. Befahrene Abschnitte werden grün, ein ausgelassener Abschnitt wird rot markiert, die Abdeckung steigt auf 83 Prozent.">
+          <div class="rd-top"><span class="rd-rec"></span><b>Aufzeichnung läuft</b><span class="rd-name">Gehweg Hauptstraße</span></div>
+          <svg class="rd-map" viewBox="0 0 400 250" aria-hidden="true">
+            <path class="rd-streets" d="M0 65H400M0 185H400M40 0V250M120 0V250M200 0V250M280 0V250M350 0V250"/>
+            <path class="rd-plan" d="M40 205V65H200V185H350V55"/>
+            <path class="rd-line" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" d="M40 205V65H200V125"><animate attributeName="stroke-dashoffset" values="100;0;0" keyTimes="0;.401;1" dur="9s" begin="rdgo.begin" repeatCount="indefinite"/></path>
+            <path class="rd-miss" opacity="1" d="M200 125V185H260"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;.54;.6;1" dur="9s" begin="rdgo.begin" repeatCount="indefinite"/></path>
+            <path class="rd-line" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" d="M260 185H350V55"><animate attributeName="stroke-dashoffset" values="100;100;0;0" keyTimes="0;.535;.78;1" dur="9s" begin="rdgo.begin" repeatCount="indefinite"/></path>
+            <circle class="rd-start" cx="40" cy="205" r="7"/>
+            <circle class="rd-end" cx="350" cy="55" r="7"/>
+            <g class="rd-car" visibility="hidden"><set attributeName="visibility" to="visible" begin="rdgo.begin"/><animateMotion path="M40 205V65H200V185H350V55" keyPoints="0;1;1" keyTimes="0;.78;1" calcMode="linear" dur="9s" begin="rdgo.begin" repeatCount="indefinite"/><circle class="rd-halo" r="15"/><circle class="rd-dot" r="8"/></g>
+            <rect width="0" height="0"><animate id="rdgo" attributeName="x" from="0" to="0" dur="9s" begin="indefinite"/></rect>
+          </svg>
+          <div class="rd-stats">
+            <div><b data-rd="m">1,2 km</b><span>gefahren</span></div>
+            <div><b data-rd="p" class="ok">83 %</b><span>abgedeckt</span></div>
+            <div><b data-rd="g" class="bad">1</b><span>Lücke (rot)</span></div>
+          </div>
+        </div></div>
+        <div class="rv">
+          <p class="eyebrow">Neu · Strecken-Nachweis</p>
+          <h2>Gehwege und Straßen per GPS abfahren</h2>
+          <p class="lead">Für Räumtouren mit Schneeschild oder Streuwagen: Start drücken, losfahren, Stopp. WinterDex zeichnet die Fahrt auf und zeigt <strong>live, welcher Abschnitt noch fehlt</strong>.</p>
+          <ul class="rules show-points">
+            <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3" /><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /><circle cx="18" cy="5" r="3" /></svg></span><span><b>Einmal abfahren, dann immer nachweisen</b>Die erste Fahrt wird zur Vorlage — oder du verbindest deine Objekte zu einer Strecke.</span></li>
+            <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /><path d="M15 5.764v15" /><path d="M9 3.236v15" /></svg></span><span><b>Grün gefahren, rot verpasst</b>Auf der Karte siehst du sofort, was befahren ist und welcher Abschnitt noch fehlt — bevor du die Fahrt beendest.</span></li>
+            <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg></span><span><b>Abdeckung vom Server geprüft</b>Länge und Abdeckung in Prozent rechnet der Server, jede Fahrt bekommt einen Prüfcode und ist unveränderlich.</span></li>
+            <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span><span><b>Fahrtenbuch als PDF</b>Je Strecke und Zeitraum, mit Kartenskizze — für Gemeinde, Hausverwaltung oder Versicherung.</span></li>
+            <li><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" /></svg></span><span><b>Auch im Funkloch</b>Die Aufzeichnung läuft offline weiter, übersteht einen leeren Akku und wird später übertragen.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <section class="soft" id="pflicht">
       <div class="wrap duty">
@@ -390,14 +451,14 @@
             <h3>Free</h3>
             <p class="price">0 €</p>
             <p class="per">für immer</p>
-            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>2 Objekte in vollem Umfang</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>GPS, Wetter, Fotos, Storno-Schutz</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF mit Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Cloud-Sync auf allen Geräten</li></ul>
+            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>2 Objekte in vollem Umfang</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>1 Strecke mit GPS-Nachweis</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>GPS, Wetter, Fotos, Storno-Schutz</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF mit Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Cloud-Sync auf allen Geräten</li></ul>
           </div>
           <div class="plan pro rv">
             <span class="badge">Empfohlen</span>
             <h3>WinterDex Pro</h3>
             <p class="price">9,99 € <small>/ Monat</small></p>
             <p class="per">oder 39,99 € pro Saison (6 Monate)</p>
-            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Unbegrenzt Objekte</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Team mit bis zu 20 Mitarbeitern</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF ohne Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Glätte-Frühwarnung für alle Objekte</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Priorisierter Support</li></ul>
+            <ul><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Unbegrenzt Objekte und Strecken</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Team mit bis zu 20 Mitarbeitern</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>PDF ohne Wasserzeichen</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Glätte-Frühwarnung für alle Objekte</li><li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Priorisierter Support</li></ul>
           </div>
           <div class="plan suite rv">
             <h3>Dexware Suite</h3>
@@ -437,7 +498,8 @@
           <details><summary>Wann muss geräumt und gestreut werden?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Eine bundesweit einheitliche Uhrzeit gibt es nicht — maßgeblich ist die Satzung der Gemeinde. Als Orientierung gilt werktags etwa 7 bis 20 Uhr, an Sonn- und Feiertagen ein späterer Beginn. Details im <a href="ratgeber-raeum-streupflicht.html">Ratgeber zur Räum- und Streupflicht</a>.</div></details>
           <details><summary>Ich dokumentiere noch auf Papier — gibt es eine Vorlage?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Ja, eine kostenlose <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage zum Ausdrucken</a> mit allen Pflichtangaben. Mit WinterDex sparst du dir das Ausfüllen — GPS, Uhrzeit und Wetter kommen automatisch.</div></details>
           <details><summary>Wir sind ein Bauhof mit vielen Leuten — was kostet das?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Abgerechnet wird pro Betrieb, nicht pro Person: Pro deckt bis zu 20 Mitarbeiter, Team bis 50, Team XL bis 100. Alle treten mit einem einzigen Team-Code bei und brauchen kein eigenes Abo. Für Gemeinden mit mehr als 100 Mitarbeitern gibt es eine Kommunal-Lizenz auf Rechnung — schreib an <a href="mailto:support@dexware.app">support@dexware.app</a>.</div></details>
-          <details><summary>Kann ich Einsätze nachträglich ändern?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Nein — genau das macht den Nachweis belastbar. Einsätze sind unveränderlich, ein Storno ist nur gekennzeichnet und mit Begründung möglich.</div></details>
+          <details><summary>Kann ich auch Gehwege und Straßen als Strecke nachweisen?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Ja. Mit dem Strecken-Nachweis fährst du eine Strecke einmal ab, danach wird jede Fahrt per GPS aufgezeichnet. Der Server berechnet, wie viel Prozent der Strecke befahren wurden; ausgelassene Abschnitte erscheinen rot. Das Fahrtenbuch gibt es als PDF mit Kartenskizze. Im Gratis-Paket ist 1 Strecke enthalten, mit Pro unbegrenzt viele.</div></details>
+          <details><summary>Kann ich Einsätze nachträglich ändern?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Nein — genau das macht den Nachweis belastbar. Einsätze und Fahrten sind unveränderlich. Ein Storno ist nur mit Begründung möglich — der Eintrag bleibt sichtbar und gekennzeichnet.</div></details>
           <details><summary>Gibt es WinterDex auch am PC?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">Ja — im <a href="https://dashboard.dexware.app/app/winterdex">Dexware-Dashboard</a> siehst du Kennzahlen, Objekte, Einsätze und Nachweis-PDFs im Browser.</div></details>
           <details><summary>Wo liegen meine Daten?<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div class="a">In einem EU-Rechenzentrum in Frankfurt. Keine Werbung, kein Tracking, kein Datenverkauf — Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</div></details>
         </div>
@@ -495,6 +557,28 @@
         es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
       els.forEach(function (e) { io.observe(e); });
+    })();
+    (function () {
+      var s = document.querySelector('.rd-map'), go = document.getElementById('rdgo');
+      if (!s || !go || !go.beginElement || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var m = document.querySelector('[data-rd=m]'), p = document.querySelector('[data-rd=p]'), g = document.querySelector('[data-rd=g]');
+      var t0 = 0, raf = 0, started = false;
+      var fmt = function (x) { return x < 1000 ? Math.round(x / 10) * 10 + ' m' : (x / 1000).toFixed(1).replace('.', ',') + ' km'; };
+      var tick = function () {
+        var c = ((s.getCurrentTime() - t0) / 9) % 1; if (c < 0) c = 0;
+        var d = Math.min(c / 0.78, 1) * 700, cov = Math.min(d, 360) + Math.max(0, d - 480);
+        m.textContent = fmt(cov * 2); p.textContent = Math.round(cov / 7) + ' %'; g.textContent = c >= 0.54 ? '1' : '0';
+        raf = requestAnimationFrame(tick);
+      };
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          cancelAnimationFrame(raf);
+          if (e.isIntersecting) {
+            if (!started) { started = true; go.beginElement(); t0 = s.getCurrentTime(); } else s.unpauseAnimations();
+            raf = requestAnimationFrame(tick);
+          } else if (started) s.pauseAnimations();
+        });
+      }, { threshold: 0.25 }).observe(s);
     })();
   </script>
 </body>
