@@ -401,6 +401,19 @@
       .wall-in { left: -30%; top: -20%; width: 170%; opacity: .42; }
     }
     @media (max-width: 480px) { .col { width: 128px; } .wall-in { gap: 18px; } }
+
+    /* Kopf „winterdex“: phones=float, wall=straight, speed=1.3, frame=light (looks.js) */
+    .shots .phone.a { animation: hero-bob 7s ease-in-out infinite; }
+    .shots .phone.b { animation: hero-bob 8s ease-in-out -4s infinite; }
+    @keyframes hero-bob { 50% { translate: 0 -14px; } }
+    @media (prefers-reduced-motion: reduce) { .shots .phone.a, .shots .phone.b { animation: none; } }
+    .wall-in { top: -12%; left: 46%; width: 70%; height: 150%; transform: none; opacity: .42; }
+    .col:nth-child(even) { margin-top: -90px; }
+    @media (max-width: 900px) { .wall-in { left: -10%; top: -8%; width: 170%; opacity: .42; } }
+    .shots .phone { background: linear-gradient(160deg, #e4e6eb, #8a8d96 38%, #34363c 70%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.18) inset, 0 0 0 1px rgba(0,0,0,.5), 0 40px 70px -30px rgba(10,10,20,.55), 0 18px 30px -18px rgba(10,10,20,.35); }
+    .track { animation-duration: calc(var(--d) * 1.3); }
+    .mp { border-radius: 30px; } .mp::before { border-radius: 25px 25px 0 0; } .mp img { border-radius: 0 0 25px 25px; }
   </style>
   <script>document.documentElement.classList.add('js')</script>
 </head>
