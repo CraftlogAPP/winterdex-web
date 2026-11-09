@@ -62,7 +62,7 @@
     <h2>2. Kurzüberblick</h2>
     <ul>
       <li>Keine Werbung, kein Werbe-Tracking, kein Verkauf von Daten.</li>
-      <li>Standort wird <strong>nur beim Dokumentieren eines Einsatzes</strong> erfasst — nie im Hintergrund.</li>
+      <li>Standort wird <strong>nur beim Dokumentieren eines Einsatzes</strong> und <strong>während einer von Ihnen gestarteten Streckenfahrt</strong> erfasst — sonst nie.</li>
       <li>Ihre Daten liegen in Ihrem Konto (EU-Rechenzentrum) und gehören Ihnen.</li>
       <li>Konto-Löschung jederzeit direkt in der App (Einstellungen → Konto löschen).</li>
     </ul>
@@ -82,10 +82,21 @@
       Rechtsgrundlage: Art. 6 Abs. 1 lit. b und f DSGVO (berechtigtes Interesse an rechtssicherer
       Dokumentation).</p>
     <h3>d) Standort</h3>
-    <p>Der Standort wird ausschließlich im Moment der Einsatz-Dokumentation im Vordergrund abgefragt.
-      Es findet <strong>keine Hintergrund-Ortung</strong> und keine Bewegungsprofilbildung statt. Die
-      Berechtigung kann jederzeit in den Systemeinstellungen entzogen werden; die App bleibt nutzbar
-      (Nachweis dann ohne GPS-Stempel).</p>
+    <p>Der Standort wird in zwei Fällen verwendet:</p>
+    <ul>
+      <li><strong>Einsatz dokumentieren:</strong> einmalig die aktuelle Position als GPS-Stempel des Nachweises.</li>
+      <li><strong>„Strecke fahren“ (Strecken-Nachweis):</strong> Nach dem Tippen auf „Start“ zeichnet die App den
+        gefahrenen Weg auf (Positionen mit Uhrzeit und Genauigkeit), bis Sie die Fahrt beenden oder verwerfen — auch
+        wenn der Bildschirm gesperrt ist oder kurz eine andere App (z. B. Navigation, Telefon) geöffnet wird. Während
+        der Aufzeichnung zeigt Android eine dauerhafte Benachrichtigung, iOS die blaue Standortanzeige.</li>
+    </ul>
+    <p>Außerhalb einer gestarteten Fahrt findet <strong>keine Hintergrund-Ortung</strong> statt; die Erlaubnis
+      „Standort immer“ wird nicht verwendet. Der Fahrweg wird mit der Fahrt gespeichert (auf dem Gerät und im
+      Cloud-Modus in Ihrem Konto) und dient als Nachweis der Räum- und Streupflicht. Rechtsgrundlage: Art. 6 Abs. 1
+      lit. b und f DSGVO. Nutzen Mitarbeiter eines Betriebs die App, informiert der Betrieb sie über die Aufzeichnung;
+      aufgezeichnet wird nur, solange die Person selbst eine Fahrt gestartet hat. Die Berechtigung kann jederzeit in
+      den Systemeinstellungen entzogen werden; die App bleibt nutzbar (Nachweis dann ohne GPS-Stempel bzw. ohne
+      Strecke).</p>
     <h3>e) Wetterdaten</h3>
     <p>Zur Archivierung der Wetterlage übermitteln wir die Koordinaten des Einsatzorts an unseren
       Server (Cloudflare Workers), der sie an den Wetterdienst Open-Meteo weiterreicht. Dabei werden
