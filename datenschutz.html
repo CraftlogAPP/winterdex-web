@@ -108,6 +108,17 @@
       an Google (Android) bzw. Apple (iPhone/iPad) zur Zustellung weitergibt. Übermittelt werden nur
       das Push-Token und der Warntext — keine Namen, Objektadressen oder Einsatzdaten. Deaktivieren
       Sie die Frühwarnung, wird das Token gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+    <h3>g) Käufe, Dexware Suite und Empfehlungsprogramm</h3>
+    <p>Abonnements werden über Google Play bzw. den Apple App Store abgewickelt; die Stores verarbeiten Zahlungsdaten in
+      eigener Verantwortung, wir erhalten keine Zahlungsdaten. Zur Verwaltung des Kaufstatus nutzen wir RevenueCat. Damit
+      ein Abo (auch das Dexware-Suite-Abo) in allen Dexware-Apps gilt, verwenden wir als Kauf-Kennung einen nicht
+      umkehrbaren Prüfwert (SHA-256) Ihrer E-Mail-Adresse statt der Adresse selbst.</p>
+    <p>Empfehlungsprogramm („Empfehlen &amp; 3 Monate gratis“): Jeder Betrieb hat einen Empfehlungs-Code. Trägt ein neuer
+      Betrieb einen Code ein, speichern wir, welcher Betrieb welchen geworben hat, die Konto-Kennungen der beiden Inhaber
+      und die Kauf-Kennung (SHA-256 der E-Mail) des geworbenen Inhabers. Damit fragt unser Server bei RevenueCat ab, ob
+      der geworbene Betrieb ein bezahltes Abo hat, und schreibt dem werbenden Betrieb dann 3 Monate Pro gut. Namen oder
+      E-Mail-Adressen stehen nicht im Protokoll; der werbende Betrieb sieht nur Anzahlen. Rechtsgrundlage: Art. 6 Abs. 1
+      lit. b DSGVO.</p>
 
     <h2>4. Auftragsverarbeiter &amp; Empfänger</h2>
     <ul>
@@ -115,6 +126,9 @@
       <li><strong>Cloudflare</strong> (Server/Workers) — technische Verarbeitung der Wetter-Anfragen.</li>
       <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
       <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
+      <li><strong>Kartendienst</strong> (Android: Google Maps von Google Ireland Ltd.; iPhone: Apple Karten) — zeigt die Karte der
+        Objekte und Strecken. Dabei lädt Ihr Gerät Kartenausschnitte direkt beim Anbieter (technisch nötig: IP-Adresse und der
+        angezeigte Kartenbereich).</li>
       <li><strong>Google</strong> (nur bei Nutzung der Google-Anmeldung) — Authentifizierung; wir erhalten E-Mail-Adresse und Namen.</li>
       <li><strong>Apple</strong> (nur bei Nutzung von „Mit Apple anmelden“ auf dem iPhone) — Authentifizierung; wir erhalten eine Kennung, Ihre E-Mail-Adresse (auf Wunsch eine von Apple anonymisierte Weiterleitungsadresse) und – falls freigegeben – Ihren Namen.</li>
       <li><strong>Google Play bzw. Apple App Store / RevenueCat</strong> — Abwicklung von In-App-Käufen (sofern Sie ein Abo abschließen); wir erhalten keine Zahlungsdaten.</li>
@@ -123,6 +137,9 @@
     <h2>5. Speicherdauer</h2>
     <p>Ihre Daten bleiben gespeichert, solange Ihr Konto besteht. Einsatz-Dokumentation ist bewusst
       unveränderlich angelegt (Beweiszweck); mit der Konto-Löschung wird sie vollständig entfernt.
+      Ausnahme Empfehlungsprogramm: Der Protokolleintrag (Betriebs- und Konto-Kennungen, Kauf-Kennung als
+      SHA-256-Prüfwert, ohne Namen oder E-Mail-Adressen) bleibt bis zu zwei Jahre erhalten, damit ein Code nicht durch
+      Löschen und Neuanlegen mehrfach eingelöst werden kann (Art. 6 Abs. 1 lit. f DSGVO).
       Gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
 
     <h2>6. Ihre Rechte</h2>
