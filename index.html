@@ -480,9 +480,14 @@
     @media (max-width: 400px) {
       .ios-tab { display: flex; }
       .ipw-visual { height: 420px; }
-      .ipw.tall .ipw-visual { height: 470px; }
+      .ipw.tall .ipw-visual { height: 484px; }
       .ipw-visual .phone.a { --pw: 186px; } .ipw-visual .phone.b { --pw: 160px; }
       .ipw-home { left: 12%; }
+    }
+    /* Schmale Handys (360 px): beide Bildschirme nebeneinander, ohne dass der vordere den hinteren verdeckt. */
+    @media (max-width: 374px) {
+      .ipw.tall .ipw-visual { height: 462px; }
+      .ipw-visual .phone.a { --pw: 172px; } .ipw-visual .phone.b { --pw: 150px; }
     }
   </style>
   <script>document.documentElement.classList.add('js')</script>
@@ -580,12 +585,12 @@
           <ol class="ipw-steps">
             <li><span><b>Im Browser öffnen</b> und anmelden — oder kostenlos ein Konto anlegen.</span></li>
             <li><span><b>„Teilen“ → „Zum Home-Bildschirm“</b> antippen.</span></li>
-            <li><span><b>Fertig:</b> WinterDex liegt wie eine App auf deinem Startbildschirm.</span></li>
+            <li><span><b>Fertig:</b> WinterDex liegt wie eine App auf deinem Home-Bildschirm.</span></li>
           </ol>
           <div class="cta"><a class="btn" href="https://dashboard.dexware.app/app/winterdex/aussendienst" target="_blank" rel="noopener">Im Browser öffnen</a></div>
-          <p class="fine">Gut zu wissen: Beim Aufzeichnen einer Strecke bleiben Seite und Bildschirm an — im Hintergrund kann ein Browser nicht aufzeichnen. Gratis für 2 Objekte.</p>
+          <p class="fine">Gut zu wissen: Beim Aufzeichnen einer Strecke bleiben Seite und Bildschirm an — im Hintergrund kann ein Browser nicht aufzeichnen. Gratis für 2 Objekte und 1 Strecke.</p>
           <div class="ipw-buy">
-            <div class="ipw-buy-head"><b>WinterDex Pro direkt im Browser kaufen</b><small>Ohne App-Store — Karte oder PayPal, Preise inkl. USt.</small></div>
+            <div class="ipw-buy-head"><b>WinterDex Pro direkt im Browser kaufen</b><small>Ohne App Store — Karte oder PayPal, Preise inkl. MwSt.</small></div>
             <div class="ipw-plans"><div><span>Saison</span><b>39,99 €</b><small>für 6 Monate</small></div><div><span>Monatlich</span><b>9,99 €</b><small>pro Monat</small></div></div>
             <span class="btn off" aria-disabled="true">In Kürze verfügbar</span>
             <p>14 Tage Geld zurück · jederzeit kündbar · Verkäufer und Zahlungsabwicklung: Paddle. Der Tarif gilt für dein Konto — im Browser und später in der App. Bis dahin gibt es Pro in der Android-App — oder ohne Android auf Rechnung (39,99 € pro Saison): <a href="mailto:support@dexware.app?subject=WinterDex%20Pro%20auf%20Rechnung">support@dexware.app</a>.</p>
