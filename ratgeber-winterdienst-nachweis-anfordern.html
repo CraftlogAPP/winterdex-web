@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winterdienst-Nachweis anfordern: Muster & Prüfliste | WinterDex</title>
+  <meta name="description" content="Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext für die Aufforderung, Prüfliste und was tun, wenn die Firma nichts liefert." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Einsatznachweise vom Winterdienst anfordern: Vertragsklausel, Mustertext und Prüfliste" />
+  <meta property="og:description" content="Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext für die Aufforderung, Prüfliste und was tun, wenn die Firma nichts liefert." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Einsatznachweise vom Winterdienst anfordern: Vertragsklausel, Mustertext und Prüfliste" />
+  <meta name="twitter:description" content="Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext für die Aufforderung, Prüfliste und was tun, wenn die Firma nichts liefert." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Einsatznachweise vom Winterdienst anfordern: Vertragsklausel, Mustertext und Prüfliste","description":"Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext für die Aufforderung, Prüfliste und was tun, wenn die Firma nichts liefert.","inLanguage":"de","datePublished":"2026-11-19","dateModified":"2026-11-19","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Muss die Winterdienst-Firma überhaupt Nachweise liefern?","acceptedAnswer":{"@type":"Answer","text":"Eine allgemeine gesetzliche Pflicht, ein Protokoll in bestimmter Form zu übergeben, gibt es weder in Deutschland noch in Österreich. Maßgeblich ist der Vertrag. Deshalb sollte die Dokumentation dort ausdrücklich vereinbart sein: Inhalt, Form und Frist der Übergabe."}},{"@type":"Question","name":"Wir haben eine Saisonpauschale. Brauchen wir trotzdem Nachweise?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Pauschale regelt nur den Preis. Ob an einem bestimmten Morgen geräumt und gestreut wurde, wird trotzdem gefragt – bei eurer eigenen Kontrolle, von Mietern und nach einem Sturz von der Versicherung."}},{"@type":"Question","name":"Wie oft sollten wir die Nachweise anfordern?","acceptedAnswer":{"@type":"Answer","text":"Monatlich hat sich bewährt. So fallen Lücken auf, solange sich noch klären lässt, was an dem Tag war. Am Saisonende ist das kaum mehr möglich."}},{"@type":"Question","name":"Reicht ein handschriftlicher Zettel?","acceptedAnswer":{"@type":"Answer","text":"Als Nachweis kann auch ein sauber geführtes Papierprotokoll dienen, wenn die Einträge zeitnah entstanden sind und Datum, Uhrzeit, Objekt, Maßnahme und Namen enthalten. Schwach sind Sammelzeilen und Protokolle, die erkennbar nachträglich in einem Zug geschrieben wurden."}},{"@type":"Question","name":"Wie lange sollten wir die Nachweise aufheben?","acceptedAnswer":{"@type":"Answer","text":"Mindestens so lange, wie Schadenersatzansprüche möglich sind: in der Regel drei Jahre, in Deutschland gerechnet ab dem Ende des Jahres, in Österreich ab Kenntnis von Schaden und Schädiger. Sinnvoll ist, sie zusammen mit den Abrechnungsunterlagen des Objekts aufzubewahren."}}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Hausverwaltung</span>
+      <h1>Einsatznachweise vom Winterdienst <span class="hl">anfordern</span>: Vertragsklausel, Mustertext und Prüfliste</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland und Österreich</strong>; wo sich die Regeln unterscheiden, steht es dabei.</p>
+      <p class="lead">Die Firma räumt – trotzdem kann die Verwaltung mit in der Haftung stehen, wenn sie schlecht auswählt oder nicht kontrolliert. Der einfachste Beleg für diese Kontrolle sind Einsatznachweise – wenn man sie regelmäßig bekommt. Hier steht, was in den Vertrag gehört, wie man Nachweise anfordert und woran man einen guten erkennt.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Für Hausverwaltungen, WEG-Verwaltung, Eigentümer &amp; Facility Management</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#warum">Warum die Verwaltung die Nachweise braucht</a></li>
+          <li><a href="#vertrag">In den Vertrag: die Dokumentationsklausel</a></li>
+          <li><a href="#muster">Mustertext: Nachweise anfordern</a></li>
+          <li><a href="#pruefen">Prüfliste: Woran man einen guten Nachweis erkennt</a></li>
+          <li><a href="#nichts">Wenn die Firma nichts liefert</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Einsatznachweise anfordern auf einen Blick</h3>
+        <ul>
+          <li><strong>Der Vertrag entscheidet:</strong> Eine feste gesetzliche Form für das Protokoll gibt es nicht. Vereinbart Inhalt, Form und Frist schriftlich.</li>
+          <li><strong>Monatlich statt am Saisonende:</strong> Lücken lassen sich nur klären, solange sich jemand an den Tag erinnert.</li>
+          <li><strong>Je Objekt:</strong> Ein Nachweis je Haus und Monat passt zur Abrechnung und zur Objektakte.</li>
+          <li><strong>Sichten und vermerken:</strong> Die eigene Kontrolle zählt nur, wenn sie eine Spur hinterlässt.</li>
+          <li><strong>Lücken schriftlich rügen:</strong> mit Datum und Frist – nicht nur am Telefon.</li>
+        </ul>
+      </div>
+
+      <h2 id="warum">Warum die Verwaltung die Nachweise braucht</h2>
+      <p>Wer den Winterdienst vergibt, ist die Arbeit los – aber nicht jede Verantwortung.</p>
+      <p><strong>Deutschland:</strong> Die Räum- und Streupflicht lässt sich auf eine Firma übertragen, wenn das klar und eindeutig vereinbart ist (BGH, Urteil vom 22.01.2008, VI ZR 126/07). Beim Auftraggeber bleiben Kontroll- und Überwachungspflichten. Verlangt wird keine lückenlose Überwachung, aber eine stichprobenartige Kontrolle der wesentlichen Punkte (LG Karlsruhe, Urteil vom 22.03.2013, 6 O 205/12).</p>
+      <p><strong>Österreich:</strong> Im Ortsgebiet verpflichtet § 93 StVO die Liegenschaftseigentümer, Gehsteige von 6 bis 22 Uhr zu räumen und zu streuen. Wird die Pflicht per Vertrag übertragen, tritt die Firma an die Stelle des Eigentümers (§ 93 Abs. 5 StVO). Für die Auswahl bleibt der Eigentümer verantwortlich: Wer eine untüchtige Person einsetzt, haftet nach § 1315 ABGB.</p>
+      <p>In beiden Ländern gilt deshalb: Regelmäßig gesichtete Einsatznachweise sind der einfachste Beleg dafür, dass ihr eine geeignete Firma beauftragt und sie kontrolliert habt. Dazu kommen zwei praktische Gründe:</p>
+      <ul>
+        <li><strong>Betriebskosten:</strong> Die Kosten werden meist auf die Mieter umgelegt (Deutschland: § 2 Nr. 8 oder Nr. 14 BetrKV; Österreich: Hausbetreuung nach § 23 MRG). Mieter dürfen die Belege einsehen – in Österreich ausdrücklich nach § 21 Abs. 3 MRG. Ein Nachweis je Objekt beantwortet Rückfragen, bevor sie zum Streit werden.</li>
+        <li><strong>Schadensfall:</strong> Nach einem Sturz fragt die Versicherung, wann zuletzt geräumt und gestreut wurde. Ansprüche können in der Regel drei Jahre lang kommen (Deutschland: §§ 195, 199 BGB, gerechnet ab Jahresende; Österreich: § 1489 ABGB, ab Kenntnis von Schaden und Schädiger).</li>
+      </ul>
+
+      <h2 id="vertrag">In den Vertrag: die Dokumentationsklausel</h2>
+      <p>Am einfachsten ist es, die Dokumentation von Anfang an zu vereinbaren. Diese Punkte sollten im Vertrag oder Leistungsverzeichnis stehen:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Punkt</th><th>Was vereinbart sein sollte</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Inhalt je Einsatz</strong></td><td>Datum, Uhrzeit von/bis, Objekt und Fläche, Maßnahme (räumen, streuen, Kontrollgang ohne Maßnahme), Streumittel, Wetterlage, Name der ausführenden Person.</td></tr>
+            <tr><td><strong>Zeitnah</strong></td><td>Der Eintrag entsteht beim Einsatz, nicht gesammelt am Monatsende.</td></tr>
+            <tr><td><strong>Form</strong></td><td>Je Objekt ein Nachweis, als PDF oder auf Papier.</td></tr>
+            <tr><td><strong>Frist</strong></td><td>Übergabe monatlich, zum Beispiel bis zum 10. des Folgemonats; im Schadensfall auf Anforderung sofort.</td></tr>
+            <tr><td><strong>Fotos</strong></td><td>Wenn gewünscht: ein Foto je Einsatz oder bei besonderen Lagen (Eisregen, nicht erreichbare Flächen).</td></tr>
+            <tr><td><strong>Aufbewahrung</strong></td><td>Wie lange die Firma die Unterlagen selbst aufhebt – sinnvoll sind mindestens die drei Jahre der Verjährung, besser so lange wie die Rechnungen.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Formulierungsbeispiel für den Vertrag:</strong></p>
+      <div class="checklist">
+        <p style="margin:0">„Der Auftragnehmer dokumentiert jeden Einsatz und jeden Kontrollgang zeitnah mit Datum, Uhrzeit, Objekt, Maßnahme, Streumittel, Wetterlage und Namen der ausführenden Person. Er übergibt dem Auftraggeber je Objekt bis zum 10. des Folgemonats einen Nachweis für den abgelaufenen Monat. Im Schadensfall stellt er die Nachweise auf Anforderung unverzüglich zur Verfügung.“</p>
+      </div>
+      <p>Das ist ein Beispiel, kein geprüfter Vertragstext. Passt es an euren Vertrag an und lasst es im Zweifel rechtlich prüfen. Was sonst ins Leistungsverzeichnis gehört, steht im Ratgeber <a href="ratgeber-winterdienst-hausverwaltung.html">Winterdienst für Hausverwaltungen</a>.</p>
+
+      <h2 id="muster">Mustertext: Nachweise anfordern</h2>
+      <p>Für laufende Verträge reicht oft eine kurze, freundliche Aufforderung. Ein Beispiel zum Anpassen:</p>
+      <div class="checklist">
+        <p style="margin:0"><strong>Betreff:</strong> Winterdienst – Einsatznachweise für [Monat], Objekt [Adresse]</p>
+        <p style="margin:10px 0 0">Guten Tag,</p>
+        <p style="margin:10px 0 0">für unsere Objektakte und die Betriebskostenabrechnung benötigen wir die Einsatznachweise für [Monat] für das Objekt [Adresse].</p>
+        <p style="margin:10px 0 0">Bitte senden Sie uns je Einsatz Datum, Uhrzeit, Maßnahme (geräumt, gestreut oder Kontrollgang ohne Maßnahme), Streumittel und den Namen der ausführenden Person – am liebsten als PDF je Objekt, bis zum [Datum].</p>
+        <p style="margin:10px 0 0">Künftig bitten wir um die Nachweise jeweils bis zum 10. des Folgemonats.</p>
+        <p style="margin:10px 0 0">Vielen Dank und freundliche Grüße</p>
+      </div>
+
+      <h2 id="pruefen">Prüfliste: Woran man einen guten Nachweis erkennt</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Frage</th><th>Gutes Zeichen</th><th>Warnzeichen</th></tr></thead>
+          <tbody>
+            <tr><td>Passt der Nachweis zum Wetter?</td><td>An Tagen mit Schnee oder Glätte gibt es Einträge, an milden Tagen keine oder nur Kontrollgänge.</td><td>Jeden Tag derselbe Eintrag – oder an einem Glättetag gar keiner.</td></tr>
+            <tr><td>Stimmen die Uhrzeiten?</td><td>Die erste Runde liegt vor Beginn der Pflichtzeit (Österreich: 6 Uhr; Deutschland: laut Satzung der Gemeinde).</td><td>Immer runde Uhrzeiten, immer gleich lang.</td></tr>
+            <tr><td>Sind es Einzeleinträge?</td><td>Jeder Einsatz mit eigener Zeile, Uhrzeit und Namen.</td><td>Eine Sammelzeile wie „Dezember: Winterdienst erledigt“.</td></tr>
+            <tr><td>Sind alle Flächen genannt?</td><td>Gehweg, Zugänge, Stellplätze wie im Vertrag.</td><td>Nur „Objekt geräumt“, ohne Flächen.</td></tr>
+            <tr><td>Ist der Eintrag zeitnah entstanden?</td><td>Zeitstempel, Foto oder Standort vom Einsatz.</td><td>Ein ganzer Monat in einem Zug nachgeschrieben.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Haltet eure eigene Sichtung kurz fest, zum Beispiel: „Nachweise Dezember gesichtet, am 14.12. um 7:10 Uhr vor Ort geprüft, in Ordnung.“ Dieser Vermerk ist euer Beleg für die Kontrolle.</p>
+
+      <h2 id="nichts">Wenn die Firma nichts liefert</h2>
+      <ul>
+        <li><strong>Schriftlich nachfassen:</strong> mit Datum, Objekt, Zeitraum und einer klaren Frist. Die Aufforderung selbst gehört in die Objektakte.</li>
+        <li><strong>Selbst kontrollieren:</strong> An Glättetagen Stichproben vor Ort machen oder Hausbewohner um Rückmeldung bitten – und das Ergebnis notieren.</li>
+        <li><strong>Mängel rügen:</strong> Fehlende Einsätze schriftlich beanstanden, nicht nur am Telefon.</li>
+        <li><strong>Vertrag prüfen:</strong> Steht die Dokumentation nicht im Vertrag, vereinbart sie als Nachtrag – spätestens zur nächsten Saison.</li>
+        <li><strong>Konsequenzen ziehen:</strong> Welche Rechte ihr bei dauerhaft fehlenden Nachweisen habt, hängt vom Vertrag ab. Das ist ein Fall für die Rechtsberatung.</li>
+      </ul>
+      <p>Oft liegt es nicht am Willen, sondern am Aufwand: Wer nachts zwanzig Objekte fährt, schreibt danach ungern Listen. Dann hilft ein Werkzeug, das den Nachweis beim Einsatz selbst erzeugt.</p>
+
+      <div class="cta">
+        <h3>Ein Tipp für euren Dienstleister</h3>
+        <p>Mit WinterDex hält die Winterdienst-Firma jeden Einsatz mit einem Tipp fest: Uhrzeit, GPS-Standort, Wetterlage und Foto. Einträge lassen sich nachträglich nicht ändern. Je Objekt entsteht ein PDF-Nachweis für den Monat oder die Saison – genau das, was ihr für Objektakte und Abrechnung braucht. 2 Objekte sind kostenlos, Pro kostet 9,99 € im Monat oder 39,99 € pro Saison.</p>
+        <a class="btn" href="index.html">WinterDex ansehen →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Muss die Winterdienst-Firma überhaupt Nachweise liefern?</summary>
+          <p>Eine allgemeine gesetzliche Pflicht, ein Protokoll in bestimmter Form zu übergeben, gibt es weder in Deutschland noch in Österreich. Maßgeblich ist der Vertrag. Deshalb sollte die Dokumentation dort ausdrücklich vereinbart sein: Inhalt, Form und Frist der Übergabe.</p>
+        </details>
+        <details>
+          <summary>Wir haben eine Saisonpauschale. Brauchen wir trotzdem Nachweise?</summary>
+          <p>Ja. Die Pauschale regelt nur den Preis. Ob an einem bestimmten Morgen geräumt und gestreut wurde, wird trotzdem gefragt – bei eurer eigenen Kontrolle, von Mietern und nach einem Sturz von der Versicherung.</p>
+        </details>
+        <details>
+          <summary>Wie oft sollten wir die Nachweise anfordern?</summary>
+          <p>Monatlich hat sich bewährt. So fallen Lücken auf, solange sich noch klären lässt, was an dem Tag war. Am Saisonende ist das kaum mehr möglich.</p>
+        </details>
+        <details>
+          <summary>Reicht ein handschriftlicher Zettel?</summary>
+          <p>Als Nachweis kann auch ein sauber geführtes Papierprotokoll dienen, wenn die Einträge zeitnah entstanden sind und Datum, Uhrzeit, Objekt, Maßnahme und Namen enthalten. Schwach sind Sammelzeilen und Protokolle, die erkennbar nachträglich in einem Zug geschrieben wurden.</p>
+        </details>
+        <details>
+          <summary>Wie lange sollten wir die Nachweise aufheben?</summary>
+          <p>Mindestens so lange, wie Schadenersatzansprüche möglich sind: in der Regel drei Jahre, in Deutschland gerechnet ab dem Ende des Jahres, in Österreich ab Kenntnis von Schaden und Schädiger. Sinnvoll ist, sie zusammen mit den Abrechnungsunterlagen des Objekts aufzubewahren.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.rechtslupe.de/zivilrecht/uebertragung-des-winterdienstes-und-die-haftung-des-grundstueckseigentuemers-363561" rel="noopener">LG Karlsruhe, Urteil vom 22.03.2013, 6 O 205/12, mit Verweis auf BGH VI ZR 126/07 – Rechtslupe</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/betrkv/__2.html" rel="noopener">§ 2 Betriebskostenverordnung (BetrKV) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/bgb/__199.html" rel="noopener">§ 199 BGB (Beginn der Verjährung) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10001622&amp;Paragraf=1315" rel="noopener">§ 1315 ABGB – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10001622&amp;Paragraf=1489" rel="noopener">§ 1489 ABGB (Verjährung von Schadenersatz) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10002531&amp;Paragraf=21" rel="noopener">§ 21 MRG (Betriebskosten, Belegeinsicht) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10002531&amp;Paragraf=23" rel="noopener">§ 23 MRG (Hausbetreuung) – RIS</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Die Mustertexte
+        sind Beispiele und müssen an den jeweiligen Vertrag angepasst werden. Maßgeblich sind eure Verträge, die Satzung bzw.
+        Verordnung der jeweiligen Gemeinde und die konkreten Umstände.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
