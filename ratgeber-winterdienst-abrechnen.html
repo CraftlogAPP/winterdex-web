@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winterdienst abrechnen: Pauschale, Einsatz, Nachweis | WinterDex</title>
+  <meta name="description" content="Winterdienst richtig abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Einsatznachweis Hausverwaltungen überzeugt. Mit Checkliste." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Winterdienst abrechnen: Pauschale oder nach Einsatz – und welcher Nachweis zur Rechnung gehört" />
+  <meta property="og:description" content="Winterdienst richtig abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Einsatznachweis Hausverwaltungen überzeugt. Mit Checkliste." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Winterdienst abrechnen: Pauschale oder nach Einsatz – und welcher Nachweis zur Rechnung gehört" />
+  <meta name="twitter:description" content="Winterdienst richtig abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Einsatznachweis Hausverwaltungen überzeugt. Mit Checkliste." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Winterdienst abrechnen: Pauschale oder nach Einsatz – und welcher Nachweis zur Rechnung gehört","description":"Winterdienst richtig abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Einsatznachweis Hausverwaltungen überzeugt. Mit Checkliste.","inLanguage":"de","datePublished":"2026-11-19","dateModified":"2026-11-19","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was ist besser: Saisonpauschale oder Abrechnung nach Einsatz?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Kunden ab. Die Pauschale gibt beiden Seiten Planbarkeit und ist bei Wohnanlagen üblich. Die Abrechnung nach Einsatz passt zu Kunden, die nur zahlen wollen, was anfällt – sie braucht dafür einen lückenlosen Einsatznachweis. Häufig ist die Mischform: eine kleine Bereitschaftspauschale plus ein Preis je Einsatz."}},{"@type":"Question","name":"Muss ich bei einer Pauschale überhaupt Einsätze nachweisen?","acceptedAnswer":{"@type":"Answer","text":"Ja, das ist dringend zu empfehlen. Die Pauschale regelt nur den Preis. Ob und wann geräumt und gestreut wurde, wird trotzdem gefragt – von der Hausverwaltung bei ihrer Kontrolle und nach einem Sturz von der Versicherung. Ohne Nachweis steht der Betrieb im Streitfall schlecht da."}},{"@type":"Question","name":"Zählt ein Kontrollgang ohne Räumen als Leistung?","acceptedAnswer":{"@type":"Answer","text":"Als Nachweis auf jeden Fall: Der Eintrag „kontrolliert, keine Maßnahme nötig“ mit Uhrzeit und Wetter zeigt, dass ihr eurer Pflicht nachgekommen seid. Ob er auch berechnet wird, regelt der Vertrag. Bei Abrechnung nach Einsatz sollte dort stehen, was ein Kontrollgang kostet."}},{"@type":"Question","name":"Wie lange sollte ich Einsatznachweise aufheben?","acceptedAnswer":{"@type":"Answer","text":"Mindestens so lange, wie Ansprüche nach einem Sturz geltend gemacht werden können – das sind in der Regel mehrere Jahre. Für Rechnungen und Buchungsbelege gelten die steuerlichen Fristen: in Deutschland seit 2025 acht Jahre, in Österreich sieben Jahre. Wer beides gleich lang aufbewahrt, macht nichts falsch."}},{"@type":"Question","name":"Können meine Kunden die Kosten von der Steuer absetzen?","acceptedAnswer":{"@type":"Answer","text":"In Deutschland oft ja: Winterdienst gilt als haushaltsnahe Dienstleistung (§ 35a EStG), nach einem Urteil des Bundesfinanzhofs auch auf dem öffentlichen Gehweg vor dem Grundstück. Voraussetzung sind eine Rechnung und die Zahlung per Überweisung; begünstigt sind die Arbeitskosten. Darum lohnt es sich, Arbeits- und Materialkosten getrennt auszuweisen."}}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Für Winterdienst-Betriebe</span>
+      <h1>Winterdienst <span class="hl">abrechnen</span>: Pauschale oder nach Einsatz – und welcher Nachweis zur Rechnung gehört</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland und Österreich</strong>; wo sich die Regeln unterscheiden, steht es dabei.</p>
+      <p class="lead">Wer für andere räumt und streut, lebt von zwei Dingen: einem fairen Preis und dem Beleg, dass die Arbeit gemacht wurde. Hier steht, welche Abrechnungsmodelle üblich sind, was in die Rechnung gehört und wie ein Einsatznachweis aussieht, der Hausverwaltungen und Auftraggeber überzeugt.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Für Hausmeisterservice, Winterdienst-Firmen &amp; GaLaBau</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#modelle">Pauschale, nach Einsatz oder gemischt</a></li>
+          <li><a href="#rechnung">Was in die Rechnung gehört</a></li>
+          <li><a href="#nachweis">Der Einsatznachweis als Anlage</a></li>
+          <li><a href="#kunde">Warum der Kunde den Nachweis braucht</a></li>
+          <li><a href="#aufbewahren">Aufbewahren: wie lange?</a></li>
+          <li><a href="#checkliste">Checkliste für die Abrechnung</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Winterdienst abrechnen auf einen Blick</h3>
+        <ul>
+          <li><strong>Drei Modelle:</strong> Saisonpauschale, Abrechnung nach Einsatz oder eine Mischform aus Bereitschaftspauschale und Einsatzpreis.</li>
+          <li><strong>Der Vertrag entscheidet:</strong> Was ein Einsatz ist, ab wann er ausgelöst wird und was ein Kontrollgang kostet, gehört vorher schriftlich geklärt.</li>
+          <li><strong>Nachweis immer beilegen:</strong> Auch bei einer Pauschale. Die Rechnung sagt, was es kostet – der Nachweis zeigt, dass es gemacht wurde.</li>
+          <li><strong>Je Objekt getrennt:</strong> Hausverwaltungen rechnen je Haus ab. Ein Nachweis je Objekt und Monat erspart Rückfragen.</li>
+          <li><strong>Arbeit und Material trennen:</strong> In Deutschland können viele Kunden die Arbeitskosten steuerlich geltend machen.</li>
+        </ul>
+      </div>
+
+      <h2 id="modelle">Pauschale, nach Einsatz oder gemischt</h2>
+      <p>Kein Winter gleicht dem anderen. Genau deshalb ist die Frage nach dem Abrechnungsmodell so wichtig: Sie verteilt das Wetter-Risiko zwischen dir und deinem Kunden.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Modell</th><th>So funktioniert es</th><th>Gut, wenn …</th><th>Achtung</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Saisonpauschale</strong></td><td>Fester Betrag für die ganze Saison, egal wie oft geräumt wird.</td><td>der Kunde Planbarkeit will (Wohnanlagen, Hausverwaltungen).</td><td>In einem strengen Winter trägst du das Risiko. Die Pauschale ersetzt keinen Nachweis.</td></tr>
+            <tr><td><strong>Nach Einsatz</strong></td><td>Preis je Einsatz, oft gestaffelt nach Räumen, Streuen und Kontrollgang.</td><td>der Kunde nur zahlen will, was anfällt.</td><td>Jeder Einsatz muss einzeln belegt sein – sonst wird um jede Position diskutiert.</td></tr>
+            <tr><td><strong>Mischform</strong></td><td>Kleine Bereitschaftspauschale plus Preis je Einsatz.</td><td>beide Seiten das Risiko teilen wollen.</td><td>Im Vertrag klar trennen, was die Pauschale abdeckt (Bereitschaft, Streugut-Vorrat, Kontrollgänge).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Unabhängig vom Modell sollte der Vertrag drei Dinge festhalten: <strong>ab wann ein Einsatz ausgelöst wird</strong> (zum Beispiel ab einer bestimmten Schneehöhe oder bei Glätte), <strong>bis wann die Flächen frei sein müssen</strong> (das richtet sich nach der Satzung der Gemeinde bzw. in Österreich nach § 93 StVO) und <strong>wie dokumentiert wird</strong>. Was Hausverwaltungen dabei erwarten, steht im Ratgeber <a href="ratgeber-winterdienst-hausverwaltung.html">Winterdienst für Hausverwaltungen</a>.</p>
+
+      <h2 id="rechnung">Was in die Rechnung gehört</h2>
+      <p>Für die Winterdienst-Rechnung gelten die üblichen Pflichtangaben einer Rechnung (in Deutschland § 14 UStG, in Österreich § 11 UStG). Darüber hinaus machen ein paar Angaben deinem Kunden das Leben leichter – und dir die Rückfragen kürzer:</p>
+      <ul>
+        <li><strong>Objekt und Leistungszeitraum:</strong> je Haus eine eigene Position oder eine eigene Rechnung, mit Monat bzw. Saison.</li>
+        <li><strong>Leistung in Klartext:</strong> „Räumen und Streuen Gehweg und Zufahrt“, nicht nur „Winterdienst“.</li>
+        <li><strong>Bei Abrechnung nach Einsatz:</strong> Anzahl der Einsätze je Art (Räumen, Streuen, Kontrollgang) und der Verweis auf den beiliegenden Nachweis.</li>
+        <li><strong>Arbeitskosten und Material getrennt:</strong> In Deutschland gilt Winterdienst als haushaltsnahe Dienstleistung nach § 35a EStG – nach einem Urteil des Bundesfinanzhofs auch für den öffentlichen Gehweg vor dem Grundstück. Begünstigt sind die Arbeitskosten, wenn eine Rechnung vorliegt und überwiesen wurde. Wer sie getrennt ausweist, hilft seinen Kunden bei der Steuererklärung.</li>
+      </ul>
+
+      <h2 id="nachweis">Der Einsatznachweis als Anlage</h2>
+      <p>Die Rechnung nennt den Preis. Der Einsatznachweis beantwortet die Frage, die irgendwann jeder Kunde stellt: <strong>„Wart ihr an dem Tag überhaupt da?“</strong> Ein guter Nachweis enthält je Einsatz:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Angabe</th><th>Warum</th></tr></thead>
+          <tbody>
+            <tr><td>Datum, Uhrzeit Beginn und Ende</td><td>Zeigt, ob rechtzeitig vor der Pflichtzeit geräumt war.</td></tr>
+            <tr><td>Objekt und Fläche</td><td>Gehweg, Zufahrt, Parkplatz – genau die Flächen aus dem Vertrag.</td></tr>
+            <tr><td>Maßnahme</td><td>Geräumt, gestreut, beides – oder „kontrolliert, keine Maßnahme nötig“.</td></tr>
+            <tr><td>Streumittel und Menge</td><td>Wichtig, wo Salz eingeschränkt ist, und für die Nachkalkulation.</td></tr>
+            <tr><td>Wetterlage</td><td>Belegt, warum ein Einsatz nötig war – oder warum keiner nötig war.</td></tr>
+            <tr><td>Name der ausführenden Person</td><td>Für Rückfragen und im Streitfall als Zeuge.</td></tr>
+            <tr><td>Foto und Standort</td><td>Macht aus einer Behauptung einen Beleg.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Wichtig sind <strong>einzelne Einträge mit Uhrzeit</strong>, keine Sammelzeile am Monatsende. Ein Zettel mit „ganzer Winter erledigt“ hilft weder bei der Rechnung noch nach einem Unfall. Eine Vorlage zum Ausdrucken gibt es im Ratgeber <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>.</p>
+
+      <h2 id="kunde">Warum der Kunde den Nachweis braucht</h2>
+      <p>Für Hausverwaltungen ist dein Nachweis mehr als eine Anlage zur Rechnung:</p>
+      <ul>
+        <li><strong>Betriebskosten:</strong> Die Verwaltung legt die Winterdienst-Kosten in der Regel auf die Mieter um (in Deutschland meist nach § 2 Nr. 8 oder Nr. 14 BetrKV, in Österreich als Hausbetreuung nach § 23 MRG). Dafür braucht sie eine nachvollziehbare Rechnung je Objekt.</li>
+        <li><strong>Kontrollpflicht:</strong> Wer den Winterdienst vergibt, muss den Dienstleister überwachen. Regelmäßig gesichtete Einsatznachweise sind der einfachste Beleg dafür.</li>
+        <li><strong>Haftungsfall:</strong> Nach einem Sturz wird gefragt, wann zuletzt geräumt und gestreut wurde. Dann zählt dein Eintrag mit Uhrzeit – für die Verwaltung und für dich.</li>
+      </ul>
+      <p>Ein Betrieb, der den Nachweis unaufgefordert mit der Rechnung schickt, nimmt der Verwaltung Arbeit ab. Das ist oft das stärkste Argument bei der Vertragsverlängerung.</p>
+
+      <h2 id="aufbewahren">Aufbewahren: wie lange?</h2>
+      <p>Für <strong>Rechnungen und Buchungsbelege</strong> gelten die steuerlichen Fristen: in Deutschland seit 2025 acht Jahre, in Österreich sieben Jahre. <strong>Einsatznachweise</strong> solltest du mindestens so lange aufheben, wie nach einem Sturz Ansprüche kommen können – Forderungen von Versicherungen treffen oft erst lange nach dem Winter ein. Wer Nachweise so lange aufbewahrt wie die Rechnungen, ist auf der sicheren Seite. Mehr dazu im Ratgeber <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Wer haftet?</a></p>
+
+      <h2 id="checkliste">Checkliste für die Abrechnung</h2>
+      <div class="checklist">
+        <h3>Vor der Saison</h3>
+        <ul>
+          <li>Abrechnungsmodell je Kunde im Vertrag festgelegt</li>
+          <li>Einsatzschwelle, Flächen und Zeiten schriftlich vereinbart</li>
+          <li>Geklärt, ob Kontrollgänge berechnet werden</li>
+          <li>Form des Nachweises abgestimmt (je Objekt, je Monat)</li>
+        </ul>
+        <h3>Jeden Monat</h3>
+        <ul>
+          <li>Nachweis je Objekt erzeugt und auf Lücken geprüft</li>
+          <li>Rechnung mit Objekt, Zeitraum und Leistung in Klartext</li>
+          <li>Arbeits- und Materialkosten getrennt ausgewiesen</li>
+          <li>Nachweis als Anlage mitgeschickt</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <h3>Der Nachweis entsteht beim Einsatz – nicht am Monatsende</h3>
+        <p>WinterDex hält jeden Räum- und Streueinsatz mit Uhrzeit, GPS-Standort, Wetterlage und Foto fest; ganze Strecken lassen sich per GPS abfahren. Je Objekt entsteht ein PDF-Nachweis für den Monat, den Vormonat oder die ganze Saison – fertig als Anlage zur Rechnung. Einträge lassen sich nachträglich nicht ändern. 2 Objekte sind kostenlos, Pro kostet 9,99 € im Monat oder 39,99 € pro Saison.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Was ist besser: Saisonpauschale oder Abrechnung nach Einsatz?</summary>
+          <p>Das hängt vom Kunden ab. Die Pauschale gibt beiden Seiten Planbarkeit und ist bei Wohnanlagen üblich. Die Abrechnung nach Einsatz passt zu Kunden, die nur zahlen wollen, was anfällt – sie braucht dafür einen lückenlosen Einsatznachweis. Häufig ist die Mischform: eine kleine Bereitschaftspauschale plus ein Preis je Einsatz.</p>
+        </details>
+        <details>
+          <summary>Muss ich bei einer Pauschale überhaupt Einsätze nachweisen?</summary>
+          <p>Ja, das ist dringend zu empfehlen. Die Pauschale regelt nur den Preis. Ob und wann geräumt und gestreut wurde, wird trotzdem gefragt – von der Hausverwaltung bei ihrer Kontrolle und nach einem Sturz von der Versicherung. Ohne Nachweis steht der Betrieb im Streitfall schlecht da.</p>
+        </details>
+        <details>
+          <summary>Zählt ein Kontrollgang ohne Räumen als Leistung?</summary>
+          <p>Als Nachweis auf jeden Fall: Der Eintrag „kontrolliert, keine Maßnahme nötig“ mit Uhrzeit und Wetter zeigt, dass ihr eurer Pflicht nachgekommen seid. Ob er auch berechnet wird, regelt der Vertrag. Bei Abrechnung nach Einsatz sollte dort stehen, was ein Kontrollgang kostet.</p>
+        </details>
+        <details>
+          <summary>Wie lange sollte ich Einsatznachweise aufheben?</summary>
+          <p>Mindestens so lange, wie Ansprüche nach einem Sturz geltend gemacht werden können – das sind in der Regel mehrere Jahre. Für Rechnungen und Buchungsbelege gelten die steuerlichen Fristen: in Deutschland seit 2025 acht Jahre, in Österreich sieben Jahre. Wer beides gleich lang aufbewahrt, macht nichts falsch.</p>
+        </details>
+        <details>
+          <summary>Können meine Kunden die Kosten von der Steuer absetzen?</summary>
+          <p>In Deutschland oft ja: Winterdienst gilt als haushaltsnahe Dienstleistung (§ 35a EStG), nach einem Urteil des Bundesfinanzhofs auch auf dem öffentlichen Gehweg vor dem Grundstück. Voraussetzung sind eine Rechnung und die Zahlung per Überweisung; begünstigt sind die Arbeitskosten. Darum lohnt es sich, Arbeits- und Materialkosten getrennt auszuweisen.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.gesetze-im-internet.de/betrkv/__2.html" rel="noopener">§ 2 Betriebskostenverordnung (BetrKV) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/estg/__35a.html" rel="noopener">§ 35a EStG (haushaltsnahe Dienstleistungen) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.test.de/Haushaltsnahe-Dienstleistungen-Jetzt-zaehlen-auch-Arbeiten-ausserhalb-des-Grundstuecks-4716155-0/" rel="noopener">BFH, Urteil vom 20.03.2014, VI R 55/12: Winterdienst auf dem öffentlichen Gehweg – Stiftung Warentest</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/ao_1977/__147.html" rel="noopener">§ 147 Abgabenordnung (Aufbewahrungsfristen) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10002531&amp;Paragraf=23" rel="noopener">§ 23 MRG (Hausbetreuung) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10003940&amp;Paragraf=132" rel="noopener">§ 132 BAO (Aufbewahrung) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 – RIS</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechts- oder Steuerberatung im Einzelfall.
+        Maßgeblich sind eure Verträge, die Satzung bzw. Verordnung der jeweiligen Gemeinde und die konkreten Umstände. Bei
+        Fragen zu Rechnung, Umsatzsteuer oder Aufbewahrung wende dich an deine Steuerberatung.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
