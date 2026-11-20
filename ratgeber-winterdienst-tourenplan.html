@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winterdienst-Tourenplan erstellen: Muster & Tipps | WinterDex</title>
+  <meta name="description" content="Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Dokumentation je Runde. Mit Muster-Plan." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Winterdienst-Tourenplan erstellen: Reihenfolge, Kontrollrunden, Vertretung und Nachweis" />
+  <meta property="og:description" content="Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Dokumentation je Runde. Mit Muster-Plan." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Winterdienst-Tourenplan erstellen: Reihenfolge, Kontrollrunden, Vertretung und Nachweis" />
+  <meta name="twitter:description" content="Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Dokumentation je Runde. Mit Muster-Plan." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Winterdienst-Tourenplan erstellen: Reihenfolge, Kontrollrunden, Vertretung und Nachweis","description":"Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Dokumentation je Runde. Mit Muster-Plan.","inLanguage":"de","datePublished":"2026-11-20","dateModified":"2026-11-20","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Nach welchem Prinzip ordne ich die Objekte in der Tour?","acceptedAnswer":{"@type":"Answer","text":"Zuerst nach der Uhrzeit, bis zu der eine Fläche sicher begehbar sein muss, erst danach nach dem kürzesten Weg. Objekte mit frühen Pflichtzeiten – zum Beispiel Zugänge zu Geschäften, Arztpraxen oder Betrieben, die vor der allgemeinen Satzungszeit öffnen – gehören an den Anfang. Wo die Zeiten gleich sind, entscheidet die Fahrstrecke."}},{"@type":"Question","name":"Muss ich auch rausfahren, wenn es nicht geschneit hat?","acceptedAnswer":{"@type":"Answer","text":"Bei Glätte ja: Reifglätte und überfrierende Nässe entstehen auch ohne Schnee. Ob gestreut werden muss, lässt sich oft nur vor Ort feststellen. Deshalb gehört eine Kontrollrunde bei Frost in den Plan – und auch eine Runde ohne Maßnahme wird mit Uhrzeit festgehalten."}},{"@type":"Question","name":"Gilt die Pflicht nur am Morgen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Sie gilt während der ganzen Pflichtzeit: in Österreich nach § 93 StVO von 6 bis 22 Uhr, in Deutschland bis zu dem Zeitpunkt, den die Satzung der Gemeinde nennt – meist 20 Uhr. Taut es tagsüber und friert am Abend wieder, braucht es innerhalb dieser Zeit eine weitere Runde."}},{"@type":"Question","name":"Wer haftet, wenn ein Mitarbeiter krank ist und die Tour ausfällt?","acceptedAnswer":{"@type":"Answer","text":"Wer die Räum- und Streupflicht vertraglich übernommen hat, muss sie auch erfüllen, wenn jemand ausfällt. Ein Ausfall des Personals entschuldigt in der Regel nicht. Darum gehört zu jeder Tour eine benannte Vertretung, die die Strecke kennt."}},{"@type":"Question","name":"Wie lange sollte ich Tourenpläne und Einsatznachweise aufheben?","acceptedAnswer":{"@type":"Answer","text":"Mindestens so lange, wie nach einem Sturz Ansprüche kommen können: in der Regel drei Jahre, in Deutschland gerechnet ab dem Ende des Jahres, in Österreich ab Kenntnis von Schaden und Schädiger. Am einfachsten hebt man sie so lange auf wie die Rechnungen."}}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Für Winterdienst-Betriebe</span>
+      <h1>Winterdienst-<span class="hl">Tourenplan</span> erstellen: Reihenfolge, Kontrollrunden, Vertretung und Nachweis</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland und Österreich</strong>; wo sich die Regeln unterscheiden, steht es dabei.</p>
+      <p class="lead">Ob ein Winterdienst gut ist, entscheidet sich nicht am ersten Schneemorgen, sondern beim Plan davor. Hier steht, wie du die Objekte richtig ordnest, wie lang eine Tour sein darf, welche Runden neben dem Morgeneinsatz nötig sind und wie du Vertretung und Nachweis regelst.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 7 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Für Hausmeisterservice, Winterdienst-Firmen &amp; GaLaBau</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#reihenfolge">Reihenfolge: zuerst die Uhrzeit, dann der Weg</a></li>
+          <li><a href="#laenge">Wie lang darf eine Tour sein?</a></li>
+          <li><a href="#runden">Kontrollrunde, Wiederholung, Abendrunde</a></li>
+          <li><a href="#muster">Muster: so sieht ein Tourenplan aus</a></li>
+          <li><a href="#vertretung">Vertretung bei Krankheit und Urlaub</a></li>
+          <li><a href="#einweisen">Mitarbeiter einweisen</a></li>
+          <li><a href="#doku">Jede Runde mit Uhrzeit festhalten</a></li>
+          <li><a href="#checkliste">Checkliste vor der Saison</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Tourenplan auf einen Blick</h3>
+        <ul>
+          <li><strong>Pflichtzeit vor Fahrweg:</strong> Objekte nach der Uhrzeit ordnen, bis zu der sie frei sein müssen – erst dann nach der kürzesten Strecke.</li>
+          <li><strong>Mit echten Zeiten rechnen:</strong> eine Probefahrt messen, statt zu schätzen. Bei Schneefall dauert alles länger.</li>
+          <li><strong>Nicht nur Schnee:</strong> Kontrollrunde bei Frost und eine Abendrunde nach Tauwetter gehören in den Plan.</li>
+          <li><strong>Jede Tour hat eine Vertretung:</strong> Wer übernommen hat, muss auch liefern, wenn jemand ausfällt.</li>
+          <li><strong>Jede Runde einzeln festhalten:</strong> mit Uhrzeit, Maßnahme und Name – auch wenn nichts zu tun war.</li>
+        </ul>
+      </div>
+
+      <h2 id="reihenfolge">Reihenfolge: zuerst die Uhrzeit, dann der Weg</h2>
+      <p>Der häufigste Fehler im Tourenplan ist eine Route, die nur nach dem kürzesten Weg gebaut ist. Für die Haftung zählt aber, ob die Fläche <strong>zur Pflichtzeit</strong> sicher begehbar war. Wer um 7 Uhr fertig sein muss und dort erst um 7:40 Uhr ankommt, war zu spät – auch wenn die Route sonst ideal ist.</p>
+      <p>Die Pflichtzeiten hängen vom Land und vom Ort ab:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Land</th><th>Wo steht es?</th><th>Übliche Zeiten</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Österreich</strong></td><td>§ 93 StVO; die Gemeinde kann per Verordnung Abweichendes festlegen</td><td>Gehsteige entlang der Liegenschaft im Ortsgebiet von 6 bis 22 Uhr</td></tr>
+            <tr><td><strong>Deutschland</strong></td><td>Satzung der jeweiligen Gemeinde; Vertrag mit dem Auftraggeber</td><td>häufig werktags ab 7 Uhr, Sonn- und Feiertage ab 8 oder 9 Uhr, meist bis 20 Uhr – je nach Ort verschieden</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Für jedes Objekt gehört die geltende Zeit in den Plan – aus der Satzung bzw. Verordnung der Gemeinde und aus dem Vertrag. Vertraglich kann eine frühere Zeit vereinbart sein, etwa wenn ein Geschäft oder eine Praxis früher öffnet. Mehr dazu im Ratgeber <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht: Uhrzeiten</a> und für Österreich im Ratgeber <a href="ratgeber-schneeraeumung-oesterreich.html">Schneeräumung in Österreich</a>.</p>
+      <p>Daraus ergibt sich die Reihenfolge: Objekte mit der <strong>frühesten Pflichtzeit zuerst</strong>, dazu Flächen mit viel Fußverkehr (Eingänge, Haltestellen-Nähe, Treppen, Rampen). Wo mehrere Objekte dieselbe Zeit haben, entscheidet der Weg.</p>
+
+      <h2 id="laenge">Wie lang darf eine Tour sein?</h2>
+      <p>So lang, dass das letzte Objekt <strong>auch an einem schlechten Morgen</strong> vor seiner Pflichtzeit fertig ist. Eine feste Faustzahl gibt es nicht – Fläche, Gerät, Streugut und Fahrwege sind zu verschieden. Verlässlich ist nur eine eigene Messung:</p>
+      <ol>
+        <li><strong>Probefahrt machen:</strong> die Tour einmal vor der Saison abfahren und je Objekt Fahrzeit und Arbeitszeit notieren.</li>
+        <li><strong>Zuschlag einplanen:</strong> Bei Schneefall, Glätte auf der Fahrbahn und vollen Straßen dauert jede Strecke länger. Wie viel, zeigt der erste echte Einsatz – danach den Plan anpassen.</li>
+        <li><strong>Rückwärts rechnen:</strong> von der Pflichtzeit des letzten Objekts zurück bis zur Abfahrtszeit. Liegt die Abfahrt unrealistisch früh, ist die Tour zu lang und gehört geteilt.</li>
+        <li><strong>Material mitdenken:</strong> Reicht das Streugut im Fahrzeug für die ganze Tour, oder muss nachgeladen werden? Der Umweg gehört in die Zeitrechnung.</li>
+      </ol>
+
+      <h2 id="runden">Kontrollrunde, Wiederholung, Abendrunde</h2>
+      <p>Ein Tourenplan ist mehr als „morgens einmal räumen“. Drei Fälle werden in der Praxis oft vergessen:</p>
+      <ul>
+        <li><strong>Frost ohne Schnee:</strong> Reifglätte und überfrierende Nässe sieht man vom Fenster aus selten. Wird Frost gemeldet, fährt eine Kontrollrunde die Objekte ab und streut, wo es nötig ist. Auch „kontrolliert, keine Maßnahme nötig“ ist ein Eintrag wert.</li>
+        <li><strong>Anhaltender Schneefall:</strong> Die Pflicht gilt während der ganzen Pflichtzeit. Schneit es weiter, muss wiederholt geräumt und gestreut werden – wie oft, richtet sich nach Satzung, Vertrag und Wetter. Plant für solche Tage eine zweite Runde fest ein, statt sie spontan zu organisieren.</li>
+        <li><strong>Tauwetter am Tag, Frost am Abend:</strong> Schmelzwasser friert nach Sonnenuntergang wieder. Innerhalb der Pflichtzeit – in Österreich bis 22 Uhr, in Deutschland meist bis 20 Uhr – braucht es dann eine Abendrunde. Sie sollte im Plan stehen, mit Zuständigkeit.</li>
+      </ul>
+      <p>Welche Runde wann fällig ist, entscheidet der Wetterbericht vom Vorabend. Wer zuständig ist, entscheidet der Plan – nicht der Zufall, wer gerade Zeit hat.</p>
+
+      <h2 id="muster">Muster: so sieht ein Tourenplan aus</h2>
+      <p>Ein <strong>Beispiel</strong> für eine Morgentour mit fünf Objekten. Die Uhrzeiten sind ausgedacht und zeigen nur den Aufbau – eure Zeiten stammen aus Satzung, Vertrag und eurer Probefahrt.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>#</th><th>Objekt</th><th>Flächen</th><th>Pflichtzeit</th><th>Geplant fertig</th><th>Hinweis</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Bäckerei, Hauptstraße</td><td>Eingang, Gehweg</td><td>6:00 (Vertrag)</td><td>5:45</td><td>Rampe zuerst</td></tr>
+            <tr><td>2</td><td>Arztpraxis, Bahnhofstraße</td><td>Zugang, Parkplatz</td><td>7:00</td><td>6:25</td><td>Behindertenparkplatz</td></tr>
+            <tr><td>3</td><td>Wohnanlage Lindenweg</td><td>Gehweg, Hauseingänge, Müllplatz</td><td>7:00</td><td>6:50</td><td>Treppe Haus B</td></tr>
+            <tr><td>4</td><td>Wohnhaus Gartenstraße</td><td>Gehweg</td><td>7:00</td><td>7:00</td><td>kein Puffer – Tour prüfen</td></tr>
+            <tr><td>5</td><td>Büro, Gewerbepark</td><td>Zufahrt, Eingang</td><td>8:00</td><td>7:30</td><td>Schlüssel Streugutkiste</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Darunter stehen im Plan: <strong>Fahrer/in und Vertretung</strong> mit Telefonnummer, das <strong>Fahrzeug</strong>, die <strong>Abfahrtszeit</strong>, wo <strong>Streugut</strong> lagert, und welche Runden zusätzlich fällig werden (Kontrollrunde bei Frost, Abendrunde). Ein Objekt ohne Puffer wie Nr. 4 ist ein Warnzeichen: Am ersten Schneemorgen wird es zu spät.</p>
+
+      <h2 id="vertretung">Vertretung bei Krankheit und Urlaub</h2>
+      <p>Wer die Räum- und Streupflicht vertraglich übernommen hat, muss sie auch erfüllen, wenn jemand krank ist oder Urlaub hat. Ein Personalausfall entschuldigt in der Regel nicht. Deshalb gehört zu jeder Tour:</p>
+      <ul>
+        <li><strong>eine benannte Vertretung,</strong> die die Strecke mindestens einmal mitgefahren ist,</li>
+        <li><strong>der Plan griffbereit</strong> – nicht nur im Kopf der Stammkraft: Objekte, Flächen, Schlüssel, Besonderheiten,</li>
+        <li><strong>eine Regel, bis wann abgesagt wird</strong> (zum Beispiel am Vorabend), damit die Vertretung rechtzeitig Bescheid weiß,</li>
+        <li><strong>Urlaubszeiten vor der Saison abgestimmt,</strong> damit nicht zwei Touren gleichzeitig ohne Stammkraft sind.</li>
+      </ul>
+
+      <h2 id="einweisen">Mitarbeiter einweisen</h2>
+      <p>Arbeitgeber müssen ihre Beschäftigten über die Gefahren bei der Arbeit unterweisen – in Deutschland nach § 12 Arbeitsschutzgesetz, in Österreich nach § 14 ArbeitnehmerInnenschutzgesetz. Für den Winterdienst heißt das vor der Saison: Umgang mit Räumgerät und Streuer, eigene Rutschgefahr, Arbeiten im Dunkeln und am Straßenrand. Dazu kommt die Einweisung in die Tour selbst:</p>
+      <ul>
+        <li>welche Flächen zu jedem Objekt gehören – am besten mit Skizze oder Foto,</li>
+        <li>bis wann jedes Objekt fertig sein muss,</li>
+        <li>welches Streugut wo erlaubt ist (manche Gemeinden schränken Salz ein),</li>
+        <li>wie ein Einsatz festgehalten wird – auch ein Kontrollgang ohne Maßnahme.</li>
+      </ul>
+      <p>Haltet fest, wer wann eingewiesen wurde. Das hilft bei Rückfragen des Auftraggebers und nach einem Unfall.</p>
+
+      <h2 id="doku">Jede Runde mit Uhrzeit festhalten</h2>
+      <p>Der beste Tourenplan nützt nach einem Sturz wenig, wenn sich nicht zeigen lässt, dass er auch gefahren wurde. Festhalten sollte man <strong>je Objekt und je Runde</strong>: Datum, Uhrzeit, Maßnahme (geräumt, gestreut oder nur kontrolliert), Streugut, Wetterlage und Name. Eine Sammelzeile „Woche erledigt“ hilft nicht.</p>
+      <p>Wie ein Protokoll aussieht, zeigt die <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>. Wie der Nachweis zur Anlage eurer Rechnung wird, steht im Ratgeber <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>. Und was Hausverwaltungen von euch erwarten, im Ratgeber <a href="ratgeber-winterdienst-nachweis-anfordern.html">Einsatznachweise vom Winterdienst anfordern</a>. Aufbewahren solltet ihr Pläne und Nachweise mindestens so lange, wie nach einem Sturz Ansprüche kommen können – in der Regel drei Jahre (Details im Ratgeber <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Wer haftet?</a>).</p>
+
+      <h2 id="checkliste">Checkliste vor der Saison</h2>
+      <div class="checklist">
+        <h3>Plan</h3>
+        <ul>
+          <li>Pflichtzeit je Objekt aus Satzung bzw. Verordnung und Vertrag eingetragen</li>
+          <li>Objekte nach Pflichtzeit geordnet, dann nach Weg</li>
+          <li>Probefahrt gemessen, Abfahrtszeit rückwärts gerechnet</li>
+          <li>Kontrollrunde bei Frost und Abendrunde mit Zuständigkeit geplant</li>
+        </ul>
+        <h3>Team</h3>
+        <ul>
+          <li>Jede Tour hat Fahrer/in und Vertretung</li>
+          <li>Urlaubszeiten abgestimmt</li>
+          <li>Unterweisung durchgeführt und festgehalten</li>
+          <li>Alle wissen, wie ein Einsatz dokumentiert wird</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <h3>Tour fahren, Nachweis entsteht nebenbei</h3>
+        <p>In WinterDex hinterlegst du für jedes Objekt die Pflichtzeiten und siehst morgens auf einen Blick, wo noch geräumt werden muss. Jeder Einsatz wird mit Uhrzeit, GPS-Standort, Wetterlage und Foto festgehalten – auch ein Kontrollgang ohne Maßnahme. Ganze Strecken lassen sich per GPS abfahren: Die Karte zeigt grün, was gefahren ist, und rot, was fehlt. Dazu Glätte-Frühwarnung und PDF-Nachweis je Objekt, Strecke, Monat oder Saison. Gratis für 2 Objekte und 1 Strecke, Pro kostet 9,99 € im Monat oder 39,99 € pro Jahr.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Nach welchem Prinzip ordne ich die Objekte in der Tour?</summary>
+          <p>Zuerst nach der Uhrzeit, bis zu der eine Fläche sicher begehbar sein muss, erst danach nach dem kürzesten Weg. Objekte mit frühen Pflichtzeiten – zum Beispiel Zugänge zu Geschäften, Arztpraxen oder Betrieben, die vor der allgemeinen Satzungszeit öffnen – gehören an den Anfang. Wo die Zeiten gleich sind, entscheidet die Fahrstrecke.</p>
+        </details>
+        <details>
+          <summary>Muss ich auch rausfahren, wenn es nicht geschneit hat?</summary>
+          <p>Bei Glätte ja: Reifglätte und überfrierende Nässe entstehen auch ohne Schnee. Ob gestreut werden muss, lässt sich oft nur vor Ort feststellen. Deshalb gehört eine Kontrollrunde bei Frost in den Plan – und auch eine Runde ohne Maßnahme wird mit Uhrzeit festgehalten.</p>
+        </details>
+        <details>
+          <summary>Gilt die Pflicht nur am Morgen?</summary>
+          <p>Nein. Sie gilt während der ganzen Pflichtzeit: in Österreich nach § 93 StVO von 6 bis 22 Uhr, in Deutschland bis zu dem Zeitpunkt, den die Satzung der Gemeinde nennt – meist 20 Uhr. Taut es tagsüber und friert am Abend wieder, braucht es innerhalb dieser Zeit eine weitere Runde.</p>
+        </details>
+        <details>
+          <summary>Wer haftet, wenn ein Mitarbeiter krank ist und die Tour ausfällt?</summary>
+          <p>Wer die Räum- und Streupflicht vertraglich übernommen hat, muss sie auch erfüllen, wenn jemand ausfällt. Ein Ausfall des Personals entschuldigt in der Regel nicht. Darum gehört zu jeder Tour eine benannte Vertretung, die die Strecke kennt.</p>
+        </details>
+        <details>
+          <summary>Wie lange sollte ich Tourenpläne und Einsatznachweise aufheben?</summary>
+          <p>Mindestens so lange, wie nach einem Sturz Ansprüche kommen können: in der Regel drei Jahre, in Deutschland gerechnet ab dem Ende des Jahres, in Österreich ab Kenntnis von Schaden und Schädiger. Am einfachsten hebt man sie so lange auf wie die Rechnungen.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 – RIS</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/arbschg/__12.html" rel="noopener">§ 12 Arbeitsschutzgesetz (Unterweisung) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10008910&amp;Paragraf=14" rel="noopener">§ 14 ASchG (Unterweisung) – RIS</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/bgb/__199.html" rel="noopener">§ 199 BGB (Beginn der Verjährung) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10001622&amp;Paragraf=1489" rel="noopener">§ 1489 ABGB (Verjährung von Schadenersatz) – RIS</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Maßgeblich sind
+        eure Verträge, die Satzung bzw. Verordnung der jeweiligen Gemeinde und die konkreten Umstände.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
