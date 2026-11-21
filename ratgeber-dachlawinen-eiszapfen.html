@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dachlawinen und Eiszapfen: Pflichten der Eigentümer | WinterDex</title>
+  <meta name="description" content="Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Dachlawinen und Eiszapfen: Was Hauseigentümer in Deutschland, Österreich und der Schweiz tun müssen" />
+  <meta property="og:description" content="Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dachlawinen und Eiszapfen: Was Hauseigentümer in Deutschland, Österreich und der Schweiz tun müssen" />
+  <meta name="twitter:description" content="Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Dachlawinen und Eiszapfen: Was Hauseigentümer in Deutschland, Österreich und der Schweiz tun müssen","description":"Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste.","inLanguage":"de","datePublished":"2026-11-21","dateModified":"2026-11-21","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html"},"image":"https://winterdex.dexware.app/og-image.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Muss ich in Österreich Schnee vom Dach räumen?","acceptedAnswer":{"@type":"Answer","text":"Ja, wenn das Gebäude an der Straße liegt und im Ortsgebiet steht. Nach § 93 Abs. 2 StVO müssen die Eigentümer dafür sorgen, dass Schneewächten oder Eisbildungen von den Dächern entfernt werden. Wer die Pflicht per Vertrag übernimmt, etwa eine Hausbetreuung, tritt an die Stelle des Eigentümers."}},{"@type":"Question","name":"Sind Schneefanggitter in Deutschland Pflicht?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Bundesland ab. Mehrere Landesbauordnungen – zum Beispiel in Sachsen und Nordrhein-Westfalen – verlangen Schutzvorrichtungen an Dächern an Verkehrsflächen und über Eingängen, wenn die Verkehrssicherheit es erfordert. Die Bayerische Bauordnung enthält in ihrem Dach-Artikel keine solche Regel. Unabhängig davon gilt die allgemeine Verkehrssicherungspflicht."}},{"@type":"Question","name":"Reicht ein Warnschild „Vorsicht Dachlawine“?","acceptedAnswer":{"@type":"Answer","text":"Darauf sollte man sich nicht verlassen. In Österreich verlangt § 93 StVO, dass Schneewächten und Eis entfernt werden; Absperren und Kennzeichnen ist dort nur für die Dauer der Arbeiten vorgesehen. Auch in Deutschland kommt es auf den Einzelfall an – ein Schild ersetzt keine Gefahrenbeseitigung, wo sie möglich ist."}},{"@type":"Question","name":"Wer haftet, wenn eine Dachlawine ein Auto beschädigt?","acceptedAnswer":{"@type":"Answer","text":"Grundsätzlich der, dessen Pflicht verletzt wurde – also wer zu wenig getan hat, um die bekannte Gefahr abzuwenden. Ob das so war, hängt von den Umständen ab: Lage des Dachs, Schneemenge, Warnung, Schutzvorrichtungen. Deshalb lohnt es sich, Kontrollen und Maßnahmen mit Datum und Foto festzuhalten."}},{"@type":"Question","name":"Darf ich selbst aufs Dach steigen, um Schnee zu räumen?","acceptedAnswer":{"@type":"Answer","text":"Arbeiten auf dem Dach sind gefährlich. Die Bauordnungen verlangen für Arbeiten vom Dach aus sicher benutzbare Vorrichtungen, etwa Anschlagpunkte. Ohne Absturzsicherung sollte niemand aufs Dach – im Zweifel eine Fachfirma beauftragen oder Eiszapfen von unten mit geeignetem Gerät entfernen und den Bereich darunter absperren."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WinterDex","item":"https://winterdex.dexware.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://dexware.app/ratgeber.html"},{"@type":"ListItem","position":3,"name":"Dachlawinen und Eiszapfen","item":"https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html"}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Für Hausbesitzer, Verwaltungen &amp; Hausbetreuung</span>
+      <h1><span class="hl">Dachlawinen</span> und Eiszapfen: Was Hauseigentümer tun müssen</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Österreich, Deutschland und die Schweiz</strong>; die Rechtsgrundlagen sind verschieden.</p>
+      <p class="lead">Ein Schneebrett von der Traufe oder ein Eiszapfen über dem Eingang kann Menschen schwer verletzen und Autos beschädigen. Hier steht, was das Gesetz in Österreich ausdrücklich verlangt, wann in Deutschland Schneefanggitter vorgeschrieben sind, wie die Schweiz haftet – und was du konkret tun und festhalten solltest.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Mit Gesetzestexten als Quelle</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#oesterreich">Österreich: § 93 Abs. 2 StVO</a></li>
+          <li><a href="#deutschland">Deutschland: Bauordnung und Verkehrssicherungspflicht</a></li>
+          <li><a href="#schweiz">Schweiz: Haftung des Werkeigentümers</a></li>
+          <li><a href="#praxis">Was konkret zu tun ist</a></li>
+          <li><a href="#dach">Sicher arbeiten: nicht ungesichert aufs Dach</a></li>
+          <li><a href="#verwaltung">Vermietete Häuser und Hausverwaltungen</a></li>
+          <li><a href="#doku">Kontrollen festhalten</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Dachlawinen auf einen Blick</h3>
+        <ul>
+          <li><strong>Österreich:</strong> Eigentümer müssen Schneewächten und Eisbildungen von Dächern straßenseitiger Gebäude entfernen lassen (§ 93 Abs. 2 StVO). Während der Arbeiten wird abgesperrt oder gekennzeichnet.</li>
+          <li><strong>Deutschland:</strong> kein eigenes Bundesgesetz. Mehrere Landesbauordnungen verlangen Schneefang-Vorrichtungen an Dächern über Gehwegen und Eingängen, wenn die Verkehrssicherheit es erfordert. Immer gilt die allgemeine Verkehrssicherungspflicht.</li>
+          <li><strong>Schweiz:</strong> Der Eigentümer eines Gebäudes haftet für Schäden aus mangelhaftem Unterhalt (Art. 58 OR).</li>
+          <li><strong>In der Praxis:</strong> gefährdete Dachkanten kennen, nach Schneefall und Tauwetter kontrollieren, Gefahr beseitigen lassen, bis dahin warnen und absperren.</li>
+          <li><strong>Nachweis:</strong> Kontrollen und Maßnahmen mit Datum, Uhrzeit und Foto festhalten.</li>
+        </ul>
+      </div>
+
+      <h2 id="oesterreich">Österreich: § 93 Abs. 2 StVO</h2>
+      <p>Österreich regelt Dachlawinen ausdrücklich – im selben Paragrafen wie die Schneeräumung auf dem Gehsteig. Wer nach § 93 Abs. 1 StVO für den Gehsteig zuständig ist, also der Eigentümer einer Liegenschaft im Ortsgebiet, ist auch fürs Dach verantwortlich:</p>
+      <blockquote style="margin:14px 0 18px;padding:12px 16px;border-left:3px solid rgba(127,127,127,.5)">„Die in Abs. 1 genannten Personen haben ferner dafür zu sorgen, daß Schneewächten oder Eisbildungen von den Dächern ihrer an der Straße gelegenen Gebäude bzw. Verkaufshütten entfernt werden.“<br><small>§ 93 Abs. 2 StVO 1960</small></blockquote>
+      <p>Für die Arbeit selbst gilt Abs. 3: Straßenbenützer dürfen nicht gefährdet werden; wenn nötig, sind die gefährdeten Stellen „längstens für die Dauer der Verrichtung“ abzuschranken oder in geeigneter Weise zu kennzeichnen. Das Gesetz verlangt also das <strong>Entfernen</strong> – Absperrung und Warnzeichen begleiten die Arbeit, sie ersetzen sie nicht.</p>
+      <p>Die Pflicht lässt sich übertragen: Übernimmt jemand sie durch einen Vertrag, etwa eine Hausbetreuung, tritt er nach § 93 Abs. 5 StVO an die Stelle des Eigentümers. Mehr zu Flächen, Uhrzeiten und Haftung im Ratgeber <a href="ratgeber-schneeraeumung-oesterreich.html">Schneeräumpflicht in Österreich</a>.</p>
+
+      <h2 id="deutschland">Deutschland: Bauordnung und Verkehrssicherungspflicht</h2>
+      <p>In Deutschland gibt es keine bundesweite Vorschrift zu Dachlawinen. Zwei Ebenen sind wichtig:</p>
+      <h3>1. Die Landesbauordnung</h3>
+      <p>Mehrere Länder schreiben Schutzvorrichtungen vor – etwa Sachsen und Nordrhein-Westfalen, jeweils in § 32 Abs. 8 ihrer Bauordnung:</p>
+      <blockquote style="margin:14px 0 18px;padding:12px 16px;border-left:3px solid rgba(127,127,127,.5)">„Dächer an Verkehrsflächen und über Eingängen müssen Vorrichtungen zum Schutz gegen das Herabfallen von Schnee und Eis haben, wenn dies die Verkehrssicherheit erfordert.“<br><small>§ 32 Abs. 8 Sächsische Bauordnung; gleichlautend § 32 Abs. 8 BauO NRW 2018</small></blockquote>
+      <p>Nicht jedes Land hat diese Regel: Die Bayerische Bauordnung enthält in ihrem Dach-Artikel (Art. 30 BayBO) keine solche Pflicht. Welche Fassung bei dir gilt, steht in der Bauordnung deines Bundeslandes.</p>
+      <h3>2. Die Verkehrssicherungspflicht</h3>
+      <p>Unabhängig von der Bauordnung haftet nach <a href="https://www.gesetze-im-internet.de/bgb/__823.html" rel="noopener">§ 823 Abs. 1 BGB</a>, wer schuldhaft die Gesundheit oder das Eigentum eines anderen verletzt. Daraus folgt die Verkehrssicherungspflicht: Wer eine Gefahrenquelle beherrscht – hier das Dach –, muss zumutbare Vorkehrungen treffen, damit niemand zu Schaden kommt. Was zumutbar ist, hängt vom Einzelfall ab: Dachneigung, Lage zum Gehweg oder Parkplatz, Schneemenge, Wetterlage. Eine pauschale Regel, wann ein Warnschild genügt und wann geräumt werden muss, gibt es nicht.</p>
+
+      <h2 id="schweiz">Schweiz: Haftung des Werkeigentümers</h2>
+      <p>In der Schweiz haftet nach <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_58" rel="noopener">Art. 58 des Obligationenrechts</a> der Eigentümer eines Gebäudes für den Schaden, den es infolge fehlerhafter Anlage oder Herstellung oder mangelhafter Unterhaltung verursacht. Ein Verschulden verlangt der Wortlaut nicht. Wer wegen herabfallender Schnee- oder Eismassen Ersatz verlangt, wird also vor allem fragen, ob das Dach ausreichend unterhalten und gesichert war. Gegen andere Verantwortliche bleibt dem Eigentümer der Rückgriff (Art. 58 Abs. 2 OR). Örtliche Vorschriften von Kanton und Gemeinde können zusätzliche Pflichten enthalten.</p>
+
+      <h2 id="praxis">Was konkret zu tun ist</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Wann</th><th>Was</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Vor dem Winter</strong></td><td>Dachkanten über Gehweg, Eingängen, Parkplätzen und Spielflächen erfassen. Schneefanggitter und Halterungen auf Schäden prüfen lassen. Klären, wer bei Schnee und Eis zuständig ist – Eigentümer, Hausbetreuung oder Dienstleister – und wer eine Fachfirma beauftragt.</td></tr>
+            <tr><td><strong>Nach Schneefall</strong></td><td>Dachflächen und Rinnen von unten kontrollieren: überstehende Schneewächten, Schneebretter an der Traufe, Eis an der Dachrinne.</td></tr>
+            <tr><td><strong>Bei Tauwetter und Frost</strong></td><td>Eiszapfen bilden sich, wenn Schmelzwasser an der Traufe wieder gefriert. Gerade dann erneut kontrollieren – auch am Nachmittag.</td></tr>
+            <tr><td><strong>Gefahr erkannt</strong></td><td>Bereich darunter sofort absperren und kennzeichnen, Gefahr beseitigen lassen (Schnee abräumen, Eiszapfen entfernen). In Österreich ist das Entfernen Pflicht.</td></tr>
+            <tr><td><strong>Danach</strong></td><td>Festhalten: Datum, Uhrzeit, was gesehen wurde, was getan wurde, von wem – am besten mit Foto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="dach">Sicher arbeiten: nicht ungesichert aufs Dach</h2>
+      <p>Schnee vom Dach zu holen ist Arbeit mit Absturzgefahr. Die Bauordnungen verlangen deshalb für Arbeiten, die vom Dach aus vorgenommen werden, „sicher benutzbare Vorrichtungen“ (zum Beispiel Art. 30 Abs. 8 BayBO, § 32 Abs. 9 SächsBO). Für Beschäftigte gelten zusätzlich die Regeln zum Absturzschutz – mit geprüfter <a href="https://gurtdex.dexware.app/ratgeber-psaga-pruefung.html">PSA gegen Absturz</a>. Ohne Sicherung sollte niemand aufs Dach. Eiszapfen lassen sich oft von unten mit geeignetem Gerät entfernen; der Bereich darunter bleibt dabei abgesperrt.</p>
+
+      <h2 id="verwaltung">Vermietete Häuser und Hausverwaltungen</h2>
+      <p>Die Pflicht für Gehweg und Dach liegt zunächst beim Eigentümer. Er kann die Ausführung vergeben – an eine Hausbetreuung, einen Winterdienst oder eine Fachfirma. In Österreich tritt der vertraglich Verpflichtete nach § 93 Abs. 5 StVO an seine Stelle. In Deutschland bleibt dem Eigentümer bei der Vergabe in der Regel eine Pflicht zur Auswahl und Kontrolle. Wie Verwaltungen das organisieren, steht im Ratgeber <a href="ratgeber-winterdienst-hausverwaltung.html">Winterdienst für Hausverwaltungen</a>.</p>
+      <p>Wichtig für Verträge: Dachlawinen und Eiszapfen ausdrücklich nennen. Ein Vertrag „Winterdienst Gehweg“ umfasst nicht automatisch das Dach.</p>
+
+      <h2 id="doku">Kontrollen festhalten</h2>
+      <p>Kommt es zum Schaden, ist die Frage meist: Was war bekannt, und was wurde getan? Eine Kontrolle, die nicht festgehalten ist, lässt sich später schwer belegen. Notiere je Gebäude Datum, Uhrzeit, Befund und Maßnahme, auch wenn nichts zu tun war – und mach ein Foto der Dachkante. Wie ein Protokoll für den Winterdienst aussieht, zeigt die <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>.</p>
+
+      <div class="cta">
+        <h3>Jede Kontrolle mit Uhrzeit, Ort und Foto</h3>
+        <p>In WinterDex legst du jedes Gebäude als Objekt an und hältst Einsätze mit Uhrzeit, GPS-Standort, archivierter Wetterlage, Fotos und Notiz fest – auch einen Kontrollgang mit „Kontrolliert – keine Maßnahme nötig“. So ist belegt, wann das Dach angesehen und was veranlasst wurde. Nachweis als PDF.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Muss ich in Österreich Schnee vom Dach räumen?</summary>
+          <p>Ja, wenn das Gebäude an der Straße liegt und im Ortsgebiet steht. Nach § 93 Abs. 2 StVO müssen die Eigentümer dafür sorgen, dass Schneewächten oder Eisbildungen von den Dächern entfernt werden. Wer die Pflicht per Vertrag übernimmt, etwa eine Hausbetreuung, tritt an die Stelle des Eigentümers.</p>
+        </details>
+        <details>
+          <summary>Sind Schneefanggitter in Deutschland Pflicht?</summary>
+          <p>Das hängt vom Bundesland ab. Mehrere Landesbauordnungen – zum Beispiel in Sachsen und Nordrhein-Westfalen – verlangen Schutzvorrichtungen an Dächern an Verkehrsflächen und über Eingängen, wenn die Verkehrssicherheit es erfordert. Die Bayerische Bauordnung enthält in ihrem Dach-Artikel keine solche Regel. Unabhängig davon gilt die allgemeine Verkehrssicherungspflicht.</p>
+        </details>
+        <details>
+          <summary>Reicht ein Warnschild „Vorsicht Dachlawine“?</summary>
+          <p>Darauf sollte man sich nicht verlassen. In Österreich verlangt § 93 StVO, dass Schneewächten und Eis entfernt werden; Absperren und Kennzeichnen ist dort nur für die Dauer der Arbeiten vorgesehen. Auch in Deutschland kommt es auf den Einzelfall an – ein Schild ersetzt keine Gefahrenbeseitigung, wo sie möglich ist.</p>
+        </details>
+        <details>
+          <summary>Wer haftet, wenn eine Dachlawine ein Auto beschädigt?</summary>
+          <p>Grundsätzlich der, dessen Pflicht verletzt wurde – also wer zu wenig getan hat, um die bekannte Gefahr abzuwenden. Ob das so war, hängt von den Umständen ab: Lage des Dachs, Schneemenge, Warnung, Schutzvorrichtungen. Deshalb lohnt es sich, Kontrollen und Maßnahmen mit Datum und Foto festzuhalten.</p>
+        </details>
+        <details>
+          <summary>Darf ich selbst aufs Dach steigen, um Schnee zu räumen?</summary>
+          <p>Arbeiten auf dem Dach sind gefährlich. Die Bauordnungen verlangen für Arbeiten vom Dach aus sicher benutzbare Vorrichtungen, etwa Anschlagpunkte. Ohne Absturzsicherung sollte niemand aufs Dach – im Zweifel eine Fachfirma beauftragen oder Eiszapfen von unten mit geeignetem Gerät entfernen und den Bereich darunter absperren.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 (Pflichten der Anrainer), Abs. 2, 3 und 5 – RIS</a></li>
+        <li><a href="https://revosax.sachsen.de/vorschrift/1779-SaechsBO" rel="noopener">Sächsische Bauordnung, § 32 Abs. 8 und 9 – REVOSax</a></li>
+        <li><a href="https://recht.nrw.de/system/files/BH/39224-23563.htm" rel="noopener">Bauordnung für das Land Nordrhein-Westfalen (BauO NRW 2018), § 32 – recht.nrw.de</a></li>
+        <li><a href="https://www.gesetze-bayern.de/Content/Document/BayBO-30" rel="noopener">Bayerische Bauordnung, Art. 30 Dächer – gesetze-bayern.de</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/bgb/__823.html" rel="noopener">§ 823 BGB (Schadensersatzpflicht) – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_58" rel="noopener">Art. 58 OR (Haftung des Werkeigentümers) – fedlex.admin.ch</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Maßgeblich sind die Bauordnung
+        deines Landes, örtliche Vorschriften, eure Verträge und die konkreten Umstände. Stand: November 2026.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="ratgeber-dachlawinen-eiszapfen.html">Dachlawinen und Eiszapfen</a>
+        <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Haftung und Beweise</a>
+        <a href="ratgeber-raeumpflicht-mieter.html">Räumpflicht für Mieter</a>
+        <a href="ratgeber-streusalz-verbot.html">Streusalz: erlaubt?</a>
+        <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>
+        <a href="ratgeber-winterdienst-nachweis-anfordern.html">Nachweise anfordern</a>
+        <a href="ratgeber-winterdienst-tourenplan.html">Tourenplan</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

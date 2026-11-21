@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streusalz auf dem Gehweg: erlaubt oder verboten? | WinterDex</title>
+  <meta name="description" content="Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-streusalz-verbot.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Streusalz auf dem Gehweg: erlaubt oder verboten? Regeln in Deutschland, Österreich und der Schweiz" />
+  <meta property="og:description" content="Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-streusalz-verbot.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Streusalz auf dem Gehweg: erlaubt oder verboten? Regeln in Deutschland, Österreich und der Schweiz" />
+  <meta name="twitter:description" content="Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Streusalz auf dem Gehweg: erlaubt oder verboten? Regeln in Deutschland, Österreich und der Schweiz","description":"Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen.","inLanguage":"de","datePublished":"2026-11-21","dateModified":"2026-11-21","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-streusalz-verbot.html"},"image":"https://winterdex.dexware.app/og-image.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist Streusalz in Deutschland verboten?","acceptedAnswer":{"@type":"Answer","text":"Ein bundesweites Verbot gibt es nicht. Ob Anlieger auf dem Gehweg Salz streuen dürfen, regeln Landesrecht und die Satzung bzw. Verordnung der Gemeinde. In vielen großen Städten ist es verboten, etwa in München, Stuttgart, Hamburg und Berlin. Maßgeblich ist immer die Regel deines Ortes."}},{"@type":"Question","name":"Darf ich bei Blitzeis oder Eisregen Salz streuen?","acceptedAnswer":{"@type":"Answer","text":"Nur, wenn die örtliche Vorschrift eine Ausnahme vorsieht. Stuttgart erlaubt Salz zum Beispiel nur im Ausnahmefall bei Eisregen. Hamburg hat das Verbot im Januar 2026 per Allgemeinverfügung befristet aufgehoben, weil mechanische Mittel bei der damaligen Glätte nicht ausreichten. Ohne solche Regel bleibt es beim Verbot."}},{"@type":"Question","name":"Was droht, wenn ich trotz Verbot Salz streue?","acceptedAnswer":{"@type":"Answer","text":"Ein Bußgeld. Stuttgart nennt für Verstöße gegen die Satzung bis zu 500 Euro, Berlin und Hamburg weisen ebenfalls auf Bußgelder hin. München verweist für Verstöße auf Art. 66 des Bayerischen Straßen- und Wegegesetzes."}},{"@type":"Question","name":"Darf ich in Österreich Salz streuen?","acceptedAnswer":{"@type":"Answer","text":"Ja, § 93 StVO verbietet Salz nicht. Wer mit Salz streut, muss aber Baumscheiben und Grünflächen jedenfalls aussparen. Gemeinden können per Verordnung nähere Vorsichtsmaßregeln festlegen – ein Blick auf die Regeln vor Ort lohnt sich."}},{"@type":"Question","name":"Was streue ich statt Salz?","acceptedAnswer":{"@type":"Answer","text":"Abstumpfende Mittel wie Splitt, Sand oder Granulat. Stuttgart empfiehlt Produkte mit dem Blauen Engel „weil salzfrei“ (RAL-UZ 13). Am besten erst Schnee und Eis mechanisch entfernen, dann streuen."}},{"@type":"Question","name":"Entbindet mich das Salzverbot von der Streupflicht?","acceptedAnswer":{"@type":"Answer","text":"Nein. Das Verbot betrifft nur das Mittel, nicht die Pflicht. Bei Glätte muss weiterhin gestreut werden – eben mit abstumpfenden Mitteln, und so oft, wie es die Satzung verlangt."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WinterDex","item":"https://winterdex.dexware.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://dexware.app/ratgeber.html"},{"@type":"ListItem","position":3,"name":"Streusalz: erlaubt?","item":"https://winterdex.dexware.app/ratgeber-streusalz-verbot.html"}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Für Hausbesitzer, Verwaltungen &amp; Winterdienste</span>
+      <h1><span class="hl">Streusalz</span> auf dem Gehweg: erlaubt oder verboten?</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland, Österreich und die Schweiz</strong>; die Regeln unterscheiden sich stark, teils von Ort zu Ort.</p>
+      <p class="lead">Salz taut schnell – und ist auf vielen Gehwegen trotzdem verboten. Hier steht, was in München, Stuttgart, Hamburg und Berlin gilt, was § 93 StVO in Österreich vorschreibt, wann es Ausnahmen gibt und womit du stattdessen streust.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Mit Quellen aus Satzungen und Gesetzestexten</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#deutschland">Deutschland: Regeln in vier Großstädten</a></li>
+          <li><a href="#ausnahmen">Ausnahmen: Eisregen, Allgemeinverfügung</a></li>
+          <li><a href="#oesterreich">Österreich: § 93 StVO</a></li>
+          <li><a href="#schweiz">Schweiz: Beispiel Basel</a></li>
+          <li><a href="#warum">Warum Salz eingeschränkt wird</a></li>
+          <li><a href="#alternativen">Was stattdessen streuen?</a></li>
+          <li><a href="#doku">Streumittel im Nachweis festhalten</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Streusalz auf einen Blick</h3>
+        <ul>
+          <li><strong>Deutschland:</strong> kein bundesweites Verbot, aber in vielen Städten für Anlieger auf Gehwegen verboten – zum Beispiel in München, Stuttgart, Hamburg und Berlin. Es gilt die Satzung deiner Gemeinde.</li>
+          <li><strong>Österreich:</strong> § 93 StVO erlaubt Salz, aber <strong>Baumscheiben und Grünflächen</strong> müssen ausgespart werden.</li>
+          <li><strong>Schweiz:</strong> Regeln von Kanton und Gemeinde; Basel-Stadt zum Beispiel setzt auf Splitt und Sand, Salz nur ergänzend.</li>
+          <li><strong>Ausnahmen</strong> gibt es nur, wenn die Vorschrift sie vorsieht – etwa bei Eisregen oder per befristeter Allgemeinverfügung.</li>
+          <li><strong>Die Streupflicht bleibt:</strong> Wo Salz verboten ist, wird mit Splitt, Sand oder Granulat gestreut.</li>
+        </ul>
+      </div>
+
+      <h2 id="deutschland">Deutschland: Regeln in vier Großstädten</h2>
+      <p>Ein Bundesgesetz zum Streusalz gibt es nicht. Wer den Gehweg vor seinem Grundstück räumen und streuen muss und womit, regeln Landesrecht und die Satzung oder Verordnung der Gemeinde. Vier Beispiele aus den Originaltexten:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Stadt</th><th>Salz für Anlieger</th><th>Ausnahme / Hinweis</th><th>Quelle</th></tr></thead>
+          <tbody>
+            <tr><td><strong>München</strong></td><td>verboten: „die Anwendung von ätzenden Stoffen, wie z.&nbsp;B. Streusalz u.&nbsp;ä., ist untersagt“</td><td>Gehbahnen werktags bis 7 Uhr, sonn- und feiertags bis 8 Uhr räumen und mit Sand oder anderen geeigneten Mitteln streuen, bis 20 Uhr so oft wie nötig wiederholen</td><td>§ 5 Abs. 2 der städtischen Verordnung; Geldbuße nach § 13</td></tr>
+            <tr><td><strong>Stuttgart</strong></td><td>verboten: kein Salz und keine sonstigen auftauenden Stoffe auf öffentlichen Gehwegen</td><td>Salz nur im Ausnahmefall bei Eisregen; Geldbuße bis 500 Euro</td><td>Satzung über das Reinigen, Räumen und Bestreuen der Gehwege; Pressemitteilung der Stadt vom 05.11.2021</td></tr>
+            <tr><td><strong>Hamburg</strong></td><td>verboten: Tausalz und tausalzhaltige Mittel</td><td>im Januar 2026 befristet per Allgemeinverfügung aufgehoben (siehe unten); Verstöße gegen Winterdienstpflichten sind bußgeldbewehrt</td><td>§ 31 Abs. 2 Satz 2 Hamburgisches Wegegesetz (HWG)</td></tr>
+            <tr><td><strong>Berlin</strong></td><td>verboten: „Auftaumittel wie Streusalz sind aus Umweltschutzgründen auf Gehwegen verboten“</td><td>bußgeldbewehrt; gestreut wird mit abstumpfenden Mitteln wie Splitt oder Sand</td><td>Straßenreinigungsgesetz; Pressemitteilung der Senatsverwaltung vom 29.10.2025</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>In anderen Gemeinden kann es anders aussehen – mit Verbot, mit Ausnahmen oder ganz ohne Regel zum Streumittel. Die Satzung findest du meist auf der Website der Gemeinde unter Begriffen wie „Straßenreinigungssatzung“, „Räum- und Streupflicht“ oder „Winterdienst“. Dort stehen auch die Uhrzeiten – mehr dazu im Ratgeber <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht: Uhrzeiten</a>.</p>
+      <p>Die Beispiele betreffen <strong>öffentliche Gehwege</strong>. Ob die Satzung auch private Wege und Hofflächen erfasst, steht in der Satzung selbst. Das Umweltamt Stuttgart empfiehlt auch dort salzfreie Streumittel.</p>
+
+      <h2 id="ausnahmen">Ausnahmen: Eisregen, Allgemeinverfügung</h2>
+      <p>Ein Salzverbot gilt nicht ausnahmslos – aber nur dort, wo die Vorschrift selbst eine Ausnahme vorsieht:</p>
+      <ul>
+        <li><strong>In der Satzung:</strong> Stuttgart erlaubt Salz oder sonstige auftauende Stoffe „nur im Ausnahmefall bei Eisregen“.</li>
+        <li><strong>Per Allgemeinverfügung:</strong> Hamburg hat die Anlieger am 06.01.2026 bis zum Ablauf des 21.01.2026 vom Verbot befreit. Begründung der Behörde: wiederholter Schneefall, Tauperioden am Tag und Überfrieren führten zu einer Glättegefahr, „der mit rein mechanischen Winterdienstmitteln nicht hinreichend begegnet werden kann“. Danach galt das Verbot wieder.</li>
+      </ul>
+      <p>Solche Freigaben werden auf der Website der Stadt bekannt gegeben und sind <strong>befristet</strong>. Wer Salz in einem Ausnahmefall nutzt, sollte festhalten, warum: Datum, Wetterlage und die geltende Ausnahme.</p>
+
+      <h2 id="oesterreich">Österreich: § 93 StVO</h2>
+      <p>In Österreich regelt § 93 der Straßenverkehrsordnung die Pflichten der Anrainer: Gehsteige und Gehwege entlang der Liegenschaft sind im Ortsgebiet von 6 bis 22 Uhr von Schnee zu säubern und bei Schnee und Glatteis zu bestreuen. Ein Salzverbot enthält das Gesetz nicht, wohl aber eine klare Grenze in Abs. 3:</p>
+      <blockquote style="margin:14px 0 18px;padding:12px 16px;border-left:3px solid rgba(127,127,127,.5)">„Weiters ist darauf Bedacht zu nehmen, dass Bäume und sonstige Bepflanzungen nicht beschädigt werden; bei Streuung mit Salz sind Baumscheiben und Grünflächen von der Bestreuung jedenfalls auszunehmen.“<br><small>§ 93 Abs. 3 StVO 1960</small></blockquote>
+      <p>Außerdem kann die Behörde per Verordnung nähere Vorsichtsmaßregeln für das Räumen und Streuen festlegen (§ 93 Abs. 4 lit. d StVO). Ob deine Gemeinde das getan hat, erfährst du beim Gemeindeamt. Alles Weitere zur Räumpflicht – Flächen, Uhrzeiten, Übertragung – im Ratgeber <a href="ratgeber-schneeraeumung-oesterreich.html">Schneeräumpflicht in Österreich</a>.</p>
+
+      <h2 id="schweiz">Schweiz: Beispiel Basel</h2>
+      <p>In der Schweiz regeln Kantone und Gemeinden den Winterdienst. Im Kanton Basel-Stadt verpflichtet eine Verordnung die Eigentümerinnen und Eigentümer, bei Schneefall und Eisbildung vor ihrer Parzelle einen mindestens einen Meter breiten Streifen zu räumen und zu bestreuen. Glatteis und festgetretener Schnee sind laut Kanton mit feinkörnigem Splitt, Sand oder anderen geeigneten Streumitteln abzustreuen; Streusalz soll nur ergänzend und mäßig eingesetzt werden – zum Beispiel an Steigungen und auf Treppen, wenn vorher geräumt wurde und das Schmelzwasser nicht in den Wurzelbereich von Bäumen gelangt (Medienmitteilungen des Kantons von 2010 und 2011). In anderen Kantonen und Gemeinden können andere Regeln gelten.</p>
+
+      <h2 id="warum">Warum Salz eingeschränkt wird</h2>
+      <p>Die Städte begründen die Verbote mit dem Schutz von Bäumen, Boden und Wasser:</p>
+      <ul>
+        <li><strong>Bäume und Sträucher:</strong> Salz gelangt über Spritzwasser und Schmelzwasser an Blätter, Triebe und Wurzeln (Stadt Stuttgart). Es entzieht den Wurzeln Wasser und blockiert die Nährstoffaufnahme; die Schäden zeigen sich oft erst im Frühjahr (Kanton Basel-Stadt).</li>
+        <li><strong>Grundwasser und Vegetation:</strong> So begründet Hamburg das Verbot nach dem Wegegesetz.</li>
+        <li><strong>Tiere und Material:</strong> Salz macht Tierpfoten wund und greift Schuhe, Beläge, Metall und Beton an (Stadt Stuttgart).</li>
+      </ul>
+
+      <h2 id="alternativen">Was stattdessen streuen?</h2>
+      <ol>
+        <li><strong>Erst räumen, dann streuen:</strong> Schnee und Eis zuerst mechanisch entfernen – mit Schieber, Besen oder Schaufel. So empfiehlt es auch das Umweltamt Stuttgart.</li>
+        <li><strong>Abstumpfende Mittel:</strong> Splitt, Sand oder Granulat. Stuttgart empfiehlt Produkte mit dem Blauen Engel „weil salzfrei“ (RAL-UZ 13).</li>
+        <li><strong>Wiederholen:</strong> Bei Neuschnee und neuer Glätte innerhalb der Pflichtzeit erneut räumen und streuen.</li>
+        <li><strong>Splitt aufkehren:</strong> Stuttgart erlaubt, das salzfreie Streugut über den Winter liegen zu lassen, rät aber in frostfreien Phasen zum Aufkehren und Wiederverwenden. Im Frühjahr werden die Gehwege gereinigt.</li>
+      </ol>
+
+      <h2 id="doku">Streumittel im Nachweis festhalten</h2>
+      <p>Kommt es nach einem Sturz zum Streit, zählt, was wann womit gemacht wurde. Ins <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll</a> gehört deshalb bei jedem Einsatz auch das <strong>Streumittel</strong> – erst recht dort, wo Salz verboten ist. Wer Salz nur in einer erlaubten Ausnahme streut, notiert den Grund dazu. Für Betriebe ist das Streumittel außerdem wichtig für Abrechnung und Nachkalkulation (siehe <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>).</p>
+
+      <div class="cta">
+        <h3>Streumittel, Menge und Wetter bei jedem Einsatz</h3>
+        <p>In WinterDex wählst du bei jedem Einsatz das Streumittel – Splitt, Salz, Sole, Granulat oder Sonstiges – samt Menge. Uhrzeit, GPS-Standort und die Wetterlage zum Einsatzzeitpunkt werden automatisch festgehalten, dazu Fotos und eine Notiz, etwa „Eisregen, Ausnahme laut Satzung“. Am Monatsende gibt es den Nachweis als PDF.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Ist Streusalz in Deutschland verboten?</summary>
+          <p>Ein bundesweites Verbot gibt es nicht. Ob Anlieger auf dem Gehweg Salz streuen dürfen, regeln Landesrecht und die Satzung bzw. Verordnung der Gemeinde. In vielen großen Städten ist es verboten, etwa in München, Stuttgart, Hamburg und Berlin. Maßgeblich ist immer die Regel deines Ortes.</p>
+        </details>
+        <details>
+          <summary>Darf ich bei Blitzeis oder Eisregen Salz streuen?</summary>
+          <p>Nur, wenn die örtliche Vorschrift eine Ausnahme vorsieht. Stuttgart erlaubt Salz zum Beispiel nur im Ausnahmefall bei Eisregen. Hamburg hat das Verbot im Januar 2026 per Allgemeinverfügung befristet aufgehoben, weil mechanische Mittel bei der damaligen Glätte nicht ausreichten. Ohne solche Regel bleibt es beim Verbot.</p>
+        </details>
+        <details>
+          <summary>Was droht, wenn ich trotz Verbot Salz streue?</summary>
+          <p>Ein Bußgeld. Stuttgart nennt für Verstöße gegen die Satzung bis zu 500 Euro, Berlin und Hamburg weisen ebenfalls auf Bußgelder hin. München verweist für Verstöße auf Art. 66 des Bayerischen Straßen- und Wegegesetzes.</p>
+        </details>
+        <details>
+          <summary>Darf ich in Österreich Salz streuen?</summary>
+          <p>Ja, § 93 StVO verbietet Salz nicht. Wer mit Salz streut, muss aber Baumscheiben und Grünflächen jedenfalls aussparen. Gemeinden können per Verordnung nähere Vorsichtsmaßregeln festlegen – ein Blick auf die Regeln vor Ort lohnt sich.</p>
+        </details>
+        <details>
+          <summary>Was streue ich statt Salz?</summary>
+          <p>Abstumpfende Mittel wie Splitt, Sand oder Granulat. Stuttgart empfiehlt Produkte mit dem Blauen Engel „weil salzfrei“ (RAL-UZ 13). Am besten erst Schnee und Eis mechanisch entfernen, dann streuen.</p>
+        </details>
+        <details>
+          <summary>Entbindet mich das Salzverbot von der Streupflicht?</summary>
+          <p>Nein. Das Verbot betrifft nur das Mittel, nicht die Pflicht. Bei Glätte muss weiterhin gestreut werden – eben mit abstumpfenden Mitteln, und so oft, wie es die Satzung verlangt.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://stadt.muenchen.de/rathaus/stadtrecht/vorschrift/230/version1/0.html" rel="noopener">München: Verordnung über die Reinhaltung und Reinigung der öffentlichen Straßen und die Sicherung der Gehbahnen im Winter, §§ 5, 13 – Stadtrecht München</a></li>
+        <li><a href="https://www.stuttgart.de/pressemitteilungen/2021/november/kein-streusalz-auf-gehwegen.php" rel="noopener">Stuttgart: „Kein Streusalz auf Gehwegen“, Pressemitteilung vom 05.11.2021 – stuttgart.de</a></li>
+        <li><a href="https://www.hamburg.de/politik-und-verwaltung/behoerden/bvm/allgemeinverfuegung-einsatz-von-tausalz-1132008" rel="noopener">Hamburg: Allgemeinverfügung Einsatz von Tausalz vom 06.01.2026 (§ 31 Abs. 2 Satz 2 HWG) – hamburg.de</a></li>
+        <li><a href="https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/abfall-entsorgung/winterdienst/winterdienst-raeumpflicht-160030" rel="noopener">Hamburg: Räum- und Streupflichten (§§ 28, 31, 72 HWG) – hamburg.de</a></li>
+        <li><a href="https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2025/pressemitteilung.1611270.php" rel="noopener">Berlin: „Gut gewappnet für den Winter“, Pressemitteilung der Senatsverwaltung vom 29.10.2025 – berlin.de</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 (Pflichten der Anrainer) – RIS</a></li>
+        <li><a href="https://www.bs.ch/medienmitteilungen/bvd/2011-schnee-und-eis-auf-trottoirs-pflichten-der-grundeigentuemer" rel="noopener">Kanton Basel-Stadt: „Schnee und Eis auf Trottoirs: Pflichten der Grundeigentümer“, Medienmitteilung vom 19.12.2011 – bs.ch</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Satzungen und Verordnungen
+        ändern sich; maßgeblich ist die aktuelle Fassung der Regeln deiner Gemeinde. Stand: November 2026.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="ratgeber-dachlawinen-eiszapfen.html">Dachlawinen und Eiszapfen</a>
+        <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Haftung und Beweise</a>
+        <a href="ratgeber-raeumpflicht-mieter.html">Räumpflicht für Mieter</a>
+        <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>
+        <a href="ratgeber-winterdienst-nachweis-anfordern.html">Nachweise anfordern</a>
+        <a href="ratgeber-winterdienst-tourenplan.html">Tourenplan</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
