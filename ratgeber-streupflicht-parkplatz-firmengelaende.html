@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streupflicht auf Parkplatz und Firmengelände | WinterDex</title>
+  <meta name="description" content="Kundenparkplatz, Zufahrt, Weg zum Eingang: was Betriebe bei Glätte räumen müssen – mit BGH-Urteil zum Marktparkplatz, Arbeitsstättenregeln und § 93 StVO." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-streupflicht-parkplatz-firmengelaende.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Streupflicht auf Parkplatz und Firmengelände: was Betriebe räumen müssen" />
+  <meta property="og:description" content="Kundenparkplatz, Zufahrt, Weg zum Eingang: was Betriebe bei Glätte räumen müssen – mit BGH-Urteil zum Marktparkplatz, Arbeitsstättenregeln und § 93 StVO." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-streupflicht-parkplatz-firmengelaende.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Streupflicht auf Parkplatz und Firmengelände: was Betriebe räumen müssen" />
+  <meta name="twitter:description" content="Kundenparkplatz, Zufahrt, Weg zum Eingang: was Betriebe bei Glätte räumen müssen – mit BGH-Urteil zum Marktparkplatz, Arbeitsstättenregeln und § 93 StVO." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+
+  <style>
+    /* Ratgeber-Ergänzungen (Tabelle, Kurzantwort, Weiterlesen) — neutral, passt zu hellem und dunklem Design */
+    .rg-scroll { overflow-x: auto; margin: 10px 0 22px; -webkit-overflow-scrolling: touch; }
+    .rg-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 520px; }
+    .rg-table th, .rg-table td { border: 1px solid rgba(127,127,127,.32); padding: 9px 11px; text-align: left; vertical-align: top; }
+    .rg-table th { background: rgba(127,127,127,.12); font-weight: 800; }
+    .rg-kurz { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 16px 18px; margin: 18px 0 24px; background: rgba(127,127,127,.07); }
+    .rg-kurz > b:first-child { display: block; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; opacity: .8; }
+    .rg-kurz ul { margin: 6px 0 0; padding-left: 20px; }
+    .rg-kurz li { margin-bottom: 5px; }
+    .rg-quellen { font-size: 14px; opacity: .9; }
+    .rg-quellen li { font-size: 14px !important; margin-bottom: 4px; }
+    .rg-weiter { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 12px 0 26px; }
+    .rg-weiter a { display: block; border: 1px solid rgba(127,127,127,.35); border-radius: 10px; padding: 12px 14px; text-decoration: none; font-weight: 700; }
+    .rg-weiter a span { display: block; font-weight: 400; font-size: 13.5px; opacity: .75; margin-top: 2px; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Streupflicht auf Parkplatz und Firmengelände: was Betriebe, Märkte und Praxen räumen müssen","description":"Kundenparkplatz, Zufahrt, Weg zum Eingang: was Betriebe bei Glätte räumen müssen – mit BGH-Urteil zum Marktparkplatz, Arbeitsstättenregeln und § 93 StVO.","inLanguage":"de","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-streupflicht-parkplatz-firmengelaende.html"},"image":"https://winterdex.dexware.app/og-image.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WinterDex","item":"https://winterdex.dexware.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html"},{"@type":"ListItem","position":3,"name":"Parkplatz und Firmengelände","item":"https://winterdex.dexware.app/ratgeber-streupflicht-parkplatz-firmengelaende.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Muss ein Kundenparkplatz komplett gestreut werden?","acceptedAnswer":{"@type":"Answer","text":"In der Regel nicht. Nach dem Bundesgerichtshof (Urteil vom 2. Juli 2019, VI ZR 184/18) muss der Betreiber einen möglichst gefahrlosen Zugang zu den Fahrzeugen und ein möglichst sicheres Be- und Entladen ermöglichen. Dafür reicht es regelmäßig, die Fahrflächen zu räumen und zu streuen. Die markierten Stellflächen müssen nicht so gestreut sein, dass man beim Aussteigen aus jedem Auto auf abgestumpften Boden tritt. Eingänge, Treppen und Gehwege zum Eingang gehören dagegen dazu."}},{"@type":"Question","name":"Ab wann muss der Firmenparkplatz geräumt sein?","acceptedAnswer":{"@type":"Answer","text":"Eine feste Uhrzeit für private Parkplätze gibt es nicht. Maßgeblich ist, wann dort mit Verkehr zu rechnen ist: bei einem Geschäft oder einer Praxis rund um die Öffnungszeiten, bei einem Betrieb ab Schichtbeginn und während Lieferzeiten. Für den öffentlichen Gehweg vor dem Grundstück gelten die Zeiten der Gemeindesatzung, in Österreich § 93 StVO mit 6 bis 22 Uhr."}},{"@type":"Question","name":"Muss ich auch den Mitarbeiterparkplatz und die Wege auf dem Gelände räumen?","acceptedAnswer":{"@type":"Answer","text":"Ja. In Deutschland müssen Arbeitsplätze und Wege im Freien bei jeder Witterung sicher erreichbar und benutzbar sein (Anhang Nr. 5.1 ArbStättV); die Technischen Regeln für Arbeitsstätten nennen den Winterdienst als Schutzmaßnahme und verlangen, Außenflächen bei Bedarf zu räumen oder zu streuen. In Österreich müssen Verkehrswege nach § 2 Abs. 7 AStV bei jeder Witterung gefahrlos benützbar sein."}},{"@type":"Question","name":"Können wir den Winterdienst an eine Firma vergeben?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Arbeit lässt sich vertraglich übertragen. Wer vergibt, muss den Dienstleister aber sorgfältig auswählen und stichprobenartig kontrollieren. Im Vertrag sollte jede Fläche mit Uhrzeit stehen, also auch Fahrgassen, Laderampen und Wege vom Mitarbeiterparkplatz, und es sollte vereinbart sein, dass jeder Einsatz mit Uhrzeit nachgewiesen wird."}},{"@type":"Question","name":"Was gilt in Österreich?","acceptedAnswer":{"@type":"Answer","text":"Für den Gehsteig entlang der Liegenschaft im Ortsgebiet gilt § 93 StVO: von 6 bis 22 Uhr geräumt und bei Schnee und Glatteis bestreut. Auf dem Gelände verlangen § 24 Abs. 3 ASchG und § 2 Abs. 7 AStV sichere Verkehrswege für die Beschäftigten. Gegenüber Kunden kommt die Haftung des Wegehalters nach § 1319a ABGB in Betracht, die dort an Vorsatz oder grobe Fahrlässigkeit geknüpft ist."}}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Für Betriebe, Märkte und Praxen</span>
+      <h1>Streupflicht auf <span class="hl">Parkplatz und Firmengelände</span>: was Betriebe räumen müssen</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland und Österreich</strong>; wo sich die Regeln unterscheiden, steht es dabei.</p>
+      <p class="lead">Der Gehweg vor dem Haus ist meist klar geregelt. Aber was gilt für den Kundenparkplatz, die Zufahrt zum Lager oder den Weg vom Mitarbeiterparkplatz zum Eingang? Hier steht, was der Bundesgerichtshof für Parkplätze verlangt, was die Arbeitsstättenregeln vorgeben und wie ein Winterdienstplan fürs Gelände aussieht.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Für Handel, Praxen, Gewerbe und Hausverwaltung</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#zwei">Zwei Pflichten: Kunden und Beschäftigte</a></li>
+          <li><a href="#bgh">Kundenparkplatz: was der BGH verlangt</a></li>
+          <li><a href="#gelaende">Firmengelände: Arbeitsschutz in Deutschland</a></li>
+          <li><a href="#at">Österreich: § 93 StVO, ASchG und AStV</a></li>
+          <li><a href="#plan">So sieht ein Winterdienstplan fürs Gelände aus</a></li>
+          <li><a href="#vergeben">Winterdienst vergeben: Kontrolle bleibt</a></li>
+          <li><a href="#nachweis">Jeden Einsatz festhalten</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Parkplatz und Gelände auf einen Blick</h3>
+        <ul>
+          <li><strong>Kundenparkplatz:</strong> Fahrgassen, Wege zum Eingang, Treppen und Rampen räumen und streuen. Die markierten Stellflächen müssen nach dem BGH in der Regel nicht flächendeckend gestreut sein.</li>
+          <li><strong>Beschäftigte:</strong> Wege auf dem Betriebsgelände müssen bei jeder Witterung sicher benutzbar sein, der Winterdienst gehört in die Gefährdungsbeurteilung.</li>
+          <li><strong>Österreich:</strong> § 93 StVO für den Gehsteig, auf dem Gelände ASchG und AStV.</li>
+          <li><strong>Schriftlich regeln:</strong> Flächen, Zeiten und Zuständigkeit festlegen, jeden Einsatz mit Uhrzeit festhalten.</li>
+        </ul>
+      </div>
+
+      <h2 id="zwei">Zwei Pflichten nebeneinander: Kunden und Beschäftigte</h2>
+      <p>Für Kunden, Lieferanten und Besucher gilt die allgemeine <strong>Verkehrssicherungspflicht</strong>: Wer eine Fläche für den Verkehr öffnet, muss sie im Rahmen des Zumutbaren sicher halten, in Deutschland abgeleitet aus § 823 BGB. Für die eigenen Beschäftigten kommt der <strong>Arbeitsschutz</strong> dazu: Der Arbeitgeber muss Arbeitsstätten und Verkehrswege auf dem Gelände so betreiben, dass sie gefahrlos benutzt werden können.</p>
+      <p>Oft geht es um dieselbe Fläche: Den Weg zum Eingang einer Arztpraxis nutzt morgens das Team, ab der Öffnung die Patienten. Deshalb ein Plan für das ganze Gelände, nicht zwei getrennte.</p>
+
+      <h2 id="bgh">Kundenparkplatz: was der Bundesgerichtshof verlangt</h2>
+      <p>Wie weit die Streupflicht auf einem Parkplatz reicht, hat der BGH am Beispiel eines Lebensmittelmarkts entschieden (<strong>Urteil vom 2. Juli 2019, VI ZR 184/18</strong>). Eine Kundin war zwischen zwei parkenden Autos auf einer markierten Stellfläche gestürzt, ihre Klage blieb erfolglos. Die Kernaussagen:</p>
+      <ul>
+        <li><strong>Keine Einheitsregel:</strong> Eine für alle Parkflächen gleich geltende Regel gibt es nicht. Die Streupflicht soll wirkliche Gefahren beseitigen, nicht bloßen Unbequemlichkeiten vorbeugen. Das gilt für öffentliche wie private Parkplätze und unabhängig davon, ob es ein Kundenparkplatz ist.</li>
+        <li><strong>Zugang und Beladen sichern:</strong> Der Marktbetreiber muss seinen Kunden einen möglichst gefahrlosen Zugang zu ihren Fahrzeugen verschaffen und ein möglichst sicheres Be- und Entladen ermöglichen.</li>
+        <li><strong>Fahrfläche ja, Stellflächen in der Regel nein:</strong> Dafür genügt es regelmäßig, die Fahrfläche zu räumen und zu streuen. Die markierten Stellflächen müssen nicht so gestreut sein, dass man schon beim Aussteigen aus jedem Auto auf abgestumpften Boden tritt. Beim Ein- und Aussteigen findet man am Fahrzeug Halt, und Kunden können so parken, dass sie den Kofferraum vom gestreuten Bereich aus erreichen.</li>
+        <li><strong>Eigene Vorsicht bleibt:</strong> Wer bei Winterwetter unterwegs ist, muss sorgfältiger gehen als sonst, auch auf gestreuten Wegen.</li>
+      </ul>
+      <div class="callout">
+        <div class="cl-t">Wo es strenger wird</div>
+        <p>Für den Parkplatz einer Gaststätte hat der BGH einen strengeren Maßstab angelegt, weil Gäste nach Alkoholgenuss weniger trittsicher sind (VI ZR 169/83, im Urteil von 2019 zitiert). Und überall gilt: Eingänge, Treppen und Rampen sind keine Nebensache. Dort ist die Sturzgefahr hoch, und ein Auto zum Festhalten gibt es nicht.</p>
+      </div>
+      <p><strong>Wann?</strong> Gesichert werden muss, solange mit Verkehr zu rechnen ist, bei einem Geschäft oder einer Praxis also vor allem rund um die Öffnungszeiten, bei einem Betrieb ab Schichtbeginn. Ob vor der Öffnung auch die Stellflächen einmal gestreut werden müssen, hängt nach dem BGH von den Gegebenheiten vor Ort ab. Tritt Glätte erst im Laufe des Tages auf, bleibt eine angemessene Zeit zum Handeln; eine feste Frist in Minuten gibt es nicht.</p>
+
+      <h2 id="gelaende">Firmengelände: was der Arbeitsschutz verlangt (Deutschland)</h2>
+      <p>Die Arbeitsstättenverordnung verlangt, dass Arbeitsplätze im Freien so eingerichtet und betrieben werden, dass Beschäftigte sie <strong>bei jeder Witterung sicher erreichen, benutzen und wieder verlassen</strong> können (Anhang Nr. 5.1 ArbStättV). Konkreter werden die Technischen Regeln für Arbeitsstätten:</p>
+      <ul>
+        <li><strong>ASR A1.8 „Verkehrswege“:</strong> Im Freien liegende Verkehrswege, insbesondere Treppen, Laderampen sowie Gebäudeein- und -ausgänge, müssen sicher benutzbar sein; Witterungseinflüsse sind zu berücksichtigen. Als mögliche Schutzmaßnahme nennt die Regel ausdrücklich den <strong>Winterdienst</strong> (Abschnitt 4.1 Abs. 8). Glatteis steht dort als Gefährdung, die Schutzmaßnahmen werden in der Gefährdungsbeurteilung festgelegt (Abschnitt 5 Abs. 1).</li>
+        <li><strong>ASR A5.1 (Ausgabe August 2025):</strong> Außenflächen, zu denen Beschäftigte im Rahmen ihrer Arbeit Zugang haben, müssen so gereinigt, geräumt oder gestreut werden, dass sich keine zusätzlichen Stolper- oder Rutschgefahren ergeben (Abschnitt 6.3.1 Abs. 3).</li>
+        <li><strong>Unterweisung:</strong> Beschäftigte sind in die Benutzung der Verkehrswege und die betrieblichen Verkehrsregeln zu unterweisen, ausdrücklich auch auf Parkflächen, die zum Betriebsgelände gehören (ASR A1.8 Abschnitt 5 Abs. 2). Welche Themen sonst in die jährliche Unterweisung gehören, steht im Ratgeber <a href="https://schutzdex.dexware.app/ratgeber-unterweisungsthemen.html">Unterweisungsthemen</a>.</li>
+      </ul>
+
+      <h2 id="at">Österreich: § 93 StVO, ASchG und AStV</h2>
+      <p>Für den <strong>öffentlichen Gehsteig</strong> entlang der Betriebsliegenschaft im Ortsgebiet gilt § 93 StVO: Er muss von 6 bis 22 Uhr geräumt und bei Schnee und Glatteis bestreut sein. Details zu Flächen und Übertragung stehen im Ratgeber <a href="ratgeber-schneeraeumung-oesterreich.html">Schneeräumung in Österreich</a>.</p>
+      <p>Für das <strong>Gelände selbst</strong> gilt der Arbeitnehmerschutz. Orte auf dem Betriebsgelände, zu denen Beschäftigte im Rahmen ihrer Arbeit Zugang haben, sind Arbeitsstätten im Freien (§ 19 Abs. 1 Z 2 ASchG). Verkehrswege im Freien sind so zu gestalten und zu erhalten, dass sie sicher begangen oder befahren werden können (§ 24 Abs. 3 ASchG). Die Arbeitsstättenverordnung verlangt zusätzlich, dass Verkehrswege <strong>bei jeder Witterung gefahrlos benützbar</strong> sind (§ 2 Abs. 7 Z 2 AStV). Schnee und Eis nennt sie nicht ausdrücklich, „bei jeder Witterung“ schließt den Winter aber ein.</p>
+      <p>Gegenüber Kunden und Besuchern kommt die Haftung des Wegehalters nach <strong>§ 1319a ABGB</strong> in Betracht. Als Weg gilt dort auch eine Fläche für einen eingeschränkten Benützerkreis, darunter kann ein Kundenparkplatz fallen. Der Halter haftet nach dieser Vorschrift bei Vorsatz oder grober Fahrlässigkeit, der Maßstab richtet sich nach Art und Widmung des Weges. Ob aus einem Vertrag, etwa mit Kunden oder Mietern, strengere Pflichten folgen, ist eine Frage des Einzelfalls.</p>
+
+      <h2 id="plan">So sieht ein Winterdienstplan fürs Gelände aus</h2>
+      <p>Eine Seite reicht. Der Plan beantwortet vier Fragen: welche Flächen, in welcher Reihenfolge, bis wann und durch wen. Ein Beispiel für einen Markt oder Gewerbebetrieb:</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Fläche</th><th>Wer nutzt sie?</th><th>Reihenfolge</th><th>Hinweis</th></tr></thead>
+          <tbody>
+            <tr><td>Eingänge, Treppen, Rampen</td><td>alle</td><td>1</td><td>hohe Sturzgefahr, kein Halt am Auto</td></tr>
+            <tr><td>Gehwege vom Parkplatz zum Eingang</td><td>Kunden, Beschäftigte</td><td>1</td><td>durchgehend, auch Bordsteinkanten und Übergänge</td></tr>
+            <tr><td>Fahrgassen des Parkplatzes</td><td>Kunden</td><td>2</td><td>damit Fahrzeuge sicher erreicht und beladen werden können</td></tr>
+            <tr><td>Behinderten- und Eltern-Kind-Parkplätze, Einkaufswagen-Boxen</td><td>Kunden</td><td>2</td><td>viel Fußverkehr auf kleiner Fläche</td></tr>
+            <tr><td>Laderampe, Lagerzufahrt, Weg vom Mitarbeiterparkplatz</td><td>Beschäftigte, Lieferanten</td><td>vor Schichtbeginn</td><td>Teil der Gefährdungsbeurteilung</td></tr>
+            <tr><td>Öffentlicher Gehweg bzw. Gehsteig</td><td>Passanten</td><td>nach Satzung bzw. § 93 StVO</td><td>eigene Uhrzeiten beachten</td></tr>
+            <tr><td>Markierte Stellflächen</td><td>Kunden</td><td>zuletzt</td><td>nach dem BGH in der Regel nicht flächendeckend nötig</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Dazu gehören in den Plan die <strong>Zeiten</strong> (Schichtbeginn, Öffnung, erste Lieferung, bei Betrieb bis in den Abend eine zweite Runde), ein Platz für den <strong>Schnee</strong>, an dem Fluchtwege, Notausgänge, Hydranten und Abläufe frei bleiben, der Vorrat an <strong>Streugut</strong> (manche Gemeinden schränken Salz ein, siehe <a href="ratgeber-streusalz-verbot.html">Streusalz: erlaubt oder verboten?</a>) und die <strong>Zuständigkeit</strong> mit Vertretung.</p>
+
+      <h2 id="vergeben">Winterdienst vergeben: Kontrolle bleibt</h2>
+      <p>Die Arbeit lässt sich an eine Winterdienst-Firma übertragen, die Sorgfalt bei Auswahl und Kontrolle nicht. Im Vertrag sollte <strong>jede Fläche mit Uhrzeit</strong> stehen, auch Fahrgassen, Laderampe und der Weg vom Mitarbeiterparkplatz, und dass jeder Einsatz nachgewiesen wird. Mehr dazu in den Ratgebern <a href="ratgeber-winterdienst-hausverwaltung.html">Winterdienst für Hausverwaltungen</a> und <a href="ratgeber-winterdienst-nachweis-anfordern.html">Einsatznachweise anfordern</a>.</p>
+
+      <h2 id="nachweis">Jeden Einsatz festhalten</h2>
+      <p>Nach einem Sturz kommt die Forderung oft erst Wochen später. In Deutschland muss grundsätzlich der Gestürzte beweisen, dass die Streupflicht verletzt wurde (BGH, VI ZR 138/11), ohne eigene Aufzeichnung steht aber schnell Aussage gegen Aussage. Festhalten <strong>je Fläche und Runde</strong>: Uhrzeit, Maßnahme (geräumt, gestreut oder nur kontrolliert), Streugut, Wetterlage und Name. Vorlage: <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll</a>, Haftung: <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Wer haftet?</a>.</p>
+
+      <div class="cta">
+        <h3>Gelände und Filialen als Objekte, jeder Einsatz mit Uhrzeit</h3>
+        <p>In WinterDex legst du dein Gelände oder deine Filialen als Objekte mit ihren Pflichtzeiten an. Jeder Einsatz wird mit Uhrzeit, GPS-Standort, Wetterlage und Foto festgehalten, auch ein Kontrollgang ohne Maßnahme. Einträge lassen sich nachträglich weder bearbeiten noch löschen, ein Storno geht nur mit Begründung. Die Glätte-Frühwarnung zeigt, bei welchen Objekten heute Glätte droht, und der Nachweis kommt als PDF je Objekt, Monat oder Saison. Gratis für 2 Objekte, Pro kostet 9,99 € im Monat oder 39,99 € im Jahr.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Muss ein Kundenparkplatz komplett gestreut werden?</summary>
+          <p>In der Regel nicht. Nach dem Bundesgerichtshof (Urteil vom 2. Juli 2019, VI ZR 184/18) muss der Betreiber einen möglichst gefahrlosen Zugang zu den Fahrzeugen und ein möglichst sicheres Be- und Entladen ermöglichen. Dafür reicht es regelmäßig, die Fahrflächen zu räumen und zu streuen. Die markierten Stellflächen müssen nicht so gestreut sein, dass man beim Aussteigen aus jedem Auto auf abgestumpften Boden tritt. Eingänge, Treppen und Gehwege zum Eingang gehören dagegen dazu.</p>
+        </details>
+        <details>
+          <summary>Ab wann muss der Firmenparkplatz geräumt sein?</summary>
+          <p>Eine feste Uhrzeit für private Parkplätze gibt es nicht. Maßgeblich ist, wann dort mit Verkehr zu rechnen ist: bei einem Geschäft oder einer Praxis rund um die Öffnungszeiten, bei einem Betrieb ab Schichtbeginn und während Lieferzeiten. Für den öffentlichen Gehweg vor dem Grundstück gelten die Zeiten der Gemeindesatzung, in Österreich § 93 StVO mit 6 bis 22 Uhr.</p>
+        </details>
+        <details>
+          <summary>Muss ich auch den Mitarbeiterparkplatz und die Wege auf dem Gelände räumen?</summary>
+          <p>Ja. In Deutschland müssen Arbeitsplätze und Wege im Freien bei jeder Witterung sicher erreichbar und benutzbar sein (Anhang Nr. 5.1 ArbStättV); die Technischen Regeln für Arbeitsstätten nennen den Winterdienst als Schutzmaßnahme und verlangen, Außenflächen bei Bedarf zu räumen oder zu streuen. In Österreich müssen Verkehrswege nach § 2 Abs. 7 AStV bei jeder Witterung gefahrlos benützbar sein.</p>
+        </details>
+        <details>
+          <summary>Können wir den Winterdienst an eine Firma vergeben?</summary>
+          <p>Ja. Die Arbeit lässt sich vertraglich übertragen. Wer vergibt, muss den Dienstleister aber sorgfältig auswählen und stichprobenartig kontrollieren. Im Vertrag sollte jede Fläche mit Uhrzeit stehen, also auch Fahrgassen, Laderampen und Wege vom Mitarbeiterparkplatz, und es sollte vereinbart sein, dass jeder Einsatz mit Uhrzeit nachgewiesen wird.</p>
+        </details>
+        <details>
+          <summary>Was gilt in Österreich?</summary>
+          <p>Für den Gehsteig entlang der Liegenschaft im Ortsgebiet gilt § 93 StVO: von 6 bis 22 Uhr geräumt und bei Schnee und Glatteis bestreut. Auf dem Gelände verlangen § 24 Abs. 3 ASchG und § 2 Abs. 7 AStV sichere Verkehrswege für die Beschäftigten. Gegenüber Kunden kommt die Haftung des Wegehalters nach § 1319a ABGB in Betracht, die dort an Vorsatz oder grobe Fahrlässigkeit geknüpft ist.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&amp;docid=KORE305182019&amp;psml=bsjrsprod.psml&amp;max=true" rel="noopener">BGH, Urteil vom 2. Juli 2019 – VI ZR 184/18 (Parkplatz eines Lebensmittelmarkts)</a></li>
+        <li><a href="https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&amp;docid=KORE303812012&amp;psml=bsjrsprod.psml&amp;max=true" rel="noopener">BGH, Urteil vom 12. Juni 2012 – VI ZR 138/11 (Beweislast, allgemeine Glätte)</a></li>
+        <li><a href="https://www.gesetze-im-internet.de/arbst_ttv_2004/anhang.html" rel="noopener">Arbeitsstättenverordnung, Anhang Nr. 5.1 – gesetze-im-internet.de</a></li>
+        <li><a href="https://www.baua.de/DE/Angebote/Regelwerk/ASR/ASR-A1-8" rel="noopener">ASR A1.8 „Verkehrswege“ – BAuA</a></li>
+        <li><a href="https://www.baua.de/DE/Angebote/Regelwerk/ASR/ASR-A5-1" rel="noopener">ASR A5.1 „Arbeitsplätze in nicht allseits umschlossenen Arbeitsstätten und Arbeitsplätze im Freien“ – BAuA</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10008910&amp;Paragraf=24" rel="noopener">§ 24 ASchG (Arbeitsstätten im Freien) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10009098&amp;Paragraf=2" rel="noopener">§ 2 AStV (Verkehrswege) – RIS</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10001622&amp;Paragraf=1319a" rel="noopener">§ 1319a ABGB (Haftung des Wegehalters) – RIS</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Maßgeblich sind
+        die Satzung bzw. Verordnung der Gemeinde, eure Verträge, die Gefährdungsbeurteilung und die konkreten Umstände vor Ort.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="ratgeber-dachlawinen-eiszapfen.html">Dachlawinen und Eiszapfen</a>
+        <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Haftung und Beweise</a>
+        <a href="ratgeber-raeumpflicht-mieter.html">Räumpflicht für Mieter</a>
+        <a href="ratgeber-streusalz-verbot.html">Streusalz: erlaubt?</a>
+        <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>
+        <a href="ratgeber-winterdienst-nachweis-anfordern.html">Nachweise anfordern</a>
+        <a href="ratgeber-winterdienst-tourenplan.html">Tourenplan</a>
+        <a href="ratgeber-glaette-ohne-schnee.html">Glätte ohne Schnee</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

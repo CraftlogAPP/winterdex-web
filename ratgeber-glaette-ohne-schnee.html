@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streupflicht ohne Schnee: Reif &amp; Eisregen | WinterDex</title>
+  <meta name="description" content="Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt." />
+  <meta name="theme-color" content="#0A1520" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="canonical" href="https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="WinterDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Glätte ohne Schnee: Wann bei Reif, überfrierender Nässe und Eisregen gestreut werden muss" />
+  <meta property="og:description" content="Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt." />
+  <meta property="og:url" content="https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html" />
+  <meta property="og:image" content="https://winterdex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Glätte ohne Schnee: Wann bei Reif, überfrierender Nässe und Eisregen gestreut werden muss" />
+  <meta name="twitter:description" content="Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt." />
+  <meta name="twitter:image" content="https://winterdex.dexware.app/og-image.png" />
+  <!-- seo:end -->
+  <meta name="robots" content="all" />
+
+  <style>
+    :root {
+      --bg: #0A1520; --surface: #122334; --surface2: #0E1C2B; --border: #22374B;
+      --text: #E4EEF7; --muted: #8FA6BA;
+      --blue: #0284C7; --blue-light: #38BDF8; --glow: rgba(56,189,248,.16);
+      --accent: #FB923C; --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1100px 620px at 15% -120px, rgba(56,189,248,.18), transparent 65%),
+        radial-gradient(900px 600px at 95% 0%, rgba(2,132,199,.16), transparent 62%),
+        radial-gradient(800px 520px at 50% 115%, rgba(56,189,248,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      -webkit-mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+      mask-image: radial-gradient(900px 620px at 50% 0%, #000 25%, transparent 75%);
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: #7DCBF7; }
+
+    /* Schneefall (dezent, nur ohne Reduced-Motion) */
+    .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+    .snow i { position: absolute; top: -12px; border-radius: 50%; background: rgba(228,238,247,.55);
+      animation: fall linear infinite; }
+    @keyframes fall { to { transform: translateY(105vh) translateX(6vw); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .snow { display: none; } }
+
+    /* Sticky glass header */
+    .sitehead {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,21,32,.72);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header { padding: 14px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 38px; height: 38px; background: linear-gradient(150deg, var(--blue-light), var(--blue) 55%, #0A2540);
+      border-radius: 10px; display: grid; place-items: center;
+      box-shadow: 0 6px 18px rgba(2,132,199,.4); }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; text-decoration: none; color: var(--text); }
+    header nav { margin-left: auto; display: flex; gap: 18px; font-size: 14px; }
+    header nav a { color: var(--muted); text-decoration: none; }
+    header nav a:hover { color: var(--blue-light); }
+
+    /* Article */
+    .badge { display: inline-block; background: rgba(56,189,248,.12); color: var(--blue-light);
+      border: 1px solid rgba(56,189,248,.3);
+      font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 13px; border-radius: 99px; margin-bottom: 18px; }
+    .article-head { padding: 54px 0 8px; }
+    h1 { font-size: clamp(28px, 4.8vw, 46px); font-weight: 850; letter-spacing: -1.1px; line-height: 1.12; }
+    h1 .hl { background: linear-gradient(120deg, #A5E3FF, var(--blue-light)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin-top: 18px; font-size: 18px; color: var(--muted); }
+    .meta { margin-top: 16px; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .meta .dot { opacity: .5; }
+
+    article { padding: 30px 0 10px; }
+    article h2 { font-size: clamp(22px, 3.4vw, 29px); font-weight: 850; letter-spacing: -0.6px; margin: 40px 0 10px; }
+    article h3 { font-size: 18px; font-weight: 750; margin: 26px 0 6px; }
+    article p { font-size: 16.5px; color: #D3E1EE; margin-bottom: 14px; }
+    article ul, article ol { margin: 4px 0 18px; padding-left: 4px; list-style: none; }
+    article li { font-size: 16px; color: #CDDBEA; padding: 5px 0 5px 26px; position: relative; }
+    article ul li::before { content: "❄"; color: var(--blue-light); position: absolute; left: 0; font-size: 13px; top: 8px; }
+    article ol { counter-reset: li; }
+    article ol li { counter-increment: li; }
+    article ol li::before { content: counter(li); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 5px; font-size: 14px; }
+    strong { color: var(--text); font-weight: 750; }
+
+    .toc { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 26px 0; }
+    .toc .t { font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; padding: 4px 0 4px 26px; position: relative; font-size: 15px; }
+    .toc li::before { content: counter(toc); color: var(--blue-light); font-weight: 800; position: absolute; left: 0; top: 4px; font-size: 13px; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .callout { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-left: 3px solid var(--blue-light);
+      border-radius: 14px; padding: 18px 20px; margin: 22px 0; }
+    .callout::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .8; }
+    .callout > * { position: relative; }
+    .callout .cl-t { font-weight: 750; margin-bottom: 4px; color: var(--text); }
+    .callout p { font-size: 15px; margin-bottom: 0; color: var(--muted); }
+
+    /* Checklist card */
+    .checklist { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 18px; padding: 24px 24px 12px; margin: 22px 0; }
+    .checklist::before { content: ''; position: absolute; inset: 0;
+      background: radial-gradient(340px 160px at 100% 0%, var(--glow), transparent 70%); opacity: .9; }
+    .checklist > * { position: relative; }
+    .checklist h3 { margin-top: 0; }
+    .checklist ul li::before { content: "✓"; color: var(--green); font-weight: 800; top: 6px; }
+
+    /* FAQ */
+    .faq { margin-top: 12px; }
+    .faq details { background: linear-gradient(180deg, var(--surface), var(--surface2));
+      border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 12px; }
+    .faq details[open] { border-color: var(--blue-light); }
+    .faq summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 16.5px;
+      padding: 16px 30px 16px 0; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font-size: 22px; color: var(--blue-light); font-weight: 400; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { font-size: 15.5px; color: var(--muted); padding-bottom: 16px; margin-bottom: 0; }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(56,189,248,.12), var(--surface2)); border: 2px solid var(--blue-light);
+      border-radius: 22px; padding: 32px 30px; margin: 40px 0 10px;
+      box-shadow: 0 0 0 1px rgba(56,189,248,.3), 0 24px 60px rgba(2,132,199,.16); }
+    .cta h3 { font-size: 24px; font-weight: 850; letter-spacing: -.5px; margin-bottom: 10px; }
+    .cta p { color: var(--muted); font-size: 15.5px; margin-bottom: 18px; }
+    .btn { display: inline-block; color: #06283a; font-weight: 750; font-size: 16px;
+      padding: 13px 26px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue));
+      box-shadow: 0 10px 30px rgba(2,132,199,.4);
+      transition: transform .15s ease, box-shadow .15s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(2,132,199,.5); }
+
+    .disclaimer { font-size: 13px; color: var(--muted); margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--border); }
+
+    footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 26px 0 46px;
+      display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 14px; }
+    footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--blue-light); }
+
+    /* Tabellen */
+    .tbl-wrap { overflow-x: auto; margin: 18px 0 22px; border: 1px solid var(--border); border-radius: 14px;
+      background: linear-gradient(180deg, var(--surface), var(--surface2)); }
+    .tbl { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 14.5px; }
+    .tbl th, .tbl td { padding: 11px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .tbl th { color: var(--blue-light); font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+    .tbl td { color: #CDDBEA; }
+    .tbl tr:last-child td { border-bottom: 0; }
+    .tbl td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
+    @media (max-width: 560px) { .tbl td:first-child { white-space: normal; } }
+  </style>
+
+
+  <style>
+    /* Ratgeber-Ergänzungen (Tabelle, Kurzantwort, Weiterlesen) — neutral, passt zu hellem und dunklem Design */
+    .rg-scroll { overflow-x: auto; margin: 10px 0 22px; -webkit-overflow-scrolling: touch; }
+    .rg-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 520px; }
+    .rg-table th, .rg-table td { border: 1px solid rgba(127,127,127,.32); padding: 9px 11px; text-align: left; vertical-align: top; }
+    .rg-table th { background: rgba(127,127,127,.12); font-weight: 800; }
+    .rg-kurz { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 16px 18px; margin: 18px 0 24px; background: rgba(127,127,127,.07); }
+    .rg-kurz > b:first-child { display: block; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; opacity: .8; }
+    .rg-kurz ul { margin: 6px 0 0; padding-left: 20px; }
+    .rg-kurz li { margin-bottom: 5px; }
+    .rg-quellen { font-size: 14px; opacity: .9; }
+    .rg-quellen li { font-size: 14px !important; margin-bottom: 4px; }
+    .rg-weiter { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 12px 0 26px; }
+    .rg-weiter a { display: block; border: 1px solid rgba(127,127,127,.35); border-radius: 10px; padding: 12px 14px; text-decoration: none; font-weight: 700; }
+    .rg-weiter a span { display: block; font-weight: 400; font-size: 13.5px; opacity: .75; margin-top: 2px; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Glätte ohne Schnee: Wann bei Reifglätte, überfrierender Nässe und Eisregen gestreut werden muss","description":"Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt.","inLanguage":"de","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html"},"image":"https://winterdex.dexware.app/og-image.png"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WinterDex","item":"https://winterdex.dexware.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html"},{"@type":"ListItem","position":3,"name":"Glätte ohne Schnee","item":"https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Muss ich streuen, wenn kein Schnee liegt?","acceptedAnswer":{"@type":"Answer","text":"Ja, wenn es glatt ist. Die Streupflicht hängt an der Glätte, nicht am Schnee. In Deutschland setzt sie nach dem Bundesgerichtshof eine allgemeine Glätte voraus oder erkennbare Anhaltspunkte für eine ernsthaft drohende Gefahr. In Österreich verlangt § 93 StVO, dass Gehsteige bei Schnee und Glatteis bestreut sind."}},{"@type":"Question","name":"Reichen einzelne glatte Stellen für eine Streupflicht?","acceptedAnswer":{"@type":"Answer","text":"Nicht ohne Weiteres. Nach dem BGH (VI ZR 138/11) begründen vereinzelte Glättestellen ohne erkennbare Anhaltspunkte für eine ernsthaft drohende Gefahr noch keine Streupflicht. Wer aber weiß, dass eine bestimmte Stelle regelmäßig vereist, etwa unter einer Regenrinne oder auf einer schattigen Treppe, sollte sie im Blick behalten."}},{"@type":"Question","name":"Muss bei Eisregen gestreut werden, während es noch regnet?","acceptedAnswer":{"@type":"Answer","text":"Solange Streuen sofort wieder wirkungslos wäre, muss nicht pausenlos gestreut werden. Sobald es die Wetterlage sinnvoll zulässt, ist aber zu handeln. Manche Gemeinden erlauben bei Eisregen ausnahmsweise Salz, das steht in der örtlichen Vorschrift."}},{"@type":"Question","name":"Muss ich vorsorglich am Vorabend streuen?","acceptedAnswer":{"@type":"Answer","text":"Eine feste Regel, wann vorsorglich gestreut werden muss, gibt es nicht. Für den Beginn der Streupflicht ist nach dem BGH aber wichtig, wie weit die erkennbare Wetterlage Anlass zur Vorsorge gegeben hat. Wer eine Glättewarnung kennt, sollte deshalb eine frühe Kontrollrunde einplanen und rechtzeitig vor Ort sein."}},{"@type":"Question","name":"Woran erkenne ich Reifglätte?","acceptedAnswer":{"@type":"Answer","text":"An einem weißen, feinen Belag auf Autoscheiben, Geländern und Gras nach einer klaren, kalten Nacht. Besonders gefährdet sind Brücken, Rampen, Außentreppen und Flächen im Schatten. Die Fläche kann glatt sein, obwohl das Thermometer knapp über null zeigt, denn der Boden kühlt oft stärker aus als die Luft."}},{"@type":"Question","name":"Muss ich auch festhalten, wenn ich kontrolliert und nichts gemacht habe?","acceptedAnswer":{"@type":"Answer","text":"Das ist sehr zu empfehlen. Ein Eintrag „kontrolliert, keine Maßnahme nötig“ mit Uhrzeit und Wetterlage zeigt später, dass zur Pflichtzeit jemand vor Ort war und die Lage beurteilt hat."}}]}</script>
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round">
+            <line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/>
+          </svg>
+        </span>
+        <a class="brand" href="index.html">WinterDex</a>
+        <nav>
+          <a href="index.html">Start</a>
+          <a href="index.html#funktionen">Funktionen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="article-head">
+      <span class="badge">Ratgeber · Reif, Eisregen, überfrierende Nässe</span>
+      <h1>Glätte ohne Schnee: <span class="hl">Wann bei Reif, Nässe und Eisregen</span> gestreut werden muss</h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Dieser Ratgeber behandelt <strong>Deutschland und Österreich</strong>; wo sich die Regeln unterscheiden, steht es dabei.</p>
+      <p class="lead">Die meisten Stürze passieren nicht im Tiefschnee, sondern auf einer Fläche, die harmlos aussieht: feiner Reif auf der Treppe, überfrorene Nässe auf dem Gehweg, Eisregen am Morgen. Die Streupflicht hängt an der Glätte, nicht am Schnee. Hier steht, wann sie greift, wie man Glätte rechtzeitig erkennt und warum auch ein Kontrollgang ohne Streuen ins Protokoll gehört.</p>
+      <div class="meta">
+        <span>Lesezeit ca. 6 Minuten</span>
+        <span class="dot">·</span>
+        <span>Stand: November 2026</span>
+        <span class="dot">·</span>
+        <span>Für Eigentümer, Hausverwaltung und Winterdienst</span>
+      </div>
+    </div>
+
+    <article>
+      <div class="toc">
+        <div class="t">Auf dieser Seite</div>
+        <ol>
+          <li><a href="#kurz">Das Wichtigste in 30 Sekunden</a></li>
+          <li><a href="#arten">Drei Arten von Glätte ohne Schnee</a></li>
+          <li><a href="#recht">Wann die Streupflicht greift</a></li>
+          <li><a href="#eisregen">Sonderfall Eisregen</a></li>
+          <li><a href="#erkennen">Glätte rechtzeitig erkennen</a></li>
+          <li><a href="#entscheiden">Wetterlage und Maßnahme: eine Übersicht</a></li>
+          <li><a href="#doku">Auch der Kontrollgang zählt</a></li>
+          <li><a href="#faq">Häufige Fragen</a></li>
+        </ol>
+      </div>
+
+      <h2 id="kurz">Das Wichtigste in 30 Sekunden</h2>
+      <div class="checklist">
+        <h3>Glätte ohne Schnee auf einen Blick</h3>
+        <ul>
+          <li><strong>Glätte zählt, nicht Schnee:</strong> Reif, überfrierende Nässe und Eisregen lösen die Streupflicht genauso aus wie Schneefall.</li>
+          <li><strong>Deutschland:</strong> Voraussetzung ist eine allgemeine Glätte oder ein erkennbarer Anhaltspunkt für eine ernsthaft drohende Gefahr (BGH).</li>
+          <li><strong>Österreich:</strong> Nach § 93 StVO müssen Gehsteige von 6 bis 22 Uhr bei Schnee und Glatteis bestreut sein.</li>
+          <li><strong>Wetter im Blick:</strong> Wer eine Glättewarnung kennt, plant eine frühe Kontrollrunde ein. Der Boden kann glatt sein, obwohl die Luft knapp über null ist.</li>
+          <li><strong>Kontrolle festhalten:</strong> auch „kontrolliert, keine Maßnahme nötig“, mit Uhrzeit und Wetterlage.</li>
+        </ul>
+      </div>
+
+      <h2 id="arten">Drei Arten von Glätte ohne Schnee</h2>
+      <p>Wer nur auf Schnee achtet, übersieht die tückischsten Lagen. Drei Formen kommen im Winter immer wieder vor:</p>
+      <ul>
+        <li><strong>Reifglätte:</strong> In klaren, windstillen Nächten kühlen Oberflächen stark aus. Feuchtigkeit aus der Luft setzt sich als feiner Eisbelag ab. Typisch sind Brücken, Rampen, Außentreppen, Metallroste und Flächen im Schatten, oft am frühen Morgen.</li>
+        <li><strong>Überfrierende Nässe:</strong> Tagsüber taut es, Schmelzwasser oder Regen bleiben auf der Fläche, und wenn die Temperatur am Abend oder in der Nacht unter null sinkt, friert die Nässe. Das betrifft auch die Abendstunden innerhalb der Pflichtzeit.</li>
+        <li><strong>Eisregen und Glatteis:</strong> Regen fällt auf einen gefrorenen Boden und gefriert beim Auftreffen sofort. In kurzer Zeit entsteht eine durchgehende, glasklare Eisschicht, die oft „Blitzeis“ genannt wird.</li>
+      </ul>
+      <p>Gemeinsam ist allen drei: Man sieht sie vom Fenster aus kaum. Die Fläche wirkt nur nass oder dunkel. Und weil der Boden oft kälter ist als die Luft in Augenhöhe, kann es glatt sein, obwohl das Thermometer noch knapp über null zeigt.</p>
+
+      <h2 id="recht">Wann die Streupflicht greift</h2>
+      <p><strong>Deutschland:</strong> Nach dem Bundesgerichtshof setzt die Räum- und Streupflicht eine konkrete Gefahrenlage voraus. Grundvoraussetzung ist eine <strong>allgemeine Glätte</strong>, nicht nur das Vorhandensein einzelner Glättestellen (BGH, Urteil vom 12. Juni 2012, VI ZR 138/11). In einer späteren Entscheidung hat der BGH das so gefasst: entweder allgemeine Glätte oder erkennbare Anhaltspunkte für eine ernsthaft drohende Gefahr aufgrund vereinzelter Glättestellen (VI ZR 184/18). Wann genau gestreut sein muss, richtet sich nach dem Einzelfall:</p>
+      <ul>
+        <li><strong>Zeitraum:</strong> Die Pflicht besteht regelmäßig für die Zeit des normalen Tagesverkehrs; die genauen Zeiten legt meist die Satzung der Gemeinde fest (siehe <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht: Uhrzeiten</a>).</li>
+        <li><strong>Glätte im Laufe des Tages:</strong> Dann ist eine angemessene Zeit zuzubilligen, um zu handeln. Eine pauschale Schonfrist von mindestens einer Stunde hat der BGH abgelehnt, es kommt auf die Umstände an.</li>
+        <li><strong>Erkennbare Wetterlage:</strong> Für den Beginn der Streupflicht ist laut BGH vor allem wichtig, wie weit die erkennbare Wetterlage und die Eigenheiten des Weges Anlass zur Vorsorge gegeben haben. Eine bekannte Glättewarnung ist so ein Anlass.</li>
+      </ul>
+      <p><strong>Österreich:</strong> § 93 StVO verpflichtet die Liegenschaftseigentümer im Ortsgebiet, die Gehsteige entlang der Liegenschaft von 6 bis 22 Uhr von Schnee und Verunreinigungen zu säubern und <strong>bei Schnee und Glatteis zu bestreuen</strong>. Glatteis ist dort also ausdrücklich genannt. Mehr dazu im Ratgeber <a href="ratgeber-schneeraeumung-oesterreich.html">Schneeräumung in Österreich</a>.</p>
+
+      <h2 id="eisregen">Sonderfall Eisregen</h2>
+      <p>Bei anhaltendem Eisregen muss nicht pausenlos gestreut werden, wenn jede Maßnahme sofort wieder wirkungslos wäre. Sobald es die Wetterlage sinnvoll zulässt, ist aber zu handeln, und Eingänge, Treppen und Rampen gehören dann zuerst dran. Zwei Punkte werden oft vergessen:</p>
+      <ul>
+        <li><strong>Salz ist nicht überall erlaubt:</strong> Viele Gemeinden schränken Streusalz ein, lassen bei Eisregen aber Ausnahmen zu. Was vor Ort gilt, steht in der Satzung bzw. Verordnung, Beispiele im Ratgeber <a href="ratgeber-streusalz-verbot.html">Streusalz: erlaubt oder verboten?</a>.</li>
+        <li><strong>Nach dem Regen kommt die zweite Runde:</strong> Hört der Eisregen auf, ist die Fläche oft glatter als vorher. Eine Runde direkt danach gehört in den Plan.</li>
+      </ul>
+
+      <h2 id="erkennen">Glätte rechtzeitig erkennen</h2>
+      <p>Wer erst losgeht, wenn jemand gestürzt ist, ist zu spät. Drei Hilfen, um Glätte vorher zu sehen:</p>
+      <ol>
+        <li><strong>Wetterwarnungen lesen:</strong> In Deutschland warnt der Deutsche Wetterdienst vor Glätte und Glatteis, in Österreich GeoSphere Austria. Die Arbeitsstättenregel ASR A5.1 ordnet die DWD-Warnstufen so ein: Stufe 1 bis 2 steht für überfrierende Nässe, Reifablagerung oder kurzzeitig kleinräumiges Glatteis, Stufe 3 bis 4 für verbreitete Glatteisbildung.</li>
+        <li><strong>Am Vorabend entscheiden:</strong> Wird Frost nach Regen oder Tauwetter gemeldet, wird die Kontrollrunde für den Morgen fest eingeplant, mit Zuständigkeit und rechtzeitig vor der Pflichtzeit.</li>
+        <li><strong>Vor Ort prüfen:</strong> bereifte Autoscheiben, Reif auf Geländern und Gras, nasse dunkle Flächen bei Temperaturen um null. Brücken, Rampen, Treppen und schattige Stellen zuerst ansehen.</li>
+      </ol>
+
+      <h2 id="entscheiden">Wetterlage und Maßnahme: eine Übersicht</h2>
+      <p>Die Tabelle ist eine Orientierung für die Praxis, keine Rechtsregel. Was im Einzelfall zumutbar ist, hängt vom Weg, vom Verkehr und von der örtlichen Vorschrift ab.</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Wetterlage</th><th>Typische Glätte</th><th>Was tun?</th><th>Was festhalten?</th></tr></thead>
+          <tbody>
+            <tr><td>Klare, kalte Nacht, Frost am Morgen</td><td>Reifglätte auf Brücken, Treppen, Rampen</td><td>Kontrollrunde vor der Pflichtzeit, gefährdete Stellen streuen</td><td>Uhrzeit, Temperatur, Flächen, Maßnahme oder „keine nötig“</td></tr>
+            <tr><td>Tauwetter am Tag, Frost am Abend</td><td>überfrierende Nässe</td><td>Abendrunde innerhalb der Pflichtzeit</td><td>Uhrzeit der Abendrunde, Wetterlage</td></tr>
+            <tr><td>Regen auf gefrorenen Boden</td><td>Eisregen, Glatteis</td><td>streuen, sobald es Wirkung hat; danach wiederholen</td><td>Beginn und Ende des Eisregens, jede Runde</td></tr>
+            <tr><td>Nebel bei Temperaturen unter null</td><td>Reif, vereiste Stellen</td><td>Kontrollgang, besonders auf Metall und Stein</td><td>Kontrolle mit Uhrzeit</td></tr>
+            <tr><td>Glättewarnung, aber trocken</td><td>evtl. später Glätte</td><td>Bereitschaft und Kontrollrunde planen</td><td>Warnung und Kontrollzeit notieren</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="doku">Auch der Kontrollgang zählt</h2>
+      <p>Gerade bei Glätte ohne Schnee ist der wichtigste Eintrag oft der unscheinbarste: <strong>„kontrolliert, keine Maßnahme nötig“</strong>. Er zeigt später, dass zur Pflichtzeit jemand vor Ort war und die Lage beurteilt hat. Festhalten sollte man je Runde Datum und Uhrzeit, Fläche, Maßnahme, Streugut, Wetterlage und Name. Eine Sammelzeile „diese Woche alles erledigt“ hilft nach einem Sturz nicht. Wie ein Protokoll aussieht, zeigt die <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>, wer nach einem Unfall was beweisen muss, der Ratgeber <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Wer haftet?</a>.</p>
+
+      <div class="callout">
+        <div class="cl-t">Kontrollrunden im Tourenplan</div>
+        <p>Wer viele Objekte betreut, plant Kontrollrunden bei Frost und Abendrunden nach Tauwetter fest ein, mit Zuständigkeit und Vertretung. Wie das aussieht, steht im Ratgeber <a href="ratgeber-winterdienst-tourenplan.html">Winterdienst-Tourenplan erstellen</a>.</p>
+      </div>
+
+      <div class="cta">
+        <h3>Frühwarnung für jedes Objekt, Nachweis für jede Runde</h3>
+        <p>WinterDex wertet die Wettervorhersage für jedes Objekt aus und zeigt, wo heute Glätte droht, etwa bei Neuschnee, angekündigtem Eisregen oder Schneefall, Niederschlag um den Gefrierpunkt oder strengem Frost. Mit Pro kommt die Glätte-Frühwarnung jeden Morgen per Push. Den Blick nach draußen ersetzt sie nicht, sie erinnert dich daran. Jeder Einsatz wird mit Uhrzeit, GPS-Standort, Wetterlage und Foto festgehalten, auch ein Kontrollgang ohne Maßnahme, und lässt sich nachträglich nicht mehr ändern. Gratis für 2 Objekte und 1 Strecke, Pro kostet 9,99 € im Monat oder 39,99 € im Jahr.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.winterdex.app">WinterDex im Play Store →</a>
+      </div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Muss ich streuen, wenn kein Schnee liegt?</summary>
+          <p>Ja, wenn es glatt ist. Die Streupflicht hängt an der Glätte, nicht am Schnee. In Deutschland setzt sie nach dem Bundesgerichtshof eine allgemeine Glätte voraus oder erkennbare Anhaltspunkte für eine ernsthaft drohende Gefahr. In Österreich verlangt § 93 StVO, dass Gehsteige bei Schnee und Glatteis bestreut sind.</p>
+        </details>
+        <details>
+          <summary>Reichen einzelne glatte Stellen für eine Streupflicht?</summary>
+          <p>Nicht ohne Weiteres. Nach dem BGH (VI ZR 138/11) begründen vereinzelte Glättestellen ohne erkennbare Anhaltspunkte für eine ernsthaft drohende Gefahr noch keine Streupflicht. Wer aber weiß, dass eine bestimmte Stelle regelmäßig vereist, etwa unter einer Regenrinne oder auf einer schattigen Treppe, sollte sie im Blick behalten.</p>
+        </details>
+        <details>
+          <summary>Muss bei Eisregen gestreut werden, während es noch regnet?</summary>
+          <p>Solange Streuen sofort wieder wirkungslos wäre, muss nicht pausenlos gestreut werden. Sobald es die Wetterlage sinnvoll zulässt, ist aber zu handeln. Manche Gemeinden erlauben bei Eisregen ausnahmsweise Salz, das steht in der örtlichen Vorschrift.</p>
+        </details>
+        <details>
+          <summary>Muss ich vorsorglich am Vorabend streuen?</summary>
+          <p>Eine feste Regel, wann vorsorglich gestreut werden muss, gibt es nicht. Für den Beginn der Streupflicht ist nach dem BGH aber wichtig, wie weit die erkennbare Wetterlage Anlass zur Vorsorge gegeben hat. Wer eine Glättewarnung kennt, sollte deshalb eine frühe Kontrollrunde einplanen und rechtzeitig vor Ort sein.</p>
+        </details>
+        <details>
+          <summary>Woran erkenne ich Reifglätte?</summary>
+          <p>An einem weißen, feinen Belag auf Autoscheiben, Geländern und Gras nach einer klaren, kalten Nacht. Besonders gefährdet sind Brücken, Rampen, Außentreppen und Flächen im Schatten. Die Fläche kann glatt sein, obwohl das Thermometer knapp über null zeigt, denn der Boden kühlt oft stärker aus als die Luft.</p>
+        </details>
+        <details>
+          <summary>Muss ich auch festhalten, wenn ich kontrolliert und nichts gemacht habe?</summary>
+          <p>Das ist sehr zu empfehlen. Ein Eintrag „kontrolliert, keine Maßnahme nötig“ mit Uhrzeit und Wetterlage zeigt später, dass zur Pflichtzeit jemand vor Ort war und die Lage beurteilt hat.</p>
+        </details>
+      </div>
+
+      <h2 id="quellen" style="font-size:20px">Quellen</h2>
+      <ul>
+        <li><a href="https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&amp;docid=KORE303812012&amp;psml=bsjrsprod.psml&amp;max=true" rel="noopener">BGH, Urteil vom 12. Juni 2012 – VI ZR 138/11 (allgemeine Glätte, Zeitraum, Wetterlage)</a></li>
+        <li><a href="https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&amp;docid=KORE305182019&amp;psml=bsjrsprod.psml&amp;max=true" rel="noopener">BGH, Urteil vom 2. Juli 2019 – VI ZR 184/18</a></li>
+        <li><a href="https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=10011336&amp;Paragraf=93" rel="noopener">§ 93 StVO 1960 – RIS</a></li>
+        <li><a href="https://www.baua.de/DE/Angebote/Regelwerk/ASR/ASR-A5-1" rel="noopener">ASR A5.1, Tabelle 2 (Intensitätsstufen Glätte und Glatteis) – BAuA</a></li>
+        <li><a href="https://www.dwd.de/DE/wetter/warnungen_gemeinden/warnWetter_node.html" rel="noopener">Wetterwarnungen – Deutscher Wetterdienst</a></li>
+        <li><a href="https://warnungen.zamg.at/" rel="noopener">Wetterwarnungen – GeoSphere Austria</a></li>
+      </ul>
+
+      <p class="disclaimer">
+        Hinweis: Diese Informationen sind allgemein gehalten und ersetzen keine Rechtsberatung im Einzelfall. Maßgeblich sind
+        die Satzung bzw. Verordnung der jeweiligen Gemeinde, eure Verträge und die konkreten Umstände vor Ort.
+      </p>
+    </article>
+
+    <footer>
+      <span>© 2026 WinterDex · Dexware</span>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="ratgeber-raeum-streupflicht.html">Ratgeber</a>
+        <a href="ratgeber-streuprotokoll-vorlage.html">Streuprotokoll-Vorlage</a>
+        <a href="ratgeber-streupflicht-uhrzeiten.html">Streupflicht-Uhrzeiten</a>
+        <a href="ratgeber-schneeraeumung-oesterreich.html">Österreich: § 93 StVO</a>
+        <a href="ratgeber-winterdienst-hausverwaltung.html">Hausverwaltungen</a>
+        <a href="ratgeber-winterdienst-gemeinde.html">Gemeinden</a>
+        <a href="ratgeber-dachlawinen-eiszapfen.html">Dachlawinen und Eiszapfen</a>
+        <a href="ratgeber-glatteis-unfall-haftung.html">Glatteis-Unfall: Haftung und Beweise</a>
+        <a href="ratgeber-raeumpflicht-mieter.html">Räumpflicht für Mieter</a>
+        <a href="ratgeber-streusalz-verbot.html">Streusalz: erlaubt?</a>
+        <a href="ratgeber-winterdienst-abrechnen.html">Winterdienst abrechnen</a>
+        <a href="ratgeber-winterdienst-nachweis-anfordern.html">Nachweise anfordern</a>
+        <a href="ratgeber-winterdienst-tourenplan.html">Tourenplan</a>
+        <a href="ratgeber-streupflicht-parkplatz-firmengelaende.html">Parkplatz und Firmengelände</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="konto-loeschung.html">Konto löschen</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        var host = document.querySelector('.snow');
+        for (var i = 0; i < 26; i++) {
+          var f = document.createElement('i');
+          var size = 2 + Math.random() * 3;
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = (Math.random() * 100) + 'vw';
+          f.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+          f.style.animationDuration = (9 + Math.random() * 14) + 's';
+          f.style.animationDelay = (-Math.random() * 20) + 's';
+          host.appendChild(f);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
