@@ -115,11 +115,13 @@
         Speicher zu Werbe- oder Analysezwecken gibt es nicht.</li>
       <li><strong>Fotos:</strong> Sie wählen Fotos selbst über Kamera oder Mediathek aus; sie werden vor dem Hochladen auf
         Ihrem Gerät verkleinert.</li>
-      <li><strong>Adresssuche und Import:</strong> Legen Sie im Dashboard ein Objekt ohne Standort an oder importieren Sie
-        Objekte aus einer Excel- bzw. CSV-Liste, bestimmt der Browser den Standort aus der Objektadresse über den Suchdienst
-        Nominatim von OpenStreetMap (für Glätte-Frühwarnung und GPS-Abstand). Übermittelt wird nur die Adresse — technisch
-        bedingt mit Ihrer IP-Adresse —, keine Namen, Kontaktdaten oder Einsatzdaten; beim Import lässt sich das abschalten.
-        Die Import-Datei selbst wird nur in Ihrem Browser gelesen; gespeichert werden nur die angelegten Objekte.</li>
+      <li><strong>Adresssuche und Import:</strong> Wenn Sie im Dashboard ein Objekt ohne Standort anlegen oder bearbeiten oder
+        Objekte aus einer Excel- bzw. CSV-Liste importieren, bestimmt der Browser den Standort aus der Objektadresse über den
+        Suchdienst Nominatim von OpenStreetMap (für Glätte-Frühwarnung und GPS-Abstand; nur bei Adressen mit Postleitzahl und
+        Ort). Übermittelt wird nur die Adresse — technisch bedingt mit Ihrer IP-Adresse —, keine Namen, Kontaktdaten oder
+        Einsatzdaten; beim Import lässt sich das abschalten. Die Import-Datei und die Suchergebnisse werden nur im
+        Arbeitsspeicher Ihres Browsers verarbeitet und nicht auf dem Gerät abgelegt; gespeichert werden nur die angelegten
+        Objekte in Ihrem Konto.</li>
       <li><strong>Auslieferung:</strong> Das Dashboard wird über GitHub Pages (GitHub Inc., USA) ausgeliefert; dabei fallen
         technisch bedingt Server-Logdaten (IP-Adresse, Zeitpunkt) an. Ihre Konto-, Objekt- und Einsatzdaten liegen nicht
         dort, sondern wie in der App bei Supabase (EU/Frankfurt).</li>
@@ -154,7 +156,7 @@
       <li><strong>Cloudflare</strong> (Server/Workers) — technische Verarbeitung der Wetter-Anfragen.</li>
       <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
       <li><strong>OpenStreetMap Foundation</strong> (Nominatim, Adresssuche; Vereinigtes Königreich; nur im Dashboard beim
-        Anlegen oder Importieren von Objekten ohne Standort) — erhält die Objektadresse und technisch bedingt die IP-Adresse,
+        Anlegen, Bearbeiten oder Importieren von Objekten ohne Standort) — erhält die Objektadresse und technisch bedingt die IP-Adresse,
         um den Standort zu bestimmen. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission.</li>
       <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
       <li><strong>Kartendienst</strong> (Android: Google Maps von Google Ireland Ltd.; iPhone: Apple Karten) — zeigt die Karte der
