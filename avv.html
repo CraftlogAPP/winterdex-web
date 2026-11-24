@@ -46,7 +46,7 @@
     </header>
 
     <h1>Auftrags&shy;verarbeitungs&shy;vertrag (AVV)</h1>
-    <p class="stand">gemäß Art. 28 DSGVO · Stand: November 2026</p>
+    <p class="stand">gemäß Art. 28 DSGVO · Stand: 24.11.2026</p>
 
     <div class="note">Dieser Vertrag gilt zwischen dem Nutzer als <strong>Verantwortlichem</strong> und dem Anbieter als
       <strong>Auftragsverarbeiter</strong>, soweit der Nutzer mit WinterDex personenbezogene Daten Dritter verarbeitet. Er ist
@@ -60,7 +60,8 @@
 
     <h2>§ 2 Gegenstand, Dauer, Art und Zweck</h2>
     <p>Gegenstand ist die Bereitstellung von WinterDex für die Dokumentation von Winterdienst-Einsätzen (Räumen und Streuen). Der Anbieter verarbeitet die Daten ausschließlich
-      zur Erbringung dieses Dienstes (Speichern, Synchronisieren, Anzeigen, Erstellen von Berichten). Die Dauer
+      zur Erbringung dieses Dienstes (Speichern, Synchronisieren, Anzeigen, Erstellen von Berichten sowie Versand von
+      Fälligkeits- und Monatsübersichten per E-Mail an die Nutzer des Betriebs; abbestellbar). Die Dauer
       entspricht der Laufzeit der Nutzung; die Kündigung richtet sich nach den AGB.</p>
 
     <h2>§ 3 Art der Daten und Kreis der Betroffenen</h2>
@@ -68,7 +69,7 @@
     <ul>
       <li>Namen der ausführenden Personen und Team-Mitglieder (inkl. E-Mail-Adresse)</li>
       <li>Einsatzdaten (Zeitpunkte, Maßnahmen, Streumittel, Notizen)</li>
-      <li>Standortdaten (GPS-Stempel bei Beginn und Ende des Einsatzes)</li>
+      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet)</li>
       <li>Fotos (können Personen oder Kennzeichen zeigen)</li>
       <li>Angaben zu Objekten und Auftraggebern (Name, Anschrift)</li>
       <li>Push-Kennungen der Geräte (nur bei aktivierter Glätte-Frühwarnung)</li>
@@ -84,6 +85,11 @@
     <p>Der Anbieter verarbeitet die Daten nur auf dokumentierte Weisung des Nutzers. Die Weisungen ergeben sich aus
       diesem Vertrag und der Nutzung der App-Funktionen durch den Nutzer; weitere Weisungen erfolgen in Textform.
       Hält der Anbieter eine Weisung für rechtswidrig, informiert er den Nutzer unverzüglich.</p>
+
+    <h2>§ 4a Einsatz bei Beschäftigten</h2>
+    <p>Setzt der Nutzer die Strecken-Aufzeichnung bei Beschäftigten ein, ist er dafür verantwortlich, die Beschäftigten
+      zu informieren und – soweit erforderlich – die Zustimmung des Betriebsrats bzw. der Beschäftigten einzuholen
+      (AT: § 96 ArbVG, § 10 AVRAG; DE: § 87 Abs. 1 Nr. 6 BetrVG).</p>
 
     <h2>§ 5 Pflichten des Anbieters</h2>
     <ul>
@@ -107,15 +113,20 @@
       <li>Unveränderlichkeit von Nachweisen: Einträge sind fortlaufend dokumentiert; Korrekturen nur als gekennzeichnete
         Stornierungen. Nachweise erhalten einen vom Server berechneten Prüfcode (SHA-256); spätere Änderungen sind
         technisch gesperrt.</li>
-      <li>Datensicherung des Anbieters; Datenminimierung (z. B. keine Hintergrund-Ortung).</li>
+      <li>Datensicherung: eigene Sicherungskopien des Anbieters (keine Sicherung durch den Hosting-Dienstleister); sie
+        werden nach spätestens 30 Tagen überschrieben, Kopien außerhalb des Arbeitsplatzes nur verschlüsselt.</li>
+      <li>Datenminimierung: Ortung nur beim Dokumentieren und während einer von der Person selbst gestarteten Streckenfahrt; keine Ortung außerhalb davon.</li>
     </ul>
 
     <h2>§ 7 Unterauftragsverarbeiter</h2>
     <p>Der Nutzer genehmigt den Einsatz folgender Unterauftragsverarbeiter:</p>
     <ul>
-      <li>Supabase Inc. (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main)</li>
+      <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln</li>
       <li>Cloudflare, Inc. (Server/Worker für Schnittstellen) — Verarbeitung im Rahmen der Anfrage, EU-Standardvertragsklauseln (nur Wetterabfragen mit Koordinaten)</li>
-      <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen) — nur Push-Kennung und Warntext, EU-Standardvertragsklauseln</li>
+      <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen über Google Firebase Cloud Messaging bzw. den Apple Push Notification Service) — nur Push-Kennung und Warntext, EU-Standardvertragsklauseln</li>
+      <li>Brevo (Sendinblue SAS, Frankreich; Versand von Anmelde-, Bestätigungs- und Passwort-Mails) — Verarbeitung in der EU</li>
+      <li>Resend (Plus Five Five, Inc., USA; Versand der Fälligkeits- und Monatsübersichten per E-Mail an die Nutzer des Betriebs) — EU-Standardvertragsklauseln</li>
+      <li>RevenueCat, Inc., USA (Abo- und Team-Freischaltung) — nur pseudonyme Kauf-Kennung, keine Inhalte, EU-Standardvertragsklauseln</li>
     </ul>
     <p>Über beabsichtigte Änderungen informiert der Anbieter vorab in geeigneter Weise (z. B. auf dieser Seite und per
       E-Mail an den Inhaber); der Nutzer kann aus wichtigem datenschutzrechtlichem Grund widersprechen.</p>
@@ -124,7 +135,8 @@
     <p>Nach Ende der Nutzung bzw. bei Löschung des Kontos durch den Inhaber werden die Daten des Betriebs
       einschließlich der Fotos gelöscht, soweit keine gesetzliche Aufbewahrungspflicht des Anbieters besteht. Vor
       der Löschung kann der Nutzer seine Nachweise als PDF bzw. Export sichern; der Nutzer ist für die Einhaltung
-      eigener Aufbewahrungspflichten verantwortlich.</p>
+      eigener Aufbewahrungspflichten verantwortlich. Sicherungskopien des Anbieters werden spätestens nach 30 Tagen
+      überschrieben.</p>
 
     <h2>§ 9 Schlussbestimmungen</h2>
     <p>Im Übrigen gelten die <a href="agb.html">AGB</a>. Bei Widersprüchen zu anderen Vereinbarungen gehen die
