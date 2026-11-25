@@ -50,7 +50,7 @@
     </header>
 
     <h1>Datenschutzerklärung</h1>
-    <p class="stand">Stand: 24.11.2026 · Gilt für die mobile App „WinterDex", die Nutzung im Browser (dashboard.dexware.app) und diese Website.</p>
+    <p class="stand">Stand: 25.11.2026 · Gilt für die mobile App „WinterDex", die Nutzung im Browser (dashboard.dexware.app) und diese Website.</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -74,7 +74,9 @@
     <h3>b) Betriebs- und Objektdaten</h3>
     <p>Von Ihnen eingegebene Angaben zu Ihrem Betrieb und Ihren Objekten (Name, Adressen, Flächen,
       Pflichtzeiten, Auftraggeber). Objektadressen werden zur Zuordnung von Wetterdaten in Koordinaten
-      umgerechnet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+      (Kartenpunkt) umgerechnet — in der App über den Standortdienst Ihres Geräts (Android: Google, iPhone: Apple), im
+      Dashboard und auf unserem Server über OpenStreetMap (siehe Buchstaben d2 und j). Rechtsgrundlage: Art. 6 Abs. 1
+      lit. b DSGVO.</p>
     <h3>c) Einsatz-Dokumentation</h3>
     <p>Beim Dokumentieren eines Einsatzes speichern wir Zeitpunkt, Maßnahme, Streumittel, optionale
       Notizen und Fotos, die aktuelle Geräteposition (GPS-Stempel) sowie die Wetterlage am Objekt.
@@ -122,6 +124,8 @@
         Einsatzdaten; beim Import lässt sich das abschalten. Die Import-Datei und die Suchergebnisse werden nur im
         Arbeitsspeicher Ihres Browsers verarbeitet und nicht auf dem Gerät abgelegt; gespeichert werden nur die angelegten
         Objekte in Ihrem Konto.</li>
+      <li><strong>Karten:</strong> Für die Karten im Dashboard und im „Außendienst“ (z. B. Fahrten, Objekte, PDF-Bericht)
+        lädt Ihr Browser Kartenkacheln von OpenStreetMap — siehe Buchstabe j.</li>
       <li><strong>Auslieferung:</strong> Das Dashboard wird über GitHub Pages (GitHub Inc., USA) ausgeliefert; dabei fallen
         technisch bedingt Server-Logdaten (IP-Adresse, Zeitpunkt) an. Ihre Konto-, Objekt- und Einsatzdaten liegen nicht
         dort, sondern wie in der App bei Supabase (EU/Frankfurt).</li>
@@ -171,19 +175,66 @@
       Art. 6 Abs. 1 lit. b und f DSGVO (Support und Verbesserung der App). Rückmeldungen bewahren wir auf, solange wir sie
       für Bearbeitung und Weiterentwicklung brauchen; löschen Sie Ihr Konto, wird die Rückmeldung von Ihrem Konto
       getrennt. Auf Wunsch löschen wir sie vollständig (E-Mail an datenschutz@dexware.app).</p>
+    <h3>j) OpenStreetMap: Karten, Standort aus der Adresse und Straßennamen</h3>
+    <p>Für Karten, Kartenpunkte und Straßennamen nutzen wir freie Dienste der OpenStreetMap-Gemeinschaft. An diese
+      Dienste übermitteln wir keine Objekt- oder Personennamen aus Ihren Einträgen, keine E-Mail-Adressen, Konto- oder
+      Betriebskennungen, Fotos oder Einsatzinhalte.</p>
+    <ul>
+      <li><strong>Karte im Fahrt-Bericht und im Browser:</strong> Erstellen Sie den PDF-Bericht einer Fahrt, lädt die App
+        die nötigen Kartenkacheln vom Kartenserver der OpenStreetMap Foundation (tile.openstreetmap.org); im Dashboard und
+        im „Außendienst“ lädt Ihr Browser die Kacheln der angezeigten Karten. Dabei werden technisch bedingt Ihre
+        IP-Adresse und der Kartenbereich (Kachelnummern) übertragen, nicht die Fahrspur selbst — die Linie zeichnet Ihr
+        Gerät. Die Kacheln liefert die OpenStreetMap Foundation über ein weltweites Netz von Zwischenspeicher-Servern
+        (Content Delivery Network) aus.</li>
+      <li><strong>Standort aus der Adresse (Glätte-Frühwarnung):</strong> Hat ein Objekt noch keinen Kartenpunkt, sucht
+        unser Server dessen Standort über den Suchdienst Nominatim der OpenStreetMap Foundation — nur für Betriebe, die
+        Glätte-Warnungen per Push-Mitteilung erhalten, und nur bei Adressen mit Postleitzahl und Ort. Übermittelt wird
+        nur die Adresse in der Form „Straße Hausnummer, PLZ Ort“: Der Objektname wird nie übermittelt, durch Komma
+        abgetrennte Zusätze im Adressfeld (z. B. „Fam. Müller, …“) werden abgeschnitten — Namen gehören deshalb in den
+        Objektnamen, nicht in die Adresse. Die Anfrage stellt unser Server, Ihre IP-Adresse wird dabei nicht übertragen.
+        Ist der Treffer hausgenau und eindeutig, tragen wir ihn als Kartenpunkt im Objekt ein (einen vorhandenen
+        Kartenpunkt überschreiben wir nie); sonst dient er nur der Glätte-Warnung und liegt in einem
+        Zwischenspeicher in Ihrer Datenbank (dort statt der Adresse nur ein Prüfwert). Setzen Sie den Kartenpunkt eines
+        Objekts selbst, findet für dieses Objekt keine Suche statt.</li>
+      <li><strong>Straßennamen im Fahrt-Bericht:</strong> Damit der Bericht zeigt, wann eine Fahrt auf welcher Straße war,
+        ermittelt unser Server nach dem Hochladen einer Fahrt (Cloud-Modus) Straßen und Gemeinden aus OpenStreetMap. Dazu
+        sendet er an Nominatim einzelne Punkte der Spur (nur Koordinaten, ohne Uhrzeit) und an öffentliche
+        Overpass-Server der OpenStreetMap-Gemeinschaft in der EU (z. B. overpass-api.de, betrieben vom FOSSGIS e.V.,
+        Deutschland, oder overpass.private.coffee, betrieben vom Verein Private.coffee, Österreich) Rechtecke aus den
+        Kacheln eines festen Kartenrasters (je etwa 550 × 550 m), durch die die Fahrt führt — nicht die Spur selbst.
+        Die Anfragen stellen unsere Server (Cloudflare bzw. Supabase), nicht Ihr Gerät. Die ermittelten Straßennamen
+        speichern wir zur Fahrt in Ihrem Konto; sie sind nicht Teil des Prüfcodes der Fahrt.</li>
+    </ul>
+    <p>Die OpenStreetMap Foundation (Vereinigtes Königreich) und die Betreiber der Overpass-Server verarbeiten die
+      Anfragen als eigenständige Verantwortliche nach ihren eigenen Nutzungs- und Datenschutzbestimmungen (OpenStreetMap:
+      <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">osmfoundation.org/wiki/Privacy_Policy</a>);
+      sie sind keine Auftragsverarbeiter von uns. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der
+      EU-Kommission (Art. 45 DSGVO, im Dezember 2025 bis Ende 2031 verlängert). Das aus OpenStreetMap geladene
+      Straßennetz und die Gemeindegrenzen speichern wir ohne Verknüpfung mit Fahrten, Betrieben oder Konten zwischen
+      und nutzen sie für alle Fahrten in derselben Gegend erneut. Rechtsgrundlage: Art. 6 Abs. 1
+      lit. b DSGVO (die von Ihnen genutzten Funktionen Glätte-Warnung und Fahrt-Bericht) und Art. 6 Abs. 1 lit. f DSGVO
+      (unser berechtigtes Interesse, Karten und Straßennamen datensparsam aus freien Kartendaten statt über kommerzielle
+      Kartendienste bereitzustellen). Soweit Sie Daten Dritter erfassen (z. B. Adressen Ihrer Auftraggeber), übermitteln
+      wir sie in Ihrem Auftrag (siehe <a href="avv.html">Auftragsverarbeitungsvertrag</a>).</p>
 
     <h2>4. Auftragsverarbeiter &amp; Empfänger</h2>
     <ul>
-      <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapur; Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt; EU-Standardvertragsklauseln) — speichert Konto-, Objekt- und Einsatzdaten.</li>
-      <li><strong>Cloudflare</strong> (Server/Workers) — technische Verarbeitung der Wetter-Anfragen.</li>
+      <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapur; Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt; EU-Standardvertragsklauseln) — speichert Konto-, Objekt- und Einsatzdaten; ermittelt außerdem mit einer Server-Funktion (Edge Function) die Straßennamen zu Fahrten (Buchstabe j).</li>
+      <li><strong>Cloudflare</strong> (Cloudflare, Inc., USA; Server/Workers; EU-Standardvertragsklauseln) — technische Verarbeitung der Wetter-Anfragen
+        und zeitgesteuerter Aufgaben (Glätte-Frühwarnung, Standort aus der Adresse, Straßennamen zu Fahrten).</li>
       <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
-      <li><strong>OpenStreetMap Foundation</strong> (Nominatim, Adresssuche; Vereinigtes Königreich; nur im Dashboard beim
-        Anlegen, Bearbeiten oder Importieren von Objekten ohne Standort) — erhält die Objektadresse und technisch bedingt die IP-Adresse,
-        um den Standort zu bestimmen. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission.</li>
+      <li><strong>OpenStreetMap Foundation</strong> (Vereinigtes Königreich; eigenständig verantwortlich; Angemessenheitsbeschluss
+        der EU-Kommission) — Kartenkacheln für Karten in App-Bericht und Browser (erhält technisch bedingt die IP-Adresse und den
+        Kartenbereich) und Suchdienst Nominatim (erhält Objektadressen ohne Objektnamen bzw. einzelne Koordinaten; bei der Adresssuche im
+        Dashboard zusätzlich technisch bedingt Ihre IP-Adresse). Siehe Buchstaben d2 und j.</li>
+      <li><strong>Overpass-Server der OpenStreetMap-Gemeinschaft</strong> (in der EU, z. B. FOSSGIS e.V., Deutschland;
+        Private.coffee, Österreich; eigenständig verantwortlich) — Straßennetz für die Straßennamen zu Fahrten; erhalten von
+        unserem Server nur Rechtecke aus Kacheln eines festen Kartenrasters (Buchstabe j).</li>
       <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
       <li><strong>Kartendienst</strong> (Android: Google Maps von Google Ireland Ltd.; iPhone: Apple Karten) — zeigt die Karte der
         Objekte und Strecken. Dabei lädt Ihr Gerät Kartenausschnitte direkt beim Anbieter (technisch nötig: IP-Adresse und der
-        angezeigte Kartenbereich).</li>
+        angezeigte Kartenbereich). Die Umrechnung einer Objektadresse in einen Kartenpunkt in der App übernimmt der
+        Standortdienst Ihres Geräts (Android: Google, iPhone: Apple); dabei geht die Adresse an diesen Anbieter.</li>
       <li><strong>Google</strong> (nur bei Nutzung der Google-Anmeldung) — Authentifizierung; wir erhalten E-Mail-Adresse und Namen.</li>
       <li><strong>Apple</strong> (nur bei Nutzung von „Mit Apple anmelden“ auf dem iPhone) — Authentifizierung; wir erhalten eine Kennung, Ihre E-Mail-Adresse (auf Wunsch eine von Apple anonymisierte Weiterleitungsadresse) und – falls freigegeben – Ihren Namen.</li>
       <li><strong>Google Play bzw. Apple App Store / RevenueCat</strong> (RevenueCat, Inc., USA; Kaufstatus mit pseudonymer Kennung; EU-Standardvertragsklauseln) — Abwicklung von In-App-Käufen (sofern Sie ein Abo abschließen); wir erhalten keine Zahlungsdaten.</li>
@@ -199,12 +250,18 @@
       Ausnahme Empfehlungsprogramm: Der Protokolleintrag (Betriebs- und Konto-Kennungen, Kauf-Kennung als
       SHA-256-Prüfwert, ohne Namen oder E-Mail-Adressen) bleibt bis zu zwei Jahre erhalten, damit ein Code nicht durch
       Löschen und Neuanlegen mehrfach eingelöst werden kann (Art. 6 Abs. 1 lit. f DSGVO).
+      Der Zwischenspeicher aus der Standortsuche (Buchstabe j) wird mit dem jeweiligen Objekt gelöscht, die Straßennamen
+      einer Fahrt mit der Fahrt bzw. mit Ihrem Konto. Das zwischengespeicherte Straßennetz und die Gemeindegrenzen aus
+      OpenStreetMap (ohne Verknüpfung mit Fahrten, Betrieben oder Konten) löschen wir nach 180 bzw. 400 Tagen und holen
+      sie bei Bedarf neu.
       Gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
 
     <h2>6. Ihre Rechte</h2>
     <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
       Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO) sowie das Recht auf Beschwerde bei der
-      Österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).</p>
+      Österreichischen Datenschutzbehörde (§ 24 DSG; <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>)
+      oder einer anderen Aufsichtsbehörde in der EU, in Deutschland z. B. bei der Aufsichtsbehörde Ihres Bundeslandes
+      (Art. 77 DSGVO).</p>
 
     <h2>7. Konto löschen</h2>
     <p>Direkt in der App unter <strong>Einstellungen → Konto löschen</strong> oder per E-Mail —

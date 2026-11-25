@@ -46,7 +46,7 @@
     </header>
 
     <h1>Auftrags&shy;verarbeitungs&shy;vertrag (AVV)</h1>
-    <p class="stand">gemäß Art. 28 DSGVO · Stand: 24.11.2026</p>
+    <p class="stand">gemäß Art. 28 DSGVO · Stand: 25.11.2026</p>
 
     <div class="note">Dieser Vertrag gilt zwischen dem Nutzer als <strong>Verantwortlichem</strong> und dem Anbieter als
       <strong>Auftragsverarbeiter</strong>, soweit der Nutzer mit WinterDex personenbezogene Daten Dritter verarbeitet. Er ist
@@ -69,9 +69,9 @@
     <ul>
       <li>Namen der ausführenden Personen und Team-Mitglieder (inkl. E-Mail-Adresse)</li>
       <li>Einsatzdaten (Zeitpunkte, Maßnahmen, Streumittel, Notizen)</li>
-      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet)</li>
+      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet, und die daraus ermittelten Straßennamen und Gemeinden)</li>
       <li>Fotos (können Personen oder Kennzeichen zeigen)</li>
-      <li>Angaben zu Objekten und Auftraggebern (Name, Anschrift)</li>
+      <li>Angaben zu Objekten und Auftraggebern (Name, Anschrift, Kartenpunkt)</li>
       <li>Push-Kennungen der Geräte (nur bei aktivierter Glätte-Frühwarnung)</li>
     </ul>
     <p>Betroffene Personen:</p>
@@ -121,8 +121,8 @@
     <h2>§ 7 Unterauftragsverarbeiter</h2>
     <p>Der Nutzer genehmigt den Einsatz folgender Unterauftragsverarbeiter:</p>
     <ul>
-      <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln</li>
-      <li>Cloudflare, Inc. (Server/Worker für Schnittstellen) — Verarbeitung im Rahmen der Anfrage, EU-Standardvertragsklauseln (nur Wetterabfragen mit Koordinaten)</li>
+      <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln; für die Straßennamen zu Fahrten zusätzlich eine Server-Funktion (Edge Function) im Netz von Supabase</li>
+      <li>Cloudflare, Inc. (Server/Worker für Schnittstellen und zeitgesteuerte Aufgaben: Wetterabfragen mit Koordinaten, Glätte-Frühwarnung, Standort aus der Objektadresse, Straßennamen zu Fahrten) — Verarbeitung im Rahmen der jeweiligen Anfrage bzw. des jeweiligen Laufs, EU-Standardvertragsklauseln</li>
       <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen über Google Firebase Cloud Messaging bzw. den Apple Push Notification Service) — nur Push-Kennung und Warntext, EU-Standardvertragsklauseln</li>
       <li>Brevo (Sendinblue SAS, Frankreich; Versand von Anmelde-, Bestätigungs- und Passwort-Mails) — Verarbeitung in der EU</li>
       <li>Resend (Plus Five Five, Inc., USA; Versand der Fälligkeits- und Monatsübersichten per E-Mail an die Nutzer des Betriebs) — EU-Standardvertragsklauseln</li>
@@ -130,6 +130,28 @@
     </ul>
     <p>Über beabsichtigte Änderungen informiert der Anbieter vorab in geeigneter Weise (z. B. auf dieser Seite und per
       E-Mail an den Inhaber); der Nutzer kann aus wichtigem datenschutzrechtlichem Grund widersprechen.</p>
+
+    <p><strong>Öffentliche Dienste (keine Unterauftragsverarbeiter).</strong> Für Funktionen, die der Nutzer verwendet,
+      fragt der Anbieter öffentliche Dienste ab, die die Anfragen in eigener Verantwortung nach ihren Nutzungs- und
+      Datenschutzbestimmungen verarbeiten und nicht im Auftrag des Anbieters tätig sind. Objekt- und Personennamen
+      aus den Einträgen, Kontaktdaten, Konto- oder Betriebskennungen, Fotos und Einsatzinhalte werden dabei nicht
+      übermittelt:</p>
+    <ul>
+      <li>Open-Meteo (Wetterdaten) — nur Koordinaten.</li>
+      <li>OpenStreetMap Foundation, Vereinigtes Königreich (Angemessenheitsbeschluss der EU-Kommission), Suchdienst
+        Nominatim — vom Server des Anbieters: die Objektadresse in der Form „Straße Hausnummer, PLZ Ort“ (durch Komma
+        abgetrennte Zusätze im Adressfeld werden abgeschnitten; für Objekte ohne Kartenpunkt, wenn der Betrieb
+        Glätte-Warnungen per Push-Mitteilung erhält) sowie einzelne Koordinaten der Fahrspur ohne Uhrzeit (Straßennamen und Gemeinden im Fahrt-Bericht); im Dashboard aus dem Browser des Nutzers
+        die Objektadresse bei der Adresssuche und beim Import.</li>
+      <li>OpenStreetMap Foundation, Kartenkacheln (tile.openstreetmap.org, Auslieferung über ein weltweites
+        Zwischenspeicher-Netz) — das Gerät bzw. der Browser des Nutzers lädt beim Erstellen eines Fahrt-Berichts und
+        beim Anzeigen von Karten im Dashboard die Kacheln des Kartenbereichs (dabei technisch bedingt die IP-Adresse).</li>
+      <li>Öffentliche Overpass-Server der OpenStreetMap-Gemeinschaft in der EU (z. B. FOSSGIS e.V., Deutschland;
+        Private.coffee, Österreich) — vom Server des Anbieters nur Rechtecke aus den Kacheln eines festen Kartenrasters
+        (je etwa 550 × 550 m), durch die eine Fahrt führt, nicht die Spur selbst.</li>
+    </ul>
+    <p>Mit der Nutzung der jeweiligen Funktion weist der Nutzer diese Übermittlungen an (§ 4). Setzt der Nutzer den
+      Kartenpunkt eines Objekts selbst, entfällt die Adresssuche für dieses Objekt.</p>
 
     <h2>§ 8 Löschung und Rückgabe</h2>
     <p>Nach Ende der Nutzung bzw. bei Löschung des Kontos durch den Inhaber werden die Daten des Betriebs
