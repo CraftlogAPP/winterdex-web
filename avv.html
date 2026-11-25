@@ -121,7 +121,7 @@
     <h2>§ 7 Unterauftragsverarbeiter</h2>
     <p>Der Nutzer genehmigt den Einsatz folgender Unterauftragsverarbeiter:</p>
     <ul>
-      <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln; für die Straßennamen zu Fahrten zusätzlich eine Server-Funktion (Edge Function) im Netz von Supabase</li>
+      <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln; für die Straßennamen zu Fahrten zusätzlich eine Server-Funktion (Edge Function) im Netz von Supabase, ausgeführt in der EU-Region (Frankfurt am Main)</li>
       <li>Cloudflare, Inc. (Server/Worker für Schnittstellen und zeitgesteuerte Aufgaben: Wetterabfragen mit Koordinaten, Glätte-Frühwarnung, Standort aus der Objektadresse, Straßennamen zu Fahrten) — Verarbeitung im Rahmen der jeweiligen Anfrage bzw. des jeweiligen Laufs, EU-Standardvertragsklauseln</li>
       <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen über Google Firebase Cloud Messaging bzw. den Apple Push Notification Service) — nur Push-Kennung und Warntext, EU-Standardvertragsklauseln</li>
       <li>Brevo (Sendinblue SAS, Frankreich; Versand von Anmelde-, Bestätigungs- und Passwort-Mails) — Verarbeitung in der EU</li>
@@ -144,9 +144,10 @@
         Nominatim — vom Server des Anbieters: die Objektadresse in der Form „Straße Hausnummer, PLZ Ort“ (durch Komma
         abgetrennte Zusätze vor der Straße werden abgeschnitten, Namen im selben Teil wie Straße oder Ort nicht; für
         Objekte ohne Kartenpunkt, wenn der Betrieb Glätte-Warnungen per Push-Mitteilung erhält) sowie — nur wenn die
-        Straßennamen einer Fahrt 6 Minuten nach dem Hochladen noch nicht ermittelt sind (Ausweichverfahren) — Punkte
-        entlang der Fahrspur, nur Koordinaten ohne Uhrzeit (bis zu etwa 60 je Fahrt — ungefähr alle 200 m und an
-        Abbiegungen, zusammen der ungefähre Verlauf der Fahrt); im Dashboard aus dem Browser des Nutzers die
+        Straßennamen einer Fahrt 6 Minuten nach dem Hochladen noch nicht ermittelt sind oder der Kartenabgleich
+        vorübergehend abgeschaltet ist (Ausweichverfahren) — Punkte entlang der Fahrspur, nur Koordinaten ohne Uhrzeit
+        (bis zu etwa 60 je Fahrt — ungefähr alle 200 m und an Abbiegungen, zusammen der ungefähre Verlauf der Fahrt);
+        im Dashboard aus dem Browser des Nutzers die
         Objektadresse aus dem Adressfeld bei der Adresssuche und beim Import.</li>
       <li>OpenStreetMap Foundation, Kartenkacheln (tile.openstreetmap.org, Auslieferung über ein weltweites
         Zwischenspeicher-Netz) — das Gerät bzw. der Browser des Nutzers lädt beim Erstellen eines Fahrt-Berichts und
@@ -154,8 +155,7 @@
       <li>Christian Dresel, Fürth, Deutschland (Overpass-Server ovp.dresel.systems und Suchdienst nominatim.dresel.systems)
         — vom Server des Anbieters für die Straßennamen im Fahrt-Bericht: Rechtecke aus den Kacheln eines festen
         Kartenrasters (je etwa 550 × 550 m), durch die eine Fahrt führt, nicht die Spur selbst; Koordinaten einzelner
-        Punkte zur Bestimmung der Gemeinde; im Ausweichverfahren (Kartenabgleich gestört oder zu langsam) Punkte entlang
-        der Fahrspur wie beim Suchdienst Nominatim oben beschrieben — jeweils nur Koordinaten ohne Uhrzeit.</li>
+        Punkte zur Bestimmung der Gemeinde — jeweils nur Koordinaten ohne Uhrzeit, keine Punkte entlang der Fahrspur.</li>
       <li>Private.coffee, Verein, Österreich (Overpass-Server overpass.private.coffee) — nur bei Störung von
         ovp.dresel.systems: Rechtecke aus den Kacheln des Kartenrasters wie oben, nicht die Spur selbst.</li>
     </ul>

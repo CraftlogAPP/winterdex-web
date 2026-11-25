@@ -212,20 +212,22 @@
         Objekts selbst, findet für dieses Objekt keine Suche statt.</li>
       <li><strong>Straßennamen im Fahrt-Bericht:</strong> Damit der Bericht zeigt, wann eine Fahrt auf welcher Straße war,
         ermittelt unser Server nach dem Hochladen einer Fahrt (Cloud-Modus) Straßen und Gemeinden aus OpenStreetMap:
-        <br/>(1) Kartenabgleich (Regelfall): Eine Server-Funktion bei Supabase lädt das Straßennetz für Rechtecke aus den
+        <br/>(1) Kartenabgleich (Regelfall): Eine Server-Funktion bei Supabase (ausgeführt in der EU-Region Frankfurt am
+        Main) lädt das Straßennetz für Rechtecke aus den
         Kacheln eines festen Kartenrasters (je etwa 550 × 550 m), durch die die Fahrt führt — nicht die Spur selbst; die
         Rechtecke lassen nur grob die Gegend erkennen, schon gespeicherte Kacheln werden nicht erneut geladen. Abgefragt
         wird der Overpass-Server ovp.dresel.systems (Christian Dresel, Fürth, Deutschland), bei dessen Störung
         overpass.private.coffee (Verein Private.coffee, Österreich). Für die Gemeinde fragt die Funktion beim Suchdienst
         Nominatim unter nominatim.dresel.systems (ebenfalls Christian Dresel) einzelne Punkte ab, deren Gemeinde noch
         nicht bekannt ist (meist wenige je Fahrt).
-        <br/>(2) Abfrage entlang der Spur (Ausweichverfahren): Ist der Kartenabgleich gestört oder für eine zeitnahe
-        Anzeige zu langsam, sendet unser Server Punkte entlang der gefahrenen Spur an Nominatim — bis zu etwa 60 je Fahrt,
-        ungefähr alle 200 m, an Abbiegungen und zur genaueren Bestimmung eines Straßenwechsels. Die Anfragen einer Fahrt
-        gehen kurz nacheinander ab; zusammen geben die Punkte den ungefähren Verlauf der Fahrt wieder. Das geschieht über
-        nominatim.dresel.systems; hat eine Fahrt 6 Minuten nach dem Hochladen noch keine Straßennamen, fragt unser Server
-        bei Cloudflare den Suchdienst Nominatim der OpenStreetMap Foundation (nominatim.openstreetmap.org), ersatzweise
-        nominatim.dresel.systems. Sobald der Kartenabgleich wieder klappt, wird das Ergebnis nach (1) neu berechnet.
+        <br/>(2) Abfrage entlang der Spur (Ausweichverfahren): Hat eine Fahrt 6 Minuten nach dem Hochladen noch keine
+        Straßennamen (z. B. weil der Kartenabgleich gestört oder zu langsam ist), sendet unser Server bei Cloudflare Punkte
+        entlang der gefahrenen Spur an den Suchdienst Nominatim der OpenStreetMap Foundation (nominatim.openstreetmap.org)
+        — bis zu etwa 60 je Fahrt, ungefähr alle 200 m, an Abbiegungen und zur genaueren Bestimmung eines
+        Straßenwechsels. Die Anfragen einer Fahrt gehen kurz nacheinander ab; zusammen geben die Punkte den ungefähren
+        Verlauf der Fahrt wieder. Ist der Kartenabgleich vorübergehend abgeschaltet (etwa nach einer Störung), geschieht
+        das für jede Fahrt gleich nach dem Hochladen. Sobald der Kartenabgleich wieder klappt, wird das Ergebnis nach (1)
+        neu berechnet. Punkte entlang der Spur senden wir nicht an die Dienste von Christian Dresel.
         <br/>In beiden Fällen gehen nur Koordinaten bzw. Rechtecke hinaus — ohne Uhrzeit, Namen oder Kennungen Ihres
         Betriebs. Die Anfragen stellen unsere Server (Supabase bzw. Cloudflare), nicht Ihr Gerät; Ihre IP-Adresse wird
         nicht übertragen. Wie von den Betreibern verlangt, tragen die Anfragen eine Programmkennung mit unserer
@@ -251,7 +253,7 @@
 
     <h2>4. Auftragsverarbeiter &amp; Empfänger</h2>
     <ul>
-      <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapur; Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt; EU-Standardvertragsklauseln) — speichert Konto-, Objekt- und Einsatzdaten; ermittelt außerdem mit einer Server-Funktion (Edge Function) die Straßennamen zu Fahrten (Buchstabe j).</li>
+      <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapur; Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt; EU-Standardvertragsklauseln) — speichert Konto-, Objekt- und Einsatzdaten; ermittelt außerdem mit einer Server-Funktion (Edge Function, ausgeführt ebenfalls in der EU-Region Frankfurt) die Straßennamen zu Fahrten (Buchstabe j).</li>
       <li><strong>Cloudflare</strong> (Cloudflare, Inc., USA; Server/Workers; EU-Standardvertragsklauseln) — technische Verarbeitung der Wetter-Anfragen
         und zeitgesteuerter Aufgaben (Glätte-Frühwarnung, Standort aus der Adresse, Straßennamen zu Fahrten).</li>
       <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten (Einsatzorte; für die Glätte-Frühwarnung
@@ -263,8 +265,8 @@
         bedingt Ihre IP-Adresse). Siehe Buchstaben d2 und j.</li>
       <li><strong>Christian Dresel</strong> (Fürth, Deutschland; Dienste ovp.dresel.systems und nominatim.dresel.systems;
         eigenständig verantwortlich) — Straßennetz und Gemeinden für die Straßennamen zu Fahrten; erhält von unserem Server
-        Rechtecke aus Kacheln eines festen Kartenrasters, Koordinaten einzelner Punkte zur Bestimmung der Gemeinde und im
-        Ausweichverfahren Koordinaten von Punkten entlang der Fahrspur, jeweils ohne Uhrzeit (Buchstabe j).</li>
+        nur Rechtecke aus Kacheln eines festen Kartenrasters und Koordinaten einzelner Punkte zur Bestimmung der Gemeinde,
+        jeweils ohne Uhrzeit — keine Punkte entlang der Fahrspur (Buchstabe j).</li>
       <li><strong>Private.coffee</strong> (Verein, Österreich; eigenständig verantwortlich) — nur bei Störung von
         ovp.dresel.systems: Straßennetz für Rechtecke aus Kacheln eines festen Kartenrasters (Buchstabe j).</li>
       <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
