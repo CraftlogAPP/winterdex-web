@@ -139,16 +139,22 @@
       (Buchstabe f) fragt der Server dort außerdem die Koordinaten Ihrer Objekte sowie einzelner Punkte Ihrer Strecken
       bzw. Fahrten ab. Dabei werden keine Namen, Konten oder sonstigen personenbezogenen Daten übermittelt.</p>
     <h3>f) Glätte-Frühwarnung (Push-Mitteilungen)</h3>
-    <p>Nur wenn Sie die Frühwarnung in den Einstellungen aktivieren (Pro, Cloud-Modus): Wir speichern
-      eine Geräte-Kennung für Push-Mitteilungen (Push-Token) zu Ihrem Betrieb. Bei Glättegefahr an
+    <p>Mit Pro (eigenes Abo, Probezeit oder über Ihr Team) richtet die App im Cloud-Modus die Frühwarnung von selbst
+      ein, sobald Mitteilungen für WinterDex erlaubt sind — fehlt die Erlaubnis, fragt die App einmal nach (auf Android
+      bis Version 12 sind Mitteilungen von vornherein erlaubt; App-Versionen vor 0.7.14 richten sie nur nach Einschalten
+      in den Einstellungen ein). Dafür speichern wir eine Geräte-Kennung für
+      Push-Mitteilungen (Push-Token) zu Ihrem Betrieb; die App erneuert sie beim Start und bei der Rückkehr in die App.
+      In den Einstellungen unter „Glätte-Wecker (Frühwarnung)“ können Sie die Frühwarnung jederzeit ausschalten: Dann
+      wird das Token gelöscht, und die App meldet das Gerät nicht wieder von selbst an, bis Sie sie dort wieder
+      einschalten. Bei Glättegefahr an
       Ihren Einsatzorten sendet unser Server morgens (und am Vorabend als Vorwarnung) eine Mitteilung über den
       Push-Dienst von Expo, der sie an Google (Android) bzw. Apple (iPhone/iPad) zur Zustellung weitergibt. Übermittelt
       werden nur das Push-Token und der Warntext — keine Namen, Objektadressen oder Einsatzdaten. Als Orte für die
       Warnung dienen Ihre Objekte, bis zu 4 Punkte je aktiver Strecke und — hat Ihr Betrieb keine aktive Strecke —
       bis zu 4 Punkte aus den Fahrten der letzten 30 Tage (höchstens 8 Fahrten); der Fahrweg wird dafür also zusätzlich
       zum Nachweis genutzt. Für diese Orte fragt der Server die Wettervorhersage bei Open-Meteo ab (nur Koordinaten,
-      siehe Buchstabe e); fehlt einem Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j). Deaktivieren
-      Sie die Frühwarnung, wird das Token gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO; für die Nutzung
+      siehe Buchstabe e); fehlt einem Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j).
+      Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (die Frühwarnung ist Teil der Pro-Leistung); für die Nutzung
       einzelner Fahrt-Punkte als Warn-Orte zusätzlich Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
       rechtzeitigen Warnung im eigenen Einsatzgebiet — ein mit dem Nachweis vereinbarer Zweck, Art. 6 Abs. 4 DSGVO; es
       gehen dabei nur Koordinaten ohne Uhrzeit oder Personenbezug an den Wetterdienst).</p>
@@ -197,7 +203,8 @@
         im „Außendienst“ lädt Ihr Browser die Kacheln der angezeigten Karten. Dabei werden technisch bedingt Ihre
         IP-Adresse und der Kartenbereich (Kachelnummern) übertragen, nicht die Fahrspur selbst — die Linie zeichnet Ihr
         Gerät. Die Kacheln liefert die OpenStreetMap Foundation über ein weltweites Netz von Zwischenspeicher-Servern
-        (Content Delivery Network) aus.</li>
+        (Content Delivery Network) aus. Geladene Kacheln hält die App bis zu 14 Tage im Zwischenspeicher Ihres Geräts,
+        damit ein weiterer Bericht derselben Gegend sie nicht erneut abruft.</li>
       <li><strong>Standort aus der Adresse (Glätte-Frühwarnung):</strong> Hat ein Objekt noch keinen Kartenpunkt, sucht
         unser Server dessen Standort über den Suchdienst Nominatim der OpenStreetMap Foundation — nur für Betriebe, die
         Glätte-Warnungen per Push-Mitteilung erhalten, und nur bei Adressen mit Postleitzahl und Ort. Übermittelt wird
@@ -269,7 +276,7 @@
         jeweils ohne Uhrzeit — keine Punkte entlang der Fahrspur (Buchstabe j).</li>
       <li><strong>Private.coffee</strong> (Verein, Österreich; eigenständig verantwortlich) — nur bei Störung von
         ovp.dresel.systems: Straßennetz für Rechtecke aus Kacheln eines festen Kartenrasters (Buchstabe j).</li>
-      <li><strong>Expo</strong> (650 Industries, Inc., USA; nur bei aktivierter Glätte-Frühwarnung) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
+      <li><strong>Expo</strong> (650 Industries, Inc., USA; nur solange die Glätte-Frühwarnung eingeschaltet ist, siehe Buchstabe f) — Zustellung von Push-Mitteilungen; erhält Push-Token und Warntext. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
       <li><strong>Kartendienst</strong> (Android: Google Maps von Google Ireland Ltd.; iPhone: Apple Karten) — zeigt die Karte der
         Objekte und Strecken. Dabei lädt Ihr Gerät Kartenausschnitte direkt beim Anbieter (technisch nötig: IP-Adresse und der
         angezeigte Kartenbereich). Die Umrechnung einer Objektadresse in einen Kartenpunkt in der App übernimmt der
