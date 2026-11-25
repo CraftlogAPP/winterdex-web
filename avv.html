@@ -7,7 +7,7 @@
   <meta name="robots" content="all" />
   <meta name="theme-color" content="#0B1220" />
   <!-- seo:start -->
-  <link rel="icon" type="image/png" href="/winterdex-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
   <link rel="canonical" href="https://winterdex.dexware.app/avv.html" />
   <!-- seo:end -->
   <style>
@@ -69,7 +69,7 @@
     <ul>
       <li>Namen der ausführenden Personen und Team-Mitglieder (inkl. E-Mail-Adresse)</li>
       <li>Einsatzdaten (Zeitpunkte, Maßnahmen, Streumittel, Notizen)</li>
-      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet, und die daraus ermittelten Straßennamen und Gemeinden)</li>
+      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet, und die daraus ermittelten Straßennamen und Gemeinden; bei aktivierter Glätte-Frühwarnung dienen einzelne Punkte von Strecken und Fahrten außerdem als Orte für die Warnung)</li>
       <li>Fotos (können Personen oder Kennzeichen zeigen)</li>
       <li>Angaben zu Objekten und Auftraggebern (Name, Anschrift, Kartenpunkt)</li>
       <li>Push-Kennungen der Geräte (nur bei aktivierter Glätte-Frühwarnung)</li>
@@ -133,16 +133,21 @@
 
     <p><strong>Öffentliche Dienste (keine Unterauftragsverarbeiter).</strong> Für Funktionen, die der Nutzer verwendet,
       fragt der Anbieter öffentliche Dienste ab, die die Anfragen in eigener Verantwortung nach ihren Nutzungs- und
-      Datenschutzbestimmungen verarbeiten und nicht im Auftrag des Anbieters tätig sind. Objekt- und Personennamen
-      aus den Einträgen, Kontaktdaten, Konto- oder Betriebskennungen, Fotos und Einsatzinhalte werden dabei nicht
-      übermittelt:</p>
+      Datenschutzbestimmungen verarbeiten und nicht im Auftrag des Anbieters tätig sind. Übermittelt werden nur
+      Adressen, Koordinaten bzw. Kartenausschnitte wie folgt beschrieben; Objektnamen, Kontaktdaten, Konto- oder
+      Betriebskennungen, Fotos und Einsatzinhalte werden nicht übermittelt. Was im Adressfeld eines Objekts steht, geht als
+      Adresse an den Suchdienst; Namen von Personen gehören daher in den Objektnamen, nicht in das Adressfeld:</p>
     <ul>
-      <li>Open-Meteo (Wetterdaten) — nur Koordinaten.</li>
+      <li>Open-Meteo (Wetterdaten) — nur Koordinaten (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu 4 Punkte je
+        aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage).</li>
       <li>OpenStreetMap Foundation, Vereinigtes Königreich (Angemessenheitsbeschluss der EU-Kommission), Suchdienst
         Nominatim — vom Server des Anbieters: die Objektadresse in der Form „Straße Hausnummer, PLZ Ort“ (durch Komma
-        abgetrennte Zusätze im Adressfeld werden abgeschnitten; für Objekte ohne Kartenpunkt, wenn der Betrieb
-        Glätte-Warnungen per Push-Mitteilung erhält) sowie einzelne Koordinaten der Fahrspur ohne Uhrzeit (Straßennamen und Gemeinden im Fahrt-Bericht); im Dashboard aus dem Browser des Nutzers
-        die Objektadresse bei der Adresssuche und beim Import.</li>
+        abgetrennte Zusätze vor der Straße werden abgeschnitten, Namen im selben Teil wie Straße oder Ort nicht; für
+        Objekte ohne Kartenpunkt, wenn der Betrieb Glätte-Warnungen per Push-Mitteilung erhält) sowie für Straßennamen
+        und Gemeinden im Fahrt-Bericht Punkte entlang der Fahrspur, nur Koordinaten ohne Uhrzeit (bei der Abfrage entlang
+        der Spur bis zu etwa 60 je Fahrt — ungefähr alle 200 m und an Abbiegungen, zusammen der ungefähre Verlauf der
+        Fahrt —, beim Kartenabgleich nur einzelne Punkte zur Bestimmung der Gemeinde); im Dashboard aus dem Browser des
+        Nutzers die Objektadresse aus dem Adressfeld bei der Adresssuche und beim Import.</li>
       <li>OpenStreetMap Foundation, Kartenkacheln (tile.openstreetmap.org, Auslieferung über ein weltweites
         Zwischenspeicher-Netz) — das Gerät bzw. der Browser des Nutzers lädt beim Erstellen eines Fahrt-Berichts und
         beim Anzeigen von Karten im Dashboard die Kacheln des Kartenbereichs (dabei technisch bedingt die IP-Adresse).</li>

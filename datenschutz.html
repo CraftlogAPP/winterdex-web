@@ -120,8 +120,10 @@
       <li><strong>Adresssuche und Import:</strong> Wenn Sie im Dashboard ein Objekt ohne Standort anlegen oder bearbeiten oder
         Objekte aus einer Excel- bzw. CSV-Liste importieren, bestimmt der Browser den Standort aus der Objektadresse über den
         Suchdienst Nominatim von OpenStreetMap (für Glätte-Frühwarnung und GPS-Abstand; nur bei Adressen mit Postleitzahl und
-        Ort). Übermittelt wird nur die Adresse — technisch bedingt mit Ihrer IP-Adresse —, keine Namen, Kontaktdaten oder
-        Einsatzdaten; beim Import lässt sich das abschalten. Die Import-Datei und die Suchergebnisse werden nur im
+        Ort). Übermittelt wird die Adresse aus dem Adressfeld — technisch bedingt mit Ihrer IP-Adresse —, nicht der
+        Objektname und keine Kontaktdaten oder Einsatzdaten. Steht im Adressfeld zusätzlich ein Name (z. B. „Fam. Müller“),
+        kann er mit übermittelt werden; tragen Sie Namen deshalb in den Objektnamen ein, nicht in die Adresse. Beim Import
+        lässt sich die Standortsuche abschalten. Die Import-Datei und die Suchergebnisse werden nur im
         Arbeitsspeicher Ihres Browsers verarbeitet und nicht auf dem Gerät abgelegt; gespeichert werden nur die angelegten
         Objekte in Ihrem Konto.</li>
       <li><strong>Karten:</strong> Für die Karten im Dashboard und im „Außendienst“ (z. B. Fahrten, Objekte, PDF-Bericht)
@@ -133,15 +135,23 @@
     <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b und f DSGVO (wie in der App).</p>
     <h3>e) Wetterdaten</h3>
     <p>Zur Archivierung der Wetterlage übermitteln wir die Koordinaten des Einsatzorts an unseren
-      Server (Cloudflare Workers), der sie an den Wetterdienst Open-Meteo weiterreicht. Dabei werden
-      keine Namen, Konten oder sonstigen personenbezogenen Daten übermittelt.</p>
+      Server (Cloudflare Workers), der sie an den Wetterdienst Open-Meteo weiterreicht; für die Glätte-Frühwarnung
+      (Buchstabe f) fragt der Server dort außerdem die Koordinaten Ihrer Objekte sowie einzelner Punkte Ihrer Strecken
+      bzw. Fahrten ab. Dabei werden keine Namen, Konten oder sonstigen personenbezogenen Daten übermittelt.</p>
     <h3>f) Glätte-Frühwarnung (Push-Mitteilungen)</h3>
     <p>Nur wenn Sie die Frühwarnung in den Einstellungen aktivieren (Pro, Cloud-Modus): Wir speichern
       eine Geräte-Kennung für Push-Mitteilungen (Push-Token) zu Ihrem Betrieb. Bei Glättegefahr an
-      Ihren Objekten sendet unser Server morgens eine Mitteilung über den Push-Dienst von Expo, der sie
-      an Google (Android) bzw. Apple (iPhone/iPad) zur Zustellung weitergibt. Übermittelt werden nur
-      das Push-Token und der Warntext — keine Namen, Objektadressen oder Einsatzdaten. Deaktivieren
-      Sie die Frühwarnung, wird das Token gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+      Ihren Einsatzorten sendet unser Server morgens (und am Vorabend als Vorwarnung) eine Mitteilung über den
+      Push-Dienst von Expo, der sie an Google (Android) bzw. Apple (iPhone/iPad) zur Zustellung weitergibt. Übermittelt
+      werden nur das Push-Token und der Warntext — keine Namen, Objektadressen oder Einsatzdaten. Als Orte für die
+      Warnung dienen Ihre Objekte, bis zu 4 Punkte je aktiver Strecke und — hat Ihr Betrieb keine aktive Strecke —
+      bis zu 4 Punkte aus den Fahrten der letzten 30 Tage (höchstens 8 Fahrten); der Fahrweg wird dafür also zusätzlich
+      zum Nachweis genutzt. Für diese Orte fragt der Server die Wettervorhersage bei Open-Meteo ab (nur Koordinaten,
+      siehe Buchstabe e); fehlt einem Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j). Deaktivieren
+      Sie die Frühwarnung, wird das Token gelöscht. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO; für die Nutzung
+      einzelner Fahrt-Punkte als Warn-Orte zusätzlich Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
+      rechtzeitigen Warnung im eigenen Einsatzgebiet — ein mit dem Nachweis vereinbarer Zweck, Art. 6 Abs. 4 DSGVO; es
+      gehen dabei nur Koordinaten ohne Uhrzeit oder Personenbezug an den Wetterdienst).</p>
     <h3>g) Käufe, Dexware Suite und Empfehlungsprogramm</h3>
     <p>Abonnements werden über Google Play bzw. den Apple App Store abgewickelt; die Stores verarbeiten Zahlungsdaten in
       eigener Verantwortung, wir erhalten keine Zahlungsdaten. Zur Verwaltung des Kaufstatus nutzen wir RevenueCat. Damit
@@ -177,8 +187,10 @@
       getrennt. Auf Wunsch löschen wir sie vollständig (E-Mail an datenschutz@dexware.app).</p>
     <h3>j) OpenStreetMap: Karten, Standort aus der Adresse und Straßennamen</h3>
     <p>Für Karten, Kartenpunkte und Straßennamen nutzen wir freie Dienste der OpenStreetMap-Gemeinschaft. An diese
-      Dienste übermitteln wir keine Objekt- oder Personennamen aus Ihren Einträgen, keine E-Mail-Adressen, Konto- oder
-      Betriebskennungen, Fotos oder Einsatzinhalte.</p>
+      Dienste übermitteln wir nur Adressen, Koordinaten bzw. Kartenausschnitte wie unten beschrieben — keine Objektnamen,
+      Kontaktdaten, E-Mail-Adressen, Konto- oder Betriebskennungen, Fotos oder Einsatzinhalte. Was im Adressfeld eines
+      Objekts steht, geht als Adresse an den Suchdienst; tragen Sie Namen von Personen deshalb in den Objektnamen ein,
+      nicht in die Adresse.</p>
     <ul>
       <li><strong>Karte im Fahrt-Bericht und im Browser:</strong> Erstellen Sie den PDF-Bericht einer Fahrt, lädt die App
         die nötigen Kartenkacheln vom Kartenserver der OpenStreetMap Foundation (tile.openstreetmap.org); im Dashboard und
@@ -190,20 +202,29 @@
         unser Server dessen Standort über den Suchdienst Nominatim der OpenStreetMap Foundation — nur für Betriebe, die
         Glätte-Warnungen per Push-Mitteilung erhalten, und nur bei Adressen mit Postleitzahl und Ort. Übermittelt wird
         nur die Adresse in der Form „Straße Hausnummer, PLZ Ort“: Der Objektname wird nie übermittelt, durch Komma
-        abgetrennte Zusätze im Adressfeld (z. B. „Fam. Müller, …“) werden abgeschnitten — Namen gehören deshalb in den
-        Objektnamen, nicht in die Adresse. Die Anfrage stellt unser Server, Ihre IP-Adresse wird dabei nicht übertragen.
+        abgetrennte Zusätze vor der Straße (z. B. „Fam. Müller, …“) werden abgeschnitten. Steht ein Name im selben Teil
+        wie Straße oder Ort (z. B. „Hauptstraße 5 bei Müller“ oder „8010 Graz (Fam. Müller)“), geht er mit — Namen
+        gehören deshalb in den Objektnamen, nicht in die Adresse. Die Anfrage stellt unser Server, Ihre IP-Adresse wird
+        dabei nicht übertragen.
         Ist der Treffer hausgenau und eindeutig, tragen wir ihn als Kartenpunkt im Objekt ein (einen vorhandenen
         Kartenpunkt überschreiben wir nie); sonst dient er nur der Glätte-Warnung und liegt in einem
         Zwischenspeicher in Ihrer Datenbank (dort statt der Adresse nur ein Prüfwert). Setzen Sie den Kartenpunkt eines
         Objekts selbst, findet für dieses Objekt keine Suche statt.</li>
       <li><strong>Straßennamen im Fahrt-Bericht:</strong> Damit der Bericht zeigt, wann eine Fahrt auf welcher Straße war,
-        ermittelt unser Server nach dem Hochladen einer Fahrt (Cloud-Modus) Straßen und Gemeinden aus OpenStreetMap. Dazu
-        sendet er an Nominatim einzelne Punkte der Spur (nur Koordinaten, ohne Uhrzeit) und an öffentliche
-        Overpass-Server der OpenStreetMap-Gemeinschaft in der EU (z. B. overpass-api.de, betrieben vom FOSSGIS e.V.,
-        Deutschland, oder overpass.private.coffee, betrieben vom Verein Private.coffee, Österreich) Rechtecke aus den
-        Kacheln eines festen Kartenrasters (je etwa 550 × 550 m), durch die die Fahrt führt — nicht die Spur selbst.
-        Die Anfragen stellen unsere Server (Cloudflare bzw. Supabase), nicht Ihr Gerät. Die ermittelten Straßennamen
-        speichern wir zur Fahrt in Ihrem Konto; sie sind nicht Teil des Prüfcodes der Fahrt.</li>
+        ermittelt unser Server nach dem Hochladen einer Fahrt (Cloud-Modus) Straßen und Gemeinden aus OpenStreetMap. Je
+        nach eingesetztem Verfahren geschieht das auf eine von zwei Arten:
+        <br/>(1) Abfrage entlang der Spur: Der Server sendet an Nominatim Punkte entlang der gefahrenen Spur — bis zu
+        etwa 60 je Fahrt, ungefähr alle 200 m, an Abbiegungen und zur genaueren Bestimmung eines Straßenwechsels. Die
+        Anfragen einer Fahrt gehen kurz nacheinander ab; zusammen geben die Punkte den ungefähren Verlauf der Fahrt wieder.
+        <br/>(2) Kartenabgleich: Der Server lädt bei öffentlichen Overpass-Servern der OpenStreetMap-Gemeinschaft in der EU
+        (z. B. overpass-api.de, betrieben vom FOSSGIS e.V., Deutschland, oder overpass.private.coffee, betrieben vom Verein
+        Private.coffee, Österreich) das Straßennetz für Rechtecke aus den Kacheln eines festen Kartenrasters (je etwa
+        550 × 550 m), durch die die Fahrt führt — nicht die Spur selbst; die Rechtecke lassen nur grob die Gegend
+        erkennen, schon gespeicherte Kacheln werden nicht erneut geladen. Bei Nominatim fragt er nur einzelne Punkte ab,
+        deren Gemeinde noch nicht bekannt ist (meist wenige je Fahrt).
+        <br/>In beiden Fällen gehen nur Koordinaten bzw. Rechtecke hinaus — ohne Uhrzeit, Namen oder Kennungen. Die Anfragen
+        stellen unsere Server (Cloudflare bzw. Supabase), nicht Ihr Gerät. Die ermittelten Straßennamen speichern wir zur
+        Fahrt in Ihrem Konto; sie sind nicht Teil des Prüfcodes der Fahrt.</li>
     </ul>
     <p>Die OpenStreetMap Foundation (Vereinigtes Königreich) und die Betreiber der Overpass-Server verarbeiten die
       Anfragen als eigenständige Verantwortliche nach ihren eigenen Nutzungs- und Datenschutzbestimmungen (OpenStreetMap:
@@ -222,11 +243,13 @@
       <li><strong>Supabase</strong> (Supabase Pte. Ltd., Singapur; Datenbank &amp; Anmeldung; Datenregion EU/Frankfurt; EU-Standardvertragsklauseln) — speichert Konto-, Objekt- und Einsatzdaten; ermittelt außerdem mit einer Server-Funktion (Edge Function) die Straßennamen zu Fahrten (Buchstabe j).</li>
       <li><strong>Cloudflare</strong> (Cloudflare, Inc., USA; Server/Workers; EU-Standardvertragsklauseln) — technische Verarbeitung der Wetter-Anfragen
         und zeitgesteuerter Aufgaben (Glätte-Frühwarnung, Standort aus der Adresse, Straßennamen zu Fahrten).</li>
-      <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten.</li>
+      <li><strong>Open-Meteo</strong> — Wetterdaten; erhält ausschließlich Koordinaten (Einsatzorte; für die Glätte-Frühwarnung
+        Objekte sowie einzelne Punkte von Strecken bzw. Fahrten).</li>
       <li><strong>OpenStreetMap Foundation</strong> (Vereinigtes Königreich; eigenständig verantwortlich; Angemessenheitsbeschluss
         der EU-Kommission) — Kartenkacheln für Karten in App-Bericht und Browser (erhält technisch bedingt die IP-Adresse und den
-        Kartenbereich) und Suchdienst Nominatim (erhält Objektadressen ohne Objektnamen bzw. einzelne Koordinaten; bei der Adresssuche im
-        Dashboard zusätzlich technisch bedingt Ihre IP-Adresse). Siehe Buchstaben d2 und j.</li>
+        Kartenbereich) und Suchdienst Nominatim (erhält Objektadressen ohne Objektnamen bzw. Koordinaten von Punkten
+        entlang der Fahrspur, ohne Uhrzeit; bei der Adresssuche im Dashboard zusätzlich technisch bedingt Ihre
+        IP-Adresse). Siehe Buchstaben d2 und j.</li>
       <li><strong>Overpass-Server der OpenStreetMap-Gemeinschaft</strong> (in der EU, z. B. FOSSGIS e.V., Deutschland;
         Private.coffee, Österreich; eigenständig verantwortlich) — Straßennetz für die Straßennamen zu Fahrten; erhalten von
         unserem Server nur Rechtecke aus Kacheln eines festen Kartenrasters (Buchstabe j).</li>
