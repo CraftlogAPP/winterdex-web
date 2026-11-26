@@ -152,11 +152,15 @@
       Einschalten in den Einstellungen ein). Dafür speichern wir eine Geräte-Kennung für
       Push-Mitteilungen (Push-Token) zu Ihrem Betrieb; die App erneuert sie beim Start und bei der Rückkehr in die App.
       Zu jedem Gerät speichern wir außerdem die Plattform (Android oder iOS), die App-Version, die gewählten
-      Mitteilungsarten, wann die App das Gerät zuletzt mit unserem Server abgeglichen hat, den Zeitpunkt der letzten
+      Mitteilungsarten und deren Einstellungen (z. B. Menge, Zeitfenster und Zeitpunkt des Schnee-Weckers), wann die App das Gerät zuletzt mit unserem Server abgeglichen hat, den Zeitpunkt der letzten
       erfolgreichen Zustellung und gegebenenfalls den letzten Zustellfehler. Es gibt folgende Mitteilungen:</p>
     <ul>
       <li><strong>Glätte-Frühwarnung:</strong> bei Glättegefahr an Ihren Einsatzorten am frühen Morgen zu der im Betrieb
         eingestellten Uhrzeit und am Vorabend als Vorwarnung.</li>
+      <li><strong>Schnee-Wecker:</strong> auf Wunsch ein Weckton, wenn an Ihren Einsatzorten Schneefall einsetzt oder in der
+        nächsten Stunde erwartet wird; ab welcher Menge, zu welchen Uhrzeiten und ob eine Stunde vorher oder bei Beginn,
+        stellen Sie je Gerät ein. Von vornherein eingeschaltet ist er nur auf dem Gerät des Inhabers. Den Modus „Nicht
+        stören“ übergeht er nur, wenn Sie das in den Einstellungen Ihres Geräts erlauben.</li>
       <li><strong>Wetter-Guide:</strong> weitere Hinweise zu Wetterereignissen an Ihren Einsatzorten, auch tagsüber und in
         dringenden Fällen (z. B. gefrierender Regen) auch nachts — etwa zu Beginn und Ende von Schneefall, zu gefrierendem
         Regen und zu amtlichen Wetterwarnungen von GeoSphere Austria. Wir führen den Wetter-Guide schrittweise ein; welche
@@ -168,24 +172,27 @@
       gegebenenfalls die Gemeinde bzw. den Wortlaut einer amtlichen Warnung — keine Namen oder Adressen von Objekten
       oder Strecken und keine Angaben dazu, wer wann wo gearbeitet hat. Unser Server sendet sie über den Push-Dienst von Expo, der sie an
       Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad) zur Zustellung
-      weitergibt; übermittelt werden dabei nur das Push-Token, Titel und Text der Mitteilung sowie technische Angaben zur
-      Anzeige (z. B. Art der Mitteilung, Benachrichtigungskanal, Gültigkeitsdauer). Als Orte für die Mitteilungen dienen
+      weitergibt; übermittelt werden dabei nur das Push-Token, Titel und Text der Mitteilung (eine Kurzfassung für die Anzeige und
+      der volle Text, damit die App ihn beim Antippen ohne weitere Abfrage zeigen kann) sowie technische Angaben zur
+      Anzeige (z. B. Art und laufende Nummer der Mitteilung, Benachrichtigungskanal, Gültigkeitsdauer). Als Orte für die Mitteilungen dienen
       Ihre Objekte, bis zu 4 Punkte je aktiver Strecke und — hat Ihr Betrieb keine aktive Strecke —
       bis zu 4 Punkte aus den Fahrten der letzten 30 Tage (höchstens 8 Fahrten); der Fahrweg wird dafür also zusätzlich
       zum Nachweis genutzt. Für diese Orte fragt der Server Wetterdaten bei GeoSphere Austria und Open-Meteo ab (nur auf
       etwa 1 km gerundete Koordinaten, an Open-Meteo dazu die auf 25 m gerundete Höhe, siehe Buchstabe e); fehlt einem
       Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j).</p>
     <p>Über die Mitteilungen und die zugehörigen Wetterereignisse führen wir je Betrieb ein Protokoll (Zeitpunkt, Art,
-      Titel, Text, Zahl der Geräte, Status) — auch für Mitteilungen, die während der Einführung nur zur Prüfung erzeugt
+      Titel, Kurzfassung und Text, Zahl der Geräte, Status) — auch für Mitteilungen, die während der Einführung nur zur Prüfung erzeugt
       und nicht versandt werden. Die Zustellbelege von Expo halten wir je Gerät fest. Ob und wann eine Mitteilung
-      geöffnet wurde, speichern wir nicht. Die Mitglieder Ihres Betriebs sehen die versandten Mitteilungen des Betriebs;
+      geöffnet wurde, speichern wir nicht. Die Mitglieder Ihres Betriebs sehen die versandten Mitteilungen des Betriebs
+      der letzten 30 Tage in der Mitteilungsliste (Glocke) der App und des Dashboards; welche davon Sie schon angesehen
+      haben, merkt sich nur Ihr Gerät bzw. Ihr Browser (lokaler Speicher), an uns wird das nicht übermittelt.
       Inhaber und Verwalter sehen außerdem je Team-Mitglied (E-Mail-Adresse und Rolle) nur, ob die Mitteilungen auf
       einem seiner Geräte aktiv sind, ob die Zustellung zuletzt fehlgeschlagen ist oder ob es keine bekommt — ohne
       Uhrzeiten, Gerätetyp oder Push-Token.</p>
-    <p>In den Einstellungen der App unter „Glätte-Wecker (Frühwarnung)“ (in neueren App-Versionen „Wetter-Guide“)
+    <p>In den Einstellungen der App unter „Glätte-Wecker (Frühwarnung)“ (in neueren App-Versionen „Mitteilungen“)
       können Sie die Mitteilungen auf Ihrem Gerät jederzeit ausschalten: Dann wird das Push-Token gelöscht, und die App
       meldet das Gerät nicht wieder von selbst an, bis Sie sie dort wieder einschalten. In neueren App-Versionen können
-      Sie dort auch einzelne Mitteilungsarten abschalten; diese Auswahl trifft nur, wer das Gerät nutzt, nicht der
+      Sie dort auch einzelne Mitteilungsarten abschalten und den Schnee-Wecker einstellen; diese Auswahl trifft nur, wer das Gerät nutzt, nicht der
       Inhaber des Betriebs.
       Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (die Mitteilungen sind Teil der Pro-Leistung); zusätzlich Art. 6
       Abs. 1 lit. f DSGVO für die Nutzung einzelner Fahrt-Punkte als Warn-Orte (berechtigtes Interesse an einer
@@ -316,7 +323,7 @@
         jeweils ohne Uhrzeit — keine Punkte entlang der Fahrspur (Buchstabe j).</li>
       <li><strong>Private.coffee</strong> (Verein, Österreich; eigenständig verantwortlich) — nur bei Störung von
         ovp.dresel.systems: Straßennetz für Rechtecke aus Kacheln eines festen Kartenrasters (Buchstabe j).</li>
-      <li><strong>Expo</strong> (650 Industries, Inc., USA; nur solange Push-Mitteilungen — Glätte-Frühwarnung, Wetter-Guide — auf dem Gerät eingeschaltet sind, siehe Buchstabe f) — Zustellung von Push-Mitteilungen; erhält Push-Token, Titel und Text der Mitteilung (ohne Namen oder Adressen von Objekten oder Strecken) und technische Angaben zur Anzeige. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
+      <li><strong>Expo</strong> (650 Industries, Inc., USA; nur solange Push-Mitteilungen — Glätte-Frühwarnung, Schnee-Wecker, Wetter-Guide — auf dem Gerät eingeschaltet sind, siehe Buchstabe f) — Zustellung von Push-Mitteilungen; erhält Push-Token, Titel und Text der Mitteilung (Kurzfassung und voller Text, ohne Namen oder Adressen von Objekten oder Strecken) und technische Angaben zur Anzeige. Weitergabe zur Zustellung an Google Firebase Cloud Messaging (Android) bzw. den Apple Push Notification Service (iPhone/iPad). Übermittlung in die USA auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.</li>
       <li><strong>Kartendienst</strong> (Android: Google Maps von Google Ireland Ltd.; iPhone: Apple Karten) — zeigt die Karte der
         Objekte und Strecken. Dabei lädt Ihr Gerät Kartenausschnitte direkt beim Anbieter (technisch nötig: IP-Adresse und der
         angezeigte Kartenbereich). Die Umrechnung einer Objektadresse in einen Kartenpunkt in der App übernimmt der
