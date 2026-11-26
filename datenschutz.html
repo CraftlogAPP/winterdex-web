@@ -167,8 +167,10 @@
     <h3>g) Käufe, Dexware Suite und Empfehlungsprogramm</h3>
     <p>Abonnements werden über Google Play bzw. den Apple App Store abgewickelt; die Stores verarbeiten Zahlungsdaten in
       eigener Verantwortung, wir erhalten keine Zahlungsdaten. Zur Verwaltung des Kaufstatus nutzen wir RevenueCat. Damit
-      ein Abo (auch das Dexware-Suite-Abo) in allen Dexware-Apps gilt, verwenden wir als Kauf-Kennung einen nicht
-      umkehrbaren Prüfwert (SHA-256) Ihrer E-Mail-Adresse statt der Adresse selbst.</p>
+      ein Abo app-übergreifend gilt (bei WinterDex auch ein bis einschließlich 26.11.2026 abgeschlossenes Dexware-Suite-Abo), verwenden
+      wir als Kauf-Kennung einen nicht umkehrbaren Prüfwert (SHA-256) Ihrer E-Mail-Adresse statt der Adresse selbst. Für
+      solche Suite-Abos steht dieser Prüfwert zusätzlich in einer Bestandsliste auf unserem Suite-Server (Supabase, EU),
+      damit WinterDex für sie freigeschaltet bleibt.</p>
     <p>Empfehlungsprogramm („Empfehlen &amp; 3 Monate gratis“): Jeder Betrieb hat einen Empfehlungs-Code. Trägt ein neuer
       Betrieb einen Code ein, speichern wir, welcher Betrieb welchen geworben hat, die Konto-Kennungen der beiden Inhaber
       und die Kauf-Kennung (SHA-256 der E-Mail) des geworbenen Inhabers. Damit fragt unser Server bei RevenueCat ab, ob
