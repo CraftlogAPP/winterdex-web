@@ -60,7 +60,8 @@
 
     <h2>§ 2 Gegenstand, Dauer, Art und Zweck</h2>
     <p>Gegenstand ist die Bereitstellung von WinterDex für die Dokumentation von Winterdienst-Einsätzen (Räumen und Streuen). Der Anbieter verarbeitet die Daten ausschließlich
-      zur Erbringung dieses Dienstes (Speichern, Synchronisieren, Anzeigen, Erstellen von Berichten sowie Versand von
+      zur Erbringung dieses Dienstes (Speichern, Synchronisieren, Anzeigen, Erstellen von Berichten, Versand von Glätte- und Wetter-Hinweisen per Push-Mitteilung an Geräte des Betriebs (Glätte-Frühwarnung,
+      Wetter-Guide), Zuordnung von Wetter-, Analyse- und Warndaten zu Einsätzen und Fahrten (Wetterverlauf) sowie Versand von
       Fälligkeits- und Monatsübersichten per E-Mail an die Nutzer des Betriebs; abbestellbar). Die Dauer
       entspricht der Laufzeit der Nutzung; die Kündigung richtet sich nach den AGB.</p>
 
@@ -68,11 +69,12 @@
     <p>Datenarten:</p>
     <ul>
       <li>Namen der ausführenden Personen und Team-Mitglieder (inkl. E-Mail-Adresse)</li>
-      <li>Einsatzdaten (Zeitpunkte, Maßnahmen, Streumittel, Notizen)</li>
-      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet, und die daraus ermittelten Straßennamen und Gemeinden; bei aktivierter Glätte-Frühwarnung dienen einzelne Punkte von Strecken und Fahrten außerdem als Orte für die Warnung)</li>
+      <li>Einsatzdaten (Zeitpunkte, Maßnahmen, Streumittel, Notizen, Wetterlage und Wetterverlauf am Einsatzort bzw. entlang der Fahrt)</li>
+      <li>Standortdaten (GPS-Stempel beim Dokumentieren; beim „Strecke fahren“ der gefahrene Weg mit Uhrzeit, bis die Person die Fahrt beendet, und die daraus ermittelten Straßennamen und Gemeinden; für Wettervorschau, Glätte-Frühwarnung und Wetter-Guide dienen einzelne Punkte von Strecken und Fahrten außerdem als Orte für die Wetterabfrage)</li>
       <li>Fotos (können Personen oder Kennzeichen zeigen)</li>
       <li>Angaben zu Objekten und Auftraggebern (Name, Anschrift, Kartenpunkt)</li>
-      <li>Push-Kennungen der Geräte (nur bei aktivierter Glätte-Frühwarnung)</li>
+      <li>Push-Kennungen, Plattform, App-Version, gewählte Mitteilungsarten und Zustellstatus je Gerät (nur solange Push-Mitteilungen auf dem Gerät eingeschaltet sind)</li>
+      <li>Protokoll der Glätte- und Wetter-Hinweise je Betrieb (Zeit, Art, Titel, Text, Anzahl der Geräte, Status; ohne Angabe, ob eine Mitteilung geöffnet wurde)</li>
     </ul>
     <p>Betroffene Personen:</p>
     <ul>
@@ -89,7 +91,14 @@
     <h2>§ 4a Einsatz bei Beschäftigten</h2>
     <p>Setzt der Nutzer die Strecken-Aufzeichnung bei Beschäftigten ein, ist er dafür verantwortlich, die Beschäftigten
       zu informieren und – soweit erforderlich – die Zustimmung des Betriebsrats bzw. der Beschäftigten einzuholen
-      (AT: § 96 ArbVG, § 10 AVRAG; DE: § 87 Abs. 1 Nr. 6 BetrVG).</p>
+      (AT: § 96 ArbVG, § 10 AVRAG; DE: § 87 Abs. 1 Nr. 6 BetrVG). Gleiches gilt, wenn der Nutzer Zeitangaben der
+      Nachweise (z. B. Ende des Schneefalls laut Wetterverlauf und Einsatzbeginn) zur Beurteilung einzelner Beschäftigter
+      verwendet. WinterDex stellt keine personenbezogenen Auswertungen oder Ranglisten von Reaktionszeiten bereit und
+      speichert nicht, ob oder wann eine Mitteilung geöffnet wurde; Inhaber und Verwalter sehen je Team-Mitglied nur, ob
+      Wetter-Hinweise auf einem seiner Geräte aktiv sind, ob die Zustellung fehlgeschlagen ist oder ob es keine bekommt.</p>
+    <p>Glätte- und Wetter-Hinweise können auch außerhalb der Arbeitszeit eintreffen. Ob und wie Beschäftigte darauf
+      reagieren sollen (z. B. im Rahmen einer Rufbereitschaft), regelt der Nutzer im Arbeitsverhältnis selbst;
+      Beschäftigte können die Mitteilungen auf ihrem Gerät jederzeit selbst abschalten.</p>
 
     <h2>§ 5 Pflichten des Anbieters</h2>
     <ul>
@@ -115,15 +124,15 @@
         technisch gesperrt.</li>
       <li>Datensicherung: eigene Sicherungskopien des Anbieters (keine Sicherung durch den Hosting-Dienstleister); sie
         werden nach spätestens 30 Tagen überschrieben, Kopien außerhalb des Arbeitsplatzes nur verschlüsselt.</li>
-      <li>Datenminimierung: Ortung nur beim Dokumentieren und während einer von der Person selbst gestarteten Streckenfahrt; keine Ortung außerhalb davon.</li>
+      <li>Datenminimierung: Ortung nur beim Dokumentieren und während einer von der Person selbst gestarteten Streckenfahrt; keine Ortung außerhalb davon. Push-Mitteilungen ohne Namen oder Adressen von Objekten und Strecken; an Wetterdienste nur gerundete Koordinaten (an Open-Meteo zusätzlich eine gerundete Höhe) ohne Kennungen.</li>
     </ul>
 
     <h2>§ 7 Unterauftragsverarbeiter</h2>
     <p>Der Nutzer genehmigt den Einsatz folgender Unterauftragsverarbeiter:</p>
     <ul>
       <li>Supabase Pte. Ltd., Singapur (Datenbank, Anmeldung, Dateispeicher) — Hosting in der EU-Region (Frankfurt am Main), EU-Standardvertragsklauseln; für die Straßennamen zu Fahrten zusätzlich eine Server-Funktion (Edge Function) im Netz von Supabase, ausgeführt in der EU-Region (Frankfurt am Main)</li>
-      <li>Cloudflare, Inc. (Server/Worker für Schnittstellen und zeitgesteuerte Aufgaben: Wetterabfragen mit Koordinaten, Glätte-Frühwarnung, Standort aus der Objektadresse, Straßennamen zu Fahrten) — Verarbeitung im Rahmen der jeweiligen Anfrage bzw. des jeweiligen Laufs, EU-Standardvertragsklauseln</li>
-      <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen über Google Firebase Cloud Messaging bzw. den Apple Push Notification Service) — nur Push-Kennung und Warntext, EU-Standardvertragsklauseln</li>
+      <li>Cloudflare, Inc. (Server/Worker für Schnittstellen und zeitgesteuerte Aufgaben: Wetterabfragen mit Koordinaten, Glätte-Frühwarnung, Wetter-Guide, Standort aus der Objektadresse, Straßennamen zu Fahrten) — Verarbeitung im Rahmen der jeweiligen Anfrage bzw. des jeweiligen Laufs, EU-Standardvertragsklauseln</li>
+      <li>Expo / 650 Industries, Inc., USA (Zustellung von Push-Mitteilungen über Google Firebase Cloud Messaging bzw. den Apple Push Notification Service) — nur Push-Kennung, Titel und Text der Mitteilung (ohne Namen oder Adressen von Objekten oder Strecken) und technische Angaben zur Anzeige, EU-Standardvertragsklauseln</li>
       <li>Brevo (Sendinblue SAS, Frankreich; Versand von Anmelde-, Bestätigungs- und Passwort-Mails) — Verarbeitung in der EU</li>
       <li>Resend (Plus Five Five, Inc., USA; Versand der Fälligkeits- und Monatsübersichten per E-Mail an die Nutzer des Betriebs) — EU-Standardvertragsklauseln</li>
       <li>RevenueCat, Inc., USA (Abo- und Team-Freischaltung) — nur pseudonyme Kauf-Kennung, keine Inhalte, EU-Standardvertragsklauseln</li>
@@ -167,7 +176,9 @@
         ovp.dresel.systems: Rechtecke aus den Kacheln des Kartenrasters wie oben, nicht die Spur selbst.</li>
     </ul>
     <p>Mit der Nutzung der jeweiligen Funktion weist der Nutzer diese Übermittlungen an (§ 4). Setzt der Nutzer den
-      Kartenpunkt eines Objekts selbst, entfällt die Adresssuche für dieses Objekt.</p>
+      Kartenpunkt eines Objekts selbst, entfällt die Adresssuche für dieses Objekt. Kommen weitere amtliche Wetterdienste
+      hinzu (z. B. der Deutsche Wetterdienst), erhalten auch sie nur gerundete Koordinaten ohne Personenbezug; der
+      Anbieter ergänzt diese Liste vorher.</p>
 
     <h2>§ 8 Löschung und Rückgabe</h2>
     <p>Nach Ende der Nutzung bzw. bei Löschung des Kontos durch den Inhaber werden die Daten des Betriebs
