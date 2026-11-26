@@ -134,12 +134,19 @@
     <p><strong>Öffentliche Dienste (keine Unterauftragsverarbeiter).</strong> Für Funktionen, die der Nutzer verwendet,
       fragt der Anbieter öffentliche Dienste ab, die die Anfragen in eigener Verantwortung nach ihren Nutzungs- und
       Datenschutzbestimmungen verarbeiten und nicht im Auftrag des Anbieters tätig sind. Übermittelt werden nur
-      Adressen, Koordinaten bzw. Kartenausschnitte wie folgt beschrieben; Objektnamen, Kontaktdaten, Konto- oder
-      Betriebskennungen, Fotos und Einsatzinhalte werden nicht übermittelt. Was im Adressfeld eines Objekts steht, geht als
-      Adresse an den Suchdienst; Namen von Personen gehören daher in den Objektnamen, nicht in das Adressfeld:</p>
+      Adressen, Koordinaten, gerundete Höhenangaben bzw. Kartenausschnitte wie folgt beschrieben; Objektnamen,
+      Kontaktdaten, Konto- oder Betriebskennungen, Fotos und Einsatzinhalte werden nicht übermittelt. Was im Adressfeld
+      eines Objekts steht, geht als Adresse an den Suchdienst; Namen von Personen gehören daher in den Objektnamen, nicht
+      in das Adressfeld:</p>
     <ul>
-      <li>Open-Meteo (Wetterdaten) — nur Koordinaten (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu 4 Punkte je
-        aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage).</li>
+      <li>GeoSphere Austria, Bundesanstalt für Geologie, Geophysik, Klimatologie und Meteorologie, Wien (Wetterdaten und
+        amtliche Wetterwarnungen) — vom Server des Anbieters etwa alle 15 Minuten nur auf etwa 1 km gerundete Koordinaten
+        (Mitte eines Rasterfelds von 0,01° × 0,015°) der Orte, an denen Objekte, bis zu 4 Punkte je aktiver Strecke,
+        Punkte aus Fahrten und Einsatzorte liegen, ohne Namen, Adressen oder Kennungen.</li>
+      <li>Open-Meteo (Wetterdaten und Höhenmodell) — vom Server des Anbieters nur auf etwa 1 km gerundete Koordinaten (Mitte
+        des Rasterfelds) und die auf 25 m gerundete Höhe des Orts (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu
+        4 Punkte je aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage),
+        für die Höhe je Rasterfeld nur feste Punkte dieses Feldes.</li>
       <li>OpenStreetMap Foundation, Vereinigtes Königreich (Angemessenheitsbeschluss der EU-Kommission), Suchdienst
         Nominatim — vom Server des Anbieters: die Objektadresse in der Form „Straße Hausnummer, PLZ Ort“ (durch Komma
         abgetrennte Zusätze vor der Straße werden abgeschnitten, Namen im selben Teil wie Straße oder Ort nicht; für

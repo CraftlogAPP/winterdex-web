@@ -139,7 +139,10 @@
       Strecken, Fahrten und Einsatzorte ab – auf etwa 1 km gerundet und ohne Namen, Adressen oder Kennungen Ihres
       Betriebs – bei GeoSphere Austria und Open-Meteo, künftig auch beim Deutschen Wetterdienst. Ihr Gerät übermittelt
       dafür die Koordinaten des Einsatzorts an unseren Server; erst dieser rundet sie auf die Mitte eines Rasters von etwa
-      1 km. Die Wetterdienste erhalten technisch bedingt die IP-Adresse unseres Servers, nicht Ihre. Die zu einem Nachweis
+      1 km. Damit die Temperatur für die richtige Höhenlage berechnet wird, erhält Open-Meteo zusätzlich die Höhe des
+      Standorts über dem Meer, auf 25 m gerundet; diese ermittelt unser Server aus einem Höhenmodell, das er je
+      Rasterfeld nur mit festen Punkten dieses Feldes abfragt, nie mit Ihrem Standort. Die Wetterdienste erhalten
+      technisch bedingt die IP-Adresse unseres Servers, nicht Ihre. Die zu einem Nachweis
       gehörenden Wetterangaben speichern wir so lange wie den Nachweis. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
     <h3>f) Glätte-Frühwarnung (Push-Mitteilungen)</h3>
     <p>Mit Pro (eigenes Abo, Probezeit oder über Ihr Team) richtet die App im Cloud-Modus die Frühwarnung von selbst
@@ -156,7 +159,7 @@
       Warnung dienen Ihre Objekte, bis zu 4 Punkte je aktiver Strecke und — hat Ihr Betrieb keine aktive Strecke —
       bis zu 4 Punkte aus den Fahrten der letzten 30 Tage (höchstens 8 Fahrten); der Fahrweg wird dafür also zusätzlich
       zum Nachweis genutzt. Für diese Orte fragt der Server die Wettervorhersage bei Open-Meteo ab (nur auf etwa 1 km
-      gerundete Koordinaten, siehe Buchstabe e); fehlt einem Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j).
+      gerundete Koordinaten und die auf 25 m gerundete Höhe, siehe Buchstabe e); fehlt einem Objekt der Kartenpunkt, sucht er ihn aus der Adresse (Buchstabe j).
       Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (die Frühwarnung ist Teil der Pro-Leistung); für die Nutzung
       einzelner Fahrt-Punkte als Warn-Orte zusätzlich Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
       rechtzeitigen Warnung im eigenen Einsatzgebiet — ein mit dem Nachweis vereinbarer Zweck, Art. 6 Abs. 4 DSGVO; es
@@ -270,8 +273,9 @@
       <li><strong>GeoSphere Austria</strong> (Bundesanstalt für Geologie, Geophysik, Klimatologie und Meteorologie, Wien;
         eigenständig verantwortlich) — Wetterdaten und amtliche Wetterwarnungen; erhält von unserem Server ausschließlich auf
         etwa 1 km gerundete Koordinaten ohne Namen, Adressen oder Kennungen (Buchstabe e).</li>
-      <li><strong>Open-Meteo</strong> — Wetterdaten; erhält von unserem Server ausschließlich auf etwa 1 km gerundete
-        Koordinaten (Einsatzorte; für die Glätte-Frühwarnung Objekte sowie einzelne Punkte von Strecken bzw. Fahrten).</li>
+      <li><strong>Open-Meteo</strong> — Wetterdaten und Höhenmodell; erhält von unserem Server ausschließlich auf etwa 1 km
+        gerundete Koordinaten und die auf 25 m gerundete Höhe (Einsatzorte; für die Glätte-Frühwarnung Objekte sowie
+        einzelne Punkte von Strecken bzw. Fahrten) sowie für die Höhe je Rasterfeld feste Punkte dieses Feldes.</li>
       <li><strong>OpenStreetMap Foundation</strong> (Vereinigtes Königreich; eigenständig verantwortlich; Angemessenheitsbeschluss
         der EU-Kommission) — Kartenkacheln für Karten in App-Bericht und Browser (erhält technisch bedingt die IP-Adresse und den
         Kartenbereich) und Suchdienst Nominatim (erhält Objektadressen ohne Objektnamen bzw. — nur im Ausweichverfahren —
