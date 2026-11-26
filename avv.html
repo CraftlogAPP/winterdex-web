@@ -146,7 +146,8 @@
     <p><strong>Öffentliche Dienste (keine Unterauftragsverarbeiter).</strong> Für Funktionen, die der Nutzer verwendet,
       fragt der Anbieter öffentliche Dienste ab, die die Anfragen in eigener Verantwortung nach ihren Nutzungs- und
       Datenschutzbestimmungen verarbeiten und nicht im Auftrag des Anbieters tätig sind. Übermittelt werden nur
-      Adressen, Koordinaten, gerundete Höhenangaben bzw. Kartenausschnitte wie folgt beschrieben; Objektnamen,
+      Adressen, Koordinaten, gerundete Höhenangaben, Kennungen öffentlicher Wetterstationen bzw. Kartenausschnitte wie
+      folgt beschrieben; Objektnamen,
       Kontaktdaten, Konto- oder Betriebskennungen, Fotos und Einsatzinhalte werden nicht übermittelt. Was im Adressfeld
       eines Objekts steht, geht als Adresse an den Suchdienst; Namen von Personen gehören daher in den Objektnamen, nicht
       in das Adressfeld:</p>
@@ -159,6 +160,15 @@
         des Rasterfelds) und die auf 25 m gerundete Höhe des Orts (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu
         4 Punkte je aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage),
         für die Höhe je Rasterfeld nur feste Punkte dieses Feldes.</li>
+      <li>Deutscher Wetterdienst (DWD), Bundesoberbehörde, Offenbach am Main (Wetterdaten und Zuordnung zur Gemeinde für
+        Orte in Deutschland) — vom Server des Anbieters je Rasterfeld einmal nur dessen Mitte (auf etwa 1 km gerundet, wie
+        bei GeoSphere Austria; zur Auffrischung nach 180 Tagen, ohne Treffer nach 30 Tagen erneut), damit Gemeinde und
+        Höhenlage des Rasterfelds bekannt sind, ohne Namen, Adressen oder Kennungen. Die Schneefall-Vorhersagen
+        (NowCastMIX) lädt der Server ohne jede Ortsangabe herunter, die Stationsvorhersagen (MOSMIX) je Wetterstation nur
+        mit deren öffentlicher Kennung.</li>
+      <li>MeteoSchweiz, Bundesamt für Meteorologie und Klimatologie, Zürich (aktuelle Messwerte der Wetterstationen für Orte
+        in der Schweiz) — der Server des Anbieters lädt nur eine Datei mit den Messwerten aller Stationen herunter;
+        MeteoSchweiz erhält keine Daten aus dem Auftrag.</li>
       <li>OpenStreetMap Foundation, Vereinigtes Königreich (Angemessenheitsbeschluss der EU-Kommission), Suchdienst
         Nominatim — vom Server des Anbieters: die Objektadresse in der Form „Straße Hausnummer, PLZ Ort“ (durch Komma
         abgetrennte Zusätze vor der Straße werden abgeschnitten, Namen im selben Teil wie Straße oder Ort nicht; für
@@ -179,9 +189,8 @@
         ovp.dresel.systems: Rechtecke aus den Kacheln des Kartenrasters wie oben, nicht die Spur selbst.</li>
     </ul>
     <p>Mit der Nutzung der jeweiligen Funktion weist der Nutzer diese Übermittlungen an (§ 4). Setzt der Nutzer den
-      Kartenpunkt eines Objekts selbst, entfällt die Adresssuche für dieses Objekt. Kommen weitere amtliche Wetterdienste
-      hinzu (z. B. der Deutsche Wetterdienst), erhalten auch sie nur gerundete Koordinaten ohne Personenbezug; der
-      Anbieter ergänzt diese Liste vorher.</p>
+      Kartenpunkt eines Objekts selbst, entfällt die Adresssuche für dieses Objekt. Kommen weitere Wetterdienste hinzu,
+      erhalten auch sie nur gerundete Koordinaten ohne Personenbezug; der Anbieter ergänzt diese Liste vorher.</p>
 
     <h2>§ 8 Löschung und Rückgabe</h2>
     <p>Nach Ende der Nutzung bzw. bei Löschung des Kontos durch den Inhaber werden die Daten des Betriebs
