@@ -129,6 +129,8 @@
         Objekte in Ihrem Konto.</li>
       <li><strong>Karten:</strong> Für die Karten im Dashboard und im „Außendienst“ (z. B. Fahrten, Objekte, PDF-Bericht)
         lädt Ihr Browser Kartenkacheln von OpenStreetMap — siehe Buchstabe j.</li>
+      <li><strong>Kauf im Browser:</strong> Kaufen Sie WinterDex Pro im Dashboard, öffnet sich der Bestellvorgang von Paddle
+        als Fenster auf der Seite — siehe Buchstabe g.</li>
       <li><strong>Auslieferung:</strong> Das Dashboard wird über GitHub Pages (GitHub Inc., USA) ausgeliefert; dabei fallen
         technisch bedingt Server-Logdaten (IP-Adresse, Zeitpunkt) an. Ihre Konto-, Objekt- und Einsatzdaten liegen nicht
         dort, sondern wie in der App bei Supabase (EU/Frankfurt).</li>
@@ -203,8 +205,18 @@
     <h3>g) Käufe, Dexware Suite und Empfehlungsprogramm</h3>
     <p>Abonnements werden über Google Play bzw. den Apple App Store abgewickelt; die Stores verarbeiten Zahlungsdaten in
       eigener Verantwortung, wir erhalten keine Zahlungsdaten. Zur Verwaltung des Kaufstatus nutzen wir RevenueCat. Damit
-      ein Abo (auch das Dexware-Suite-Abo) in allen Dexware-Apps gilt, verwenden wir als Kauf-Kennung einen nicht
-      umkehrbaren Prüfwert (SHA-256) Ihrer E-Mail-Adresse statt der Adresse selbst.</p>
+      ein Abo app-übergreifend gilt (bei WinterDex auch ein bis einschließlich 26.11.2026 abgeschlossenes Dexware-Suite-Abo), verwenden
+      wir als Kauf-Kennung einen nicht umkehrbaren Prüfwert (SHA-256) Ihrer E-Mail-Adresse statt der Adresse selbst. Für
+      solche Suite-Abos steht dieser Prüfwert zusätzlich in einer Bestandsliste auf unserem Suite-Server (Supabase, EU),
+      damit WinterDex für sie freigeschaltet bleibt.</p>
+    <p>Kauf im Browser: Im Dashboard (dashboard.dexware.app) können Sie WinterDex Pro auch direkt kaufen. Dann öffnet
+      sich der Bestellvorgang unseres Vertriebspartners Paddle (Paddle.com Market Limited, Vereinigtes Königreich;
+      Angemessenheitsbeschluss der EU-Kommission) als Fenster auf der Seite; dafür lädt Ihr Browser erst beim Klick auf
+      einen Tarif Programmcode und Bestellformular von Servern von Paddle. Paddle ist bei diesem Kauf Verkäufer und
+      verarbeitet die Kauf- und Zahlungsdaten als eigener Verantwortlicher; wir erhalten keine Zahlungsdaten. Damit der
+      Kauf Ihrem Konto zugeordnet wird und Sie die Adresse nicht neu eintippen müssen, erhalten RevenueCat und Paddle
+      dabei neben der Kauf-Kennung auch die E-Mail-Adresse Ihres Kontos. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.
+      Einzelheiten: <a href="https://dexware.app/datenschutz.html">dexware.app/datenschutz.html</a>, Abschnitt 7a.</p>
     <p>Empfehlungsprogramm („Empfehlen &amp; 3 Monate gratis“): Jeder Betrieb hat einen Empfehlungs-Code. Trägt ein neuer
       Betrieb einen Code ein, speichern wir, welcher Betrieb welchen geworben hat, die Konto-Kennungen der beiden Inhaber
       und die Kauf-Kennung (SHA-256 der E-Mail) des geworbenen Inhabers. Damit fragt unser Server bei RevenueCat ab, ob
@@ -331,6 +343,7 @@
       <li><strong>Google</strong> (nur bei Nutzung der Google-Anmeldung) — Authentifizierung; wir erhalten E-Mail-Adresse und Namen.</li>
       <li><strong>Apple</strong> (nur bei Nutzung von „Mit Apple anmelden“ auf dem iPhone) — Authentifizierung; wir erhalten eine Kennung, Ihre E-Mail-Adresse (auf Wunsch eine von Apple anonymisierte Weiterleitungsadresse) und – falls freigegeben – Ihren Namen.</li>
       <li><strong>Google Play bzw. Apple App Store / RevenueCat</strong> (RevenueCat, Inc., USA; Kaufstatus mit pseudonymer Kennung; EU-Standardvertragsklauseln) — Abwicklung von In-App-Käufen (sofern Sie ein Abo abschließen); wir erhalten keine Zahlungsdaten.</li>
+      <li><strong>Paddle</strong> (Paddle.com Market Limited, Vereinigtes Königreich; eigenständig verantwortlich; Angemessenheitsbeschluss der EU-Kommission) — nur bei einem Kauf im Browser (Buchstabe g): Verkäufer, Bestellvorgang und Zahlungsabwicklung; erhält die E-Mail-Adresse und die Kauf-Kennung Ihres Kontos, die im Bestellvorgang eingegebenen Daten und technisch bedingt Ihre IP-Adresse. RevenueCat erhält bei einem Kauf im Browser ebenfalls die E-Mail-Adresse Ihres Kontos.</li>
       <li><strong>Brevo</strong> (Sendinblue SAS, Frankreich) — Versand von Anmelde-, Bestätigungs- und Passwort-Mails.</li>
       <li><strong>Resend</strong> (Plus Five Five, Inc., USA) — Versand der Wochen- und Monatsübersichten per E-Mail; EU-Standardvertragsklauseln.</li>
     </ul>
