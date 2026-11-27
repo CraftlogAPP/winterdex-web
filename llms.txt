@@ -1,0 +1,102 @@
+# WinterDex
+
+> WinterDex ist eine Winterdienst-App von Dexware für Deutschland, Österreich und die Schweiz. Sie dokumentiert Räum- und Streueinsätze mit Uhrzeit, GPS-Stempel, Wetterlage und Foto und erstellt daraus PDF-Nachweise. Android-App bei Google Play, am iPhone im Browser. 2 Objekte und 1 Strecke gratis, Pro 19,99 € im Monat oder 69,99 € im Jahr.
+
+Sachliche Kurzinfo für Sprachmodelle und Suchdienste. Maßgeblich sind die Angaben auf https://winterdex.dexware.app/. Anbieter: Dexware (https://dexware.app/), Kontakt: support@dexware.app.
+
+## Was WinterDex macht
+
+- Räum- und Streueinsätze mit Uhrzeit, GPS-Stempel, Wetterlage und Foto dokumentieren
+- Strecken-Nachweis: Gehwege und Straßen per GPS abfahren, Abdeckung in Prozent
+- Einträge nachträglich nicht änderbar, Storno nur mit Begründung
+- Nachweis-PDF je Objekt, Strecke, Monat oder Saison
+- Glätte-Frühwarnung per Push (Pro)
+- Karte „Heute Nacht“ auf der Startseite: Schnee, Regen, Temperatur und Glätte-Wahrscheinlichkeit
+- Schnee-Wecker für Einsatzorte in Österreich, Deutschland und der Schweiz (Pro)
+- Mitteilungen der letzten 30 Tage unter der Glocke, in Österreich zusätzlich Hinweise vor Schnee und Eisregen sowie amtliche Warnungen von GeoSphere Austria (Pro)
+- Team per Team-Code (Pro)
+- Objekte aus Excel oder CSV einlesen, Excel-Listen im Dexware-Dashboard
+
+## Für wen
+
+Gemeinden und Bauhöfe, Hausbetreuung und Hausmeisterdienste, Winterdienst-Betriebe und GaLaBau, Hausverwaltungen in Deutschland, Österreich und der Schweiz.
+
+## Preise
+
+- Gratis (für immer): 2 Objekte, Einsätze unbegrenzt; 1 Strecke mit GPS-Nachweis; GPS, Wetter, Fotos, Storno-Schutz; Karte „Heute Nacht“ auf der Startseite; PDF mit Wasserzeichen; Cloud-Sync auf allen Geräten
+- Pro: 19,99 € im Monat oder 69,99 € pro Jahr – deckt die ganze Wintersaison, umgerechnet 5,83 € im Monat. Enthält: Unbegrenzt Objekte und Strecken; Team mit bis zu 20 Mitarbeitern, ein Abo für alle; Glätte-Frühwarnung per Push am Vorabend und früh, wenn Glätte droht; Schnee-Wecker und Mitteilungen unter der Glocke; PDF ohne Wasserzeichen, mit deinem Logo und deiner Farbe; Einsätze und Strecken als Excel-Liste zum Abrechnen (im Dashboard); Priorisierter Support
+- Stufen nach Teamgröße (ein Abo pro Betrieb, Mitarbeiter treten per Team-Code bei und brauchen kein eigenes Abo):
+  - Pro (bis 20 Mitarbeiter): 19,99 € im Monat · 69,99 € im Jahr (ganze Saison)
+  - Team (bis 50 Mitarbeiter): 29,99 € im Monat · 99,99 € im Jahr (ganze Saison)
+  - Team XL (bis 100 Mitarbeiter): 39,99 € im Monat · 129,99 € im Jahr (ganze Saison)
+  - Kommunal (über 100 Mitarbeiter): Angebot · auf Rechnung
+- Preise für Neukunden inkl. MwSt., Abo jederzeit kündbar.
+
+## Wetterdaten
+
+- Vorhersagen für Karte „Heute Nacht“, Glätte-Frühwarnung und Schnee-Wecker: in Österreich von GeoSphere Austria, in Deutschland und der Schweiz vom Deutschen Wetterdienst (Modell ICON-D2), in der Schweiz zusätzlich Messwerte von MeteoSchweiz.
+- Die Quelle der Wetterlage, die jeder Einsatz festhält, steht im PDF-Nachweis. Alle Quellen und Lizenzen (CC BY 4.0) stehen im Impressum; die genannten Stellen sind an WinterDex nicht beteiligt.
+- Wetter-Hinweise sind ohne Gewähr und ersetzen weder die Kontrolle vor Ort noch einen eigenen Wecker.
+
+## Was WinterDex nicht ist
+
+- Keine Rechtsberatung: WinterDex dokumentiert. Räumen, Streuen und Kontrollieren bleibt bei der Person oder Firma, die die Pflicht trägt.
+- Keine Fahrzeug-Telematik oder Disposition: WinterDex dokumentiert Einsätze und Strecken, es steuert keine Streufahrzeuge.
+- Eine iPhone-App im App Store gibt es noch nicht; am iPhone und iPad läuft WinterDex im Browser (Einsätze erfassen und Strecken fahren).
+
+## Kurz beantwortet
+
+- Wann muss geräumt und gestreut werden? Das regelt die Satzung der Gemeinde — eine bundesweit einheitliche Uhrzeit gibt es nicht. Als Faustregel gilt werktags etwa 7 bis 20 Uhr, sonn- und feiertags ein späterer Beginn.
+- Ist ein Streuprotokoll Pflicht? Eine ausdrückliche gesetzliche Pflicht gibt es nicht. Nach einem Sturz steht ohne Protokoll aber oft Aussage gegen Aussage, und wer mit Uhrzeit, Ort und Wetter belegen kann, dass geräumt und gestreut war, hat die besseren Karten.
+- Welche App eignet sich für den Winterdienst-Nachweis und das Streuprotokoll? Eine App, die jeden Einsatz mit Uhrzeit, Standort und Wetterlage von selbst festhält und den Eintrag danach nicht mehr ändern lässt. WinterDex ist eine solche Winterdienst-App: Zu jedem Räum- oder Streueinsatz speichert sie Uhrzeit, GPS-Stempel, Wetterlage, Maßnahme und Streumittel, auf Wunsch mit Fotos.
+- Papier-Streubuch oder App: Was ist besser? Beides kann als Nachweis dienen, wenn es zeitnah und vollständig geführt wird. Der Unterschied liegt in der Glaubwürdigkeit: Ein Papier-Streubuch lässt sich nachträglich ausfüllen, und genau das kann die Gegenseite nach einem Sturz einwenden.
+- Wie funktioniert der Strecken-Nachweis für Gehwege und Straßen? Die erste Fahrt wird zur Vorlage — oder du verbindest deine Objekte zu einer Strecke. Danach wird jede Fahrt per GPS aufgezeichnet; das läuft auch im Funkloch weiter und übersteht einen leeren Akku.
+- Gibt es eine GPS-App für den Räumdienst-Nachweis in Deutschland, Österreich und der Schweiz? Ja. WinterDex ist für den Winterdienst in allen drei Ländern gemacht: Jeder Einsatz bekommt einen GPS-Stempel, und Gehwege, Straßen oder Parkplätze lassen sich als Strecke per GPS abfahren.
+- Kann ich Objekte und Einsätze auch am PC auswerten? Ja, im Dexware-Dashboard im Browser: Kennzahlen, Objekte, Einsätze und Nachweis-PDFs, praktisch fürs Büro, die Hausverwaltung oder die Bauhof-Leitung.
+- Wir haben den Winterdienst vergeben. Müssen wir trotzdem kontrollieren? Ja. Die Arbeit lässt sich vergeben, die Organisation nicht: Eigentümer und Hausverwaltung müssen den Dienstleister sorgfältig auswählen und stichprobenartig kontrollieren.
+- Wie lange sollte ich Streuprotokolle aufbewahren? In Deutschland verjähren Ansprüche aus einem Glätteunfall in der Regel nach drei Jahren, gerechnet ab dem Ende des Jahres, in dem der Geschädigte vom Schaden und vom Verantwortlichen erfahren hat.
+- Was gilt beim Schneeräumen in Österreich? Im Ortsgebiet verpflichtet § 93 StVO die Liegenschaftseigentümer: Gehsteige entlang der Liegenschaft müssen zwischen 6 und 22 Uhr geräumt und bei Glätte bestreut sein.
+- Wie dokumentiere ich die Räumpflicht nach § 93 StVO? Mit einem Eintrag je Einsatz, geschrieben direkt danach: Datum und genaue Uhrzeit, welcher Gehsteig oder Gehweg, was getan wurde (geräumt, gestreut oder kontrolliert, nichts nötig), Streumittel, Wetterlage und wer es war, am besten mit Foto.
+- Kann ich meine Objektliste aus Excel übernehmen? Ja. Im Dexware-Dashboard liest „Objekte importieren“ eine Excel- oder CSV-Liste ein, auch eine einfach eingefügte Tabelle. Spalten wie Name, Adresse und Pflichtzeiten werden erkannt; leere Pflichtzeiten bekommen die Vorgabe des Landes, schon angelegte Objekte werden übersprungen.
+- Wie kommen meine Mitarbeiter ins Team? Über den Team-Code. Der Inhaber erzeugt ihn in der App, die Mitarbeiter geben ihn nach der Anmeldung ein und dokumentieren ab dann im selben Betrieb.
+- Wie funktioniert die Glätte-Frühwarnung? Mit Pro prüft WinterDex am Vorabend um 19 Uhr und früh um 2:45 Uhr (Uhrzeit für deinen Betrieb einstellbar) die Wettervorhersage für deine Objekte und Strecken: Neuschnee, Eisregen, Niederschlag bei Temperaturen um den Gefrierpunkt oder strengen Frost.
+- Woher kommen die Wetterdaten? Die Vorhersagen kommen von staatlichen Wetterdiensten: Für die Karte „Heute Nacht“, die Glätte-Frühwarnung und den Schnee-Wecker rechnet WinterDex in Österreich mit den Vorhersagen von GeoSphere Austria, in Deutschland und der Schweiz mit denen des Deutschen Wetterdienstes (Modell ICON-D2), in der Schweiz zusätzlich mit Messwerten von MeteoSchweiz.
+- Wofür zahle ich bei Pro 69,99 € im Jahr? Für alles, was ein Betrieb mit mehreren Objekten braucht: unbegrenzt Objekte und Strecken, ein Team mit bis zu 20 Mitarbeitern, die Glätte-Frühwarnung per Push und PDF-Nachweise mit deinem Logo.
+- Alle Antworten: https://winterdex.dexware.app/#faq
+
+## Seiten
+
+- [Startseite](https://winterdex.dexware.app/): Funktionen, Preise, häufige Fragen
+- [Preise](https://winterdex.dexware.app/#preise): Gratis, Pro, Team und Team XL
+- [Häufige Fragen](https://winterdex.dexware.app/#faq): Räumpflicht, Streuprotokoll, Strecken-Nachweis, Wetterdaten, Preise
+- [Papier-Streubuch oder App](https://winterdex.dexware.app/#papier-oder-app): Vergleich Punkt für Punkt
+- [Räum- und Streupflicht in Deutschland und Österreich](https://winterdex.dexware.app/#wissen): Grundsätze in Kürze, Inhalt eines Streuprotokolls
+- [WinterDex am iPhone](https://winterdex.dexware.app/#iphone): im Browser, ohne App Store
+- [Dexware-Dashboard](https://dashboard.dexware.app/app/winterdex): Auswertung am PC mit demselben Konto
+- [Google Play](https://play.google.com/store/apps/details?id=com.winterdex.app): Android-App
+- [Dexware für Gemeinden](https://dexware.app/kommunal/): Gemeinde-Pauschale und Kommunal-Lizenz
+
+## Ratgeber
+
+- [Dachlawinen und Eiszapfen: Pflichten der Eigentümer](https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html): Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste.
+- [Streupflicht ohne Schnee: Reif & Eisregen](https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html): Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt.
+- [Glatteis-Unfall: Wer haftet – und welche Beweise zählen?](https://winterdex.dexware.app/ratgeber-glatteis-unfall-haftung.html): Sturz auf Glatteis vor dem Haus: wer haftet, wann Mitverschulden zählt, wer was beweisen muss und was in Österreich gilt (§ 93 StVO, § 1319a ABGB).
+- [Räum- und Streupflicht: Haftung und Nachweis](https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html): Räum- und Streupflicht verständlich erklärt: Wer haftet bei einem Glatteisunfall, welche Uhrzeiten gelten, wie man die Streupflicht auf Mieter oder Dienstleister überträgt — und wie eine belastbare Winterdienst-Dokumentation aussieht.
+- [Räumpflicht für Mieter: Wann muss ich Schnee schippen?](https://winterdex.dexware.app/ratgeber-raeumpflicht-mieter.html): Wann Mieter Schnee räumen müssen: Mietvertrag, Hausordnung, Urlaub und Krankheit, Kosten über die Nebenkosten – und was in Österreich gilt.
+- [Schneeräumpflicht Österreich: § 93 StVO erklärt](https://winterdex.dexware.app/ratgeber-schneeraeumung-oesterreich.html): Wer in Österreich Gehsteige räumen und streuen muss, zu welchen Zeiten, wie weit die Pflicht reicht, wann sie auf Mieter oder Firmen übergeht und wie du im Schadensfall nachweist, dass geräumt wurde.
+- [Streupflicht auf Parkplatz und Firmengelände](https://winterdex.dexware.app/ratgeber-streupflicht-parkplatz-firmengelaende.html): Kundenparkplatz, Zufahrt, Weg zum Eingang: was Betriebe bei Glätte räumen müssen – mit BGH-Urteil zum Marktparkplatz, Arbeitsstättenregeln und § 93 StVO.
+- [Streupflicht-Uhrzeit: ab wann muss geräumt sein?](https://winterdex.dexware.app/ratgeber-streupflicht-uhrzeiten.html): Ab wann morgens geräumt und gestreut sein muss und bis wann die Streupflicht abends gilt: die übliche Regel, Beispiele aus München, Stuttgart und Hamburg, Schneefall tagsüber und was in Österreich gilt.
+- [Streuprotokoll-Vorlage zum Ausdrucken](https://winterdex.dexware.app/ratgeber-streuprotokoll-vorlage.html): Kostenlose Streuprotokoll-Vorlage zum Ausdrucken: Welche Angaben ein Räum- und Streuprotokoll für den Winterdienst braucht, wie lange man es aufbewahrt und warum Papier vor Gericht oft nicht reicht.
+- [Streusalz auf dem Gehweg: erlaubt oder verboten?](https://winterdex.dexware.app/ratgeber-streusalz-verbot.html): Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen.
+- [Winterdienst abrechnen: Pauschale, Einsatz, Nachweis](https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html): Winterdienst richtig abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Einsatznachweis Hausverwaltungen überzeugt. Mit Checkliste.
+- [Winterdienst in Gemeinden: Streuplan, Prioritäten, Streubuch](https://winterdex.dexware.app/ratgeber-winterdienst-gemeinde.html): Winterdienst für Gemeinden und Bauhöfe in DE und AT: Rechtsgrundlagen, Räum- und Streuplan mit Prioritäten, Übertragung auf Anlieger und Streubuch.
+- [Winterdienst für Hausverwaltungen: Pflichten und Nachweis](https://winterdex.dexware.app/ratgeber-winterdienst-hausverwaltung.html): Winterdienst für Hausverwaltungen in DE und AT: Verantwortung trotz Dienstleister, Leistungsverzeichnis, Kontrolle, Nachweis je Objekt und Kostenumlage.
+- [Winterdienst-Nachweis anfordern: Muster & Prüfliste](https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html): Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext für die Aufforderung, Prüfliste und was tun, wenn die Firma nichts liefert.
+- [Winterdienst-Tourenplan erstellen: Muster & Tipps](https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html): Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Dokumentation je Runde. Mit Muster-Plan.
+
+## Rechtliches
+
+- [Impressum](https://winterdex.dexware.app/impressum.html)
+- [Datenschutz](https://winterdex.dexware.app/datenschutz.html)
+- [AGB](https://winterdex.dexware.app/agb.html)
+- [AVV](https://winterdex.dexware.app/avv.html)
