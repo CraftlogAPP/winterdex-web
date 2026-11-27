@@ -46,7 +46,7 @@
     </header>
 
     <h1>Auftrags&shy;verarbeitungs&shy;vertrag (AVV)</h1>
-    <p class="stand">gemäß Art. 28 DSGVO · Stand: 26.11.2026</p>
+    <p class="stand">gemäß Art. 28 DSGVO · Stand: 27.11.2026</p>
 
     <div class="note">Dieser Vertrag gilt zwischen dem Nutzer als <strong>Verantwortlichem</strong> und dem Anbieter als
       <strong>Auftragsverarbeiter</strong>, soweit der Nutzer mit WinterDex personenbezogene Daten Dritter verarbeitet. Er ist
@@ -162,17 +162,19 @@
       <li>GeoSphere Austria, Bundesanstalt für Geologie, Geophysik, Klimatologie und Meteorologie, Wien (Wetterdaten und
         amtliche Wetterwarnungen) — vom Server des Anbieters etwa alle 15 Minuten nur auf etwa 1 km gerundete Koordinaten
         (Mitte eines Rasterfelds von 0,01° × 0,015°) der Orte, an denen Objekte, bis zu 4 Punkte je aktiver Strecke,
-        Punkte aus Fahrten und Einsatzorte liegen, ohne Namen, Adressen oder Kennungen.</li>
-      <li>Open-Meteo (Wetterdaten und Höhenmodell) — vom Server des Anbieters nur auf etwa 1 km gerundete Koordinaten (Mitte
-        des Rasterfelds) und die auf 25 m gerundete Höhe des Orts (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu
-        4 Punkte je aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage),
-        für die Höhe je Rasterfeld nur feste Punkte dieses Feldes.</li>
+        Punkte aus Fahrten und Einsatzorte liegen, ohne Namen, Adressen oder Kennungen; Messwerte von Wetterstationen nur
+        mit deren öffentlicher Kennung (welche Stationen, ergibt sich aus der ungefähren Lage der Orte).</li>
+      <li>Open-Meteo (Wetterdaten) — vom Server des Anbieters nur auf etwa 1 km gerundete Koordinaten (Mitte des
+        Rasterfelds) und die auf 25 m gerundete Höhe des Orts (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu
+        4 Punkte je aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage).
+        Neu ermittelte Höhen berechnet der Anbieter selbst aus dem Copernicus-Höhenmodell auf seinem Server, ohne Abfrage
+        bei Dritten; bereits gespeicherte Höhen nutzt er weiter.</li>
       <li>Deutscher Wetterdienst (DWD), Bundesoberbehörde, Offenbach am Main (Wetterdaten und Zuordnung zur Gemeinde für
         Orte in Deutschland) — vom Server des Anbieters je Rasterfeld einmal nur dessen Mitte (auf etwa 1 km gerundet, wie
         bei GeoSphere Austria; zur Auffrischung nach 180 Tagen, ohne Treffer nach 30 Tagen erneut), damit Gemeinde und
         Höhenlage des Rasterfelds bekannt sind, ohne Namen, Adressen oder Kennungen. Die Schneefall-Vorhersagen
-        (NowCastMIX) lädt der Server ohne jede Ortsangabe herunter, die Stationsvorhersagen (MOSMIX) je Wetterstation nur
-        mit deren öffentlicher Kennung.</li>
+        (NowCastMIX) lädt der Server ohne jede Ortsangabe herunter, die Stationsvorhersagen (MOSMIX) und Messwerte je
+        Wetterstation nur mit deren öffentlicher Kennung (welche Stationen, ergibt sich aus der ungefähren Lage der Orte).</li>
       <li>MeteoSchweiz, Bundesamt für Meteorologie und Klimatologie, Zürich (aktuelle Messwerte der Wetterstationen für Orte
         in der Schweiz) — der Server des Anbieters lädt nur eine Datei mit den Messwerten aller Stationen herunter;
         MeteoSchweiz erhält keine Daten aus dem Auftrag.</li>
