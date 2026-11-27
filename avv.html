@@ -134,7 +134,7 @@
         technisch gesperrt.</li>
       <li>Datensicherung: eigene Sicherungskopien des Anbieters (keine Sicherung durch den Hosting-Dienstleister); sie
         werden nach spätestens 30 Tagen überschrieben, Kopien außerhalb des Arbeitsplatzes nur verschlüsselt.</li>
-      <li>Datenminimierung: Ortung nur beim Dokumentieren und während einer von der Person selbst gestarteten Streckenfahrt; in der geöffneten Tour wertet die App die Position nur auf dem Gerät aus (Ankunft am Objekt), ohne sie zu speichern oder zu übermitteln; keine Ortung außerhalb davon. Der Hinweis „… ist dort“ enthält keine Koordinaten und wird spätestens 30 Minuten nach dem letzten Lebenszeichen der App gelöscht. Push-Mitteilungen ohne Namen oder Adressen von Objekten und Strecken; an Wetterdienste nur gerundete Koordinaten (an Open-Meteo zusätzlich eine gerundete Höhe) ohne Kennungen.</li>
+      <li>Datenminimierung: Ortung nur beim Dokumentieren und während einer von der Person selbst gestarteten Streckenfahrt; in der geöffneten Tour wertet die App die Position nur auf dem Gerät aus (Ankunft am Objekt), ohne sie zu speichern oder zu übermitteln; keine Ortung außerhalb davon. Der Hinweis „… ist dort“ enthält keine Koordinaten und wird spätestens 30 Minuten nach dem letzten Lebenszeichen der App gelöscht. Push-Mitteilungen ohne Namen oder Adressen von Objekten und Strecken; an Wetterdienste nur gerundete Koordinaten (an Open-Meteo – nur ersatzweise – zusätzlich eine gerundete Höhe) ohne Kennungen.</li>
     </ul>
 
     <h2>§ 7 Unterauftragsverarbeiter</h2>
@@ -164,7 +164,8 @@
         (Mitte eines Rasterfelds von 0,01° × 0,015°) der Orte, an denen Objekte, bis zu 4 Punkte je aktiver Strecke,
         Punkte aus Fahrten und Einsatzorte liegen, ohne Namen, Adressen oder Kennungen; Messwerte von Wetterstationen nur
         mit deren öffentlicher Kennung (welche Stationen, ergibt sich aus der ungefähren Lage der Orte).</li>
-      <li>Open-Meteo (Wetterdaten) — vom Server des Anbieters nur auf etwa 1 km gerundete Koordinaten (Mitte des
+      <li>Open-Meteo (Wetterdaten, nur ersatzweise: wenn GeoSphere Austria bzw. der Deutsche Wetterdienst für einen Ort
+        keine verwertbaren Daten liefern) — vom Server des Anbieters dann nur auf etwa 1 km gerundete Koordinaten (Mitte des
         Rasterfelds) und die auf 25 m gerundete Höhe des Orts (Einsatzorte; für die Glätte-Frühwarnung Objekte, bis zu
         4 Punkte je aktiver Strecke und – ohne aktive Strecke – bis zu 4 Punkte aus den Fahrten der letzten 30 Tage).
         Neu ermittelte Höhen berechnet der Anbieter selbst aus dem Copernicus-Höhenmodell auf seinem Server, ohne Abfrage
@@ -173,7 +174,7 @@
         Orte in Deutschland) — vom Server des Anbieters je Rasterfeld einmal nur dessen Mitte (auf etwa 1 km gerundet, wie
         bei GeoSphere Austria; zur Auffrischung nach 180 Tagen, ohne Treffer nach 30 Tagen erneut), damit Gemeinde und
         Höhenlage des Rasterfelds bekannt sind, ohne Namen, Adressen oder Kennungen. Die Schneefall-Vorhersagen
-        (NowCastMIX) lädt der Server ohne jede Ortsangabe herunter, die Stationsvorhersagen (MOSMIX) und Messwerte je
+        (NowCastMIX) und die Radardaten (RADOLAN) lädt der Server ohne jede Ortsangabe herunter, die Stationsvorhersagen (MOSMIX) und Messwerte je
         Wetterstation nur mit deren öffentlicher Kennung (welche Stationen, ergibt sich aus der ungefähren Lage der Orte).</li>
       <li>MeteoSchweiz, Bundesamt für Meteorologie und Klimatologie, Zürich (aktuelle Messwerte der Wetterstationen für Orte
         in der Schweiz) — der Server des Anbieters lädt nur eine Datei mit den Messwerten aller Stationen herunter;
