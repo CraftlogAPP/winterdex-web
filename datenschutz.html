@@ -50,7 +50,7 @@
     </header>
 
     <h1>Datenschutzerklärung</h1>
-    <p class="stand">Stand: 26.11.2026 · Gilt für die mobile App „WinterDex", die Nutzung im Browser (dashboard.dexware.app) und diese Website.</p>
+    <p class="stand">Stand: 27.11.2026 · Gilt für die mobile App „WinterDex", die Nutzung im Browser (dashboard.dexware.app) und diese Website.</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -161,11 +161,14 @@
       Schneefall-Vorhersagen und die Vorhersagen einzelner Wetterstationen lädt unser Server herunter, ohne Ihre Orte zu
       übermitteln (je Station nur deren öffentliche Kennung). Für Orte in der Schweiz nutzt unser Server zusätzlich die
       aktuellen Messwerte der Wetterstationen von MeteoSchweiz; er lädt sie als eine Datei für alle Stationen herunter,
-      MeteoSchweiz erhält dabei keine Angaben zu Ihren Orten. Damit die Temperatur für die richtige Höhenlage berechnet
-      wird, erhält Open-Meteo zusätzlich die Höhe des Standorts über dem Meer, auf 25 m gerundet; diese ermittelt unser
-      Server aus einem Höhenmodell, das er je Rasterfeld nur mit festen Punkten dieses Feldes abfragt, nie mit Ihrem
-      Standort. Die Wetterdienste erhalten technisch bedingt die IP-Adresse unseres Servers, nicht Ihre. Quellen der
-      Wetterdaten sind GeoSphere Austria, der Deutsche Wetterdienst, MeteoSchweiz und Open-Meteo (offene Daten unter der
+      MeteoSchweiz erhält dabei keine Angaben zu Ihren Orten. Zur laufenden Kontrolle der Treffsicherheit lädt unser
+      Server außerdem Messwerte öffentlicher Wetterstationen von GeoSphere Austria und vom Deutschen Wetterdienst – nur
+      mit der öffentlichen Kennung der jeweiligen Station, ohne Angaben zu Ihren Orten. Die Höhe eines Standorts ermittelt
+      unser Server aus dem Copernicus-Höhenmodell (GLO-30), das auf unserem Server gespeichert ist; Höhenangaben fragt er
+      dafür bei keinem anderen Dienst ab. Damit die Temperatur für die richtige Höhenlage berechnet wird, erhält Open-Meteo
+      bei seinen Wetterabfragen zusätzlich die Höhe des Standorts über dem Meer, auf 25 m gerundet. Die Wetterdienste
+      erhalten technisch bedingt die IP-Adresse unseres Servers, nicht Ihre. Quellen der Wetterdaten sind GeoSphere
+      Austria, der Deutsche Wetterdienst, MeteoSchweiz und Open-Meteo (offene Daten unter der
       Lizenz <a href="https://creativecommons.org/licenses/by/4.0/deed.de" target="_blank" rel="noopener">CC BY 4.0</a>);
       ausgewertet werden sie von WinterDex, die genannten Stellen sind daran nicht beteiligt. Die zu einem Nachweis
       gehörenden Wetterangaben speichern wir so lange wie den Nachweis. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
@@ -344,15 +347,16 @@
         Fahrten).</li>
       <li><strong>GeoSphere Austria</strong> (Bundesanstalt für Geologie, Geophysik, Klimatologie und Meteorologie, Wien;
         eigenständig verantwortlich) — Wetterdaten und amtliche Wetterwarnungen; erhält von unserem Server ausschließlich auf
-        etwa 1 km gerundete Koordinaten ohne Namen, Adressen oder Kennungen (Buchstabe e).</li>
-      <li><strong>Open-Meteo</strong> — Wetterdaten und Höhenmodell; erhält von unserem Server ausschließlich auf etwa 1 km
-        gerundete Koordinaten und die auf 25 m gerundete Höhe (Einsatzorte; für die Glätte-Frühwarnung Objekte sowie
-        einzelne Punkte von Strecken bzw. Fahrten) sowie für die Höhe je Rasterfeld feste Punkte dieses Feldes.</li>
+        etwa 1 km gerundete Koordinaten ohne Namen, Adressen oder Kennungen; Messwerte von Wetterstationen ruft unser Server
+        nur mit deren öffentlicher Kennung ab (Buchstabe e).</li>
+      <li><strong>Open-Meteo</strong> — Wetterdaten; erhält von unserem Server ausschließlich auf etwa 1 km gerundete
+        Koordinaten und die auf 25 m gerundete Höhe (Einsatzorte; für die Glätte-Frühwarnung Objekte sowie einzelne Punkte
+        von Strecken bzw. Fahrten). Höhenangaben fragt unser Server bei Open-Meteo nicht mehr ab (Buchstabe e).</li>
       <li><strong>Deutscher Wetterdienst</strong> (Bundesoberbehörde, Offenbach am Main, Deutschland; eigenständig
         verantwortlich) — Wetterdaten und Zuordnung zur Gemeinde für Orte in Deutschland; erhält von unserem Server
         ausschließlich je Rasterfeld einmal dessen Mitte (auf etwa 1 km gerundet) ohne Namen, Adressen oder Kennungen;
-        Vorhersagen lädt unser Server ohne Ortsangabe herunter, je Wetterstation nur mit deren öffentlicher Kennung
-        (Buchstabe e).</li>
+        Vorhersagen und Messwerte lädt unser Server ohne Ortsangabe herunter, je Wetterstation nur mit deren öffentlicher
+        Kennung (Buchstabe e).</li>
       <li><strong>OpenStreetMap Foundation</strong> (Vereinigtes Königreich; eigenständig verantwortlich; Angemessenheitsbeschluss
         der EU-Kommission) — Kartenkacheln für Karten in App-Bericht und Browser (erhält technisch bedingt die IP-Adresse und den
         Kartenbereich) und Suchdienst Nominatim (erhält Objektadressen ohne Objektnamen bzw. — nur im Ausweichverfahren —
