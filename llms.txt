@@ -78,7 +78,7 @@ Gemeinden und Bauhöfe, Hausbetreuung und Hausmeisterdienste, Winterdienst-Betri
 
 ## Ratgeber
 
-- [Dachlawinen und Eiszapfen: Pflichten der Eigentümer](https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html): Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste.
+- [Dachlawinen, Eiszapfen: Pflichten der Eigentümer](https://winterdex.dexware.app/ratgeber-dachlawinen-eiszapfen.html): Wer muss Dachlawinen und Eiszapfen verhindern? § 93 StVO in Österreich, Schneefanggitter laut Landesbauordnung, Haftung in der Schweiz – mit Checkliste.
 - [Streupflicht ohne Schnee: Reif & Eisregen](https://winterdex.dexware.app/ratgeber-glaette-ohne-schnee.html): Reifglätte, überfrierende Nässe, Eisregen: wann die Streupflicht auch ohne Schnee greift, wie man Glätte früh erkennt und warum der Kontrollgang zählt.
 - [Glatteis-Unfall: Wer haftet – und welche Beweise zählen?](https://winterdex.dexware.app/ratgeber-glatteis-unfall-haftung.html): Sturz auf Glatteis vor dem Haus: wer haftet, wann Mitverschulden zählt, wer was beweisen muss und was in Österreich gilt (§ 93 StVO, § 1319a ABGB).
 - [Räum- und Streupflicht: Haftung und Nachweis](https://winterdex.dexware.app/ratgeber-raeum-streupflicht.html): Räum- und Streupflicht erklärt: wer bei Glatteis haftet, welche Uhrzeiten gelten, wie man die Pflicht überträgt und wie ein belastbarer Nachweis aussieht.
@@ -90,11 +90,11 @@ Gemeinden und Bauhöfe, Hausbetreuung und Hausmeisterdienste, Winterdienst-Betri
 - [Streupflicht-Uhrzeit: ab wann muss geräumt sein?](https://winterdex.dexware.app/ratgeber-streupflicht-uhrzeiten.html): Ab wann morgens geräumt sein muss und bis wann die Streupflicht abends gilt: die übliche Regel, Beispiele aus München, Stuttgart, Hamburg und Österreich.
 - [Streuprotokoll-Vorlage zum Ausdrucken](https://winterdex.dexware.app/ratgeber-streuprotokoll-vorlage.html): Kostenlose Streuprotokoll-Vorlage zum Ausdrucken: welche Angaben ein Streuprotokoll braucht, wie lange man es aufbewahrt und warum Papier oft nicht reicht.
 - [Streusalz auf dem Gehweg: erlaubt oder verboten?](https://winterdex.dexware.app/ratgeber-streusalz-verbot.html): Darf man auf dem Gehweg Salz streuen? Regeln in München, Stuttgart, Hamburg, Berlin, Österreich (§ 93 StVO) und Basel – mit Ausnahmen, Bußgeld und Alternativen.
-- [Winterdienst abrechnen: Pauschale, Einsatz, Nachweis](https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html): Winterdienst abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Nachweis Hausverwaltungen überzeugt. Mit Checkliste.
+- [Winterdienst abrechnen: Pauschale oder Einsatz](https://winterdex.dexware.app/ratgeber-winterdienst-abrechnen.html): Winterdienst abrechnen: Saisonpauschale oder nach Einsatz, was in die Rechnung gehört und welcher Nachweis Hausverwaltungen überzeugt. Mit Checkliste.
 - [Winterdienst in Gemeinden: Streuplan, Prioritäten, Streubuch](https://winterdex.dexware.app/ratgeber-winterdienst-gemeinde.html): Winterdienst für Gemeinden und Bauhöfe in DE und AT: Rechtsgrundlagen, Räum- und Streuplan mit Prioritäten, Übertragung auf Anlieger und Streubuch.
 - [Winterdienst für Hausverwaltungen: Pflichten und Nachweis](https://winterdex.dexware.app/ratgeber-winterdienst-hausverwaltung.html): Winterdienst für Hausverwaltungen in DE und AT: Verantwortung trotz Dienstleister, Leistungsverzeichnis, Kontrolle, Nachweis je Objekt und Kostenumlage.
-- [Winterdienst-Nachweis anfordern: Muster & Prüfliste](https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html): Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext, Prüfliste und was tun, wenn die Firma nichts liefert.
-- [Winterdienst-Tourenplan erstellen: Muster & Tipps](https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html): Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Doku je Runde. Mit Muster-Plan.
+- [Winterdienst-Nachweis anfordern: Mustertext](https://winterdex.dexware.app/ratgeber-winterdienst-nachweis-anfordern.html): Einsatznachweise vom Winterdienst anfordern: was im Vertrag stehen sollte, Mustertext, Prüfliste und was tun, wenn die Firma nichts liefert.
+- [Winterdienst-Tourenplan: Muster und Tipps](https://winterdex.dexware.app/ratgeber-winterdienst-tourenplan.html): Winterdienst-Tourenplan erstellen: Objekte nach Pflichtzeiten ordnen, Kontrollrunden bei Frost, Abendrunde, Vertretung und Doku je Runde. Mit Muster-Plan.
 
 ## Rechtliches
 
